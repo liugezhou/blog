@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>最近搭建博客遇到的一系列问题 | 六个周</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="最近在重新搭博客的时候，发生了一系列问题，今天抓紧记录下。  环境介绍 首先介绍一下我的博客部署： 我的博客是通过hexo搭建、上传至Github上，之前的博客访问便都是：https://liugezhou.github.io 但是最新搭建的这个博客，我想给自己已有的域名进行绑定：liugezhou.online. 于是，查找了一些资料，知道需要将我的域名进行解析， 需要添加 CNAME 记录。">
+<meta name="keywords" content="六个周的个人博客">
+<meta property="og:type" content="article">
+<meta property="og:title" content="最近搭建博客遇到的一系列问题">
+<meta property="og:url" content="http://liugezhou.online/2019/07/11/我的博客图片来自七牛云存储/index.html">
+<meta property="og:site_name" content="六个周">
+<meta property="og:description" content="最近在重新搭博客的时候，发生了一系列问题，今天抓紧记录下。  环境介绍 首先介绍一下我的博客部署： 我的博客是通过hexo搭建、上传至Github上，之前的博客访问便都是：https://liugezhou.github.io 但是最新搭建的这个博客，我想给自己已有的域名进行绑定：liugezhou.online. 于是，查找了一些资料，知道需要将我的域名进行解析， 需要添加 CNAME 记录。">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-11T09:59:37.799Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="最近搭建博客遇到的一系列问题">
+<meta name="twitter:description" content="最近在重新搭博客的时候，发生了一系列问题，今天抓紧记录下。  环境介绍 首先介绍一下我的博客部署： 我的博客是通过hexo搭建、上传至Github上，之前的博客访问便都是：https://liugezhou.github.io 但是最新搭建的这个博客，我想给自己已有的域名进行绑定：liugezhou.online. 于是，查找了一些资料，知道需要将我的域名进行解析， 需要添加 CNAME 记录。">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
+  <link rel="stylesheet" href="/css/donate.css">
+  
+</head>
+</html>
+  
+    
+      <body class="dark">
+    
+  
+      <div id="container" class="container">
+        <article id="post-我的博客图片来自七牛云存储" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <header id="header" class="header">
+  <nav class="mobile-nav">
+    <h1 class="nickname">六个周</h1>
+    <ul class="mobile-nav-menu">
+      <label for="mobile-menu-toggle"><a>&#9776; Menu</a></label>
+      <input type="checkbox" id="mobile-menu-toggle"/>
+      <ul class="mobile-nav-link">
+        
+        <a href="/">首页</a>
+        
+        <a href="/archives">目录</a>
+        
+      </ul>
+    </ul>
+  </nav>
+	
+		<nav id="main-nav" class="main-nav">
+	
+	
+	  <a class="main-nav-link" href="/">首页</a>
+	
+	  <a class="main-nav-link" href="/archives">目录</a>
+	
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
+    
+
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      最近搭建博客遇到的一系列问题
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry typo" itemprop="articleBody">
+      
+        <blockquote>
+<p>最近在重新搭博客的时候，发生了一系列问题，今天抓紧记录下。</p>
+</blockquote>
+<h6 id="环境介绍"><a href="#环境介绍" class="headerlink" title="环境介绍"></a>环境介绍</h6><blockquote>
+<p>首先介绍一下我的博客部署：</p>
+<p>我的博客是通过hexo搭建、上传至Github上，之前的博客访问便都是：<a href="https://liugezhou.github.io" target="_blank" rel="noopener">https://liugezhou.github.io</a></p>
+<p>但是最新搭建的这个博客，我想给自己已有的域名进行绑定：liugezhou.online.</p>
+<p>于是，查找了一些资料，知道需要将我的域名进行解析， 需要添加 CNAME 记录。</p>
+<p>在域名解析的时候，发现其实没服务器什么事，直接在解析设置上添加两条记录（并暂停其它的一些配置）：</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">记录类型</th>
+<th align="left">主机记录</th>
+<th align="left">解析线路</th>
+<th align="left">记录值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">A</td>
+<td align="left">@</td>
+<td align="left">默认</td>
+<td align="left">192.30.252.153</td>
+</tr>
+<tr>
+<td align="left">CNAME</td>
+<td align="left">www</td>
+<td align="left">默认</td>
+<td align="left">liugezhou.github.io</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>我也记不清为什么是这么配置了，总之这个时候我的个人域名便可以直接访问我的博客内容了。</p>
+</blockquote>
+<h6 id="问题出现"><a href="#问题出现" class="headerlink" title="问题出现"></a>问题出现</h6><blockquote>
+<p>在写博客的时候，避免不了要使用图片，于是我专门在Github上建了个仓库放图片，这样我每次需要插入图片的时候，直接使用Markdown语法引入图片便好了。<br>用这样的方法，<code>在github网站上访问项目博客文件</code>的时候，看md文件的确是可以访问到图片的。</p>
+<p>但是用HEXO搭建的博客网站，其中图片便死活不出来，就这样写了两篇文章后，感觉是真难受。</p>
+<p>一篇文章怎么可以没有图片呢？<br>怎么可以没有自己上传的图片呢？<br>怎么可以总是引用别人的图片地址呢？</p>
+</blockquote>
+<h6 id="解决图片存储问题"><a href="#解决图片存储问题" class="headerlink" title="解决图片存储问题"></a>解决图片存储问题</h6><blockquote>
+<p>七牛云有个免费存储图片的功能–使我可以便于链接访问。</p>
+</blockquote>
+<blockquote>
+<p>这里记录的我使用到它所做的简单步骤。</p>
+</blockquote>
+<blockquote>
+<p>1️⃣  不管你用什么方法首先登录七牛云网站，不管你用什么方法首先有个自己的域名。</p>
+</blockquote>
+<blockquote>
+<p>2️⃣  进入首页–查找产品–对象存储–立即使用–新建存储空间</p>
+</blockquote>
+<blockquote>
+<p>3️⃣  绑定域名[融合 CDN 加速域名] （重点⭐⭐⭐）<br>这里又需要在域名控制台配置一下CNAME，但是我之前已经将Github与liugehzou.online的域名使用了一次CANME,于是犯了嘀咕。。  </p>
+<p>继续，查阅<a href="https://developer.qiniu.com/fusion/kb/1322/how-to-configure-cname-domain-name" target="_blank" rel="noopener">官方资料</a>、等资料，经过多次尝试：</p>
+</blockquote>
+<blockquote>
+<p>绑定域名选择【普通域名】、加速域名设置为：【img.liugezhou.online】,然后到这里在七牛云上的配置便结束！</p>
+</blockquote>
+<blockquote>
+<p>接着进入域名管理平台，进行域名解析：<br>同上，只需要添加一条记录即可：</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">记录类型</th>
+<th align="left">主机记录</th>
+<th align="left">解析线路</th>
+<th align="left">记录值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">CNAME</td>
+<td align="left">img</td>
+<td align="left">默认</td>
+<td align="left">img.liugezhou.online.qiniudns.com</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>这时候回到七牛云平台，点击内容管理，直接上传照片，然后查看地址便可以访问了。<br>这期间还有一个加水印的功能，我试了一下没加上，这个应该是后台上传图片的时候才有效，也罢，到此最起码解决了图片的上传问题。</p>
+</blockquote>
+<h6 id="博客遗留问题"><a href="#博客遗留问题" class="headerlink" title="博客遗留问题"></a>博客遗留问题</h6><blockquote>
+<p>之前我的博客在另一台电脑上进行的部署，后来我换电脑后，出了一些状况。<br>就是：换了台电脑我不能很好的部署上传了，原因为文章的发布时间都错乱了，这也是导致我重新部署博客的原因。</p>
+</blockquote>
+<blockquote>
+<p>但是，如果我再换电脑是不是意味着我还有继续重新部署，博客文章归为0呢？<br>当然不是，查阅了一些资料后，我知道情况是这样的：</p>
+</blockquote>
+<blockquote>
+<p>首先HEXO博客搭建上传至Github使用的命令是hexo clean &amp;&amp; hexo g &amp;&amp; hexo d,这时候上传到Github上的只是由HEXO生成的静态文件，而本地的关于hexo的文件其实还是在本地的，这个时候就需要在liugezhou.github.io的项目上，再建一个分支，将本地的HEXO项目上传至另一个分支，每次提交代码的时候hexo d部署到主分支，本地的文件提交到新建的分支，这样在其它电脑上再写博客的时候，只需要将新建的那个分支上的代码下载到本地即可。（这里说的比较混乱，因为这里我现在还没有新建分支提代码，这里只是记录一下思路，待有兴趣或者迫不得已的时候再去实践） </p>
+</blockquote>
+<blockquote>
+<p>行吧，大概就是这个样子。</p>
+</blockquote>
+
+      
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2019/07/11/我的博客图片来自七牛云存储/" class="article-date">
+  <time class="dt-published" datetime="2019-07-11T08:51:33.948Z" itemprop="datePublished">2019-07-11</time>
+</a>
+
+        </li>
+        
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <span id="article-nav-newer" class="article-nav-link-wrap newer"></span>
+  
+  
+    <a href="/2019/07/11/Open Source License/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">开源许可证介绍</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>欢迎关注我的公众号【六个周】，每周一篇.</p>
+
+
+      </div>
+    </footer>
+
+      
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="https://cdn.jsdelivr.net/npm/html5shiv@3/dist/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>

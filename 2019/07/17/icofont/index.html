@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="六个周">
 <meta property="og:description" content="背景 最近自己在写一个小程序，在使用iconfont的时候，出了一点小问题，解决的过程是简单、高效的。想到之前就使用过iconfont，不过当时只是一笔带过。而今考虑到在项目中小icon的使用广泛，有必要简单总结一下使用iconfont方面的。这篇博文不属于技术范畴，只能说是一个小小的技能吧–在个人开发中可以起到一个很好的技能拓展。  概念 我们在开发过程中会用到很多的小图标，作为一个不会PS的前">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-17T15:16:03.170Z">
+<meta property="og:updated_time" content="2019-07-17T15:18:53.035Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iconfont在小程序端的使用">
 <meta name="twitter:description" content="背景 最近自己在写一个小程序，在使用iconfont的时候，出了一点小问题，解决的过程是简单、高效的。想到之前就使用过iconfont，不过当时只是一笔带过。而今考虑到在项目中小icon的使用广泛，有必要简单总结一下使用iconfont方面的。这篇博文不属于技术范畴，只能说是一个小小的技能吧–在个人开发中可以起到一个很好的技能拓展。  概念 我们在开发过程中会用到很多的小图标，作为一个不会PS的前">
@@ -86,9 +86,9 @@
 <p><code>iconfont-阿里巴巴矢量图标库</code>地址：<a href="https://www.iconfont.cn/" target="_blank" rel="noopener">https://www.iconfont.cn/</a><br>可供web端、Android、iOS端使用。<br>官方文档的使用说明很明确：<a href="https://www.iconfont.cn/help/detail?spm=a313x.7781069.1998910419.d8d11a391&amp;helptype=code" target="_blank" rel="noopener">https://www.iconfont.cn/help/detail?spm=a313x.7781069.1998910419.d8d11a391&amp;helptype=code</a><br>本文章只讨论小程序端关于Unicode的使用</p>
 </blockquote>
 <h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><blockquote>
-<p>这里记录两中使用方法，可直接看最后的在线链接使用，两步搞定。</p>
+<p>这里记录两种使用方法，可直接看最后的在线链接使用，两步搞定。</p>
 </blockquote>
-<h3 id="本地使用"><a href="#本地使用" class="headerlink" title="本地使用"></a>本地使用</h3><h5 id="转换"><a href="#转换" class="headerlink" title="转换"></a>转换</h5><blockquote>
+<h3 id="本地使用"><a href="#本地使用" class="headerlink" title="本地使用"></a>本地使用</h3><h5 id="步骤一"><a href="#步骤一" class="headerlink" title="步骤一"></a>步骤一</h5><blockquote>
 <ul>
 <li>将选好的小图标进行代码下载（此下载文件为1️⃣）</li>
 <li>打开这个平台<a href="transfonter.org">transfonter.org/</a></li>
@@ -98,7 +98,7 @@
 <li>转换后点击download下载，（此文件为2️⃣）</li>
 </ul>
 </blockquote>
-<h5 id="新建使用"><a href="#新建使用" class="headerlink" title="新建使用"></a>新建使用</h5><blockquote>
+<h5 id="步骤二"><a href="#步骤二" class="headerlink" title="步骤二"></a>步骤二</h5><blockquote>
 <ul>
 <li>在小程序本地新建 icon.wxss文件，并在app.wxss引入</li>
 <li>下载下来的文件（文件2️⃣）中有个 stylesheet.css文件，将其中代码copy至icon.wxss（注意这一步也可以直接在你新建的项目中找到在线连接、直接复制copy到stylesheet中也可以）</li>

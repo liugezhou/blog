@@ -1,0 +1,22 @@
+<%- partial('_partial/head') %>
+  <% if (is_home()) { %>
+    <% if (theme.dark) { %>
+    <body class="home-body dark">
+    <% } else { %>
+    <body class="home-body">
+    <% } %>
+  <% } else {%>
+    <% if (theme.dark) { %>
+      <body class="dark">
+    <% } else { %>
+      <body>
+    <% } %>
+  <% } %>
+      <div id="container" class="container">
+        <%- body %>
+      </div>
+      <%- partial('_partial/footer') %>
+      <%- partial('_partial/after-footer') %>
+    </div>
+  </body>
+</html>

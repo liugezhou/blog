@@ -1,0 +1,87 @@
+# Lang
+language: zh-CN
+
+# Dark Mode
+dark: true
+
+# Header
+menu:
+  首页: /
+  目录: /archives
+
+# Your Feed Location
+#rss: /atom.xml
+
+# Content
+fancybox: true
+
+
+# Miscellaneous
+google_analytics:
+favicon: /favicon.ico
+twitter:
+google_plus:
+fb_admins:
+fb_app_id:
+
+
+# Profile
+nickname: 六个周
+description: My name is liugezhou,<br>I think It's not easy to find something <br>that you can stick to in a sea of people.<br>It is a great honor for me <br>to found such a thing,<br>which is to record <br>what I think and feel every day!
+
+# Load fontawesome icons? Also see the links option
+icons: false
+
+# Footer area links
+# NOTICE) If you set "icons: false" link names will be clear text
+# If "icons: true" link names will interpreted as fontawesome icon names
+# NOTICE) Use the fontawesome icon names without the fa- prefix (http://fontawesome.io/cheatsheet/)
+links:
+  博客目录: /archives/
+  # Github: https://github.com/liugezhou
+ 
+
+# nav position (top, left. top is default)
+nav: top
+
+# Info
+archive_footer_content: Be brave,take some risks,make some mistakes and then learn from them.
+post_footer_content: Imessage:18231133236
+
+# Gitment
+gitment:
+  owner:
+  repo:
+  client:
+    id:
+    secret:
+
+# Utterances
+# NOTICE) make sure the app is installed on the repo before using this commit system
+# see https://utteranc.es/ for more
+utterances:
+  enable: false
+  repo: # your repo in this format: 'username/reponame', note that there is no '.git' suffix
+
+# If you want to use valine,you should get the appId and appKey form https://leancloud.cn ,more setting please see https://valine.js.org
+valine:
+  enable: false # !!if you want use valine comment system,please set enable: true
+  appId:  #your leancloud appId
+  appKey:  #your leancloud appKey
+  guest_info: nick,mail,link #valine comment header info
+  placeholder: Just go go # valine comment input placeholder(like: Please leave your footprints )
+  avatar: mm # gravatar style https://valine.js.org/avatar
+  pageSize: 10 # comment list page size
+  verify: false # valine verify code (true/false)
+  notify: false # valine mail notify (true/false)
+  lang: zh-cn
+
+# Donate
+donate:
+  enable: false
+  github: 
+  paypal: 
+  bitcoin: 
+  BTCQR:
+  AliPayQR: 
+  WeChatQR: 

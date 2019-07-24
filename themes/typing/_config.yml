@@ -8,7 +8,7 @@ dark: true
 menu:
   首页: /
   目录: /archives
-
+  About: /about
 # Your Feed Location
 #rss: /atom.xml
 

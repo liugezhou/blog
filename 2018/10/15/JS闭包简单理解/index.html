@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/favicon.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="闭包,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1、先来看一个闭包的代码小例子：var scope = &amp;quot;全局scope&amp;quot;;  function checkScope() { var scope = &amp;quot;内部scope&amp;quot;; function f() {     return scope; } return f(); } checkScope();   //=&amp;gt; &amp;quot;内部scope&amp;quot;闭">
+<meta name="keywords" content="闭包">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS闭包简单理解">
+<meta property="og:url" content="http://liugezhou.online/2018/10/15/JS闭包简单理解/index.html">
+<meta property="og:site_name" content="六个周">
+<meta property="og:description" content="1、先来看一个闭包的代码小例子：var scope = &amp;quot;全局scope&amp;quot;;  function checkScope() { var scope = &amp;quot;内部scope&amp;quot;; function f() {     return scope; } return f(); } checkScope();   //=&amp;gt; &amp;quot;内部scope&amp;quot;闭">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-25T08:17:37.194Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS闭包简单理解">
+<meta name="twitter:description" content="1、先来看一个闭包的代码小例子：var scope = &amp;quot;全局scope&amp;quot;;  function checkScope() { var scope = &amp;quot;内部scope&amp;quot;; function f() {     return scope; } return f(); } checkScope();   //=&amp;gt; &amp;quot;内部scope&amp;quot;闭">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://liugezhou.online/2018/10/15/JS闭包简单理解/">
+
+
+
+
+
+  <title>JS闭包简单理解 | 六个周</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">六个周</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">liugezhou</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-websitelink">
+          <a href="/websitelink" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heart"></i> <br>
+            
+            工具收藏
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-collectionlink">
+          <a href="/collectionlink" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-child"></i> <br>
+            
+            其它收藏
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liugezhou.online/2018/10/15/JS闭包简单理解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liugezhou">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="http://img.liugezhou.online/time.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="六个周">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">JS闭包简单理解</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-15T00:00:00+08:00">
+                2018-10-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web前端/" itemprop="url" rel="index">
+                    <span itemprop="name">web前端</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web前端/JavaScirpt/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScirpt</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h5 id="1、先来看一个闭包的代码小例子："><a href="#1、先来看一个闭包的代码小例子：" class="headerlink" title="1、先来看一个闭包的代码小例子："></a>1、先来看一个闭包的代码小例子：</h5><pre><code>var scope = &quot;全局scope&quot;; 
+function checkScope() {
+var scope = &quot;内部scope&quot;;
+function f() {
+    return scope;
+}
+return f();
+}
+checkScope();   //=&gt; &quot;内部scope&quot;</code></pre><p>闭包可以捕获到局部变量和参数的外部函数绑定，即便外部函数的调用已经结束。</p>
+<a id="more"></a>
+<p><a href="https://www.jianshu.com/p/132fb6d485ee" target="_blank" rel="noopener">词法作用域的规则，即函数被执行时(executed)使用的作用域链(scope chain)是被定义时的scope chain，而不是执行时的scope chain，就可以很容易的理解闭包的行为了。</a></p>
+<h5 id="2、在javascript语言中，闭包就是函数和该函数作用域的组合。从这个概念上来讲，在js中，所有函数都是闭包（函数都是对象并且函数都有和他们相关联的作用域链scope-chain）。简单说：闭包就是有权访问另一个函数作用域中变量的函数"><a href="#2、在javascript语言中，闭包就是函数和该函数作用域的组合。从这个概念上来讲，在js中，所有函数都是闭包（函数都是对象并且函数都有和他们相关联的作用域链scope-chain）。简单说：闭包就是有权访问另一个函数作用域中变量的函数" class="headerlink" title="2、在javascript语言中，闭包就是函数和该函数作用域的组合。从这个概念上来讲，在js中，所有函数都是闭包（函数都是对象并且函数都有和他们相关联的作用域链scope chain）。简单说：闭包就是有权访问另一个函数作用域中变量的函数."></a>2、在javascript语言中，闭包就是函数和该函数作用域的组合。从这个概念上来讲，在js中，所有函数都是闭包（函数都是对象并且函数都有和他们相关联的作用域链scope chain）。简单说：闭包就是有权访问另一个函数作用域中变量的函数.</h5><h5 id="3、在ES6之前，函数只能在全局作用域和函数作用域中声明，不能在块级作用域中声明。没有块级作用域导致很多场景不合理，闭包在一些地方很好解决了这个不合理。"><a href="#3、在ES6之前，函数只能在全局作用域和函数作用域中声明，不能在块级作用域中声明。没有块级作用域导致很多场景不合理，闭包在一些地方很好解决了这个不合理。" class="headerlink" title="3、在ES6之前，函数只能在全局作用域和函数作用域中声明，不能在块级作用域中声明。没有块级作用域导致很多场景不合理，闭包在一些地方很好解决了这个不合理。"></a>3、在ES6之前，函数只能在全局作用域和函数作用域中声明，不能在块级作用域中声明。没有块级作用域导致很多场景不合理，闭包在一些地方很好解决了这个不合理。</h5><h5 id="4-闭包的使用场景"><a href="#4-闭包的使用场景" class="headerlink" title="4.闭包的使用场景"></a>4.闭包的使用场景</h5><blockquote>
+<p>场景描述：假如页面上有5个button,要给button绑定onclick事件，点击的时候，弹出对应button的索引编号。</p>
+</blockquote>
+<pre><code>#html
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+ &lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;button&gt;Button0&lt;/button&gt;
+&lt;button&gt;Button1&lt;/button&gt;
+&lt;button&gt;Button2&lt;/button&gt;
+&lt;button&gt;Button3&lt;/button&gt;
+&lt;button&gt;Button4&lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+#js
+...
+var btns = document.getElementsByTagName(&apos;button&apos;);
+for(var i = 0, len = btns.length; i &lt; len; i++) {
+btns[i].onclick = function() {
+    console.log(i);
+}
+}
+...</code></pre><p>通过执行该段代码，发现不论点击哪个button ，均输入4；<br>这显然不符合我们的需求，我们我们需要修改代码：<br>1️⃣ 将for循环中的var 变为let<br>2️⃣Tip： 在ES6之前，没有块级作用域 ，只有函数作用域(即：通过var声明的变量没有块级作用域)。可以采用“立即执行函数”的方式创建作用域。</p>
+<pre><code>for(var i = 0, len = btns.length; i &lt; len; i++) {
+(function(i) {
+    btns[i].onclick = function() {
+       console.log(i);
+    }
+}(i))
+}</code></pre><h5 id="5、闭包注意点"><a href="#5、闭包注意点" class="headerlink" title="5、闭包注意点"></a>5、闭包注意点</h5><blockquote>
+<p>由于闭包会使得函数中的变量都被保存在内存中，内存消耗很大，所以不能滥用闭包，否则会造成网页的性能问题，在IE中可能导致内存泄露。解决方法是，在退出函数之前，将不使用的局部变量全部删除。</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Enjoy Yourself EveryDay！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="liugezhou 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="liugezhou 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/闭包/" rel="tag"># 闭包</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/16/canvas入门回顾/" rel="next" title="Canvas入门回顾">
+                <i class="fa fa-chevron-left"></i> Canvas入门回顾
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/15/服务端渲染/" rel="prev" title="服务端渲染">
+                服务端渲染 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="http://img.liugezhou.online/time.png" alt="liugezhou">
+            
+              <p class="site-author-name" itemprop="name">liugezhou</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/liugezhou" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="18231133236@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.jianshu.com/u/5842abb77bd1" title="简书" target="_blank">简书</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#1、先来看一个闭包的代码小例子："><span class="nav-number">1.</span> <span class="nav-text">1、先来看一个闭包的代码小例子：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2、在javascript语言中，闭包就是函数和该函数作用域的组合。从这个概念上来讲，在js中，所有函数都是闭包（函数都是对象并且函数都有和他们相关联的作用域链scope-chain）。简单说：闭包就是有权访问另一个函数作用域中变量的函数"><span class="nav-number">2.</span> <span class="nav-text">2、在javascript语言中，闭包就是函数和该函数作用域的组合。从这个概念上来讲，在js中，所有函数都是闭包（函数都是对象并且函数都有和他们相关联的作用域链scope chain）。简单说：闭包就是有权访问另一个函数作用域中变量的函数.</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3、在ES6之前，函数只能在全局作用域和函数作用域中声明，不能在块级作用域中声明。没有块级作用域导致很多场景不合理，闭包在一些地方很好解决了这个不合理。"><span class="nav-number">3.</span> <span class="nav-text">3、在ES6之前，函数只能在全局作用域和函数作用域中声明，不能在块级作用域中声明。没有块级作用域导致很多场景不合理，闭包在一些地方很好解决了这个不合理。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-闭包的使用场景"><span class="nav-number">4.</span> <span class="nav-text">4.闭包的使用场景</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5、闭包注意点"><span class="nav-number">5.</span> <span class="nav-text">5、闭包注意点</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-github"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">liugezhou</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

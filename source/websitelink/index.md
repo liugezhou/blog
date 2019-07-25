@@ -1,5 +1,5 @@
 ---
-title: 网站收藏
+title: 工具收藏
 date: 2019-07-25 14:34:40
 type: "websitelink"
 ---

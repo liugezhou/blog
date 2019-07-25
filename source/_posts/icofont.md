@@ -2,7 +2,7 @@
 title: iconfont在小程序端的使用
 date: 2019-07-17
 categories:
-- 前端
+- web前端
 - 小程序
 tags: iconfont
 ---

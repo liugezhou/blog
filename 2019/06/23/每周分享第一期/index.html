@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/favicon.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="六个周, liugezhou">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="受阮老师的公号、博客影响，也同样受很多优秀的人儿们在Github上的技术文章周刊、读书分享等，我也觉得应该有自己的一个节奏，把自己的所学、所看、所得进行记录，虽然现在“望尘莫及”，但愿可以“望其项背”。">
+<meta name="keywords" content="六个周的个人博客">
+<meta property="og:type" content="article">
+<meta property="og:title" content="每周分享第一期">
+<meta property="og:url" content="http://liugezhou.online/2019/06/23/每周分享第一期/index.html">
+<meta property="og:site_name" content="六个周">
+<meta property="og:description" content="受阮老师的公号、博客影响，也同样受很多优秀的人儿们在Github上的技术文章周刊、读书分享等，我也觉得应该有自己的一个节奏，把自己的所学、所看、所得进行记录，虽然现在“望尘莫及”，但愿可以“望其项背”。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-25T05:33:04.651Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="每周分享第一期">
+<meta name="twitter:description" content="受阮老师的公号、博客影响，也同样受很多优秀的人儿们在Github上的技术文章周刊、读书分享等，我也觉得应该有自己的一个节奏，把自己的所学、所看、所得进行记录，虽然现在“望尘莫及”，但愿可以“望其项背”。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://liugezhou.online/2019/06/23/每周分享第一期/">
+
+
+
+
+
+  <title>每周分享第一期 | 六个周</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?a6ce5d6d4a02e5fc27dfd3a7d7a875b0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">六个周</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">liugezhou</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-websitelink">
+          <a href="/websitelink" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heart"></i> <br>
+            
+            工具收藏
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-collectionlink">
+          <a href="/collectionlink" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-child"></i> <br>
+            
+            其它收藏
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liugezhou.online/2019/06/23/每周分享第一期/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liugezhou">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="http://img.liugezhou.online/time.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="六个周">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">每周分享第一期</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-23T00:00:00+08:00">
+                2019-06-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/每周分享/" itemprop="url" rel="index">
+                    <span itemprop="name">每周分享</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>受阮老师的公号、博客影响，也同样受很多优秀的人儿们在Github上的技术文章周刊、读书分享等，我也觉得应该有自己的一个节奏，把自己的所学、所看、所得进行记录，虽然现在“望尘莫及”，但愿可以“望其项背”。<br> <a id="more"></a><br>这里记录过去一周，我认为值得传播和学习的内容。</p>
+</blockquote>
+<h4 id="DogeDoge"><a href="#DogeDoge" class="headerlink" title="DogeDoge"></a>DogeDoge</h4><blockquote>
+<p>多吉搜索是一个新的国产搜索引擎，据传说目标是要成为百度的替代方案之一。网址：<a href="www.dogedoge.com">www.dogedoge.com</a>.<br>亲测好用，不会搜出来一堆的广告，目前应该还处于一个起步开发阶段吧，暂时不支持[图片]、[视频]、[新闻]的搜索。<br>推荐大家使用doge搜索。</p>
+</blockquote>
+<h4 id="无版权插图的网站"><a href="#无版权插图的网站" class="headerlink" title="无版权插图的网站"></a>无版权插图的网站</h4><blockquote>
+<p>一个收集无版权插图的网站，提供 SVG / PNG 格式下载，并且允许更改颜色，亲测好用。<a href="https://gallery.manypixels.co/category" target="_blank" rel="noopener">网站戳这里</a></p>
+</blockquote>
+<h4 id="Weekly"><a href="#Weekly" class="headerlink" title="Weekly"></a>Weekly</h4><blockquote>
+<p>公众号<a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzI4NjAxNjY4Nw==#wechat_redirect" target="_blank" rel="noopener">阮一峰的网络日志</a>.<br>这里记录作者每周值得分享的科技内容，每周五发布。文章涵盖【资讯】、【新闻】、【文章】、【工具】、【资源】、【文摘】、【图片】、【言论】等干货。</p>
+</blockquote>
+<blockquote>
+<p>Github项目–<a href="https://github.com/zenany/weekly/tree/master/software" target="_blank" rel="noopener">weekly</a>,Web前端技术周刊，周刊从 09 年开始整理，期间中断过约半年。以前以 email 的形式分享给公司的 FE 同事，于 14 年开始存档于 github。</p>
+</blockquote>
+<h4 id="Nocode"><a href="#Nocode" class="headerlink" title="Nocode"></a>Nocode</h4><blockquote>
+<p>一个一行代码也没有的项目，斩获近三万Star，用来搞笑的项目–<a href="https://github.com/kelseyhightower/nocode" target="_blank" rel="noopener">nocode</a>.</p>
+</blockquote>
+<h4 id="Gitter"><a href="#Gitter" class="headerlink" title="Gitter"></a>Gitter</h4><blockquote>
+<p>微信小程序版Github，代码开源，该项目采用 Taro 框架 + Taro UI 进行开发。<br><a href="https://github.com/huangjianke/Gitter" target="_blank" rel="noopener">可能是目前颜值最高的GitHub微信小程序客户端–Gitter</a></p>
+</blockquote>
+<h4 id="Taro"><a href="#Taro" class="headerlink" title="Taro"></a>Taro</h4><blockquote>
+<p>Taro 是一套遵循 React 语法规范的 多端开发 解决方案。现如今市面上端的形态多种多样，Web、React-Native、微信小程序等各种端大行其道，当业务要求同时在不同的端都要求有所表现的时候，针对不同的端去编写多套代码的成本显然非常高，这时候只编写一套代码就能够适配到多端的能力就显得极为需要。</p>
+</blockquote>
+<blockquote>
+<p>使用 Taro，我们可以只书写一套代码，再通过 Taro 的编译工具，将源代码分别编译出可以在不同端（微信/百度/支付宝/字节跳动小程序、H5、React-Native 等）运行的代码。</p>
+</blockquote>
+<h4 id="freeCodeCamp"><a href="#freeCodeCamp" class="headerlink" title="freeCodeCamp"></a>freeCodeCamp</h4><blockquote>
+<p>Github最多Star的项目。<br>官方网站：<a href="https://www.freecodecamp.org/" target="_blank" rel="noopener">freecodecamp</a>。<br><a href="https://learn.freecodecamp.one/" target="_blank" rel="noopener">中文网站</a>。<br><a href="https://www.freecodecamp.cn/challenges/build-a-tribute-page" target="_blank" rel="noopener">中文社区</a>.<br>freeCodeCamp.org is a tiny non-profit that’s helping millions of people learn to code for free.<br>[如果你是编程新手，我们推荐你 从头开始。]<br>[如果你是编程老手，我们推荐你 自由跳跃。]</p>
+</blockquote>
+<h4 id="lantern"><a href="#lantern" class="headerlink" title="lantern"></a>lantern</h4><blockquote>
+<p>下载地址：<a href="https://github.com/getlantern/lantern" target="_blank" rel="noopener">戳这里</a></p>
+</blockquote>
+<h4 id="文章"><a href="#文章" class="headerlink" title="文章"></a>文章</h4><blockquote>
+<p><a href="http://www.360doc.com/content/13/0512/16/3125585_284829243.shtml" target="_blank" rel="noopener">迄今为止看过最好的职业规划</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://www.mtyyw.com/7013/" target="_blank" rel="noopener">寒门再难出贵子</a></p>
+</blockquote>
+<blockquote>
+<p><a href="http://www.ruanyifeng.com/survivor/" target="_blank" rel="noopener">未来世界的幸存者-阮一峰著</a></p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Enjoy Yourself EveryDay！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="liugezhou 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="liugezhou 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/31/编译型语言与解释型语言的区别/" rel="next" title="编译型语言与解释型语言的区别">
+                <i class="fa fa-chevron-left"></i> 编译型语言与解释型语言的区别
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/28/每周分享第二期/" rel="prev" title="每周分享第二期">
+                每周分享第二期 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="http://img.liugezhou.online/time.png" alt="liugezhou">
+            
+              <p class="site-author-name" itemprop="name">liugezhou</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/liugezhou" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="18231133236@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.jianshu.com/u/5842abb77bd1" title="简书" target="_blank">简书</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#DogeDoge"><span class="nav-number">1.</span> <span class="nav-text">DogeDoge</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#无版权插图的网站"><span class="nav-number">2.</span> <span class="nav-text">无版权插图的网站</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Weekly"><span class="nav-number">3.</span> <span class="nav-text">Weekly</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Nocode"><span class="nav-number">4.</span> <span class="nav-text">Nocode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Gitter"><span class="nav-number">5.</span> <span class="nav-text">Gitter</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Taro"><span class="nav-number">6.</span> <span class="nav-text">Taro</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#freeCodeCamp"><span class="nav-number">7.</span> <span class="nav-text">freeCodeCamp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lantern"><span class="nav-number">8.</span> <span class="nav-text">lantern</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文章"><span class="nav-number">9.</span> <span class="nav-text">文章</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-github"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">liugezhou</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

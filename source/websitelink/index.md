@@ -23,3 +23,6 @@ type: "websitelink"
 
 #### [图片压缩–网站](https://www.iloveimg.com/zh-cn/compress-image/compress-jpg)
 >有的时候你需要快速对一张图片进行压缩，可以收藏此网站，方便下回使用，降低搜索成本。
+
+#### [Tidio](https://www.tidio.com/panel/dashboard)
+> Tidio Chat 是一款界面极其简洁的网页即时聊天工具.

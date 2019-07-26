@@ -81,3 +81,8 @@ deploy:
   type: git
   repo: https://github.com/liugezhou/liugezhou.github.io.git
   branch: master
+
+# Security
+##
+encrypt:
+    enable: true

@@ -416,6 +416,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/05/28/小程序Request的封装/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/28/小程序Request的封装/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -483,158 +493,19 @@
 
       
         
-          
-            <h6 id="最近做了两个小程序，业务相对比较简单，关于公益方面的，收获颇多，其中感觉在开发中明显提升开发效率以及减少代码量的就是request的封装，下面稍稍做个总结。"><a href="#最近做了两个小程序，业务相对比较简单，关于公益方面的，收获颇多，其中感觉在开发中明显提升开发效率以及减少代码量的就是request的封装，下面稍稍做个总结。" class="headerlink" title="最近做了两个小程序，业务相对比较简单，关于公益方面的，收获颇多，其中感觉在开发中明显提升开发效率以及减少代码量的就是request的封装，下面稍稍做个总结。"></a>最近做了两个小程序，业务相对比较简单，关于公益方面的，收获颇多，其中感觉在开发中明显提升开发效率以及减少代码量的就是request的封装，下面稍稍做个总结。</h6><hr>
+          <h6 id="最近做了两个小程序，业务相对比较简单，关于公益方面的，收获颇多，其中感觉在开发中明显提升开发效率以及减少代码量的就是request的封装，下面稍稍做个总结。"><a href="#最近做了两个小程序，业务相对比较简单，关于公益方面的，收获颇多，其中感觉在开发中明显提升开发效率以及减少代码量的就是request的封装，下面稍稍做个总结。" class="headerlink" title="最近做了两个小程序，业务相对比较简单，关于公益方面的，收获颇多，其中感觉在开发中明显提升开发效率以及减少代码量的就是request的封装，下面稍稍做个总结。"></a>最近做了两个小程序，业务相对比较简单，关于公益方面的，收获颇多，其中感觉在开发中明显提升开发效率以及减少代码量的就是request的封装，下面稍稍做个总结。</h6><hr>
 <h4 id="通用封装"><a href="#通用封装" class="headerlink" title="通用封装"></a>通用封装</h4><blockquote>
 <p>在utils文件夹下新建两个文件，config.js以及request.js,代码分别如下。</p>
-</blockquote>
-<pre><code>//`config.js`---一些全局变量
-module.exports = {
-appid: &quot;wxcXXXXXXXXXXXXXX349f&quot;,
-API_BASE_URL: &apos;https://liugezhou.github.io/&apos;,//暂时测试环境地址、上线需要修改
-}
-
-`request`---request封装
-const CONFIG = require(&quot;./config.js&quot;)
-const request = (url,method,data) =&gt; {
-  let _url = CONFIG.API_BASE_URL+url
-  return new Promise((resolve ,reject)=&gt;{
-    wx.request({
-      url: _url,
-       method:method,
-      data:data,
-      header: {
-        &apos;content-type&apos;: &apos;application/json&apos; // 默认值
-      },
-      success(request) {
-        resolve(request.data)
-      },
-      fail(error) {
-        reject(error)
-      },
-      complete(aaa) {
-        // 加载完成
-      }
-    })
-  })
-}
-/**
- * 小程序的promise没有finally方法，自己扩展下
- */
-Promise.prototype.finally = function (callback) {
-  var Promise = this.constructor;
-  return this.then(
-    function (value) {
-      Promise.resolve(callback()).then(
-        function () {
-          return value;
-        }
-      );
-    },
-    function (reason) {
-     Promise.resolve(callback()).then(
-        function () {
-          throw reason;
-        }
-      );
-    }
-  );
-}
-
-
-  //所有接口定义在这里
-module.exports = {
-  request,
-  //app.js登录
-  login:(data) =&gt; {
-    return request(&apos;WeChat/Login.aspx&apos;,&apos;POST&apos;,data)
-  },
-  //获取验证码
-  getMessageCode: (mobile) =&gt; {
-    return request(&apos;Donor/DonorPhoneCode.aspx?&apos;+mobile,&apos;POST&apos;)
-  },
-  ……
-}</code></pre><blockquote>
-<p>通过上面两个小文件我们就将request封装完毕，在业务层调用代码的时候只需要：</p>
-</blockquote>
-<pre><code>const REQUEST = require(&apos;../../utils/request.js&apos;);
-…………………………………………
-var that =this
-    REQUEST.login({
-      tokenkey: res.code
-    }).then(function(res){
-         that.globalData.openId = res.data.tokenkey
-         that.globalData.isBind = res.code
-    }).catch(res =&gt; {//catch  fail在这里
-        console.log(&apos;fail:&apos;,res); 
-      }).finally(()=&gt;{//finally在这里
-       console.log(&apos;finally:&apos;, &quot;结束&quot;); 
-      })
-………………………………………</code></pre><h4 id="队列封装（不常用）"><a href="#队列封装（不常用）" class="headerlink" title="队列封装（不常用）"></a>队列封装（不常用）</h4><blockquote>
-<p>一般情况下，上面的封装我们按着自己的需求稍微修改就应该可以方便使用。<br>接下来介绍的一种是接口队列化封装。因为在我们的开发需求中，每一次接口的请求需要上一个接口返回的两个数据，因此稍作整理如下：</p>
-</blockquote>
-<pre><code>//request.js
-const CONFIG = require(&quot;./config.js&quot;)
-let requestlist = [];
-let doing = false;
-const request = (link, data, back) =&gt; {
-  var link = CONFIG.API_BASE_URL + link
-  requestlist.push({ link: link, data: data, back: back })
-  if (!doing) dorequest();
-}
-const dorequest = () =&gt; {
-
-  doing = true
-  let task = requestlist.shift();
-  if (task) {
-    wx.request({
-      url: task.link,
-      data: Object.assign({
-         seq : wx.getStorageSync(&quot;seq&quot;) || &apos;&apos;,
-         token : wx.getStorageSync(&quot;token&quot;) || &apos;&apos;,
-         openid : wx.getStorageSync(&quot;openId&quot;) || &apos;&apos;}, task.data),
-      method: &apos;POST&apos;,
-      header: {
-        &apos;content-type&apos;: &apos;application/json&apos; // 默认值
-      },
-      success: res =&gt; {
-        wx.setStorageSync(&quot;seq&quot;, res.data.seq)
-        wx.setStorageSync(&quot;token&quot;, res.data.token)
-        task.back(res.data);
-        dorequest();
-      },
-      fail:function(){
-        wx.showToast({
-          title: &apos;服务器出现故障&apos;,
-          image: &apos;../../assets/icon/wrong.png&apos;,
-          duration: 3000
-        })
-      },
-      complete:function(){
-      }
-    });
-  }
-    else {
-    doing = false;
-  }
-
-};
-
-module.exports = {
-  request,
-  //获取用户openid
-  getOpenid: (data,res) =&gt; {
-    return request(&apos;get-wx-openid&apos;,data,res)
-  },
-  //获取验证码
-  getLoginCode: (data,res) =&gt; {
-    return request(&apos;send-phone-code&apos;, data, res)
-  }
-}</code></pre>
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/05/28/小程序Request的封装/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
-    </div>
+    </blockquote></div>
     
     
     
@@ -756,6 +627,16 @@ module.exports = {
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/04/30/微信小程序开发需要注意的一些规范/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/30/微信小程序开发需要注意的一些规范/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -823,37 +704,19 @@ module.exports = {
 
       
         
-          
-            <h6 id="今天的工作已经做完，在马上就进入五一假期的下班焦躁时刻，来个简单的微信小程序开发规范总结。"><a href="#今天的工作已经做完，在马上就进入五一假期的下班焦躁时刻，来个简单的微信小程序开发规范总结。" class="headerlink" title="今天的工作已经做完，在马上就进入五一假期的下班焦躁时刻，来个简单的微信小程序开发规范总结。"></a>今天的工作已经做完，在马上就进入五一假期的下班焦躁时刻，来个简单的微信小程序开发规范总结。</h6><hr>
+          <h6 id="今天的工作已经做完，在马上就进入五一假期的下班焦躁时刻，来个简单的微信小程序开发规范总结。"><a href="#今天的工作已经做完，在马上就进入五一假期的下班焦躁时刻，来个简单的微信小程序开发规范总结。" class="headerlink" title="今天的工作已经做完，在马上就进入五一假期的下班焦躁时刻，来个简单的微信小程序开发规范总结。"></a>今天的工作已经做完，在马上就进入五一假期的下班焦躁时刻，来个简单的微信小程序开发规范总结。</h6><hr>
 <h4 id="1-小程序应避免出现任何-JavaScript-异常"><a href="#1-小程序应避免出现任何-JavaScript-异常" class="headerlink" title="1.小程序应避免出现任何 JavaScript 异常"></a>1.小程序应避免出现任何 JavaScript 异常</h4><blockquote>
 <p>出现 JavaScript 异常可能导致小程序的交互无法进行下去，我们应当追求零异常，保证小程序的高鲁棒性和高可用性，相信这一点一般情况下都不会出现，需要注意的是代码测试中多场景的试错。</p>
-</blockquote>
-<h4 id="2-合理控制图片的大小"><a href="#2-合理控制图片的大小" class="headerlink" title="2.合理控制图片的大小"></a>2.合理控制图片的大小</h4><blockquote>
-<p>图片太大会增加下载时间和内存的消耗，应根据显示区域大小合理控制图片大小。<br>一般情况下图片较大的，我们应该都会选择直接放在服务器上，直接拿到地址，但是官方说这样读取的图片：<code>存在网络图片资源未开启 HTTP 缓存控制</code>,这是个什么意思，我也未完全弄懂。</p>
-</blockquote>
-<h4 id="3-小程序所有请求应响应正常"><a href="#3-小程序所有请求应响应正常" class="headerlink" title="3.小程序所有请求应响应正常"></a>3.小程序所有请求应响应正常</h4><blockquote>
-<p>请求失败可能导致小程序的交互无法进行下去，应当保证所有请求都能成功。然而，请求成功只是第一步，还可能存在的问题就是请求的耗时太长、存在短时间内发起太多的请求这样的情况。</p>
-</blockquote>
-<h4 id="4-避免setData的数据过大且避免setData的调用过于频繁。"><a href="#4-避免setData的数据过大且避免setData的调用过于频繁。" class="headerlink" title="4.避免setData的数据过大且避免setData的调用过于频繁。"></a>4.避免setData的数据过大且避免setData的调用过于频繁。</h4><blockquote>
-<p>由于小程序运行逻辑线程与渲染线程之上，setData的调用会把数据从逻辑层传到渲染层，数据太大会增加通信时间.<br>setData接口的调用涉及逻辑层与渲染层间的线程通过，通信过于频繁可能导致处理队列阻塞，界面渲染不及时而导致卡顿，应避免无用的频繁调用.</p>
-</blockquote>
-<h4 id="5-避免将未绑定在-WXML-的变量传入-setData"><a href="#5-避免将未绑定在-WXML-的变量传入-setData" class="headerlink" title="5.避免将未绑定在 WXML 的变量传入 setData"></a>5.避免将未绑定在 WXML 的变量传入 setData</h4><blockquote>
-<p>setData操作会引起框架处理一些渲染界面相关的工作，一个未绑定的变量意味着与界面渲染无关，传入setData会造成不必要的性能消耗。<br>这一条我想是很多开发人员在初次接触小程序开发的时候都会犯的一个错误吧。因为刚开始的时候由于这种setData的语法，让我们忘了还有全局变量的使用，于是会经常出现使用Page中定义的data做中间过渡。</p>
-</blockquote>
-<h4 id="6-wxss-覆盖率较高，较少或没有引入未被使用的样式"><a href="#6-wxss-覆盖率较高，较少或没有引入未被使用的样式" class="headerlink" title="6.wxss 覆盖率较高，较少或没有引入未被使用的样式"></a>6.wxss 覆盖率较高，较少或没有引入未被使用的样式</h4><blockquote>
-<p>我们应该按需引入 wxss 资源，如果小程序中存在大量未使用的样式，会增加小程序包体积大小，从而在一定程度上影响加载速度。<br>这个也是比较常见的一种不规范，写了很多CSS样式，很多不用的就留来了代码里面，越来越多，所以在编写代码过程中，尽量去对每一行代码（特别是自己写的）了如指掌。</p>
-</blockquote>
-<h4 id="7-避免首屏时间太长的情况"><a href="#7-避免首屏时间太长的情况" class="headerlink" title="7.避免首屏时间太长的情况"></a>7.避免首屏时间太长的情况</h4><blockquote>
-<p>首屏时间是指用户开始看到第一屏的内容的时间，首屏时间太长会导致用户长时间看到的都是白屏，会一直等待有意义的内容展示出来。出现这一情况，应仔细检查这个过程都有哪个操作，一般来说，可能是请求数据的时间太长，或者是一次渲染的数据太大导致渲染时间太长。</p>
-</blockquote>
-<blockquote>
-<p>这些东西是我感觉比较常见且容易修改的，其它还存在一些规范，不妨打开微信开发者工具，点击<code>Audits</code>,对你写的代码进行一个测试，测试结果会让你很好的处理自己的代码。That’s really cool!</p>
-</blockquote>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/04/30/微信小程序开发需要注意的一些规范/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
-    </div>
+    </blockquote></div>
     
     
     
@@ -963,6 +826,16 @@ module.exports = {
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/31/编译型语言与解释型语言的区别/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/31/编译型语言与解释型语言的区别/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -1153,6 +1026,16 @@ module.exports = {
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/16/前端跨域问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/16/前端跨域问题/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -1277,483 +1160,6 @@ module.exports = {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liugezhou.online/2018/11/04/CSS小温故/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="liugezhou">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="http://img.liugezhou.online/time.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="六个周">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/04/CSS小温故/" itemprop="url">CSS小温故</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-04T00:00:00+08:00">
-                2018-11-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web前端/" itemprop="url" rel="index">
-                    <span itemprop="name">web前端</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web前端/HTML-CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">HTML/CSS</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/11/04/CSS小温故/" class="leancloud_visitors" data-flag-title="CSS小温故">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.1k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  4
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>今天在看一篇文章的时候，遇到了很多经常使用或者很简单却不知道去使用的一些CSS属性，希望可以做个记录，学会对基础知识的掌握程度进行把握。</p>
-</blockquote>
-<h5 id="一、使用CSS画一个扇形"><a href="#一、使用CSS画一个扇形" class="headerlink" title="一、使用CSS画一个扇形"></a>一、使用CSS画一个扇形</h5><pre><code> &lt;style&gt;
-    #main{
-        height:0;
-        width:0;
-        border-style:solid;
-        border-width:50px;
-        border-color:black transparent transparent;
-        border-radius:50px;
-    }
-&lt;/style&gt;
-&lt;body&gt;
-    &lt;div id=&quot;main&quot;&gt;&lt;/div&gt;
-&lt;/body&gt;</code></pre><blockquote>
-<p>这个例子我主要是之前没使用过transparent这个属性，它是用来指定全透明色彩的。</p>
-</blockquote>
-<h5 id="二、-box-sizing常用的属性有哪些？分别有什么作用？"><a href="#二、-box-sizing常用的属性有哪些？分别有什么作用？" class="headerlink" title="二、 box-sizing常用的属性有哪些？分别有什么作用？"></a>二、 box-sizing常用的属性有哪些？分别有什么作用？</h5><blockquote>
-<p>box-sizing这个属性我之前看到过别人使用过这个属性，但是我自己却未使用过，于是对box-sizing做一个简单记录。<br><code>box-sizing</code>有两个值：<code>content-box</code>、<code>border-box</code><br>常见的是<code>content-box</code>（W3C标准盒模型）：若定义一个div，width为100px，它若有padding、border属性，那么这个div最后的实际宽度将为width+2<em>padding+2</em>border.<br>若为<code>border-box</code>(怪异盒模型)：同上一个例子，那么这个div的最后width就是100px。</p>
-</blockquote>
-<h5 id="三、清除浮动。"><a href="#三、清除浮动。" class="headerlink" title="三、清除浮动。"></a>三、清除浮动。</h5><p>参考链接：<a href="https://www.jianshu.com/p/09bd5873bed4" target="_blank" rel="noopener">https://www.jianshu.com/p/09bd5873bed4</a></p>
-<blockquote>
-<p>清除浮动应该是在前端开发中使用比较频繁的，但是我之前并未使用过，也是在阅读他人代码时一笔带过，并未对这个小小的东西进行研究，于是很多代码的布局那真是费煞苦心，写了一堆垃圾代码。<br>浮动最初设计只是用来实现文字环绕排版的，清除浮动这个东西的主要三个特点：</p>
-<ol>
-<li>脱离文档流。(也就是说浮动不会影响普通元素的布局)</li>
-<li>向左/向右浮动直到遇到父元素或者别的浮动元素。</li>
-<li><code>浮动会导致父元素高度坍塌</code>(感受深刻，之前都不知道浮动原来会让父元素的高度坍塌，于是之前总是写margin-top那种写死的方式进行布局)</li>
-</ol>
-</blockquote>
-<blockquote>
-<p>解决父元素高度坍塌的方式就是清除浮动，常规的方法是clear清除浮动和BFC清除浮动，推荐clearfix的方式。<br>这里展开一下说一下，若没有清除浮动会出现的样式：</p>
-</blockquote>
-<pre><code>// css
-.box-wrapper {
-  border: 5px solid red;
-}
-.box-wrapper .box {
-  float: left; 
-  width: 100px; 
-  height: 100px; 
-  margin: 20px; 
-  background-color: green;
-}
-
-// html
-&lt;div class=&quot;box-wrapper&quot;&gt;
-  &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
-  &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
-  &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;</code></pre><p><img src="https://upload-images.jianshu.io/upload_images/2054455-c018aed4d7f63ec5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="父元素高度坍塌.png"></p>
-<blockquote>
-<p>清除浮动主要有两种方式：clear清除浮动和BFC清除浮动(不做介绍)。</p>
-</blockquote>
-<p>clear清除：</p>
-<pre><code>&lt;div class=&quot;box-wrapper&quot;&gt;
-  &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
-  &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
-  &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
-  &lt;div style=&quot;clear:both;&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;</code></pre><p>高度坍塌问题解决，这里就不贴图片了。<br>然而clear清除浮动最佳实践是：</p>
-<pre><code>.clearfix:after {
-  display: table;
-  content: &quot; &quot;;
-  clear: both;
-}</code></pre><h5 id="四、CSS3的Gradient。"><a href="#四、CSS3的Gradient。" class="headerlink" title="四、CSS3的Gradient。"></a>四、CSS3的Gradient。</h5><p>参考链接：<a href="https://www.w3cplus.com/content/css3-gradient" target="_blank" rel="noopener">https://www.w3cplus.com/content/css3-gradient</a></p>
-<blockquote>
-<p>语法（共三个参数）：（radial）linear-gradient: [top | left |  left top ]  [起点颜色]  [终点颜色]<br>代码:<code>background: -moz-linear-gradient( top,#ccc,#000);</code><br>  <code>background: -webkit-linear-gradient( top,#ccc,#000);</code><br> <code>background: -o-linear-gradient( top,#ccc,#000);</code></p>
-</blockquote>
-<h5 id="五、CSS3的制作动画的几个属性：变形（transform）、转换（transition）和动画（animation）。"><a href="#五、CSS3的制作动画的几个属性：变形（transform）、转换（transition）和动画（animation）。" class="headerlink" title="五、CSS3的制作动画的几个属性：变形（transform）、转换（transition）和动画（animation）。"></a>五、CSS3的制作动画的几个属性：变形（transform）、转换（transition）和动画（animation）。</h5><h6 id="5-1-Transform"><a href="#5-1-Transform" class="headerlink" title="5.1 Transform"></a>5.1 Transform</h6><blockquote>
-<p>在<a href="http://www.w3.org/TR/css3-roadmap/" target="_blank" rel="noopener">CSS3</a>中<a href="http://www.w3.org/TR/css3-2d-transforms/" target="_blank" rel="noopener">transform</a>主要包括以下几种：<strong>旋转rotate</strong>、<strong>扭曲skew</strong>、<strong>缩放scale</strong>和<strong>移动translate</strong>以及<strong>矩阵变形matrix</strong>。<br>语法：<code>transform : rotate | skew |  scale |  translate | matrix</code></p>
-</blockquote>
-<h6 id="5-2-Transition"><a href="#5-2-Transition" class="headerlink" title="5.2 Transition"></a>5.2 Transition</h6><blockquote>
-<p><a href="http://www.w3.org/" target="_blank" rel="noopener">W3C</a>标准中对<a href="http://www.w3.org/TR/css3-roadmap/" target="_blank" rel="noopener">css3</a>的<a href="http://www.w3.org/TR/css3-transitions/" target="_blank" rel="noopener">transition</a>这是样描述的：“css的<a href="http://www.w3.org/TR/css3-transitions/" target="_blank" rel="noopener">transition</a>允许css的属性值在一定的时间区间内平滑地过渡。这种效果可以在鼠标单击、获得焦点、被点击或对元素任何改变中触发，并圆滑地以动画效果改变CSS的属性值。”<br>transition主要包含四个属性值：执行变换的属性：transition-property,变换延续的时间：transition-duration,在延续时间段，变换的速率变化transition-timing-function,变换延迟时间transition-delay.<br>语法：<code>transition:[transition-property] || [transition-duration] || [transition-timing-function] || [transition-delay]</code><br>eg:<code>transition:all 0.5s ease-in</code></p>
-</blockquote>
-<h6 id="5-3-Animation"><a href="#5-3-Animation" class="headerlink" title="5.3 Animation"></a>5.3 Animation</h6><p>代码以及介绍省略</p>
-<h5 id="欢迎关注我的简书文章：六个周"><a href="#欢迎关注我的简书文章：六个周" class="headerlink" title="欢迎关注我的简书文章：六个周"></a>欢迎关注我的简书文章：<a href="https://www.jianshu.com/p/2c64fa018a3e" target="_blank" rel="noopener">六个周</a></h5>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liugezhou.online/2018/10/15/JS闭包简单理解/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="liugezhou">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="http://img.liugezhou.online/time.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="六个周">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/15/JS闭包简单理解/" itemprop="url">JS闭包简单理解</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-15T00:00:00+08:00">
-                2018-10-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web前端/" itemprop="url" rel="index">
-                    <span itemprop="name">web前端</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web前端/JavaScirpt/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScirpt</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/10/15/JS闭包简单理解/" class="leancloud_visitors" data-flag-title="JS闭包简单理解">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  642
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h5 id="1、先来看一个闭包的代码小例子："><a href="#1、先来看一个闭包的代码小例子：" class="headerlink" title="1、先来看一个闭包的代码小例子："></a>1、先来看一个闭包的代码小例子：</h5><pre><code>var scope = &quot;全局scope&quot;; 
-function checkScope() {
-var scope = &quot;内部scope&quot;;
-function f() {
-    return scope;
-}
-return f();
-}
-checkScope();   //=&gt; &quot;内部scope&quot;</code></pre><p>闭包可以捕获到局部变量和参数的外部函数绑定，即便外部函数的调用已经结束。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/10/15/JS闭包简单理解/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://liugezhou.online/2018/10/15/服务端渲染/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1820,6 +1226,16 @@ checkScope();   //=&gt; &quot;内部scope&quot;</code></pre><p>闭包可以捕�
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/10/15/服务端渲染/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/15/服务端渲染/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -1949,219 +1365,6 @@ checkScope();   //=&gt; &quot;内部scope&quot;</code></pre><p>闭包可以捕�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liugezhou.online/2018/09/16/canvas入门回顾/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="liugezhou">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="http://img.liugezhou.online/time.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="六个周">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/16/canvas入门回顾/" itemprop="url">Canvas入门回顾</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-16T00:00:00+08:00">
-                2018-09-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web前端/" itemprop="url" rel="index">
-                    <span itemprop="name">web前端</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web前端/HTML-CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">HTML/CSS</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/09/16/canvas入门回顾/" class="leancloud_visitors" data-flag-title="Canvas入门回顾">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.6k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  5
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>canvas我们多少都会有些接触，今天做一个回顾。</p>
-</blockquote>
-<blockquote>
-<p>首先，我们知道<code>&lt;canvas&gt;</code>是HTML5 中新增的元素，它可以结合JavaScript脚本绘制出各种各样的图形。</p>
-</blockquote>
-<h5 id="一、下面以画一个五角星来简单对其一些方法进行速记"><a href="#一、下面以画一个五角星来简单对其一些方法进行速记" class="headerlink" title="一、下面以画一个五角星来简单对其一些方法进行速记"></a>一、下面以画一个五角星来简单对其一些方法进行速记</h5><blockquote>
-<p>第一步是定义canvas的长与宽。</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;canvas id=&quot;test&quot; width=&quot;800&quot; height=&quot;500&quot;&gt;</span><br><span class="line">        您的浏览器不支持canvas属性</span><br><span class="line">&lt;/canvas&gt;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>第二步是获取DOM元素以及获取上下文</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var dom= document.getElementById(&quot;test&quot;);</span><br><span class="line">var ctx = dom.getContext(&quot;2d&quot;);</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/16/canvas入门回顾/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://liugezhou.online/2018/08/22/Flex布局/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2239,6 +1442,16 @@ checkScope();   //=&gt; &quot;内部scope&quot;</code></pre><p>闭包可以捕�
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/08/22/Flex布局/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/08/22/Flex布局/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -2439,6 +1652,16 @@ checkScope();   //=&gt; &quot;内部scope&quot;</code></pre><p>闭包可以捕�
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/08/15/Chrome扩展程序/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/08/15/Chrome扩展程序/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -2552,11 +1775,425 @@ checkScope();   //=&gt; &quot;内部scope&quot;</code></pre><p>闭包可以捕�
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liugezhou.online/2018/07/11/搭建个人博客极简/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liugezhou">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="http://img.liugezhou.online/time.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="六个周">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/11/搭建个人博客极简/" itemprop="url">搭建个人-博客极简</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-11T00:00:00+08:00">
+                2018-07-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/博客搭建/" itemprop="url" rel="index">
+                    <span itemprop="name">博客搭建</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/07/11/搭建个人博客极简/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/11/搭建个人博客极简/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/07/11/搭建个人博客极简/" class="leancloud_visitors" data-flag-title="搭建个人-博客极简">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  184
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>进入<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">HEXO</a>官方文档，可以查看完全的个人博客的搭建。<br>本文只是对个人在搭建博客过程中，极简的总结，几乎涵盖搭建一个个人免费博客的全部命令，还是非常推荐去官方网站学习。</p>
+</blockquote>
+<h6 id="一、官网主题"><a href="#一、官网主题" class="headerlink" title="一、官网主题"></a>一、官网主题</h6><p>在搭建个人博客本地版的时候，总共使用五个命令就好了。</p>
+<blockquote>
+<p>1.npm install hexo-cli -g<br>2.cd DeskTop<br>3.hexo init liugezhou<br>4.npm install<br>5.hexo s</p>
+</blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/07/11/搭建个人博客极简/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liugezhou.online/2018/06/28/npm intsall -save 和-save-dev/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liugezhou">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="http://img.liugezhou.online/time.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="六个周">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/28/npm intsall -save 和-save-dev/" itemprop="url">npm intsall -save 和-save-dev</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-28T00:00:00+08:00">
+                2018-06-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web前端/" itemprop="url" rel="index">
+                    <span itemprop="name">web前端</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web前端/node/" itemprop="url" rel="index">
+                    <span itemprop="name">node</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/06/28/npm intsall -save 和-save-dev/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/06/28/npm intsall -save 和-save-dev/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/06/28/npm intsall -save 和-save-dev/" class="leancloud_visitors" data-flag-title="npm intsall -save 和-save-dev">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  470
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>关于npm在安装的时候，有个小的知识点，一定要小小的补一下，那就是npm install 后面带参数的问题。<br>相信不少在开始接触node的时候，我们肯定都使用过这样的命令<br><code>npm install -save</code> | <code>npm install -save-dev</code> | <code>npm install -g [--global]</code><br>但是这些<code>-save</code> | <code>-save-dev</code> | <code>-g</code>的一些小小的区别是什么呢?</p>
+<blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/06/28/npm intsall -save 和-save-dev/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </blockquote></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
   </nav>
 
 
@@ -2604,7 +2241,7 @@ checkScope();   //=&gt; &quot;内部scope&quot;</code></pre><p>闭包可以捕�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2615,7 +2252,7 @@ checkScope();   //=&gt; &quot;内部scope&quot;</code></pre><p>闭包可以捕�
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2626,7 +2263,7 @@ checkScope();   //=&gt; &quot;内部scope&quot;</code></pre><p>闭包可以捕�
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2651,6 +2288,18 @@ checkScope();   //=&gt; &quot;内部scope&quot;</code></pre><p>闭包可以捕�
                         <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                   </span>
                 
+                  <span class="links-of-author-item">
+                    <a href="https://mobile.twitter.com/liu_mingzhou" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/gezhou.liu" target="_blank" title="Facebook">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>Facebook</a>
+                  </span>
+                
             </div>
           
 
@@ -2661,13 +2310,17 @@ checkScope();   //=&gt; &quot;内部scope&quot;</code></pre><p>闭包可以捕�
           
             <div class="links-of-blogroll motion-element links-of-blogroll-block">
               <div class="links-of-blogroll-title">
-                <i class="fa  fa-fw fa-weixin"></i>
+                <i class="fa  fa-fw fa-link"></i>
                 链接
               </div>
               <ul class="links-of-blogroll-list">
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://mp.weixin.qq.com/mp/getmasssendmsg?__biz=MzIxNDc0OTMxNA==#wechat_webview_type=1&wechat_redirect" title="Dangerous Wakaka" target="_blank">Dangerous Wakaka</a>
+                    <a href="https://www.jianshu.com/u/5842abb77bd1" title="简书" target="_blank">简书</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://juejin.im/user/5afcc0a66fb9a07aad17b79e" title="掘金" target="_blank">掘金</a>
                   </li>
                 
               </ul>
@@ -2707,7 +2360,7 @@ checkScope();   //=&gt; &quot;内部scope&quot;</code></pre><p>闭包可以捕�
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">29k</span>
+    <span title="Site words total count">25k</span>
   
 </div>
 
@@ -2874,6 +2527,28 @@ checkScope();   //=&gt; &quot;内部scope&quot;</code></pre><p>闭包可以捕�
 
 
 
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '7Y2MfUyJAFLBIDtKaHckAXbO-gzGzoHsz',
+        appKey: 'QzorRYCide4mEYVhrEGCOHh7',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
 
 
   
@@ -2994,6 +2669,21 @@ checkScope();   //=&gt; &quot;内部scope&quot;</code></pre><p>闭包可以捕�
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
   

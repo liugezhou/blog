@@ -10,6 +10,7 @@ tags: npm intsall
 相信不少在开始接触node的时候，我们肯定都使用过这样的命令
 `npm install -save` | `npm install -save-dev` | `npm install -g [--global]`
 但是这些`-save` | `-save-dev` | `-g`的一些小小的区别是什么呢?
+> <!-- more -->
 ###### npm install moduleName 命令
 >1.安装模块到项目node_modules目录下。
 >2.不会将模块依赖写入devDependencies或dependencies 节点。

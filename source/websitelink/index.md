@@ -26,3 +26,21 @@ type: "websitelink"
 
 #### [Tidio](https://www.tidio.com/panel/dashboard)
 > Tidio Chat 是一款界面极其简洁的网页即时聊天工具.
+
+#### [CSS ARROW PLEASE](http://www.cssarrowplease.com/)
+>这是一个在线生成气泡的工具，你可以在线制作一个你需要的气泡，可以调整宽度大小、颜色，箭头方向，边框等属性，是一款非常好用的工具.
+
+#### [CSS Load](https://icons8.com/cssload/)
+>这是一款纯代码制作loading效果的工具，里面也提供了非常多的案例供大家学习使用。
+
+#### [CSS triangle generator](http://apps.eky.hk/css-triangle-generator/)
+>CSS triangle generator是一款在线制作三角图形的工具
+
+#### [Webarti CSS3 Button Maker](https://www.bestcssbuttongenerator.com/)
+> Webarti CSS3 Button Maker是一款非常强大的按钮在线生成工具，有非常多样式可以供你选择，里面的按钮颜色，大小，文字，你可以随意设置，当你设定好后，点【Get Code】按钮，你就可以得到按钮的CSS代码.
+
+#### [盒子阴影box-shadow](https://www.themeshock.com/css-drop-shadow/)
+>这款阴影工具可以在线直接生成不同类型的阴影效果，也可是非常方便的调整阴影大小，如果你不知道怎么写阴影效果，你借用这个在线工具进行直接生成你想要的阴影效果。
+
+#### [border-image工具](https://border-image.com/)
+>这是一款可以在线设置边框的工具，通过这款工具，可以非常轻松的学习了解border-image这个属性。

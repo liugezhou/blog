@@ -13,6 +13,8 @@ message: 你需要输入密码访问.    # 密码提示
 ### 博客类
 > + [杨小二的小江湖](http://www.yangxiaoer.net/)
 > + [曹雪松、一只特立独行的CoderBoy](https://sevencho.github.io/)
+> + [xiaobai050](https://zhangnai.xin/2018/11/11/hexo-theme-upgrade/)
+> + [9935](https://hooray.github.io/)
 > + [Yearito's Blog](http://yearito.cn/posts/hexo-advanced-settings.html)
 > + [diygod's Blog](https://diygod.me/)
 > + [Geekplux](https://geekplux.com/)

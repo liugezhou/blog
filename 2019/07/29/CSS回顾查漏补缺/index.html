@@ -139,14 +139,14 @@
 <meta name="description" content="作为一个前端开发者来说，对CSS的熟悉是基础中的基础，然而由于我们一些书写习惯的问题，导致一些很简单的布局会走一些弯路或者对某些属性运用不频繁，所以：实时的对自己的CSS布局掌握查漏补缺显得是尤为的重要，本篇博文便是回顾一些CSS的基础，对基础内容进行巩固。">
 <meta name="keywords" content="flex">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS3回顾查漏补缺">
+<meta property="og:title" content="CSS3属性回顾">
 <meta property="og:url" content="http://liugezhou.online/2019/07/29/CSS回顾查漏补缺/index.html">
 <meta property="og:site_name" content="六个周">
 <meta property="og:description" content="作为一个前端开发者来说，对CSS的熟悉是基础中的基础，然而由于我们一些书写习惯的问题，导致一些很简单的布局会走一些弯路或者对某些属性运用不频繁，所以：实时的对自己的CSS布局掌握查漏补缺显得是尤为的重要，本篇博文便是回顾一些CSS的基础，对基础内容进行巩固。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-30T10:00:54.000Z">
+<meta property="og:updated_time" content="2019-07-30T15:38:54.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS3回顾查漏补缺">
+<meta name="twitter:title" content="CSS3属性回顾">
 <meta name="twitter:description" content="作为一个前端开发者来说，对CSS的熟悉是基础中的基础，然而由于我们一些书写习惯的问题，导致一些很简单的布局会走一些弯路或者对某些属性运用不频繁，所以：实时的对自己的CSS布局掌握查漏补缺显得是尤为的重要，本篇博文便是回顾一些CSS的基础，对基础内容进行巩固。">
 
 
@@ -183,7 +183,7 @@
 
 
 
-  <title>CSS3回顾查漏补缺 | 六个周</title>
+  <title>CSS3属性回顾 | 六个周</title>
   
 
 
@@ -357,7 +357,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">CSS3回顾查漏补缺</h2>
+          <h2 class="post-title" itemprop="name headline">CSS3属性回顾</h2>
         
 
         <div class="post-meta">
@@ -385,7 +385,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-07-30T18:00:54+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-07-30T23:38:54+08:00">
                 2019-07-30
               </time>
             
@@ -442,7 +442,7 @@
 
           
           
-             <span id="/2019/07/29/CSS回顾查漏补缺/" class="leancloud_visitors" data-flag-title="CSS3回顾查漏补缺">
+             <span id="/2019/07/29/CSS回顾查漏补缺/" class="leancloud_visitors" data-flag-title="CSS3属性回顾">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -467,7 +467,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1k
+                  1.1k
                 </span>
               
 
@@ -530,17 +530,77 @@
 <ul>
 <li><p>过渡属性<br><code>transition</code>:简写属性，用于在一个属性中设置四个过渡属性。<br><code>transition-property</code>:规定应用过渡的CSS属性的名称。<br><code>transition-duration</code>：定义过渡效果花费的时间。默认为0<br><code>transition-timing-function</code>:规定过渡效果的时间曲线<br><code>transition-delay</code>:规定过渡效果何时开始</p>
 </li>
-<li><p>动画属性<br><code>@keyframse</code>:规定动画<br><code>animation</code>:所有动画的简写属性，除了<code>animation-play-state</code>属性<br>语法：<code>animation: name duration timing-function delay iteration-count direction fill-mode play-state;</code></p>
+<li><p>动画属性</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>@keyframse</code></td>
+<td>规定动画</td>
+</tr>
+<tr>
+<td><code>animation</code></td>
+<td>所有动画的简写属性，除了<code>animation-play-state</code>属性</td>
+</tr>
+<tr>
+<td>语法：</td>
+<td><code>animation: name duration timing-function delay iteration-count direction fill-mode play-state;</code></td>
+</tr>
+<tr>
+<td><code>animation-name</code></td>
+<td>规定@keyframes动画的名称</td>
+</tr>
+<tr>
+<td><code>animation-duration</code></td>
+<td>规定动画完成一个周期所花费封秒或毫秒</td>
+</tr>
+<tr>
+<td><code>animation-timing-function</code></td>
+<td>规定动画的速度曲线：默认为[ease（低速-加快-变慢）]</td>
+</tr>
+<tr>
+<td>其它值</td>
+<td>linear(匀速)、ease-in(动画以低速开始)、ease-out(动画以低速结束)、ease-in-out(动画以低速开始和结束)</td>
+</tr>
+<tr>
+<td><code>animation-fill-mode</code></td>
+<td>规定当动画不播放时（当动画完成或者延迟未开始播放时），要应用到的元素的样式。</td>
+</tr>
+<tr>
+<td><code>animation-delay</code></td>
+<td>规定动画何时开始</td>
+</tr>
+<tr>
+<td><code>animation-iteration-count</code></td>
+<td>规定动画被播放的次数   [infinite]无限次</td>
+</tr>
+<tr>
+<td><code>animation-direction</code></td>
+<td>规定动画是否在下一周期逆向地播放。默认是[normal]</td>
+</tr>
+<tr>
+<td>animation-direction – reverse</td>
+<td>动画反向播放</td>
+</tr>
+<tr>
+<td>animation-direction –alternate</td>
+<td>动画在奇数次（1、3、5…）正向播放，在偶数次（2、4、6…）反向播放。</td>
+</tr>
+<tr>
+<td>animation-direction–alternate-reverse</td>
+<td>动画在奇数次（1、3、5…）反向播放，在偶数次（2、4、6…）正向播放</td>
+</tr>
+<tr>
+<td><code>animation-play-state</code></td>
+<td>规定动画是否正在运行或暂停。默认是[running]</td>
+</tr>
+</tbody></table>
 </li>
 </ul>
-<p><code>animation-name</code>:规定@keyframes动画的名称  </p>
-<p><code>animation-duration</code>:规定动画完成一个周期所花费封秒或毫秒 </p>
-<p><code>animation-timing-function</code>:规定动画的速度曲线：默认为[ease（低速-加快-变慢）]<br>  其它值：linear(匀速)、ease-in(动画以低速开始)、ease-out(动画以低速结束)、ease-in-out(动画以低速开始和结束) </p>
-<p><code>animation-fill-mode</code>:规定当动画不播放时（当动画完成或者延迟未开始播放时），要应用到的元素的样式。</p>
-<p><code>animation-delay</code>:规定动画何时开始  </p>
-<p><code>animation-iteration-count</code>:规定动画被播放的次数   [infinite]无限次  </p>
-<p><code>animation-direction</code>：规定动画是否在下一周期逆向地播放。默认是[normal]<br>  reverse:动画反向播放<br>  alternate:动画在奇数次（1、3、5…）正向播放，在偶数次（2、4、6…）反向播放。<br>  alternate-reverse:动画在奇数次（1、3、5…）反向播放，在偶数次（2、4、6…）正向播放</p>
-<p><code>animation-play-state</code>:规定动画是否正在运行或暂停。默认是[running]</p>
 </blockquote>
 <h4 id="CSS3多列"><a href="#CSS3多列" class="headerlink" title="CSS3多列"></a>CSS3多列</h4><blockquote>
 <p>关于CSS3的多列属性我好像还真没用到过，看到了就记录一下吧。</p>
@@ -607,7 +667,25 @@
 </tr>
 </tbody></table>
 </blockquote>
-
+<h4 id="CSS3图片"><a href="#CSS3图片" class="headerlink" title="CSS3图片"></a>CSS3图片</h4><blockquote>
+<ul>
+<li>响应式图片</li>
+</ul>
+</blockquote>
+<pre><code>img{
+    max-width:100%;
+    height:auto;
+}</code></pre><blockquote>
+<ul>
+<li>图片文本<br>定义图片文本的时候结合上文提到的position:relative和position:absolute。</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>响应式图片相册<br>在这里正确用好这几个属性：<code>box-sizing:border</code>、<code>@media</code>、<code>clear:both</code></li>
+</ul>
+</blockquote>
+<h4 id="今天就先到这里吧"><a href="#今天就先到这里吧" class="headerlink" title="今天就先到这里吧"></a>今天就先到这里吧</h4>
       
     </div>
     
@@ -874,7 +952,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#作为一个前端开发者来说，对CSS的熟悉是基础中的基础，然而由于我们一些书写习惯的问题，导致一些很简单的布局会走一些弯路或者对某些属性运用不频繁，所以：实时的对自己的CSS布局掌握查漏补缺显得是尤为的重要，本篇博文便是回顾一些CSS的基础，对基础内容进行巩固。"><span class="nav-number">1.</span> <span class="nav-text">作为一个前端开发者来说，对CSS的熟悉是基础中的基础，然而由于我们一些书写习惯的问题，导致一些很简单的布局会走一些弯路或者对某些属性运用不频繁，所以：实时的对自己的CSS布局掌握查漏补缺显得是尤为的重要，本篇博文便是回顾一些CSS的基础，对基础内容进行巩固。</span></a></li></ol><li class="nav-item nav-level-4"><a class="nav-link" href="#absolute"><span class="nav-number"></span> <span class="nav-text">absolute</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#线性渐变"><span class="nav-number"></span> <span class="nav-text">线性渐变</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2D转换"><span class="nav-number"></span> <span class="nav-text">2D转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3D转换"><span class="nav-number"></span> <span class="nav-text">3D转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS3过渡-CSS3动画"><span class="nav-number"></span> <span class="nav-text">CSS3过渡 || CSS3动画</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS3多列"><span class="nav-number"></span> <span class="nav-text">CSS3多列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS3用户界面"><span class="nav-number"></span> <span class="nav-text">CSS3用户界面</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#作为一个前端开发者来说，对CSS的熟悉是基础中的基础，然而由于我们一些书写习惯的问题，导致一些很简单的布局会走一些弯路或者对某些属性运用不频繁，所以：实时的对自己的CSS布局掌握查漏补缺显得是尤为的重要，本篇博文便是回顾一些CSS的基础，对基础内容进行巩固。"><span class="nav-number">1.</span> <span class="nav-text">作为一个前端开发者来说，对CSS的熟悉是基础中的基础，然而由于我们一些书写习惯的问题，导致一些很简单的布局会走一些弯路或者对某些属性运用不频繁，所以：实时的对自己的CSS布局掌握查漏补缺显得是尤为的重要，本篇博文便是回顾一些CSS的基础，对基础内容进行巩固。</span></a></li></ol><li class="nav-item nav-level-4"><a class="nav-link" href="#absolute"><span class="nav-number"></span> <span class="nav-text">absolute</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#线性渐变"><span class="nav-number"></span> <span class="nav-text">线性渐变</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2D转换"><span class="nav-number"></span> <span class="nav-text">2D转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3D转换"><span class="nav-number"></span> <span class="nav-text">3D转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS3过渡-CSS3动画"><span class="nav-number"></span> <span class="nav-text">CSS3过渡 || CSS3动画</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS3多列"><span class="nav-number"></span> <span class="nav-text">CSS3多列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS3用户界面"><span class="nav-number"></span> <span class="nav-text">CSS3用户界面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS3图片"><span class="nav-number"></span> <span class="nav-text">CSS3图片</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#今天就先到这里吧"><span class="nav-number"></span> <span class="nav-text">今天就先到这里吧</span></a></li></div>
             
 
           </div>

@@ -1,23 +1,39 @@
 ---
-title: CSS3属性回顾
+title: CSS3属性全回顾
 date: 2019-07-29 22:33:54
-updated: 2019-07-30 23:38:54 #手动添加更新时间
+updated: 2019-07-31 16:40:00 #手动添加更新时间
 categories:
 - web前端
 - HTML/CSS
-tags: flex
+tags: CSS3
 ---
-###### 作为一个前端开发者来说，对CSS的熟悉是基础中的基础，然而由于我们一些书写习惯的问题，导致一些很简单的布局会走一些弯路或者对某些属性运用不频繁，所以：实时的对自己的CSS布局掌握查漏补缺显得是尤为的重要，本篇博文便是回顾一些CSS的基础，对基础内容进行巩固。
+###### 作为一个前端开发者来说，对CSS的熟悉是基础中的基础。现如今框架眼花缭乱，炫酷的动画、美丽的UI，应接不暇，然而CSS3的本来面目是那么的简单，有很多的CSS3属性虽然特别的常见，但是灵活的运用还是需要我们对基础进行多次的夯实，本篇博客就是来对我们的CSS3的一些属性进行一个大而全的回顾。（可能大多数属性你都烂熟于心、你可以跳过它或者再次做一次温习）
+|-webkit-|-ms-|-moz- |
+|--|--|--|
 <!--more-->
 
-#### absolute
-> 这个之所以首先提出来，是因为我之前用到此属性的时候，模棱两可。
-> 此 `position:absolute` 是相对于最近的 `postion` 祖先元素的，比较常用的是父元素设置为`posotion:relative`时在使用。
-> 若没有属性为`position`的祖先元素，则此属性是指相对于文档的`body`元素。
+#### CSS边框
+> 本节回顾两个属性`border-radius`、`box-shadow`
+> 
+>   |     属性  |    描述      |        扩展|
+>   |-----------|--------------|-------------------|
+>   |border-radius|给div元素添加圆角的边框<br>border-radius 属性是一个最多可指定四个 border -*- radius 属性的复合属性<br><br>若跟四个值其顺序是：<br>左上角、右上角、右下角、左下角|~~border-top-left-radius<br>border-top-right-radius<br>border-bottom-right-radius<br>border-bottom-left-radius<br>~~推荐写法:<br>border-radius:20px|
+>   |box-shadow|该属性可以设置一个或多个下拉阴影的框<br>语法：<br>box-shadow:h-shadow v-shadow blur spread color inset|`h-shadow`  水平阴影位置--必填值（允许负值）<br>`v-shadow`  垂直阴影位置--必填值（允许负值） <br>`blur`  可选值--模糊距离<br>`spread`  可选值--阴影的大小<br> `color`  可选值-颜色<br>`inset`  可选值 --从外内的阴影（开始时）改变阴影内侧阴影 |
+>   |border-image|
 
-#### 线性渐变
-> CSS的线性渐变是真的漂亮，对线性渐变的高效使用，可以提升网站一个Level。  
-> 让我们重新回味下两种线性渐变：线性渐变（Linear Gradients）和径向渐变（Radial Gradients）  
+#### CSS3背景
+>本节回顾以下背景属性：`bacground-image`、 `background-size`、 `background-origin`、 `background-clip`
+>
+>   |属性  |描述| 扩展|
+>   | ---- |---- |----|
+>   |background-image|添加背景图片(允许在元素上添加多个背景图像)| background: url(flower.png) right bottom no-repeat, url(summertrack.png) left top repeat;|
+>   |background-size|指定背景图像的大小--该大小是相对于父元素的高度和宽度的百分比|background-size:20px 60px;<br>background-size:100% 100%;<br>background-size:cover--保持图像纵横比并将图像缩放成完全覆盖背景定位的最小大小<br>background-size:contain--保持图像的纵横比并将图像缩放成将适合背景定位区域的最大大小。|
+>   |background-origin|该属性指定了背景图像的位置区域|content-box<br>padding-box<br>border-box|
+>   |background-clip|该裁剪属性是指从指定位置开始绘制|content-box<br>padding-box<br>border-box|
+> 
+#### CSS3的渐变
+> 对CSS3渐变的高效使用，可以提升网站一个Level。  
+> 我们来回顾：线性渐变（Linear Gradients）和径向渐变（Radial Gradients）  
 
 > + 线性渐变（Linerar Gradients）：
 > 从上到下（默认）：`background:linear-gradient(red,blue,...)`  
@@ -30,13 +46,21 @@ tags: flex
 > 颜色结点不均匀分布：`background:radial-gradient(red 10%,green 20%,blue 30%)`
 > 设置形状：`background: radial-gradient(circle | ellipse, red, yellow, green);`
 
+#### CSS3文本效果
+> 这里我们来回顾以下文本效果的以下几个属性：`text-shadow`、`text-overflow`、`word-wrap`、`word-break`
+> 
+>   | 属性 | 描述 | 扩展 |
+>   | ---- |---- |----|
+>   |text-shadow|文本阴影<br>语法：<br>text-shadow: h-shadow v-shadow blur color;|`h-shadow`  水平阴影位置--必填值（允许负值）<br>`v-shadow`  垂直阴影位置--必填值（允许负值） <br>`blur`  可选值--模糊距离<br>`spread`  可选值--阴影的大小|  
+>   |text-overflow|文本溢出属性指定应向用户如何显示溢出内容（clip、ellipsis、string）|clip --修剪文本<br>ellipsis--显示省略号代替被修剪的文本<br>string -- 使用给定的字符串来代表被修剪的文本|  
+>   |word-wrap|允许对长的不可分割的单词进行分割并换行到下一行。（normal、break-word）| normal--只在允许的断字点换行<br>break-word--在长单词或URL地址内部进行换行|  
+>   |word-break|规定非中日韩文本的换行规则|normal--使用浏览器默认的换行规则。<br>break-all--允许在单词内换行。<br>keep-all--只能在半角空格或连字符处换行。|
+> 	
 #### 2D转换
 > transform:translate(x,y)、rotate(angle)、scale(x,y)、skew(x-angle,y-angle)、matrix()
 >移动、旋转、放大缩小、倾斜。
 > 不展开叙述。
 
-#### 3D转换
->  这块回头写
 
 #### CSS3过渡 || CSS3动画
 > + 过渡属性
@@ -96,10 +120,20 @@ tags: flex
     }
 
 > + 图片文本
->定义图片文本的时候结合上文提到的position:relative和position:absolute。
+>定义图片文本的时候结合position:relative和position:absolute。
 
 > + 响应式图片相册
 > 在这里正确用好这几个属性：`box-sizing:border`、`@media`、`clear:both`
 
-#### 今天就先到这里吧
+#### CSS3弹性盒子-Flex布局
+> 之前总结过一篇：[Flex布局](https:/www.liugezhou.online/2018/08/22/Flex布局/)
 
+#### CSS3多媒体查询
+> CSS3多媒体类型
+>
+> |   值   |  描述|
+> |-----------|-----------|
+> |all|用于所有多媒体类型设备|
+> |print|用于打印机|
+> |screen|用于电脑屏幕、平板、智能手机等|
+> |speech|用于屏幕阅读器|

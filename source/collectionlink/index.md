@@ -12,6 +12,7 @@ message: 你需要输入密码访问.    # 密码提示
 
 ### 博客类
 > + [杨小二的小江湖](http://www.yangxiaoer.net/)
+> + [有赞技术博客](https://tech.youzan.com/)
 > + [曹雪松、一只特立独行的CoderBoy](https://sevencho.github.io/)
 > + [xiaobai050](https://zhangnai.xin/2018/11/11/hexo-theme-upgrade/)
 > + [9935](https://hooray.github.io/)

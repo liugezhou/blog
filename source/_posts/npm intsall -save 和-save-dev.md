@@ -3,7 +3,7 @@ title: npm intsall -save 和-save-dev
 date: 2018-06-28
 categories:
 - web前端
-- node
+- js
 tags: npm intsall
 ---
 关于npm在安装的时候，有个小的知识点，一定要小小的补一下，那就是npm install 后面带参数的问题。

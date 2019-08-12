@@ -145,7 +145,7 @@
 <meta property="og:description" content="由于代码的开发加上章节的总结会对专注代码带来巨大的精力与时间投出，于是不在逐行代码进行解析，从本节开始我会直接把在项目开发过程中遇到的知识点进行总结，并直接上代码地址。   本章节实现源码：https://github.com/liugezhou/liugezhou_music/tree/chapter3   效果演示：    从本节开始，项目的所有数据是通过抓取获得的，所以我们首先要对数据抓取">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://img.liugezhou.online/Vue2-03.png">
-<meta property="og:updated_time" content="2019-08-11T12:56:29.287Z">
+<meta property="og:updated_time" content="2019-08-12T10:00:47.027Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="三、推荐页面开发-轮播图">
 <meta name="twitter:description" content="由于代码的开发加上章节的总结会对专注代码带来巨大的精力与时间投出，于是不在逐行代码进行解析，从本节开始我会直接把在项目开发过程中遇到的知识点进行总结，并直接上代码地址。   本章节实现源码：https://github.com/liugezhou/liugezhou_music/tree/chapter3   效果演示：    从本节开始，项目的所有数据是通过抓取获得的，所以我们首先要对数据抓取">
@@ -387,8 +387,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-08-11T20:56:29+08:00">
-                2019-08-11
+              <time title="更新于" itemprop="dateModified" datetime="2019-08-12T18:00:47+08:00">
+                2019-08-12
               </time>
             
           </span>
@@ -458,7 +458,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.2k
+                  1.4k
                 </span>
               
 
@@ -523,26 +523,25 @@
 </blockquote>
 <p>关于jsonp的学习，可以移除至：<a href="https://github.com/webmodules/jsonp" target="_blank" rel="noopener">https://github.com/webmodules/jsonp</a></p>
 <h3 id="代码介绍："><a href="#代码介绍：" class="headerlink" title="代码介绍："></a>代码介绍：</h3><blockquote>
-<p>1.jsonp的安装—-pacakage.json/dependencies</p>
-<p>2.jsonp的封装：<br><a href="https://github.com/liugezhou/liugezhou_music/blob/chapter3/src/common/js/jsonp.js" target="_blank" rel="noopener">https://github.com/liugezhou/liugezhou_music/blob/chapter3/src/common/js/jsonp.js</a></p>
-</blockquote>
-<blockquote>
+<p>1.jsonp的安装—-pacakage.json/dependencies<br>    npm install jsonp –save</p>
+<p>2.jsonp的封装：<br>代码演示：<a href="https://github.com/liugezhou/liugezhou_music/blob/chapter3/src/common/js/jsonp.js" target="_blank" rel="noopener">戳这里</a><br>这个文件将jsonp进行了封装。</p>
 <p>3.轮播图数据的抓取：</p>
-<p>3.1、抓取数据用到的公共数据参数的封装：<br><a href="https://github.com/liugezhou/liugezhou_music/blob/chapter3/src/api/config.js" target="_blank" rel="noopener">https://github.com/liugezhou/liugezhou_music/blob/chapter3/src/api/config.js</a></p>
-</blockquote>
-<blockquote>
-<p>3.2、轮播图数据的封装：<br><a href="https://github.com/liugezhou/liugezhou_music/blob/chapter3/src/api/recommend.js" target="_blank" rel="noopener">https://github.com/liugezhou/liugezhou_music/blob/chapter3/src/api/recommend.js</a></p>
-</blockquote>
-<blockquote>
-<p>3.3、推荐页面轮播图数据的引入与轮播图组件的开发：<br>数据引入：<br><a href="https://github.com/liugezhou/liugezhou_music/blob/chapter3/src/components/recommend/recommend.vue" target="_blank" rel="noopener">https://github.com/liugezhou/liugezhou_music/blob/chapter3/src/components/recommend/recommend.vue</a><br>轮播图组件：<br><a href="https://github.com/liugezhou/liugezhou_music/blob/chapter3/src/base/slider/slider.vue" target="_blank" rel="noopener">https://github.com/liugezhou/liugezhou_music/blob/chapter3/src/base/slider/slider.vue</a><br>以上列出的为主要修改文件，其它省略。</p>
+<p>3.1、抓取数据用到的公共数据参数的封装：<br>代码演示：<a href="https://github.com/liugezhou/liugezhou_music/blob/chapter3/src/api/config.js" target="_blank" rel="noopener">戳这里</a><br>这个文件将用到的一些公共参数进行了封装，便于其它文件的调用。<br>其中包括：很多接口用到的公共参数<code>commonParams</code>、jsonp回调<code>options</code>、接口返回正确与否的变量<code>ERR_OK</code></p>
+<p>3.2、轮播图数据的封装：<br>代码演示：<a href="https://github.com/liugezhou/liugezhou_music/blob/chapter3/src/api/recommend.js" target="_blank" rel="noopener">戳这里</a><br>这个文件通过上面的两个文件，将地址以及用到的一些参数进行合并，最终return到上面封装的jsonp文件.<br>使用了Object.assign()方法。</p>
+<p>3.3、推荐页面轮播图数据的引入与轮播图组件的开发：</p>
+<p>数据引入：<br>代码演示：<a href="https://github.com/liugezhou/liugezhou_music/blob/chapter3/src/components/recommend/recommend.vue" target="_blank" rel="noopener">戳这里</a></p>
+<p>轮播图组件：<br>代码演示：<a href="https://github.com/liugezhou/liugezhou_music/blob/chapter3/src/base/slider/slider.vue" target="_blank" rel="noopener">戳这里</a><br>这里作者通过自己的方式写了一个轮播组件，对我相对来说有些复杂，暂时略过了这里的实现，如果在开发项目过程中遇到轮播的问题我应该会直接使用swiper。</p>
 </blockquote>
 <h4 id="写完本节你应该明白"><a href="#写完本节你应该明白" class="headerlink" title="写完本节你应该明白"></a>写完本节你应该明白</h4><blockquote>
 <ul>
-<li>jsonp是什么，如何使用jsonp。<br>本节完。</li>
+<li>jsonp是什么，如何使用jsonp。 </li>
+<li>通过看作者jsonp的封装，思考如何将自己的代码友好封装。<br>本节完。</li>
 </ul>
 <p>2019.01.10</p>
 </blockquote>
-<p>如有疑问请添加我的微信号：18231133236。欢迎交流！<br>更多内容，请访问的我的个人博客：<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fwww.liugezhou.online" target="_blank" rel="noopener">https://www.liugezhou.online</a>.</p>
+<blockquote>
+<p>关于本节如果你有任何问题可以在下方留言。<br>如有疑问请添加我的微信号：18231133236。欢迎交流！<br>更多内容，请访问的我的个人博客：<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fwww.liugezhou.online" target="_blank" rel="noopener">https://www.liugezhou.online</a>.</p>
+</blockquote>
 
       
     </div>
@@ -848,7 +847,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">37.2k</span>
+    <span title="Site words total count">37.7k</span>
   
 </div>
 

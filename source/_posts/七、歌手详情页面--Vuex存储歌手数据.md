@@ -81,5 +81,6 @@ api中的诸多方法都是通过jsonp方式获取数据，不再赘述。
 那个啥，后面的代码就不分析了，直接github上clone下chapter7分支代码即可，这个歌手详情页真是美的不像话。
 
 
-如有疑问请添加我的微信号：18231133236。欢迎交流！
-更多内容，请访问的我的个人博客：[https://www.liugezhou.online](https://links.jianshu.com/go?to=https%3A%2F%2Fwww.liugezhou.online).
+>关于本节如果你有任何问题可以在下方留言。
+>如有疑问请添加我的微信号：18231133236。欢迎交流！  
+>更多内容，请访问的我的个人博客：[https://www.liugezhou.online](https://links.jianshu.com/go?to=https%3A%2F%2Fwww.liugezhou.online).

@@ -60,5 +60,6 @@ https://github.com/liugezhou/liugezhou_music
 
 > 这门课程在讲解过程中弱化了CSS部分，JS部分差不多每一行都是手写的，所以其中很多的知识点由于知识储备不足，就会出现很多地方的深究学习。写这个专题的目的就是希望可以突破重重困难，敬畏每一行代码，对自己的学习过程做一个记录，希望在本课程中学到一些作者编码的思想与技巧。
 
-> 如有疑问请添加我的微信号：18231133236。欢迎交流！
-> 更多内容，请访问的我的个人博客：https://www.liugezhou.online.
+>关于本节如果你有任何问题可以在下方留言。
+>如有疑问请添加我的微信号：18231133236。欢迎交流！  
+>更多内容，请访问的我的个人博客：[https://www.liugezhou.online](https://links.jianshu.com/go?to=https%3A%2F%2Fwww.liugezhou.online).

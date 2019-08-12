@@ -84,6 +84,6 @@ git push
 > 2.项目路径别名在`build/webpack.base.config.js`中的resolve/alias下修改。
 
 
-如有疑问请添加我的微信号：18231133236。欢迎交流！
-更多内容，请访问的我的个人博客：[https://www.liugezhou.online](https://links.jianshu.com/go?to=https%3A%2F%2Fwww.liugezhou.online).
-您也可以关注我的个人公众号：【Dangerous Wakaka】
+>关于本节如果你有任何问题可以在下方留言。
+>如有疑问请添加我的微信号：18231133236。欢迎交流！  
+>更多内容，请访问的我的个人博客：[https://www.liugezhou.online](https://links.jianshu.com/go?to=https%3A%2F%2Fwww.liugezhou.online).

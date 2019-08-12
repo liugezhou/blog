@@ -1,16 +1,17 @@
 ---
 title: jsonp温故
-date: 2019-08-11
+date: 2019-08-11 20:00:00
+update: 2019-08-12 16:17:00
 categories:
 - web前端
 - js
 tags: jsonp
 ---
 #####  今天重新学习之前写了半截的项目，其中提到了jsonp，当时也是查了很多资料，做了很多笔记，但是最近在写一个项目的时候，竟然遗忘了很多，所以特此做个总结，在下次再遇到jsonp的时候，可以有一个清晰的认识。
-
+<!--more-->
 #### jsonp原理介绍
 ---
->jsonp就是为了解决前端的跨域问题而进行的一项设计，jsonp之所以能实现跨域，是因为`它不是ajax请求`，它`动态创建了script标签`，script标签是不受同源策略限制的，将script的src指向正式的服务器地址。
+>jsonp就是为了解决前端的跨域问题而进行的一项设计，jsonp之所以能实现跨域，是因为`它发送的不是ajax请求`，它`动态创建了script标签`，script标签是不受同源策略限制的，将script的src指向正式的服务器地址。
 
 #### 查找资料：
 > 目前为止(2012年)最被推崇或者说首选的方案还是用JSON来传数据，靠JSONP来跨域。  
@@ -34,5 +35,28 @@ tags: jsonp
 #### 安装
 > npm install jsonp --save
 
-#### [API](https://github.com/webmodules/jsonp)
-> API介绍是如此简洁。
+#### [GithubAPI](https://github.com/webmodules/jsonp)
+> API介绍很简洁，下面为全文。
+> 
+> //语法：
+> **jsonp(url,opts,fn)**
+> + url (String) url to fetch   
+> //要获取的网址
+> + opts(Object) ,optional       
+> //一个参数对象  
+>   ·param(String) name of the query string parameter to specify the callback (default to callback)
+> // 用于指定回调的查询字符串参数的名称 (默认为callback)
+>   ·timeout(Number) how long after a timeout error is emitted. 0 to disable(default to 60000)
+> // 超时错误多长时间后出发。 0表示禁用（默认为60s）
+>   ·prefix(String) prefix for the global callback functions that handle jsonp responses(default to __ip)
+> // 处理jsonp响应的全局回调函数的前缀
+>   ·name(String) name of the global callback funcitions that handle jsonp responses(default to `prefix` + incremented counter)
+> // 处理jsonp响应的全局回调函数的名称
+> + fn callback 
+>
+> The callback is called with `err`,`data` parameters.
+> // 使用`err`，`data`参数调用回调。
+> If it times out ,the err will be an ERROR object whose message is Timeout.
+> // 如果超时，则错误将是ERROR对象，其消息为Timeout。
+> Return a function that ,when called,will cancel the in-progress jsonp request( `fn` wont't be called)
+> // 返回一个函数，当出现错误时，将取消正在进行的jsonp请求（`fn`不会被调用）

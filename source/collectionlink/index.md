@@ -11,6 +11,7 @@ message: 你需要输入密码访问.    # 密码提示
 > + [ES6入门教程](http://es6.ruanyifeng.com/)
 
 ### 博客类
+> + [别人家的博客](https://www.hojun.cn/)
 > + [杨小二的小江湖](http://www.yangxiaoer.net/)
 > + [有赞技术博客](https://tech.youzan.com/)
 > + [曹雪松、一只特立独行的CoderBoy](https://sevencho.github.io/)

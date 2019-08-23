@@ -4,7 +4,9 @@ date: 2019-07-17
 categories:
 - web前端
 - 小程序
-tags: iconfont
+tags: 
+- 小程序
+- iconfont
 ---
 ### 背景
 > 最近自己在写一个小程序，在使用iconfont的时候，出了一点小问题，解决的过程是简单、高效的。  

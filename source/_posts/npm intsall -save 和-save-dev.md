@@ -4,7 +4,9 @@ date: 2018-06-28
 categories:
 - web前端
 - js
-tags: npm intsall
+tags: 
+- npm intsall
+- js
 ---
 关于npm在安装的时候，有个小的知识点，一定要小小的补一下，那就是npm install 后面带参数的问题。
 相信不少在开始接触node的时候，我们肯定都使用过这样的命令

@@ -340,6 +340,499 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liugezhou.online/2019/01/27/八、播放器内置组件开发---(动画过渡)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liugezhou">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="http://img.liugezhou.online/time.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="六个周">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/27/八、播放器内置组件开发---(动画过渡)/" itemprop="url">八、播放器内置组件开发---(动画过渡)</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-27T00:00:00+08:00">
+                2019-01-27
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-08-12T18:01:50+08:00">
+                2019-08-12
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue2-0开发企业级移动音乐APP/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue2.0开发企业级移动音乐APP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/27/八、播放器内置组件开发---(动画过渡)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/27/八、播放器内置组件开发---(动画过渡)/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/01/27/八、播放器内置组件开发---(动画过渡)/" class="leancloud_visitors" data-flag-title="八、播放器内置组件开发---(动画过渡)">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  564
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="本节总览"><a href="#本节总览" class="headerlink" title="本节总览"></a>本节总览</h4><hr>
+<h6 id="本节代码提交至：chapter8"><a href="#本节代码提交至：chapter8" class="headerlink" title="本节代码提交至：chapter8"></a>本节代码提交至：<a href="https://github.com/liugezhou/liugezhou_music/tree/chapter8" target="_blank" rel="noopener">chapter8</a></h6><h6 id="效果预览："><a href="#效果预览：" class="headerlink" title="效果预览："></a>效果预览：</h6><p><img src="http://img.liugezhou.online/Vue2-08.gif" alt="chapter8--动画.gif"></p>
+<blockquote>
+<p>本节主要是在进入歌手详情页后，点击某一首歌曲后的页面–播放页面的代码开发。<br>包含底部mini播放器的Vuex状态控制显示与掩藏（之前已写好）、播放器页面布局、播放器页面的动画效果。</p>
+</blockquote>
+<h4 id="代码主要更新"><a href="#代码主要更新" class="headerlink" title="代码主要更新"></a>代码主要更新</h4><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">liugezhou_music/src/store</span><br><span class="line">liugezhou_music/src/common/js/config.js</span><br><span class="line">liugezhou_music/package.json</span><br><span class="line">liugezhou_music/src/components/music-list/music-list.vue</span><br><span class="line">liugezhou_music/src/components/player/player.vue</span><br><span class="line">liugezhou_music/src/App.vue</span><br></pre></td></tr></table></figure>
+
+<h4 id="本节代码开发知识点及代码思路"><a href="#本节代码开发知识点及代码思路" class="headerlink" title="本节代码开发知识点及代码思路"></a>本节代码开发知识点及代码思路</h4><hr>
+<h5 id="1-store"><a href="#1-store" class="headerlink" title="1.store"></a>1.store</h5><blockquote>
+<p>上节内容主要介绍了一下Vuex，这节课因为要开始进行播放器内置组件的开发，开始使用Vuex。分析播放器内置组件页面的需求，我们发现有几个变量我们是需要写进全局变量控制中的。</p>
+<blockquote>
+<p><code>singer</code>:(默认{}):存储歌手数据<br><code>playing</code>(默认false)：控制歌曲是否正在播放<br><code>fullScreen</code>(默认flase)：控制播放器是否全屏播放<br><code>playlist</code>(默认[])：存储播放器播放列表<br><code>sequenceList</code>(默认[])：存储播放器顺序播放列表<br><code>mode</code>(默认playMode.sequence)：播放器播放方式<br><code>currentIndex</code>（默认为-1）：播放歌曲的索引</p>
+</blockquote>
+</blockquote>
+<p>关于store的代码目录：<br><img src="https://upload-images.jianshu.io/upload_images/2054455-95a351c16c1ceefa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="store.png"><br>文件中具体代码：<a href="https://github.com/liugezhou/liugezhou_music/tree/8abb9b118507974191a20af9a6338d3ea554dab9/src/store" target="_blank" rel="noopener">戳这里</a><br>这里基本上涵盖了Vuex的大多数内容。</p>
+<h5 id="2-player-vue"><a href="#2-player-vue" class="headerlink" title="2.player.vue"></a>2.player.vue</h5><p>package.json—-<a href="https://github.com/HenrikJoreteg/create-keyframe-animation" target="_blank" rel="noopener">create-keyframe-animation</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install create-keyframe-animation</span><br></pre></td></tr></table></figure>
+
+<p>这里包含全屏的播放器显示以及退出全局播放后的mini播放器的显示。<br>在经过一些布局后，退出全屏播放器需要加一个中心大图片向nimi播放器图片切换的过渡效果，反之同样，这里主要使用了Vux官方给出的transition动画与上面的相关依赖。<br>代码实现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//全屏div使用transition包裹，使用官方的JavaScript钩子函数</span><br><span class="line">&lt;transition name=&quot;normal&quot;</span><br><span class="line">                @enter = &quot;enter&quot;</span><br><span class="line">                @after-enter = &quot;afterEnter&quot;</span><br><span class="line">                @leave = &quot;leave&quot;</span><br><span class="line">                @after-leave= &quot;afterLeave&quot;</span><br><span class="line">&gt;</span><br><span class="line">//mini播放器的transition包裹</span><br><span class="line">&lt;transition name=&quot;mini&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>具体代码实现：<a href="https://github.com/liugezhou/liugezhou_music/blob/chapter8/src/components/player/player.vue" target="_blank" rel="noopener">戳这里</a></p>
+<blockquote>
+<p>关于本节如果你有任何问题可以在下方留言。<br>如有疑问请添加我的微信号：18231133236。欢迎交流！<br>更多内容，请访问的我的个人博客：<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fwww.liugezhou.online" target="_blank" rel="noopener">https://www.liugezhou.online</a>.</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liugezhou.online/2019/01/19/七、歌手详情页面--Vuex存储歌手数据/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liugezhou">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="http://img.liugezhou.online/time.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="六个周">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/19/七、歌手详情页面--Vuex存储歌手数据/" itemprop="url">七、歌手详情页面--Vuex存储歌手数据</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-19T00:00:00+08:00">
+                2019-01-19
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-08-23T18:22:53+08:00">
+                2019-08-23
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue2-0开发企业级移动音乐APP/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue2.0开发企业级移动音乐APP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/19/七、歌手详情页面--Vuex存储歌手数据/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/19/七、歌手详情页面--Vuex存储歌手数据/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/01/19/七、歌手详情页面--Vuex存储歌手数据/" class="leancloud_visitors" data-flag-title="七、歌手详情页面--Vuex存储歌手数据">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.2k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="本节总览"><a href="#本节总览" class="headerlink" title="本节总览"></a>本节总览</h4><hr>
+<blockquote>
+<p>本节代码提交至：<a href="https://github.com/liugezhou/liugezhou_music/tree/chapter7" target="_blank" rel="noopener">chapter7</a></p>
+</blockquote>
+<h3 id="效果预览："><a href="#效果预览：" class="headerlink" title="效果预览："></a>效果预览：</h3><p><img src="http://img.liugezhou.online/Vue2-07.png" alt="singer-detail.png"></p>
+<blockquote>
+<p>本节实现点击歌手提交mutation，将歌手数据存储在store中，涉及到整个Vuex技术栈。<br>本节主要代码开发是singer-detail组件。<br>singer-detail调用开发的music-list组件：将歌手歌曲数据、背景图片以及歌手姓名传入到music-list组件中。<br>music-list组件中分为上半部分与下半部分两块，下半部分的歌曲列表再分离成song-list组件。<br>即总共包含三个组件的开发，还有一些酷炫、美丽的花朵、图片拖拽等的效果。</p>
+</blockquote>
+<h4 id="代码更新"><a href="#代码更新" class="headerlink" title="代码更新"></a>代码更新</h4><hr>
+<blockquote>
+<p><code>主要</code>更新代码列表如下：<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/src/components/singer-detail/singer-detail.vue</span><br><span class="line">/src/store  //文件夹下包含多个文件</span><br><span class="line">/src/api/singer.js</span><br><span class="line">/src/components/music-list/music-list.vue</span><br><span class="line">/src/base/song-list/song-list.vue</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="本节代码开发知识点及代码思路："><a href="#本节代码开发知识点及代码思路：" class="headerlink" title="本节代码开发知识点及代码思路："></a>本节代码开发知识点及代码思路：</h3><hr>
+<h4 id="一、transition-进入-离开-amp-列表过渡"><a href="#一、transition-进入-离开-amp-列表过渡" class="headerlink" title="一、transition | 进入/离开 &amp; 列表过渡"></a>一、<code>transition</code> | 进入/离开 &amp; 列表过渡</h4><blockquote>
+<p>官方学习：<a href="https://cn.vuejs.org/v2/guide/transitions.html" target="_blank" rel="noopener">https://cn.vuejs.org/v2/guide/transitions.html</a><br>小结：<br>1.transition标签包裹<br>2.进入时：<code>name-enter</code>与<code>name-enter-active</code><br>3.离开时：<code>name-leave-to</code>与<code>name-leave-active</code><br>4.CSS3-3D转换(<code>translate3d</code>)<br>关于Vue的动画效果与CSS3动画效果的学习，一定要去Vue的官方文档进行一个系统的学习。</p>
+</blockquote>
+<h4 id="二、Vuex"><a href="#二、Vuex" class="headerlink" title="二、Vuex"></a>二、Vuex</h4><blockquote>
+<p>官方学习：<a href="https://vuex.vuejs.org/zh/" target="_blank" rel="noopener">https://vuex.vuejs.org/zh/</a><br>小结：<br>1.Vuex 是一个专为 Vue.js 应用程序开发的<code>状态管理模式</code>。<br>2.Vuex 背后的基本思想，借鉴了 <a href="https://facebook.github.io/flux/docs/overview.html" target="_blank" rel="noopener">Flux</a>、<a href="http://redux.js.org/" target="_blank" rel="noopener">Redux</a>、和 <a href="https://guide.elm-lang.org/architecture/" target="_blank" rel="noopener">The Elm Architecture</a><br>3.Vuex 和单纯的全局对象有两点不同:<br>   1️⃣、Vuex 的状态存储是响应式的<br>   2️⃣、你不能直接改变<code>store</code>中的状态。改变 <code>store</code>中的状态的唯一途径就是显式地提交 <code>(commit) mutation</code>。<br>4.可以通过 <code>store.state.count</code> 来获取状态对象，以及通过<code>store.commit</code> 方法触发状态变更.<br>5.强调:我们通过提交<code>mutation</code>的方式，而非直接改变<code>store.state.count</code>，是因为我们想要更明确地追踪到状态的变化.<br>6.<code>mapState</code>辅助函数| <code>对象展开运算符</code><br>7.<code>Getter</code>:从 <code>store</code>中的 <code>state</code> 中派生出一些状态:<a href="https://vuex.vuejs.org/zh/guide/getters.html" target="_blank" rel="noopener">详请</a><br>8.<a href="https://vuex.vuejs.org/zh/guide/getters.html#mapgetters-%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0" target="_blank" rel="noopener">mapGetters 辅助函数</a><br>9.<a href="https://vuex.vuejs.org/zh/guide/mutations.html" target="_blank" rel="noopener">Mutation</a></p>
+<blockquote>
+<p>1️⃣、接受 state 作为第一个参数<br>2️⃣、可以向 <code>store.commit</code>传入额外的参数，即 <code>mutation</code>的 载荷（payload）<br>3️⃣、使用常量替代 Mutation 事件类型（本节使用）<br>4️⃣、Mutation 必须是同步函数</p>
+</blockquote>
+<p>10.<a href="https://vuex.vuejs.org/zh/guide/actions.html" target="_blank" rel="noopener">Action</a></p>
+<blockquote>
+<p><code>Action</code>类似于<code>mutation</code>，不同在于：<br>①、<code>Action</code> 提交的是 <code>mutation</code>，而不是直接变更状态。<br>②、<code>Action</code> 可以包含任意<code>异步</code>操作。</p>
+</blockquote>
+<p>11.<a href="https://vuex.vuejs.org/zh/guide/modules.html" target="_blank" rel="noopener">Module</a><br>为了解决store 对象可能变得相当臃肿的问题。<br>……</p>
+</blockquote>
+<h4 id="三、通过jsonp–以singer-id为参数，获取歌手详情数据"><a href="#三、通过jsonp–以singer-id为参数，获取歌手详情数据" class="headerlink" title="三、通过jsonp–以singer.id为参数，获取歌手详情数据"></a>三、通过jsonp–以singer.id为参数，获取歌手详情数据</h4><blockquote>
+<p>在<code>api/singer.js</code>中添加<code>getSingerDetail(singerId)</code>方法。<br>api中的诸多方法都是通过jsonp方式获取数据，不再赘述。</p>
+</blockquote>
+<h4 id="四、歌手详情数据处理和song类的封装"><a href="#四、歌手详情数据处理和song类的封装" class="headerlink" title="四、歌手详情数据处理和song类的封装"></a>四、歌手详情数据处理和song类的封装</h4><blockquote>
+<p>通过jsonp获取到了歌手详情的数据后，需要对详情数据进行优化，将优化的数据进行存储。<br>在<code>common/js</code>中新建<code>song.js</code>，开发song类 ，避免代码冗余—-<a href="https://www.jianshu.com/p/0743e31cd911" target="_blank" rel="noopener">小拓展：ES6-Class基本语法</a></p>
+</blockquote>
+<h4 id="五、music-list组件开发"><a href="#五、music-list组件开发" class="headerlink" title="五、music-list组件开发"></a>五、music-list组件开发</h4><blockquote>
+<p>新建文件<code>/src/components/music-list/music-list.vue</code><br>musicl-list布局，在之前也对歌手的song数据进行了封装存储后，我们继续分析需求，我们发现多个页面与歌手详情页面是类似的（头部的大图片与歌曲list区块），于是开发song-list组件（下半部分的歌曲列表），方便各个地方进行使用。</p>
+</blockquote>
+<h4 id="后面的代码暂时就不分析了，直接github上clone下chapter7分支代码即可，这个歌手详情页真是美的不像话。"><a href="#后面的代码暂时就不分析了，直接github上clone下chapter7分支代码即可，这个歌手详情页真是美的不像话。" class="headerlink" title="后面的代码暂时就不分析了，直接github上clone下chapter7分支代码即可，这个歌手详情页真是美的不像话。"></a>后面的代码暂时就不分析了，直接github上clone下chapter7分支代码即可，这个歌手详情页真是美的不像话。</h4><h4 id="20190823代码分析更新"><a href="#20190823代码分析更新" class="headerlink" title="20190823代码分析更新"></a>20190823代码分析更新</h4><blockquote>
+<ol>
+<li><p>添加路由子路由(children),点击歌手列表中某歌手跳转至某歌手页面，代码修改的地方：<a href="https://github.com/liugezhou/liugezhou_music/blob/chapter7/src/router/index.js" target="_blank" rel="noopener">戳这里</a>。 </p>
+</li>
+<li><p>开发歌手详情页面，代码查看：<a href="https://github.com/liugezhou/liugezhou_music/blob/chapter7/src/components/singer-detail/singer-detail.vue" target="_blank" rel="noopener">戳这里</a>. –这里使用了transition动画.  </p>
+</li>
+<li><p>使用Vuex，在store下新建一系列文件，可直接查看代码。这里的代码规范也可以让我们在使用到Vuex的时候按这种方式进行代码管理。</p>
+</li>
+<li><p>写获取歌手歌曲列表的方法：<a href="https://github.com/liugezhou/liugezhou_music/blob/chapter7/src/api/singer.js" target="_blank" rel="noopener">代码在这里</a></p>
+</li>
+<li><p>构建一个song类，用来处理需要的song的数据：<a href="https://github.com/liugezhou/liugezhou_music/blob/chapter7/src/common/js/song.js" target="_blank" rel="noopener">代码在这里</a> ,这个很重要是为了在上面的第二步骤处理获得到的song数据–song数据的二次封装。</p>
+</li>
+<li><p>music-list组件开发：<a href="https://github.com/liugezhou/liugezhou_music/blob/chapter7/src/components/music-list/music-list.vue" target="_blank" rel="noopener">代码</a>。</p>
+</li>
+<li><p>基础组件song-list组件开发：<a href="https://github.com/liugezhou/liugezhou_music/blob/chapter7/src/base/song-list/song-list.vue" target="_blank" rel="noopener">代码</a>–包含酷炫的上滑下拉的效果。</p>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>关于本节如果你有任何问题可以在下方留言。<br>如有疑问请添加我的微信号：18231133236。欢迎交流！<br>更多内容，请访问的我的个人博客：<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fwww.liugezhou.online" target="_blank" rel="noopener">https://www.liugezhou.online</a>.</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://liugezhou.online/2019/01/17/六、歌手页面开发（二）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -387,8 +880,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-08-12T18:01:33+08:00">
-                2019-08-12
+              <time title="更新于" itemprop="dateModified" datetime="2019-08-23T15:57:19+08:00">
+                2019-08-23
               </time>
             
           </span>
@@ -458,7 +951,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  302
+                  723
                 </span>
               
 
@@ -474,7 +967,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -501,15 +994,14 @@
 <blockquote>
 <p>本节代码提交至：<a href="https://github.com/liugezhou/liugezhou_music/tree/chapter6" target="_blank" rel="noopener">chapter6</a></p>
 </blockquote>
-<h5 id="效果预览："><a href="#效果预览：" class="headerlink" title="效果预览："></a>效果预览：</h5><p><img src="http://img.liugezhou.online/Vue2-06.png" alt="vue-music.png"></p>
+<h3 id="效果预览："><a href="#效果预览：" class="headerlink" title="效果预览："></a>效果预览：</h3><p><img src="http://img.liugezhou.online/Vue2-06.png" alt="vue-music.png"></p>
 <hr>
-<h4 id="代码更新"><a href="#代码更新" class="headerlink" title="代码更新"></a>代码更新</h4><blockquote>
+<h3 id="代码更新"><a href="#代码更新" class="headerlink" title="代码更新"></a>代码更新</h3><blockquote>
 <p>主要更新代码列表如下：</p>
+<p>  /src/base/listview/listview.vue<br>  /src/common/js/dom.js<br>  /src/base/scroll/scroll.vue</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/src/base/listview/listview.vue</span><br><span class="line">/src/common/js/dom.js</span><br><span class="line">/src/base/scroll/scroll.vue</span><br></pre></td></tr></table></figure>
-
 <hr>
-<h5 id="本节代码思路："><a href="#本节代码思路：" class="headerlink" title="本节代码思路："></a>本节代码思路：</h5><blockquote>
+<h3 id="本节代码思路："><a href="#本节代码思路：" class="headerlink" title="本节代码思路："></a>本节代码思路：</h3><blockquote>
 <p>本节代码复杂度相对来说有了难度，以至于在学习过程中接近放弃状态，直接copy了源代码，于是代码的实现还有待继续深度学习。</p>
 </blockquote>
 <blockquote>
@@ -519,6 +1011,20 @@
 <li>实现了右半部分的字母列表的实时滑动。（在这个listview中做了大量的计算处理）</li>
 <li>在滑动左侧部分添加相对应title字母的置顶效果</li>
 </ul>
+</blockquote>
+<h3 id="2019-08-23代码讲解更新"><a href="#2019-08-23代码讲解更新" class="headerlink" title="2019-08-23代码讲解更新"></a>2019-08-23代码讲解更新</h3><blockquote>
+<p>本节的重点是listview.vue组件</p>
+<ol>
+<li>首先将右部分的字母列表静态显示，这里并未添加新的组件，只是在原文件下直接添加了一个div，将数据填充进去进行显示。</li>
+<li>为这个div添加<code>touchstart</code>、<code>touchmove</code>、<code>touchend</code>事件，这里需要对其事件的详细方法做一个了解。<blockquote>
+<p>①、在写<code>touchstart</code>的时候我们发现需要<code>scroll</code>组件有一个滚动到相应位置的方法，这些方法在<code>better-scroll</code>中已经封装好，我们在之前封装的<code>scroll</code>组件中需要去引入<code>scrollTo</code>和<code>scrollToElement</code>方法,而且需要添加一个监听滚动的方法<code>listenScroll</code>。<br>②、<code>touchstart</code>:第一次点击右侧div的时候，首先获取此索引（这里将获取索引做了一个dom方法的封装），然后调用上面提到的<code>scrollToElement</code>方法，且在这里需要记录一下刚点击的位置,获取点击的位置需要用到<code>e.touches[0]</code>。<br>③、<code>touchmove</code>：此次也需要记录滑动的位置,使用<code>e.touches[0].pageY</code>，通过两次滑动记录位置，计算滑动了多少，到哪个值。</p>
+</blockquote>
+</li>
+<li>实现通过滑动歌手，右侧字母索引的高亮，这里首先是计算出来每一块的高度放到一个数组中，然后在互动过程中监听变化计算当前索引。（计算方法仍感受有点小复杂）</li>
+<li>接着需要实现点击、滑动字母索引的时候实现字母的高亮（这里做了一些边界的处理）。</li>
+<li>Fixed title的功能实现：添加一个fixed的div，然后再做关联。</li>
+<li>最后添加loading组件。</li>
+</ol>
 </blockquote>
 <hr>
 <h6 id="本节代码，可以在遇到这种关联滑动的页面需求时，起到一个很好的代码借鉴作用。"><a href="#本节代码，可以在遇到这种关联滑动的页面需求时，起到一个很好的代码借鉴作用。" class="headerlink" title="本节代码，可以在遇到这种关联滑动的页面需求时，起到一个很好的代码借鉴作用。"></a>本节代码，可以在遇到这种关联滑动的页面需求时，起到一个很好的代码借鉴作用。</h6><blockquote>
@@ -619,8 +1125,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-08-13T22:40:24+08:00">
-                2019-08-13
+              <time title="更新于" itemprop="dateModified" datetime="2019-08-23T10:33:29+08:00">
+                2019-08-23
               </time>
             
           </span>
@@ -690,7 +1196,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  286
+                  325
                 </span>
               
 
@@ -735,17 +1241,16 @@
 <h3 id="效果预览："><a href="#效果预览：" class="headerlink" title="效果预览："></a>效果预览：</h3><h2 id><a href="#" class="headerlink" title></a><img src="http://img.liugezhou.online/Vue2-05.png" alt="vue-music.png"></h2><h3 id="代码更新"><a href="#代码更新" class="headerlink" title="代码更新"></a>代码更新</h3><blockquote>
 <p>今天只是简单看了一下歌手页面的需求,以及歌手接口数据的获得。<br>主要更新代码列表如下：</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">src/components/singer/singer.vue</span><br><span class="line">src/api/singer.js</span><br><span class="line">src/base/listview</span><br><span class="line">src/common/js/singer.js</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">src/api/singer.js</span><br><span class="line">src/components/singer/singer.vue</span><br><span class="line">src/base/listview</span><br><span class="line">src/common/js/singer.js</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h3 id="本节代码思路："><a href="#本节代码思路：" class="headerlink" title="本节代码思路："></a>本节代码思路：</h3><blockquote>
-<ul>
-<li>首先通过扣扣音乐官方，找到并分析歌手列表的接口（学习中的视频接口未找到）</li>
-<li>依照前面写好的recommend的api(jsonp),将接口url以及不同的参数传入。</li>
-<li>编写歌手列表<code>singer.vue</code>，将从接口获取的歌手数据进行二次处理存储使用（本节重点）</li>
-<li>开发<code>listview</code>组件：引入之前写好的<code>scroll</code>组件，在<code>scroll</code>组件中写<code>listview</code>组件（本节重点）</li>
+<h3 id="本节代码讲解："><a href="#本节代码讲解：" class="headerlink" title="本节代码讲解："></a>本节代码讲解：</h3><blockquote>
+<ol>
+<li>首先通过扣扣音乐官方，找到并分析歌手列表的接口, 依照前面写好的recommend的api(jsonp),将接口url以及不同的参数传入，在<code>src/api/singer.js</code>代码中可看到数据的获取。</li>
+<li>编写歌手列表<code>singer.vue</code>，<br>从上一步我们拿到数据后，我们需要对拿到的数据做一个二次封装，这里对数据的二次处理简单、高效，也是本节的重点。<br>代码在<code>src/components/singer/singer.vue</code>组件中可查看。</li>
+<li>开发<code>listview</code>组件：引入之前写好的<code>scroll</code>组件，在<code>scroll</code>组件中写<code>listview</code>组件。</li>
 <li>最后，添加一个图片懒加载效果。</li>
-</ul>
+</ol>
 </blockquote>
 <h6 id="歌手页面右侧的字母索引以及主页面title的置顶与切换效果，下节更新。"><a href="#歌手页面右侧的字母索引以及主页面title的置顶与切换效果，下节更新。" class="headerlink" title="歌手页面右侧的字母索引以及主页面title的置顶与切换效果，下节更新。"></a>歌手页面右侧的字母索引以及主页面title的置顶与切换效果，下节更新。</h6><blockquote>
 <p>关于本节如果你有任何问题可以在下方留言。<br>如有疑问请添加我的微信号：18231133236。欢迎交流！<br>更多内容，请访问的我的个人博客：<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fwww.liugezhou.online" target="_blank" rel="noopener">https://www.liugezhou.online</a>.</p>
@@ -845,8 +1350,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-08-13T22:39:31+08:00">
-                2019-08-13
+              <time title="更新于" itemprop="dateModified" datetime="2019-08-23T09:31:28+08:00">
+                2019-08-23
               </time>
             
           </span>
@@ -916,7 +1421,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  961
+                  946
                 </span>
               
 
@@ -1006,12 +1511,8 @@
 <ol start="4">
 <li><p>scroll.vue–base组件<br>将scroll写成了一个基础组件。<br>代码演示：<a href="https://github.com/liugezhou/liugezhou_music/blob/chapter4/src/base/scroll/scroll.vue" target="_blank" rel="noopener">戳这里</a><br>这个简单的scroll组件比较经典，还里一个坑就是在recommend组件中确保数据渲染后去调用scroll.vue组件的refresh()方法。</p>
 </li>
-<li><p>图片懒加载<br>第三方插件：(vue-lazyload)[<a href="https://github.com/hilongjw/vue-lazyload]" target="_blank" rel="noopener">https://github.com/hilongjw/vue-lazyload]</a><br><code>npm i vue-lazyload -S</code>,详细安装、引入–参考上述文档链接。<br>代码演示:<a href="https://github.com/liugezhou/liugezhou_music/blob/chapter4/src/main.js" target="_blank" rel="noopener">戳这里</a><br>使用：在歌单中图片部分：<code>&lt;img width=&quot;60&quot; height=&quot;60&quot; v-lazy=&quot;item.imgurl&quot;  /&gt;</code></p>
+<li><p>图片懒加载<br>第三方插件：<a href="https://github.com/hilongjw/vue-lazyload" target="_blank" rel="noopener">vue-lazyload</a><br><code>npm i vue-lazyload -S</code>,详细安装、引入–参考上述文档链接。<br>代码演示:<a href="https://github.com/liugezhou/liugezhou_music/blob/chapter4/src/main.js" target="_blank" rel="noopener">戳这里</a><br>使用：在歌单中图片部分：<code>&lt;img width=&quot;60&quot; height=&quot;60&quot; v-lazy=&quot;item.imgurl&quot;  /&gt;</code></p>
 </li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="6">
 <li><p><code>class=&quot;needsclick&quot;</code><br><code>fastclick</code>与<code>scroll</code>组件的click事件发生了冲突，这个时候只要在被点击的图片上加上如上的class即可。</p>
 </li>
 <li><p>loading基础组件的开发和应用<br>loading组件也是一个基础组件，在整个项目中会多次用到，所以我们将此组件进行封装。<br>代码演示：<a href="https://github.com/liugezhou/liugezhou_music/blob/chapter4/src/base/loading/loading.vue" target="_blank" rel="noopener">戳这里</a><br>在所需要的组件中使用：</p>
@@ -1020,13 +1521,12 @@
 <ul>
 <li><code>import Loading from &#39;base/loading/loading</code>,</li>
 <li>在components中注册</li>
-<li>在DOM中自己加一个容器并将组件引入<pre><code>&lt;div class=&quot;loding-container&quot; v-show=&quot;!data.length&quot;&gt;
-    &lt;loading /&gt;
-&lt;/div&gt;
-关于本节如果你有任何问题可以在下方留言。
-如有疑问请添加我的微信号：18231133236。欢迎交流！  
-更多内容，请访问的我的个人博客：[https://www.liugezhou.online](https://links.jianshu.com/go?to=https%3A%2F%2Fwww.liugezhou.online).</code></pre></li>
+<li>在DOM中自己加一个容器并将组件引入<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;   &lt;div class=&quot;loding-container&quot; v-show=&quot;!data.length&quot;&gt;</span><br><span class="line">&gt;       &lt;loading /&gt;</span><br><span class="line">&gt;   &lt;/div&gt;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
+</blockquote>
+<blockquote>
+<p>关于本节如果你有任何问题可以在下方留言。<br>如有疑问请添加我的微信号：18231133236。欢迎交流！<br>更多内容，请访问的我的个人博客：<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fwww.liugezhou.online" target="_blank" rel="noopener">https://www.liugezhou.online</a>.</p>
 </blockquote>
 
           
@@ -2148,8 +2648,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-07-25T16:01:35+08:00">
-                2019-07-25
+              <time title="更新于" itemprop="dateModified" datetime="2019-08-23T09:26:39+08:00">
+                2019-08-23
               </time>
             
           </span>
@@ -2299,436 +2799,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liugezhou.online/2018/12/16/前端跨域问题/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="liugezhou">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="http://img.liugezhou.online/time.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="六个周">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/16/前端跨域问题/" itemprop="url">前端跨域问题</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-16T00:00:00+08:00">
-                2018-12-16
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2019-07-25T16:02:16+08:00">
-                2019-07-25
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程概念类/" itemprop="url" rel="index">
-                    <span itemprop="name">编程概念类</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/12/16/前端跨域问题/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/16/前端跨域问题/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/12/16/前端跨域问题/" class="leancloud_visitors" data-flag-title="前端跨域问题">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  4k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  15
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>作者：Qyouu<br>链接：<a href="https://www.imooc.com/article/70123" target="_blank" rel="noopener">https://www.imooc.com/article/70123</a><br>来源：慕课网</p>
-<h6 id="本文对原文章进行了样式整理，内容如下："><a href="#本文对原文章进行了样式整理，内容如下：" class="headerlink" title="本文对原文章进行了样式整理，内容如下："></a>本文对原文章进行了样式整理，内容如下：</h6><blockquote>
-<p>相信每一个前端er对于跨域这两个字都不会陌生，在实际项目中应用也是比较多的。但跨域方法的多种多样实在让人目不暇接。老规矩，碰到这种情况，就只能自己总结一篇博客，作为记录。</p>
-</blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/12/16/前端跨域问题/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liugezhou.online/2018/10/15/服务端渲染/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="liugezhou">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="http://img.liugezhou.online/time.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="六个周">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/15/服务端渲染/" itemprop="url">服务端渲染</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-15T00:00:00+08:00">
-                2018-10-15
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2019-07-25T16:29:33+08:00">
-                2019-07-25
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程概念类/" itemprop="url" rel="index">
-                    <span itemprop="name">编程概念类</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/10/15/服务端渲染/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/15/服务端渲染/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/10/15/服务端渲染/" class="leancloud_visitors" data-flag-title="服务端渲染">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.8k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  6
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="导读"><a href="#导读" class="headerlink" title="导读"></a>导读</h3><h5 id="本文主要是从三个方面学习服务端渲染，内容整理自多个博客。"><a href="#本文主要是从三个方面学习服务端渲染，内容整理自多个博客。" class="headerlink" title="本文主要是从三个方面学习服务端渲染，内容整理自多个博客。"></a>本文主要是从三个方面学习服务端渲染，内容整理自多个博客。</h5><blockquote>
-<ul>
-<li>服务端渲染是什么？什么是服务端渲染？（服务端渲染的运行机制）</li>
-<li>为什么使用服务端渲染？服务端渲染解决了什么问题？</li>
-<li>什么情况下使用服务端渲染？（服务端渲染的应用实例与使用场景）</li>
-</ul>
-</blockquote>
-<hr>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/10/15/服务端渲染/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2781,7 +2851,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2792,7 +2862,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2803,7 +2873,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2909,7 +2979,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">40.7k</span>
+    <span title="Site words total count">42.7k</span>
   
 </div>
 

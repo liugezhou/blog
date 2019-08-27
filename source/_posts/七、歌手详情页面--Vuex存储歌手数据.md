@@ -9,7 +9,7 @@ tags: 移动音乐APP
 #### 本节总览
 ---
 > 本节代码提交至：[chapter7](https://github.com/liugezhou/liugezhou_music/tree/chapter7)
-### 效果预览：
+#### 效果预览：
 ![singer-detail.png](http://img.liugezhou.online/Vue2-07.png)
 
 >本节实现点击歌手提交mutation，将歌手数据存储在store中，涉及到整个Vuex技术栈。

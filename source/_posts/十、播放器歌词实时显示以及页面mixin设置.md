@@ -14,13 +14,11 @@ tags: 移动音乐APP
 ---
 ```
  liugezhou_music/package.json 
- liugezhou_music/src/common/js/song.js
- liugezhou_music/src/common/js/uid.js
+ liugezhou_music/src/components/music-list/music-list.vue
  liugezhou_music/src/components/player/player.vue
- liugezhou_music/src/components/singer-detail/singer-detail.vue
- liugezhou_music/src/base/progress-bar/progress-bar.vue
- liugezhou_music/src/base/progress-circle/progress-circle.vue
- liugezhou_music/src/api/song.js
+ liugezhou_music/src/components/recommend/recommend.vue
+ liugezhou_music/src/components/singer/singer.vue
+ liugezhou_music/src/common/js/mixin.js
 
 ```
 #### 本节代码开发知识点及代码思路

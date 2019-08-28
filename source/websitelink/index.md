@@ -31,7 +31,7 @@ type: "websitelink"
 #### [APIJSON](https://github.com/APIJSON/APIJSON)
 >自动化接口管理工具，后端自动生成接口文档，前端可以定制任何数据、任何结构.
 
-### 图片相关
+### 设计图片相关
 ---
 #### [无版权美丽图片](https://www.ssyer.com/home)
 >美丽的图片，可做背景图片使用
@@ -41,6 +41,13 @@ type: "websitelink"
 
 #### [图片压缩–网站](https://www.iloveimg.com/zh-cn/compress-image/compress-jpg)
 >有的时候你需要快速对一张图片进行压缩，可以收藏此网站，方便下回使用，降低搜索成本。
+
+### [设计网站大全](http://hao.shejidaren.com/index.html)
+> 做设计的应该去关注的一个网站，此网站的知识、工具等聚合应该会让做设计的人产生一丝共鸣。
+
+### [美化二维码](http://www.mobanma.com)
+> 之前二维码的制作用的是草料二维码，无意间发现这样一个网站，也是关于二维码的制作。
+
 
 ### CSS相关
 ---

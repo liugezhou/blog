@@ -21,6 +21,11 @@
   %>
   <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="六个周的个人博客">
+  <meta property="og:description" content="这里是六个周的个人博客">
+  <meta property="og:image" content="http://img.liugezhou.online/time2.png">
+  <meta property="og:url" content="https://www.liugezhou.online">
   <%- open_graph({twitter_id: theme.twitter, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
   <% if (theme.rss){ %>
     <link rel="alternate" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml">

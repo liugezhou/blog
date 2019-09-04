@@ -136,19 +136,19 @@
 
 
 
-<meta name="description" content="本节总览  本节代码提交至：chapter7  效果预览：  本节实现点击歌手提交mutation，将歌手数据存储在store中，涉及到整个Vuex技术栈。本节主要代码开发是singer-detail组件。singer-detail调用开发的music-list组件：将歌手歌曲数据、背景图片以及歌手姓名传入到music-list组件中。music-list组件中分为上半部分与下半部分两块，下半部分">
+<meta name="description" content="本节总览  本节代码提交至：chapter7  效果预览：">
 <meta name="keywords" content="移动音乐APP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="七、歌手详情页面--Vuex存储歌手数据">
 <meta property="og:url" content="http://liugezhou.online/2019/01/19/七、歌手详情页面--Vuex存储歌手数据/index.html">
 <meta property="og:site_name" content="六个周">
-<meta property="og:description" content="本节总览  本节代码提交至：chapter7  效果预览：  本节实现点击歌手提交mutation，将歌手数据存储在store中，涉及到整个Vuex技术栈。本节主要代码开发是singer-detail组件。singer-detail调用开发的music-list组件：将歌手歌曲数据、背景图片以及歌手姓名传入到music-list组件中。music-list组件中分为上半部分与下半部分两块，下半部分">
+<meta property="og:description" content="本节总览  本节代码提交至：chapter7  效果预览：">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://img.liugezhou.online/Vue2-07.png">
-<meta property="og:updated_time" content="2019-08-23T10:22:53.052Z">
+<meta property="og:updated_time" content="2019-09-04T01:50:41.262Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="七、歌手详情页面--Vuex存储歌手数据">
-<meta name="twitter:description" content="本节总览  本节代码提交至：chapter7  效果预览：  本节实现点击歌手提交mutation，将歌手数据存储在store中，涉及到整个Vuex技术栈。本节主要代码开发是singer-detail组件。singer-detail调用开发的music-list组件：将歌手歌曲数据、背景图片以及歌手姓名传入到music-list组件中。music-list组件中分为上半部分与下半部分两块，下半部分">
+<meta name="twitter:description" content="本节总览  本节代码提交至：chapter7  效果预览：">
 <meta name="twitter:image" content="http://img.liugezhou.online/Vue2-07.png">
 
 
@@ -387,8 +387,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-08-23T18:22:53+08:00">
-                2019-08-23
+              <time title="更新于" itemprop="dateModified" datetime="2019-09-04T09:50:41+08:00">
+                2019-09-04
               </time>
             
           </span>
@@ -499,7 +499,8 @@
 <blockquote>
 <p>本节代码提交至：<a href="https://github.com/liugezhou/liugezhou_music/tree/chapter7" target="_blank" rel="noopener">chapter7</a></p>
 </blockquote>
-<h3 id="效果预览："><a href="#效果预览：" class="headerlink" title="效果预览："></a>效果预览：</h3><p><img src="http://img.liugezhou.online/Vue2-07.png" alt="singer-detail.png"></p>
+<h4 id="效果预览："><a href="#效果预览：" class="headerlink" title="效果预览："></a>效果预览：</h4><p><img src="http://img.liugezhou.online/Vue2-07.png" alt="singer-detail.png"></p>
+<a id="more"></a>
 <blockquote>
 <p>本节实现点击歌手提交mutation，将歌手数据存储在store中，涉及到整个Vuex技术栈。<br>本节主要代码开发是singer-detail组件。<br>singer-detail调用开发的music-list组件：将歌手歌曲数据、背景图片以及歌手姓名传入到music-list组件中。<br>music-list组件中分为上半部分与下半部分两块，下半部分的歌曲列表再分离成song-list组件。<br>即总共包含三个组件的开发，还有一些酷炫、美丽的花朵、图片拖拽等的效果。</p>
 </blockquote>
@@ -823,7 +824,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#本节总览"><span class="nav-number">1.</span> <span class="nav-text">本节总览</span></a></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#效果预览："><span class="nav-number"></span> <span class="nav-text">效果预览：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代码更新"><span class="nav-number">1.</span> <span class="nav-text">代码更新</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本节代码开发知识点及代码思路："><span class="nav-number"></span> <span class="nav-text">本节代码开发知识点及代码思路：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、transition-进入-离开-amp-列表过渡"><span class="nav-number">1.</span> <span class="nav-text">一、transition | 进入/离开 &amp; 列表过渡</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、Vuex"><span class="nav-number">2.</span> <span class="nav-text">二、Vuex</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、通过jsonp–以singer-id为参数，获取歌手详情数据"><span class="nav-number">3.</span> <span class="nav-text">三、通过jsonp–以singer.id为参数，获取歌手详情数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四、歌手详情数据处理和song类的封装"><span class="nav-number">4.</span> <span class="nav-text">四、歌手详情数据处理和song类的封装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#五、music-list组件开发"><span class="nav-number">5.</span> <span class="nav-text">五、music-list组件开发</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#后面的代码暂时就不分析了，直接github上clone下chapter7分支代码即可，这个歌手详情页真是美的不像话。"><span class="nav-number">6.</span> <span class="nav-text">后面的代码暂时就不分析了，直接github上clone下chapter7分支代码即可，这个歌手详情页真是美的不像话。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#20190823代码分析更新"><span class="nav-number">7.</span> <span class="nav-text">20190823代码分析更新</span></a></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#本节总览"><span class="nav-number">1.</span> <span class="nav-text">本节总览</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#效果预览："><span class="nav-number">2.</span> <span class="nav-text">效果预览：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码更新"><span class="nav-number">3.</span> <span class="nav-text">代码更新</span></a></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#本节代码开发知识点及代码思路："><span class="nav-number"></span> <span class="nav-text">本节代码开发知识点及代码思路：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、transition-进入-离开-amp-列表过渡"><span class="nav-number">1.</span> <span class="nav-text">一、transition | 进入/离开 &amp; 列表过渡</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、Vuex"><span class="nav-number">2.</span> <span class="nav-text">二、Vuex</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、通过jsonp–以singer-id为参数，获取歌手详情数据"><span class="nav-number">3.</span> <span class="nav-text">三、通过jsonp–以singer.id为参数，获取歌手详情数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四、歌手详情数据处理和song类的封装"><span class="nav-number">4.</span> <span class="nav-text">四、歌手详情数据处理和song类的封装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#五、music-list组件开发"><span class="nav-number">5.</span> <span class="nav-text">五、music-list组件开发</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#后面的代码暂时就不分析了，直接github上clone下chapter7分支代码即可，这个歌手详情页真是美的不像话。"><span class="nav-number">6.</span> <span class="nav-text">后面的代码暂时就不分析了，直接github上clone下chapter7分支代码即可，这个歌手详情页真是美的不像话。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#20190823代码分析更新"><span class="nav-number">7.</span> <span class="nav-text">20190823代码分析更新</span></a></li></ol></li></div>
             
 
           </div>
@@ -857,7 +858,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">43.1k</span>
+    <span title="Site words total count">43.3k</span>
   
 </div>
 

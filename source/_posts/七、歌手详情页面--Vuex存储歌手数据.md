@@ -11,7 +11,7 @@ tags: 移动音乐APP
 > 本节代码提交至：[chapter7](https://github.com/liugezhou/liugezhou_music/tree/chapter7)
 #### 效果预览：
 ![singer-detail.png](http://img.liugezhou.online/Vue2-07.png)
-
+<!--more-->
 >本节实现点击歌手提交mutation，将歌手数据存储在store中，涉及到整个Vuex技术栈。
 本节主要代码开发是singer-detail组件。
 singer-detail调用开发的music-list组件：将歌手歌曲数据、背景图片以及歌手姓名传入到music-list组件中。

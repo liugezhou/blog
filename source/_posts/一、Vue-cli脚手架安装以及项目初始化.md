@@ -8,6 +8,7 @@ tags: 移动音乐APP
 ---
 ##### 本章节分为两个部分，第一部分简单介绍下Vue-cli的脚手架安装，第二部分介绍下项目目录以及图标字体、公共样式等资源的准备。
 ---
+<!--more-->
 ### 一、Vue-cli脚手架安装
 >在进行项目初始化安装cli前，我们先在github上新建一个空的项目，项目名字自起。
 我新建gitHub地址为：https://github.com/liugezhou/liugezhou_music

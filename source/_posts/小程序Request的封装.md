@@ -12,7 +12,7 @@ tags:
 ---
 ####  通用封装
 >在utils文件夹下新建两个文件，config.js以及request.js,代码分别如下。
-> <!-- more -->
+<!-- more -->
     //`config.js`---一些全局变量
     module.exports = {
     appid: "wxcXXXXXXXXXXXXXX349f",

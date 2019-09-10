@@ -145,7 +145,7 @@
 <meta property="og:description" content="本节代码更新至：https://github.com/liugezhou/liugezhou_music/tree/chapter4  效果预览：">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://img.liugezhou.online/Vue2-04.png">
-<meta property="og:updated_time" content="2019-09-04T01:49:53.460Z">
+<meta property="og:updated_time" content="2019-09-10T08:43:16.744Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="四、热门歌单推荐">
 <meta name="twitter:description" content="本节代码更新至：https://github.com/liugezhou/liugezhou_music/tree/chapter4  效果预览：">
@@ -387,8 +387,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-09-04T09:49:53+08:00">
-                2019-09-04
+              <time title="更新于" itemprop="dateModified" datetime="2019-09-10T16:43:16+08:00">
+                2019-09-10
               </time>
             
           </span>
@@ -458,7 +458,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  946
+                  1k
                 </span>
               
 
@@ -503,8 +503,8 @@
 
 <h3 id="前置知识点"><a href="#前置知识点" class="headerlink" title="前置知识点"></a>前置知识点</h3><h4 id="axios"><a href="#axios" class="headerlink" title="axios"></a>axios</h4><hr>
 <blockquote>
-<p>qq音乐在抓取热门歌单推荐数据时，不能通过前面说过的jsonp直接获取，原因为qq做了一个host域名为qq域名的访问(host referer的限制），因此需要后端代理的方式去解决。<br>热门歌单推荐使用axios进行数据抓取。<br>axios官网：<a href="https://github.com/axios/axios" target="_blank" rel="noopener">https://github.com/axios/axios</a></p>
-<h5 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h5><ul>
+<p>qq音乐在抓取热门歌单推荐数据时，不能通过前面说过的jsonp直接获取，原因为qq做了一个host域名为qq域名的访问(host referer的限制,在Request Header中我们可以看到Host字段为：c.y.qq.com），因此需要后端代理的方式去解决。<br>热门歌单推荐–使用axios进行数据抓取。</p>
+<h6 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h6><ul>
 <li>Make <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest" target="_blank" rel="noopener">XMLHttpRequests</a> from the browser</li>
 <li>Make <a href="http://nodejs.org/api/http.html" target="_blank" rel="noopener">http</a> requests from node.js</li>
 <li>Supports the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank" rel="noopener">Promise</a> API</li>
@@ -514,17 +514,19 @@
 <li>Automatic transforms for JSON data</li>
 <li>Client side support for protecting against <a href="http://en.wikipedia.org/wiki/Cross-site_request_forgery" target="_blank" rel="noopener">XSRF</a></li>
 </ul>
-<h5 id="使用："><a href="#使用：" class="headerlink" title="使用："></a>使用：</h5></blockquote>
+<h6 id="使用："><a href="#使用：" class="headerlink" title="使用："></a>使用：</h6></blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install axios</span><br><span class="line">&lt;script src=&quot;https://unpkg.com/axios/dist/axios.min.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
-<p>其它不介绍。</p>
 <h4 id="flex布局"><a href="#flex布局" class="headerlink" title="flex布局"></a>flex布局</h4><hr>
 <blockquote>
-<p>热门歌单推荐使用了双flex布局，关于flex布局的温习：<a href="https://www.liugezhou.online/2018/08/22/Flex%E5%B8%83%E5%B1%80/" target="_blank" rel="noopener">https://www.liugezhou.online/2018/08/22/Flex%E5%B8%83%E5%B1%80/</a></p>
+<p>热门歌单推荐布局使用了双flex布局，关于flex布局的温习：<a href="https://www.liugezhou.online/2018/08/22/Flex%E5%B8%83%E5%B1%80/" target="_blank" rel="noopener">https://www.liugezhou.online/2018/08/22/Flex%E5%B8%83%E5%B1%80/</a></p>
 </blockquote>
 <h4 id="better-scroll"><a href="#better-scroll" class="headerlink" title="better-scroll"></a>better-scroll</h4><hr>
 <blockquote>
-<p>关于better-scroll的学习：<a href="https://github.com/ustbhuangyi/better-scroll" target="_blank" rel="noopener">https://github.com/ustbhuangyi/better-scroll</a><br><code>better-scroll</code>层级是父子级，只有第一个元素才会滚动</p>
+<p><code>better-scroll</code>层级是父子级，只有第一个元素才会滚动。</p>
+<p>使用<code>better-scroll</code>去抽象一个基础组件<code>scroll</code>，后面的每个页面基本都会用到，而且这个抽象出来的基础组件，在我们工作中使用也是大大的方面。</p>
+<p>一定好好好看下官方的说明，才能更好的对此插件有一个清除明白的使用：  </p>
+<p><a href="https://better-scroll.github.io/docs/zh-CN/guide/" target="_blank" rel="noopener">better-scroll的官方文档：</a><br><a href="https://zhuanlan.zhihu.com/p/27407024" target="_blank" rel="noopener">当better-scroll遇见Vue</a></p>
 </blockquote>
 <h4 id="vue-lazyload懒加载"><a href="#vue-lazyload懒加载" class="headerlink" title="vue-lazyload懒加载"></a>vue-lazyload懒加载</h4><hr>
 <blockquote>
@@ -544,23 +546,18 @@
 </li>
 <li><p>recommend.vue组件<br>获取到数据后，我们需要使用此数据且在recommend.vue组件中布局：<br>代码演示：<a href="https://github.com/liugezhou/liugezhou_music/blob/chapter4/src/components/recommend/recommend.vue" target="_blank" rel="noopener">戳这里</a>  </p>
 </li>
-</ol>
-<ol start="4">
-<li><p>scroll.vue–base组件<br>将scroll写成了一个基础组件。<br>代码演示：<a href="https://github.com/liugezhou/liugezhou_music/blob/chapter4/src/base/scroll/scroll.vue" target="_blank" rel="noopener">戳这里</a><br>这个简单的scroll组件比较经典，还里一个坑就是在recommend组件中确保数据渲染后去调用scroll.vue组件的refresh()方法。</p>
+<li><p>scroll.vue–base组件<br>将scroll写成了一个基础组件。<br>代码演示：<a href="https://github.com/liugezhou/liugezhou_music/blob/chapter4/src/base/scroll/scroll.vue" target="_blank" rel="noopener">戳这里</a><br>这个简单的scroll组件比较经典，还里一个大坑就是在recommend组件中确保数据渲染后去调用scroll.vue组件的refresh()方法。<br>在这里对图片的加载添加了一个load事件的监听。</p>
 </li>
-<li><p>图片懒加载<br>第三方插件：<a href="https://github.com/hilongjw/vue-lazyload" target="_blank" rel="noopener">vue-lazyload</a><br><code>npm i vue-lazyload -S</code>,详细安装、引入–参考上述文档链接。<br>代码演示:<a href="https://github.com/liugezhou/liugezhou_music/blob/chapter4/src/main.js" target="_blank" rel="noopener">戳这里</a><br>使用：在歌单中图片部分：<code>&lt;img width=&quot;60&quot; height=&quot;60&quot; v-lazy=&quot;item.imgurl&quot;  /&gt;</code></p>
-</li>
-<li><p><code>class=&quot;needsclick&quot;</code><br><code>fastclick</code>与<code>scroll</code>组件的click事件发生了冲突，这个时候只要在被点击的图片上加上如上的class即可。</p>
-</li>
-<li><p>loading基础组件的开发和应用<br>loading组件也是一个基础组件，在整个项目中会多次用到，所以我们将此组件进行封装。<br>代码演示：<a href="https://github.com/liugezhou/liugezhou_music/blob/chapter4/src/base/loading/loading.vue" target="_blank" rel="noopener">戳这里</a><br>在所需要的组件中使用：</p>
+<li><p>图片懒加载<br>第三方插件：<a href="https://github.com/hilongjw/vue-lazyload" target="_blank" rel="noopener">vue-lazyload</a></p>
 </li>
 </ol>
-<ul>
-<li><code>import Loading from &#39;base/loading/loading</code>,</li>
-<li>在components中注册</li>
-<li>在DOM中自己加一个容器并将组件引入<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;   &lt;div class=&quot;loding-container&quot; v-show=&quot;!data.length&quot;&gt;</span><br><span class="line">&gt;       &lt;loading /&gt;</span><br><span class="line">&gt;   &lt;/div&gt;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+<p><code>npm i vue-lazyload -S</code>,详细安装、引入–参考上述文档链接。</p>
+<p>代码演示:<a href="https://github.com/liugezhou/liugezhou_music/blob/chapter4/src/main.js" target="_blank" rel="noopener">戳这里</a> </p>
+<p>main.js中引入，在需要使用地方—图片部分：<code>&lt;img width=&quot;60&quot; height=&quot;60&quot; v-lazy=&quot;item.imgurl&quot;  /&gt;</code></p>
+<p>6.<code>better-scroll</code>与<code>fastclick</code>关于点击事件的冲突<br>之前是需要在轮播图片的img标签上添加：<code>class=&quot;needsclick&quot;</code><br>但是后来，<code>better-scrll</code>做了优化，所以这里就不需要再设置什么了。</p>
+<ol start="7">
+<li>loading基础组件的开发和应用<br>loading组件也是一个基础组件，在整个项目中会多次用到，所以我们将此组件进行封装。<br>代码演示：<a href="https://github.com/liugezhou/liugezhou_music/blob/chapter4/src/base/loading/loading.vue" target="_blank" rel="noopener">戳这里</a><br>在所需要的组件中引入使用：</li>
+</ol>
 </blockquote>
 <blockquote>
 <p>关于本节如果你有任何问题可以在下方留言。<br>如有疑问请添加我的微信号：18231133236。欢迎交流！<br>更多内容，请访问的我的个人博客：<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fwww.liugezhou.online" target="_blank" rel="noopener">https://www.liugezhou.online</a>.</p>
@@ -836,7 +833,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#效果预览："><span class="nav-number">1.</span> <span class="nav-text">效果预览：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#前置知识点"><span class="nav-number">2.</span> <span class="nav-text">前置知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#axios"><span class="nav-number">2.1.</span> <span class="nav-text">axios</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Features"><span class="nav-number">2.1.1.</span> <span class="nav-text">Features</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用："><span class="nav-number">2.1.2.</span> <span class="nav-text">使用：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#flex布局"><span class="nav-number">2.2.</span> <span class="nav-text">flex布局</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#better-scroll"><span class="nav-number">2.3.</span> <span class="nav-text">better-scroll</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vue-lazyload懒加载"><span class="nav-number">2.4.</span> <span class="nav-text">vue-lazyload懒加载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#loading插件"><span class="nav-number">2.5.</span> <span class="nav-text">loading插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码介绍"><span class="nav-number">2.6.</span> <span class="nav-text">代码介绍</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#效果预览："><span class="nav-number">1.</span> <span class="nav-text">效果预览：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#前置知识点"><span class="nav-number">2.</span> <span class="nav-text">前置知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#axios"><span class="nav-number">2.1.</span> <span class="nav-text">axios</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Features"><span class="nav-number">2.1.0.1.</span> <span class="nav-text">Features</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#使用："><span class="nav-number">2.1.0.2.</span> <span class="nav-text">使用：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#flex布局"><span class="nav-number">2.2.</span> <span class="nav-text">flex布局</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#better-scroll"><span class="nav-number">2.3.</span> <span class="nav-text">better-scroll</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vue-lazyload懒加载"><span class="nav-number">2.4.</span> <span class="nav-text">vue-lazyload懒加载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#loading插件"><span class="nav-number">2.5.</span> <span class="nav-text">loading插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码介绍"><span class="nav-number">2.6.</span> <span class="nav-text">代码介绍</span></a></li></ol></div>
             
 
           </div>
@@ -870,7 +867,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">44.4k</span>
+    <span title="Site words total count">44.9k</span>
   
 </div>
 

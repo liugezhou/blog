@@ -144,7 +144,7 @@
 <meta property="og:site_name" content="六个周">
 <meta property="og:description" content="学习Vue也有差不多两年了，业务代码呱呱的写，一来二去就那两下子，只有拳脚功夫渐涨，而忽略了内功的修炼，气运丹田，将Vue秘籍再次翻阅咀嚼一下子。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-23T01:29:11.672Z">
+<meta property="og:updated_time" content="2019-09-10T06:22:16.865Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue.js文档再回顾">
 <meta name="twitter:description" content="学习Vue也有差不多两年了，业务代码呱呱的写，一来二去就那两下子，只有拳脚功夫渐涨，而忽略了内功的修炼，气运丹田，将Vue秘籍再次翻阅咀嚼一下子。">
@@ -385,8 +385,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-08-23T09:29:11+08:00">
-                2019-08-23
+              <time title="更新于" itemprop="dateModified" datetime="2019-09-10T14:22:16+08:00">
+                2019-09-10
               </time>
             
           </span>
@@ -467,7 +467,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.1k
+                  1.3k
                 </span>
               
 
@@ -483,7 +483,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  4
                 </span>
               
             </div>
@@ -541,7 +541,7 @@
 </blockquote>
 <h3 id="事件修饰符"><a href="#事件修饰符" class="headerlink" title="事件修饰符"></a>事件修饰符</h3><blockquote>
 <ul>
-<li><code>.stop</code> (阻止单击事件继续传播—-只触发当前点击事件，不会触发父元素的点击事件)</li>
+<li><code>.stop</code> (阻止单击事件继续传播—-只触发当前点击事件，不会触发父元素的点击事件)—⭐⭐⭐</li>
 <li><code>.self</code> (只当事件是从事件绑定的元素本身触发时才触发回调)</li>
 <li><code>.prevent</code> (提交事件不再重载页面—-用于阻止事件的默认行为)</li>
 <li><code>.capture</code> (事件触发从包含这个元素的顶层开始往下触发)</li>
@@ -549,6 +549,15 @@
 <li><code>.passive</code>(当我们在监听元素滚动事件的时候，会一直触发onscroll事件，在pc端是没啥问题的，但是在移动端，会让我们的网页变卡，因此我们使用这个修饰符的时候，相当于给onscroll事件整了一个.lazy修饰符)</li>
 <li><code>.native</code> (将原生事件绑定到组件)</li>
 </ul>
+</blockquote>
+<h3 id="记住全局注册的行为必须在根Vue实例（通过new-Vue）创建之前发生。"><a href="#记住全局注册的行为必须在根Vue实例（通过new-Vue）创建之前发生。" class="headerlink" title="记住全局注册的行为必须在根Vue实例（通过new Vue）创建之前发生。"></a>记住全局注册的行为必须在根Vue实例（通过new Vue）创建之前发生。</h3><h3 id="将原生事件绑定到组件上"><a href="#将原生事件绑定到组件上" class="headerlink" title="将原生事件绑定到组件上"></a>将原生事件绑定到组件上</h3><blockquote>
+<p>想要在一个组件的根元素上直接监听一个原生事件，可以使用 <code>@click.native</code>。</p>
+</blockquote>
+<h3 id="访问根实例"><a href="#访问根实例" class="headerlink" title="访问根实例"></a>访问根实例</h3><blockquote>
+<p>在每个new Vue实例的子组件中，其根实例可以通过<code>$root</code>属性进行访问。—-对于 demo 或非常小型的有少量组件的应用来说这是很方便的。但对中大型应用来说就不适用了，因此也可以说我们在开发过程中极大概率会是不适用这个<code>$root</code>的。</p>
+</blockquote>
+<h3 id="混入"><a href="#混入" class="headerlink" title="混入"></a>混入</h3><blockquote>
+<p>混入（mixin）是用来分发Vue组件中的可复用功能。比如两个组件中都使用了某一个方法、某一个action或者某一个Getters，可以在mixin中集中管理，只要在这两个组件中引入mixin便可共用了。</p>
 </blockquote>
 <h3 id="过渡类名"><a href="#过渡类名" class="headerlink" title="过渡类名"></a>过渡类名</h3><blockquote>
 <p>在进入/离开的过渡中，会有6个class切换</p>
@@ -841,7 +850,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#学习Vue也有差不多两年了，业务代码呱呱的写，一来二去就那两下子，只有拳脚功夫渐涨，而忽略了内功的修炼，气运丹田，将Vue秘籍再次翻阅咀嚼一下子。"><span class="nav-number">1.</span> <span class="nav-text">学习Vue也有差不多两年了，业务代码呱呱的写，一来二去就那两下子，只有拳脚功夫渐涨，而忽略了内功的修炼，气运丹田，将Vue秘籍再次翻阅咀嚼一下子。</span></a></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-freeze"><span class="nav-number"></span> <span class="nav-text">Object.freeze()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生命周期"><span class="nav-number"></span> <span class="nav-text">生命周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-once"><span class="nav-number"></span> <span class="nav-text">v-once</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-if条件渲染–template"><span class="nav-number"></span> <span class="nav-text">v-if条件渲染–template</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vue中包含的七个观察数组的方法"><span class="nav-number"></span> <span class="nav-text">Vue中包含的七个观察数组的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-for-with-v-if"><span class="nav-number"></span> <span class="nav-text">v-for with v-if</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件修饰符"><span class="nav-number"></span> <span class="nav-text">事件修饰符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过渡类名"><span class="nav-number"></span> <span class="nav-text">过渡类名</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#学习Vue也有差不多两年了，业务代码呱呱的写，一来二去就那两下子，只有拳脚功夫渐涨，而忽略了内功的修炼，气运丹田，将Vue秘籍再次翻阅咀嚼一下子。"><span class="nav-number">1.</span> <span class="nav-text">学习Vue也有差不多两年了，业务代码呱呱的写，一来二去就那两下子，只有拳脚功夫渐涨，而忽略了内功的修炼，气运丹田，将Vue秘籍再次翻阅咀嚼一下子。</span></a></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-freeze"><span class="nav-number"></span> <span class="nav-text">Object.freeze()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生命周期"><span class="nav-number"></span> <span class="nav-text">生命周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-once"><span class="nav-number"></span> <span class="nav-text">v-once</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-if条件渲染–template"><span class="nav-number"></span> <span class="nav-text">v-if条件渲染–template</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vue中包含的七个观察数组的方法"><span class="nav-number"></span> <span class="nav-text">Vue中包含的七个观察数组的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-for-with-v-if"><span class="nav-number"></span> <span class="nav-text">v-for with v-if</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件修饰符"><span class="nav-number"></span> <span class="nav-text">事件修饰符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#记住全局注册的行为必须在根Vue实例（通过new-Vue）创建之前发生。"><span class="nav-number"></span> <span class="nav-text">记住全局注册的行为必须在根Vue实例（通过new Vue）创建之前发生。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将原生事件绑定到组件上"><span class="nav-number"></span> <span class="nav-text">将原生事件绑定到组件上</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#访问根实例"><span class="nav-number"></span> <span class="nav-text">访问根实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#混入"><span class="nav-number"></span> <span class="nav-text">混入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过渡类名"><span class="nav-number"></span> <span class="nav-text">过渡类名</span></a></li></div>
             
 
           </div>
@@ -875,7 +884,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">44.4k</span>
+    <span title="Site words total count">44.9k</span>
   
 </div>
 

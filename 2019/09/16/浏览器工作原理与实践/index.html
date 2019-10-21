@@ -144,7 +144,7 @@
 <meta property="og:site_name" content="六个周">
 <meta property="og:description" content="导读本文主要是从极客时间专栏《浏览器工作原理与实践》，对其每一章的学习进行系统性总结。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-30T03:18:02.131Z">
+<meta property="og:updated_time" content="2019-10-21T05:22:06.188Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浏览器工作原理与实践">
 <meta name="twitter:description" content="导读本文主要是从极客时间专栏《浏览器工作原理与实践》，对其每一章的学习进行系统性总结。">
@@ -385,8 +385,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-09-30T11:18:02+08:00">
-                2019-09-30
+              <time title="更新于" itemprop="dateModified" datetime="2019-10-21T13:22:06+08:00">
+                2019-10-21
               </time>
             
           </span>
@@ -467,7 +467,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  5.2k
+                  5.9k
                 </span>
               
 
@@ -483,7 +483,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  17
+                  20
                 </span>
               
             </div>
@@ -731,7 +731,7 @@
 <blockquote>
 <p>Promise解决的是异步编码风格的问题。</p>
 </blockquote>
-<h5 id="Promise：消灭嵌套调用和多次错误处理"><a href="#Promise：消灭嵌套调用和多次错误处理" class="headerlink" title="Promise：消灭嵌套调用和多次错误处理"></a>Promise：消灭嵌套调用和多次错误处理</h5><h3 id="浏览器中的页面-3讲"><a href="#浏览器中的页面-3讲" class="headerlink" title="浏览器中的页面(3讲)"></a>浏览器中的页面(3讲)</h3><h4 id="21-Chrome开发者工具：利用网络面板做性能分析"><a href="#21-Chrome开发者工具：利用网络面板做性能分析" class="headerlink" title="21 | Chrome开发者工具：利用网络面板做性能分析"></a>21 | Chrome开发者工具：利用网络面板做性能分析</h4><hr>
+<h5 id="Promise：消灭嵌套调用和多次错误处理"><a href="#Promise：消灭嵌套调用和多次错误处理" class="headerlink" title="Promise：消灭嵌套调用和多次错误处理"></a>Promise：消灭嵌套调用和多次错误处理</h5><h3 id="浏览器中的页面-8讲"><a href="#浏览器中的页面-8讲" class="headerlink" title="浏览器中的页面(8讲)"></a>浏览器中的页面(8讲)</h3><h4 id="21-Chrome开发者工具：利用网络面板做性能分析"><a href="#21-Chrome开发者工具：利用网络面板做性能分析" class="headerlink" title="21 | Chrome开发者工具：利用网络面板做性能分析"></a>21 | Chrome开发者工具：利用网络面板做性能分析</h4><hr>
 <blockquote>
 <p>这节内容是介绍了我们平时开发用到的Chrome浏览器的面板。下面记录一下从这篇文章加深印象的知识点：</p>
 <p>控制器：红色圆点表示“开始/暂停抓包”。<br>Disabled cache:禁止从Cache中加载资源。<br>下载信息概要：重点关注【DOMContentLoaded】和【Load】两个事件。</p>
@@ -745,7 +745,39 @@
 </ul>
 </blockquote>
 <h4 id="22-DOM树-JavaScript是如何影响DOM树构建的"><a href="#22-DOM树-JavaScript是如何影响DOM树构建的" class="headerlink" title="22 | DOM树 | JavaScript是如何影响DOM树构建的"></a>22 | DOM树 | JavaScript是如何影响DOM树构建的</h4><hr>
+<p><code>什么是DOM？</code> </p>
 <blockquote>
+<p>从网络传给渲染引擎的HTML文件字节流是无法直接被渲染引擎理解的。<br>所以要将其转化为渲染引擎能够理解的内部结构。<br>这个结构就是DOM。<br><code>DOM三个层面的作用：</code>  </p>
+<ul>
+<li>从页面视角看，DOM是生成页面的基础数据结构。  </li>
+<li>从JS视角来看，DOM提供了给JS脚本操作的接口，JS通过这套接口可以对DOM进行访问，从而改变文档的内容、结构、样式。  </li>
+<li>从安全视角来看，DOM是一道安全防护线。一些不安全的内容在DOM解析阶段被拒之门外。<br>总结：DOM是表述HTML的内部文件，它将Web页面和JavaScript脚本连接起来，并过滤一些不安全的内容。<br><code>DOM树如何生成</code><br>通过<code>HTML解析器</code>：它存在与渲染引擎内部，负责将HTML字节流转换为DOM结构。<br>注意：HTML解析器不是等整个文档加载完毕之后再去解析的，而是网络进程加载了多少数据，HTML解析器便解析多少数据。 </li>
+<li>第一个阶段：通过分词器将字节流转换为Token。（分为Tag Token和文本Token），Tag Token又分为StartTag和EndTag。  </li>
+<li>第二三阶段同步：需要将Token解析为DOM节点，并将DOM节点添加到DOM树中。  </li>
+</ul>
+</blockquote>
+<blockquote>
+<p>JavaScript的下载过程会阻塞DOM的解析。Chrome对此做了优化，其中最主要的一个优化是<code>预解析操作</code>(预解析线程会提前下载这些文件)。 </p>
+</blockquote>
+<h4 id="23-渲染流水线：CSS如何影响首次加载时的白屏时间"><a href="#23-渲染流水线：CSS如何影响首次加载时的白屏时间" class="headerlink" title="23 | 渲染流水线：CSS如何影响首次加载时的白屏时间"></a>23 | 渲染流水线：CSS如何影响首次加载时的白屏时间</h4><hr>
+<p><code>渲染流水线视角下的CSS</code> </p>
+<blockquote>
+<p>合成布局树需要CSSOM和DOM。</p>
+</blockquote>
+<blockquote>
+<p>同HTML一样，浏览器渲染引擎是不理解CSS的，需要将其解析成渲染引擎能够理解的结构：CSSOM。<br>CSSOM有两个作用：第一个是提供给JavaScript操作样式表的能力，第二个是为布局树的合成提供基础的样式信息。 </p>
+</blockquote>
+<blockquote>
+<p>等DOM和CSSOM都构建好之后，渲染引擎就会构造布局树.<br>CSS的白屏出现的通常瓶颈主要体现在：下载CSS文件、下载JavaScript文件和执行JavaSCript。  </p>
+</blockquote>
+<blockquote>
+<p>缩短白屏时间的策略：  </p>
+<ul>
+<li>通过内敛JavaScript、内敛CSS来移除这两种类型的文件下载，这样获取到HTML文件后就可以直接开始渲染流程。 </li>
+<li>在不适合内敛的场景下，减少文件体积，比如通过Webpack等工具移除一些不必要的注释，并压缩JavaScript文件。 </li>
+<li>可以将一些不需要在解析HTML阶段使用的JavaScrit，标记上async活defer。 </li>
+<li>对于特大的CSS文件，可以通过媒体查询属性，将其拆分为不同用途的多CSS文件。</li>
+</ul>
 </blockquote>
 
       
@@ -1018,7 +1050,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#导读"><span class="nav-number">1.</span> <span class="nav-text">导读</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#本文主要是从极客时间专栏《浏览器工作原理与实践》，对其每一章的学习进行系统性总结。"><span class="nav-number">1.0.1.</span> <span class="nav-text">本文主要是从极客时间专栏《浏览器工作原理与实践》，对其每一章的学习进行系统性总结。</span></a></li></ol></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#宏观视角下的浏览器-6讲"><span class="nav-number">2.</span> <span class="nav-text">宏观视角下的浏览器(6讲)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#01-Chrome架构：仅仅打开了一个页面，为什么会有四个进程"><span class="nav-number">2.1.</span> <span class="nav-text">01 | Chrome架构：仅仅打开了一个页面，为什么会有四个进程</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#线程-VS-进程"><span class="nav-number">2.1.1.</span> <span class="nav-text">线程 VS 进程</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#02-TCP协议：如何保证页面文件能被完整送达浏览器？"><span class="nav-number">2.2.</span> <span class="nav-text">02 | TCP协议：如何保证页面文件能被完整送达浏览器？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#总结"><span class="nav-number">2.2.1.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#03-HTTP请求流程：为什么很多站点第二次打开速度会很快"><span class="nav-number">2.3.</span> <span class="nav-text">03 | HTTP请求流程：为什么很多站点第二次打开速度会很快</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#浏览器端发起HTTP请求流程"><span class="nav-number">2.3.1.</span> <span class="nav-text">浏览器端发起HTTP请求流程</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#04-导航流程：从输入URL到页面显示，这中间发生了什么？"><span class="nav-number">2.4.</span> <span class="nav-text">04 | 导航流程：从输入URL到页面显示，这中间发生了什么？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器中的JavaScript执行机制-5讲"><span class="nav-number">3.</span> <span class="nav-text">浏览器中的JavaScript执行机制 (5讲)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#07-变量提升：JavaScript代码是按顺序执行的吗？"><span class="nav-number">3.1.</span> <span class="nav-text">07 | 变量提升：JavaScript代码是按顺序执行的吗？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#08-调用栈：为什么JavaScript代码会出现栈溢出？"><span class="nav-number">3.2.</span> <span class="nav-text">08 | 调用栈：为什么JavaScript代码会出现栈溢出？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#09-块级作用域：var缺陷以及为什么要引入let和const？"><span class="nav-number">3.3.</span> <span class="nav-text">09 | 块级作用域：var缺陷以及为什么要引入let和const？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-作用域链和闭包-：代码中出现相同的变量，JavaScript引擎是如何选择的？"><span class="nav-number">3.4.</span> <span class="nav-text">10 | 作用域链和闭包 ：代码中出现相同的变量，JavaScript引擎是如何选择的？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-this：从JavaScript执行上下文的视角讲清楚this"><span class="nav-number">3.5.</span> <span class="nav-text">11 | this：从JavaScript执行上下文的视角讲清楚this</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#V8工作原理-3讲"><span class="nav-number">4.</span> <span class="nav-text">V8工作原理(3讲)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#12-栈空间和堆空间：数据是如何存储的？"><span class="nav-number">4.1.</span> <span class="nav-text">12 | 栈空间和堆空间：数据是如何存储的？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13-垃圾回收：垃圾数据是如何自动回收的？"><span class="nav-number">4.2.</span> <span class="nav-text">13 | 垃圾回收：垃圾数据是如何自动回收的？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#调用栈中的数据是如何回收的"><span class="nav-number">4.2.1.</span> <span class="nav-text">调用栈中的数据是如何回收的</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#堆中的数据是如何回收的"><span class="nav-number">4.2.2.</span> <span class="nav-text">堆中的数据是如何回收的</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#副垃圾回收器"><span class="nav-number">4.2.3.</span> <span class="nav-text">副垃圾回收器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#主垃圾回收器"><span class="nav-number">4.2.4.</span> <span class="nav-text">主垃圾回收器</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14-编译器和解释器：V8是如何执行一段JavaScript代码的？"><span class="nav-number">4.3.</span> <span class="nav-text">14 | 编译器和解释器：V8是如何执行一段JavaScript代码的？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#编译器和解释器"><span class="nav-number">4.3.1.</span> <span class="nav-text">编译器和解释器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#V8时如何执行一段JavaScript代码的"><span class="nav-number">4.3.2.</span> <span class="nav-text">V8时如何执行一段JavaScript代码的</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#JavaScript的性能优化"><span class="nav-number">4.3.3.</span> <span class="nav-text">JavaScript的性能优化</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器中的页面循环系统-5讲"><span class="nav-number">5.</span> <span class="nav-text">浏览器中的页面循环系统(5讲)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#15-消息队列和事件循环：页面上怎么“活”起来的？"><span class="nav-number">5.1.</span> <span class="nav-text">15 | 消息队列和事件循环：页面上怎么“活”起来的？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#在线程运行中处理新任务"><span class="nav-number">5.1.1.</span> <span class="nav-text">在线程运行中处理新任务</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#处理其它线程发送过来的任务"><span class="nav-number">5.1.2.</span> <span class="nav-text">处理其它线程发送过来的任务</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#处理其它进程发送过来的任务"><span class="nav-number">5.1.3.</span> <span class="nav-text">处理其它进程发送过来的任务</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#消息队列中的任务类型"><span class="nav-number">5.1.4.</span> <span class="nav-text">消息队列中的任务类型</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#16-WebAPI：setTimeout是如何实现的？"><span class="nav-number">5.2.</span> <span class="nav-text">16 | WebAPI：setTimeout是如何实现的？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#17-WebAPI：XMLHttpRequest是怎么实现的？"><span class="nav-number">5.3.</span> <span class="nav-text">17 | WebAPI：XMLHttpRequest是怎么实现的？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#回调函数-VS-系统调用栈"><span class="nav-number">5.3.1.</span> <span class="nav-text">回调函数 VS  系统调用栈</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#18-宏任务和微任务：不是所有任务都是一个待遇"><span class="nav-number">5.4.</span> <span class="nav-text">18 | 宏任务和微任务：不是所有任务都是一个待遇</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#19-Promise：使用Promise，告别回调函数"><span class="nav-number">5.5.</span> <span class="nav-text">19 | Promise：使用Promise，告别回调函数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Promise：消灭嵌套调用和多次错误处理"><span class="nav-number">5.5.1.</span> <span class="nav-text">Promise：消灭嵌套调用和多次错误处理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器中的页面-3讲"><span class="nav-number">6.</span> <span class="nav-text">浏览器中的页面(3讲)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#21-Chrome开发者工具：利用网络面板做性能分析"><span class="nav-number">6.1.</span> <span class="nav-text">21 | Chrome开发者工具：利用网络面板做性能分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#22-DOM树-JavaScript是如何影响DOM树构建的"><span class="nav-number">6.2.</span> <span class="nav-text">22 | DOM树 | JavaScript是如何影响DOM树构建的</span></a></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#导读"><span class="nav-number">1.</span> <span class="nav-text">导读</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#本文主要是从极客时间专栏《浏览器工作原理与实践》，对其每一章的学习进行系统性总结。"><span class="nav-number">1.0.1.</span> <span class="nav-text">本文主要是从极客时间专栏《浏览器工作原理与实践》，对其每一章的学习进行系统性总结。</span></a></li></ol></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#宏观视角下的浏览器-6讲"><span class="nav-number">2.</span> <span class="nav-text">宏观视角下的浏览器(6讲)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#01-Chrome架构：仅仅打开了一个页面，为什么会有四个进程"><span class="nav-number">2.1.</span> <span class="nav-text">01 | Chrome架构：仅仅打开了一个页面，为什么会有四个进程</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#线程-VS-进程"><span class="nav-number">2.1.1.</span> <span class="nav-text">线程 VS 进程</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#02-TCP协议：如何保证页面文件能被完整送达浏览器？"><span class="nav-number">2.2.</span> <span class="nav-text">02 | TCP协议：如何保证页面文件能被完整送达浏览器？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#总结"><span class="nav-number">2.2.1.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#03-HTTP请求流程：为什么很多站点第二次打开速度会很快"><span class="nav-number">2.3.</span> <span class="nav-text">03 | HTTP请求流程：为什么很多站点第二次打开速度会很快</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#浏览器端发起HTTP请求流程"><span class="nav-number">2.3.1.</span> <span class="nav-text">浏览器端发起HTTP请求流程</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#04-导航流程：从输入URL到页面显示，这中间发生了什么？"><span class="nav-number">2.4.</span> <span class="nav-text">04 | 导航流程：从输入URL到页面显示，这中间发生了什么？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器中的JavaScript执行机制-5讲"><span class="nav-number">3.</span> <span class="nav-text">浏览器中的JavaScript执行机制 (5讲)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#07-变量提升：JavaScript代码是按顺序执行的吗？"><span class="nav-number">3.1.</span> <span class="nav-text">07 | 变量提升：JavaScript代码是按顺序执行的吗？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#08-调用栈：为什么JavaScript代码会出现栈溢出？"><span class="nav-number">3.2.</span> <span class="nav-text">08 | 调用栈：为什么JavaScript代码会出现栈溢出？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#09-块级作用域：var缺陷以及为什么要引入let和const？"><span class="nav-number">3.3.</span> <span class="nav-text">09 | 块级作用域：var缺陷以及为什么要引入let和const？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-作用域链和闭包-：代码中出现相同的变量，JavaScript引擎是如何选择的？"><span class="nav-number">3.4.</span> <span class="nav-text">10 | 作用域链和闭包 ：代码中出现相同的变量，JavaScript引擎是如何选择的？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-this：从JavaScript执行上下文的视角讲清楚this"><span class="nav-number">3.5.</span> <span class="nav-text">11 | this：从JavaScript执行上下文的视角讲清楚this</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#V8工作原理-3讲"><span class="nav-number">4.</span> <span class="nav-text">V8工作原理(3讲)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#12-栈空间和堆空间：数据是如何存储的？"><span class="nav-number">4.1.</span> <span class="nav-text">12 | 栈空间和堆空间：数据是如何存储的？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13-垃圾回收：垃圾数据是如何自动回收的？"><span class="nav-number">4.2.</span> <span class="nav-text">13 | 垃圾回收：垃圾数据是如何自动回收的？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#调用栈中的数据是如何回收的"><span class="nav-number">4.2.1.</span> <span class="nav-text">调用栈中的数据是如何回收的</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#堆中的数据是如何回收的"><span class="nav-number">4.2.2.</span> <span class="nav-text">堆中的数据是如何回收的</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#副垃圾回收器"><span class="nav-number">4.2.3.</span> <span class="nav-text">副垃圾回收器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#主垃圾回收器"><span class="nav-number">4.2.4.</span> <span class="nav-text">主垃圾回收器</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14-编译器和解释器：V8是如何执行一段JavaScript代码的？"><span class="nav-number">4.3.</span> <span class="nav-text">14 | 编译器和解释器：V8是如何执行一段JavaScript代码的？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#编译器和解释器"><span class="nav-number">4.3.1.</span> <span class="nav-text">编译器和解释器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#V8时如何执行一段JavaScript代码的"><span class="nav-number">4.3.2.</span> <span class="nav-text">V8时如何执行一段JavaScript代码的</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#JavaScript的性能优化"><span class="nav-number">4.3.3.</span> <span class="nav-text">JavaScript的性能优化</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器中的页面循环系统-5讲"><span class="nav-number">5.</span> <span class="nav-text">浏览器中的页面循环系统(5讲)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#15-消息队列和事件循环：页面上怎么“活”起来的？"><span class="nav-number">5.1.</span> <span class="nav-text">15 | 消息队列和事件循环：页面上怎么“活”起来的？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#在线程运行中处理新任务"><span class="nav-number">5.1.1.</span> <span class="nav-text">在线程运行中处理新任务</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#处理其它线程发送过来的任务"><span class="nav-number">5.1.2.</span> <span class="nav-text">处理其它线程发送过来的任务</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#处理其它进程发送过来的任务"><span class="nav-number">5.1.3.</span> <span class="nav-text">处理其它进程发送过来的任务</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#消息队列中的任务类型"><span class="nav-number">5.1.4.</span> <span class="nav-text">消息队列中的任务类型</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#16-WebAPI：setTimeout是如何实现的？"><span class="nav-number">5.2.</span> <span class="nav-text">16 | WebAPI：setTimeout是如何实现的？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#17-WebAPI：XMLHttpRequest是怎么实现的？"><span class="nav-number">5.3.</span> <span class="nav-text">17 | WebAPI：XMLHttpRequest是怎么实现的？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#回调函数-VS-系统调用栈"><span class="nav-number">5.3.1.</span> <span class="nav-text">回调函数 VS  系统调用栈</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#18-宏任务和微任务：不是所有任务都是一个待遇"><span class="nav-number">5.4.</span> <span class="nav-text">18 | 宏任务和微任务：不是所有任务都是一个待遇</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#19-Promise：使用Promise，告别回调函数"><span class="nav-number">5.5.</span> <span class="nav-text">19 | Promise：使用Promise，告别回调函数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Promise：消灭嵌套调用和多次错误处理"><span class="nav-number">5.5.1.</span> <span class="nav-text">Promise：消灭嵌套调用和多次错误处理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器中的页面-8讲"><span class="nav-number">6.</span> <span class="nav-text">浏览器中的页面(8讲)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#21-Chrome开发者工具：利用网络面板做性能分析"><span class="nav-number">6.1.</span> <span class="nav-text">21 | Chrome开发者工具：利用网络面板做性能分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#22-DOM树-JavaScript是如何影响DOM树构建的"><span class="nav-number">6.2.</span> <span class="nav-text">22 | DOM树 | JavaScript是如何影响DOM树构建的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#23-渲染流水线：CSS如何影响首次加载时的白屏时间"><span class="nav-number">6.3.</span> <span class="nav-text">23 | 渲染流水线：CSS如何影响首次加载时的白屏时间</span></a></li></ol></li></div>
             
 
           </div>
@@ -1052,7 +1084,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">55.6k</span>
+    <span title="Site words total count">56.3k</span>
   
 </div>
 

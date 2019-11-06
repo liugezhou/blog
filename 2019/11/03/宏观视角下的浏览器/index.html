@@ -123,7 +123,7 @@
 
 
 
-  <meta name="keywords" content="Licence,">
+  <meta name="keywords" content="浏览器工作原理与实践,">
 
 
 
@@ -136,20 +136,18 @@
 
 
 
-<meta name="description" content="Github上新建项目的时候，会让添加开源许可证，一搬情况下我们自己建项目的时候：Add a licence:None,即：不添加许可证。刚开始的时候我们都不会在意这个许可证到底是什么，但是随着项目专业、职业化，我们一定要d对开源许可证有个清楚的了解。那么，现在就动脑、动手记录一下关于开源许可证的小介绍。">
-<meta name="keywords" content="Licence">
+<meta name="description" content="前端时间在《极客时间》上学了一个专栏，通篇学完干货不少，但理解还是不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的理解来个通篇的文字记录学习，以加深印象，争取做到脑中留痕。本篇是这个专栏的第一章：《宏观视角下的浏览器》。本章分为六讲。01.Chrome架构：仅仅打开一个页面，为什么有四个进程  在谷歌浏览器随便打开一个页面，点击“选项”菜单，选择“更多工具”，点击“任务管理器”，">
+<meta name="keywords" content="浏览器工作原理与实践">
 <meta property="og:type" content="article">
-<meta property="og:title" content="开源许可证介绍">
-<meta property="og:url" content="http://liugezhou.online/2019/07/11/开源许可证介绍/index.html">
+<meta property="og:title" content="No1.宏观视角下的浏览器">
+<meta property="og:url" content="http://liugezhou.online/2019/11/03/宏观视角下的浏览器/index.html">
 <meta property="og:site_name" content="六个周">
-<meta property="og:description" content="Github上新建项目的时候，会让添加开源许可证，一搬情况下我们自己建项目的时候：Add a licence:None,即：不添加许可证。刚开始的时候我们都不会在意这个许可证到底是什么，但是随着项目专业、职业化，我们一定要d对开源许可证有个清楚的了解。那么，现在就动脑、动手记录一下关于开源许可证的小介绍。">
+<meta property="og:description" content="前端时间在《极客时间》上学了一个专栏，通篇学完干货不少，但理解还是不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的理解来个通篇的文字记录学习，以加深印象，争取做到脑中留痕。本篇是这个专栏的第一章：《宏观视角下的浏览器》。本章分为六讲。01.Chrome架构：仅仅打开一个页面，为什么有四个进程  在谷歌浏览器随便打开一个页面，点击“选项”菜单，选择“更多工具”，点击“任务管理器”，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://img.liugezhou.online/licence.jpg">
-<meta property="og:updated_time" content="2019-09-30T03:18:02.119Z">
+<meta property="og:updated_time" content="2019-11-06T14:02:37.270Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="开源许可证介绍">
-<meta name="twitter:description" content="Github上新建项目的时候，会让添加开源许可证，一搬情况下我们自己建项目的时候：Add a licence:None,即：不添加许可证。刚开始的时候我们都不会在意这个许可证到底是什么，但是随着项目专业、职业化，我们一定要d对开源许可证有个清楚的了解。那么，现在就动脑、动手记录一下关于开源许可证的小介绍。">
-<meta name="twitter:image" content="http://img.liugezhou.online/licence.jpg">
+<meta name="twitter:title" content="No1.宏观视角下的浏览器">
+<meta name="twitter:description" content="前端时间在《极客时间》上学了一个专栏，通篇学完干货不少，但理解还是不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的理解来个通篇的文字记录学习，以加深印象，争取做到脑中留痕。本篇是这个专栏的第一章：《宏观视角下的浏览器》。本章分为六讲。01.Chrome架构：仅仅打开一个页面，为什么有四个进程  在谷歌浏览器随便打开一个页面，点击“选项”菜单，选择“更多工具”，点击“任务管理器”，">
 
 
 
@@ -179,13 +177,13 @@
 
 
 
-  <link rel="canonical" href="http://liugezhou.online/2019/07/11/开源许可证介绍/">
+  <link rel="canonical" href="http://liugezhou.online/2019/11/03/宏观视角下的浏览器/">
 
 
 
 
 
-  <title>开源许可证介绍 | 六个周</title>
+  <title>No1.宏观视角下的浏览器 | 六个周</title>
   
 
 
@@ -342,7 +340,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liugezhou.online/2019/07/11/开源许可证介绍/">
+    <link itemprop="mainEntityOfPage" href="http://liugezhou.online/2019/11/03/宏观视角下的浏览器/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liugezhou">
@@ -359,7 +357,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">开源许可证介绍</h2>
+          <h2 class="post-title" itemprop="name headline">No1.宏观视角下的浏览器</h2>
         
 
         <div class="post-meta">
@@ -371,8 +369,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-11T00:00:00+08:00">
-                2019-07-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-03T23:20:00+08:00">
+                2019-11-03
               </time>
             
 
@@ -387,8 +385,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-09-30T11:18:02+08:00">
-                2019-09-30
+              <time title="更新于" itemprop="dateModified" datetime="2019-11-06T22:02:37+08:00">
+                2019-11-06
               </time>
             
           </span>
@@ -406,8 +404,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程概念类/" itemprop="url" rel="index">
-                    <span itemprop="name">编程概念类</span>
+                  <a href="/categories/浏览器工作原理与实践/" itemprop="url" rel="index">
+                    <span itemprop="name">浏览器工作原理与实践</span>
                   </a>
                 </span>
 
@@ -424,8 +422,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/07/11/开源许可证介绍/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/11/开源许可证介绍/" itemprop="commentCount"></span>
+                <a href="/2019/11/03/宏观视角下的浏览器/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/11/03/宏观视角下的浏览器/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -433,7 +431,7 @@
 
           
           
-             <span id="/2019/07/11/开源许可证介绍/" class="leancloud_visitors" data-flag-title="开源许可证介绍">
+             <span id="/2019/11/03/宏观视角下的浏览器/" class="leancloud_visitors" data-flag-title="No1.宏观视角下的浏览器">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -458,7 +456,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  574
+                  3.1k
                 </span>
               
 
@@ -474,7 +472,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  10
                 </span>
               
             </div>
@@ -495,32 +493,118 @@
       
 
       
-        <blockquote>
-<p>Github上新建项目的时候，会让添加开源许可证，一搬情况下我们自己建项目的时候：<code>Add a licence:None</code>,即：不添加许可证。<br>刚开始的时候我们都不会在意这个许可证到底是什么，但是随着项目专业、职业化，我们一定要d对开源许可证有个清楚的了解。<br>那么，现在就动脑、动手记录一下关于开源许可证的小介绍。</p>
-</blockquote>
-<a id="more"></a>
-<h5 id="分析图"><a href="#分析图" class="headerlink" title="分析图"></a>分析图</h5><blockquote>
-<p>乌克兰程序员Paul Bagwell，画了一张分析图，说明应该怎么选择。只用两分钟，你就能搞清楚这六种许可证之间的最大区别。<br>下面的图片是来自阮一峰博客制作的中文版，请点击看大图。</p>
-</blockquote>
+        <h6 id="前端时间在《极客时间》上学了一个专栏，通篇学完干货不少，但理解还是不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的理解来个通篇的文字记录学习，以加深印象，争取做到脑中留痕。"><a href="#前端时间在《极客时间》上学了一个专栏，通篇学完干货不少，但理解还是不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的理解来个通篇的文字记录学习，以加深印象，争取做到脑中留痕。" class="headerlink" title="前端时间在《极客时间》上学了一个专栏，通篇学完干货不少，但理解还是不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的理解来个通篇的文字记录学习，以加深印象，争取做到脑中留痕。"></a>前端时间在《极客时间》上学了一个专栏，通篇学完干货不少，但理解还是不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的理解来个通篇的文字记录学习，以加深印象，争取做到脑中留痕。</h6><h6 id="本篇是这个专栏的第一章：《宏观视角下的浏览器》。本章分为六讲。"><a href="#本篇是这个专栏的第一章：《宏观视角下的浏览器》。本章分为六讲。" class="headerlink" title="本篇是这个专栏的第一章：《宏观视角下的浏览器》。本章分为六讲。"></a>本篇是这个专栏的第一章：《宏观视角下的浏览器》。本章分为六讲。</h6><h4 id="01-Chrome架构：仅仅打开一个页面，为什么有四个进程"><a href="#01-Chrome架构：仅仅打开一个页面，为什么有四个进程" class="headerlink" title="01.Chrome架构：仅仅打开一个页面，为什么有四个进程"></a>01.Chrome架构：仅仅打开一个页面，为什么有四个进程</h4><hr>
 <blockquote>
-<p><img src="http://img.liugezhou.online/licence.jpg" alt="Licence"></p>
-<p>这里介绍的是最流行的五种开源许可证：  MIT BSD  Apache GPL  LGPL </p>
+<p>在谷歌浏览器随便打开一个页面，点击“选项”菜单，选择“更多工具”，点击“任务管理器”，这将打开Chrome的任务管理器的窗口，你会发现一个页面上有四个以上的进程。为什么会有四个进程呢？<br>本章通过分析浏览器的进化史而展开探讨这个问题。<br>开始之前，我们必须得了解一下这个<code>进程</code>与<code>线程</code>的概念。  </p>
 </blockquote>
-<h5 id="MIT"><a href="#MIT" class="headerlink" title="MIT"></a>MIT</h5><blockquote>
-<p>非常宽松的许可证，就是说你什么都可以干，但是开发方不负责质量，相当于免责声明。<br>MIT内容与三条款BSD许可证（3-clause BSD license）内容颇为近似，但是赋予软件被授权人更大的权利与更少的限制。<br>应用该许可证的项目：jQuery Rails Express Lua等</p>
+<h5 id="线程-VS-进程"><a href="#线程-VS-进程" class="headerlink" title="线程 VS 进程"></a>线程 VS 进程</h5><blockquote>
+<p><code>线程这个东西它是不能单独存在的，它是由进程来启动和管理的。</code> </p>
+<p><code>一个进程就是一个程序的运行实例</code>。</p>
+<p><code>线程是依附于进程的，而进程中使用多线程并行处理能提升运算效率</code>。  </p>
+<p>总结，线程与进程之间的关系有以下四个特点：</p>
+<ol>
+<li>进程中任一线程执行出错，都会导致整个进程崩溃。 </li>
+<li>线程之间共享进程的数据。   </li>
+<li>当一个进程关闭之后，操作系统会回收进程所占用的内存。   </li>
+<li>进程之间的内容都互相隔离。(如果进程之间需要进行数据的通信，这时候需要使用用于进程间通讯(IPC)机制了)。</li>
+</ol>
 </blockquote>
-<h5 id="BSD"><a href="#BSD" class="headerlink" title="BSD"></a>BSD</h5><blockquote>
-<p>也是宽松的协议，但比起MIT，BSD不允许软件的衍生版用原作者名字促销，BSD依然是一个免责声明，与MIT相比差异很少。<br>Javascript常用BSD许可协议。因为javascript库很多，替代品也多。作者要做的仅仅是免责而已。</p>
+<h5 id="单进程浏览器时代"><a href="#单进程浏览器时代" class="headerlink" title="单进程浏览器时代"></a>单进程浏览器时代</h5><blockquote>
+<p>早在07年之前，市面上的浏览器都是单进程的。单进程，顾名思义是指：浏览器的所有功能模块都运行在同一个进程里。<br>如此多的功能模块运行在一个进程里，导致单进程浏览器<code>不稳定</code>、<code>不流畅</code>、<code>不安全</code>。<br>具体的表现就不说了，总之体验非常差，于是进入了“多线程浏览器”时代。    </p>
 </blockquote>
-<h5 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h5><blockquote>
-<p>Apache的许可很长，比BSD和MIT要严格不少,需要保留全部的原始版权，如果修改，则需要加上主要的修改通知。</p>
+<h5 id="多进程浏览器时代"><a href="#多进程浏览器时代" class="headerlink" title="多进程浏览器时代"></a>多进程浏览器时代</h5><blockquote>
+<ul>
+<li>多进程浏览器由于进程相互隔离，所以当一个页面或者插件崩溃的时候，影响的仅仅是当前的页面进程或者插件过程。这就完美解决了页面或者插件崩溃而导致的整个浏览器崩溃问题。JS的渲染若出现问题，影响的同样是当前的渲染页面，没有响应的仅对当前页面。而且在多进程浏览器时代，当关闭一个页面的时候，整个渲染进程会被关闭，该进程占用的内存都会被系统回收，这样也就轻松解决了浏览器页面的内存泄露问题。    </li>
+<li>此外有关安全方面的问题：使用多线程架构可以使用<code>安全沙箱</code>。  </li>
+</ul>
+<p>可以把沙箱看成是操作系统给进程上了一把锁，沙箱里面的程序可以运行，但是不能在硬盘上写入任何数据，也不能在敏感位置读取任何数据(例如文档和桌面)，Chrome把插件进程和渲染进程锁在沙箱里面，这样即使在渲染进程或者插件进程里面执行了恶意程序，恶意程序也无法突破沙箱去获取系统权限。</p>
 </blockquote>
-<h5 id="GPL"><a href="#GPL" class="headerlink" title="GPL"></a>GPL</h5><blockquote>
-<p>GPL是常用许可协议中最严格的。<br>GPL最最重要的一条就是GPL的衍生品也必须是GPL协议，也就是说GPL协议发布的软件，其后继版本将都是GPL.<br>Linux就是GPL。</p>
+<h5 id="目前多进程架构"><a href="#目前多进程架构" class="headerlink" title="目前多进程架构"></a>目前多进程架构</h5><blockquote>
+<p>最新的Chrome进程架构：Chrome浏览器包括：<code>1个浏览器(Brower)主进程，1个GPU进程、一个网络(NetWork)进程、多个渲染进程和多个插件进程</code>。<br>虽然多进程模型提升了浏览器的稳定性、流畅性、安全性，但是同样也会不可避免带来一些问题：  </p>
+<ul>
+<li><code>更高的资源占用</code> ：因为每个进程都会包含公共基础结构的副本（如JavaScript运行环境），这意味着浏览器会消耗更多的资源。  </li>
+<li><code>更复杂的体系架构</code>：浏览器各模块之间耦合性高、扩展性差等问题，会导致现在的架构已经很难适应新的需求。 </li>
+</ul>
 </blockquote>
-<h5 id="LGPL"><a href="#LGPL" class="headerlink" title="LGPL"></a>LGPL</h5><blockquote>
-<p>GPL过于严格于是GUN发布了LGPL这个限制较少的许可证。<br>LGPL和GPL最大的不同是LGPL允许在私有软件上使用它，而GPL只允许在自由软件上使用。<br>如果你使用一个LGPL下的库，你需要遵循LGOL，如果仅仅是连接这个库，则不需要遵循LGPL。</p>
+<h5 id="未来面向服务的架构-SOP"><a href="#未来面向服务的架构-SOP" class="headerlink" title="未来面向服务的架构(SOP)"></a>未来面向服务的架构(SOP)</h5><blockquote>
+<p>为了解决这些问题，2016年，Chrome团队使用“面向服务的架构“（SOP）思想设计了新的Chrome架构，这也是现阶段Chrome团队的一个主要任务。</p>
 </blockquote>
+<h4 id="02｜TCP协议：如何保证页面文件能被完整的送达浏览器"><a href="#02｜TCP协议：如何保证页面文件能被完整的送达浏览器" class="headerlink" title="02｜TCP协议：如何保证页面文件能被完整的送达浏览器"></a>02｜TCP协议：如何保证页面文件能被完整的送达浏览器</h4><hr>
+<blockquote>
+<p>在衡量Web页面性能的时候有一个重要的指标叫”FP(First Paint)”,是指从页面加载到首次开始绘制的时长。其中影响FP的一个重要因素就是<code>网络加载速度</code>。 </p>
+<p>要优化网络加载速度，需要对网络有充分的了解，这一节重点介绍<code>在Web世界中的TCP/IP是如何工作的</code>。 </p>
+<p>在网络中，一个文件通常会被拆分为很多数据包来进行传输，而数据包在传输过程中有很大概览丢失或者出错，那么如何保证页面文件能被完整地送达浏览器？</p>
+</blockquote>
+<h5 id="一个数据包的“旅程”"><a href="#一个数据包的“旅程”" class="headerlink" title="一个数据包的“旅程”"></a>一个数据包的“旅程”</h5><blockquote>
+<ol>
+<li><p>IP:把数据包送达目的主机<br>计算机的地址称为IP地址，访问任何网站实际上只是你的计算机向另外一台计算机请求信息。<br>当从主机A向主机B发送数据(即发送数据包)，传输前，数据包会被附加上主机A和主机B的IP地址信息，这些信息会被封到一个叫做IP头的数据结构里，在这个IP头中包含IP数据包开头的信息(IP版本、源IP地址、目标地址、生存时间等信息)，于是数据包从主机A发送到主机B。  </p>
+</li>
+<li><p>UDP:把数据包送达应用程序<br>IP通过IP地址信息把数据包发送给指定的电脑，而UDP通过端口号把数据包发给正确的程序。<br>UDP发送数据，有各种因素会导致数据包出错，虽然UDP可以校验数据是否正确，但是<code>UDP不提供重发机制</code>，只是丢弃当前的包，且UDP在发送之后无法知道能否到达目的地。<br><code>UDP不能保证数据可靠性，但是传输速度却非常快</code>，因此UDP应用在一些关注速度但不那么严格要求数据完整性的领域，例如：在线视频、互动游戏等。  </p>
+</li>
+<li><p>TCP:把数据完整的送达应用程序<br>TCP(Transmission Control Protocol,传输控制协议)：他是一种面向连接的、可靠的、基于字节流的传输层通信协议。相对于UDP而言：  </p>
+</li>
+</ol>
+<ul>
+<li>对于数据包丢失情况，提供重传机制。  </li>
+<li>TCP引入数据包排序机制，用来保证把乱序的数据包组合成一个完整的文件。 </li>
+</ul>
+</blockquote>
+<h5 id="完整的TCP连接过程"><a href="#完整的TCP连接过程" class="headerlink" title="完整的TCP连接过程"></a>完整的TCP连接过程</h5><blockquote>
+<p>我们现在已经知道TCP单个数据包的传输流程和UDP流程差不多，不同在于，通过TCP头信息可以保证一块大的数据传输的完整性。<br>一个完整的TCP连接过程，其生命周期包括了“建立连接“、”数据传输“、”断开连接“三个阶段。</p>
+<ul>
+<li>建立连接阶段：这个阶段通过“三次握手”来建立客户端和服务器之间的连接。  </li>
+<li>数据传输阶段：在该阶段，接收端需要对每个数据包进行确认操作。接收端应该在接收数据后要发送确认数据包给发送端，若发送端没有接收到这个确认，则判断数据包丢失，并触发发送端的重发机制。  </li>
+<li>断开连接阶段：数据传输完毕，终止连接，通过最后一个阶段“四次挥手”来保证双方都能断开连接。</li>
+</ul>
+</blockquote>
+<h4 id="03｜HTTP请求流程：为什么很多站点第二次打开速度会很快？"><a href="#03｜HTTP请求流程：为什么很多站点第二次打开速度会很快？" class="headerlink" title="03｜HTTP请求流程：为什么很多站点第二次打开速度会很快？"></a>03｜HTTP请求流程：为什么很多站点第二次打开速度会很快？</h4><hr>
+<blockquote>
+<p>首先的首先我们知道：HTTP协议建立在TCP连接基础之上的。<code>HTTP是一种允许浏览器向服务器获取资源的协议，是Web的基础。HTTP是浏览器使用最广的协议</code>。</p>
+<p>简单说说HTTP和TCP的关系：浏览器使用HTTP协议作为<code>应用层协议</code>，用来封装请求的文本信息，并使用TCP/IP作为<code>传输层协议</code>将它发到网路上,所以HTTP工作前，需要通过TCP与服务器建立连接，也就是说：<code>HTTP的内容是通过TCP的传输数据阶段来实现的</code>。</p>
+</blockquote>
+<h5 id="浏览器端发起HTTP请求流程"><a href="#浏览器端发起HTTP请求流程" class="headerlink" title="浏览器端发起HTTP请求流程"></a>浏览器端发起HTTP请求流程</h5><blockquote>
+<p>如果在浏览器地址栏里输入：<a href="https://www.liugezhou.online" target="_blank" rel="noopener">https://www.liugezhou.online</a> 这个网址后,浏览器这个庞然大物，它的背后都做些什么呢？</p>
+</blockquote>
+<ul>
+<li>构建请求<blockquote>
+<p>首先浏览器构建请求行信息，构建好之后，浏览器准备发起网路请求。</p>
+</blockquote>
+</li>
+<li>查找缓存<blockquote>
+<p>在准备发起网路请求阶段，浏览器偷偷的在它的缓存中查询是否有要请求的资源。<br>若有：拦截请求，返回资源副本，直接结束请求。<br>若缓存查找失败：继续下一步。  </p>
+</blockquote>
+</li>
+<li>准备IP地址和端口号<blockquote>
+<p>这个IP地址和端口号的获取，肯定是通过域名与其映射，即“域名系统”，也就是我们熟知的DNS。<br>于是，浏览器第一步会请求DNS返回域名对应的IP，如果没有特别指明端口号，则默认为80。<br>(浏览器提供了DNS数据缓存服务，若缓存过也就不会去请求，直接解析。从而减少一次网络请求)</p>
+</blockquote>
+</li>
+<li>等待TCP队列<blockquote>
+<p>拿到IP地址与端口号后，还需要在TCP队列中排队才能建立TCP连接。<br>这是因为：Chrome有个机制，同一个域名同时最多只能建立6个TCP连接，若此刻同时有10个请求发生。则四个会进入TCP队列进行排队。<br>当然，若当前请求数量少于6个，则会直接进入下一步。 </p>
+</blockquote>
+</li>
+<li>建立TCP连接 <blockquote>
+<p>建立TCP连接，上一节我们已经知道，一个完整的TCP连接过程包括“建立连接”、“数据传输”、“断开连接“三个阶段。  </p>
+</blockquote>
+</li>
+<li>发送HTTP请求<blockquote>
+<p>HTTP请求是在TCP连接的数据传输阶段工作的，这个时候浏览器向服务器发送请求行，它包括请求方法、请求URI、HTTP版本协议。，HTTP中的数据在这个通信过程中传输。</p>
+</blockquote>
+</li>
+</ul>
+<h5 id="服务器端处理HTTP请求流程"><a href="#服务器端处理HTTP请求流程" class="headerlink" title="服务器端处理HTTP请求流程"></a>服务器端处理HTTP请求流程</h5><blockquote>
+<p>这里可以在命令行中输入<code>curl -i https://www.google.com</code>来查看返回请求数据。 (-i 返回响应行、响应头和响应体信息。 -I 不返回响应体。)<br>返回网站的HTTP协议、Connection、Location、Cache-Control等信息。 </p>
+<p>通常情况，一旦服务器向客户端返回了请求数据，它就要关闭TCP连接，但是如果浏览器或者服务器设置了<code>Connection:keep-alive</code>，那么TCP连接在发送后将仍保持打开状态。<code>保持TCP连接可以省去下次请求时需要建立连接的时间，提升资源加载速度</code>。</p>
+</blockquote>
+<h5 id="问题解答"><a href="#问题解答" class="headerlink" title="问题解答"></a>问题解答</h5><ol>
+<li>为什么很多站点第二次打开速度会很快？<blockquote>
+<p>主要原因肯定是第一次加载页面的过程中，缓存了一些数据(从上面的过程分析，我们知道<code>DNS缓存</code>和<code>页面资源缓存</code>这两块数据是会被浏览器缓存起来的).<br>网站把很多资源都缓存到了本地，浏览器缓存直接使用本地副本来回应请求，而不会产生真实的网络请求，从而节省了时间。</p>
+</blockquote>
+</li>
+<li>登录状态是如何保持的 <blockquote>
+<p>简单地说，如果服务器端发送的响应头内有 Set-Cookie 的字段，那么浏览器就会将该字段的内容保持到本地。当下次客户端再往该服务器发送请求时，客户端会自动在请求头中加入 Cookie 值后再发送出去。服务器端发现客户端发送过来的 Cookie 后，会去检查究竟是从哪一个客户端发来的连接请求，然后对比服务器上的记录，最后得到该用户的状态信息。</p>
+</blockquote>
+</li>
+</ol>
 
       
     </div>
@@ -575,7 +659,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Licence/" rel="tag"># Licence</a>
+            <a href="/tags/浏览器工作原理与实践/" rel="tag"># 浏览器工作原理与实践</a>
           
         </div>
       
@@ -588,8 +672,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/07/每周分享第三期/" rel="next" title="每周分享第三期">
-                <i class="fa fa-chevron-left"></i> 每周分享第三期
+              <a href="/2019/11/03/每周总结第十七期/" rel="next" title="每周总结第十七期">
+                <i class="fa fa-chevron-left"></i> 每周总结第十七期
               </a>
             
           </div>
@@ -597,10 +681,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/11/最近搭建博客遇到的一系列问题/" rel="prev" title="最近搭建博客遇到的一系列问题">
-                最近搭建博客遇到的一系列问题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -792,7 +872,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#分析图"><span class="nav-number">1.</span> <span class="nav-text">分析图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#MIT"><span class="nav-number">2.</span> <span class="nav-text">MIT</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#BSD"><span class="nav-number">3.</span> <span class="nav-text">BSD</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Apache"><span class="nav-number">4.</span> <span class="nav-text">Apache</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#GPL"><span class="nav-number">5.</span> <span class="nav-text">GPL</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#LGPL"><span class="nav-number">6.</span> <span class="nav-text">LGPL</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#前端时间在《极客时间》上学了一个专栏，通篇学完干货不少，但理解还是不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的理解来个通篇的文字记录学习，以加深印象，争取做到脑中留痕。"><span class="nav-number">1.</span> <span class="nav-text">前端时间在《极客时间》上学了一个专栏，通篇学完干货不少，但理解还是不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的理解来个通篇的文字记录学习，以加深印象，争取做到脑中留痕。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#本篇是这个专栏的第一章：《宏观视角下的浏览器》。本章分为六讲。"><span class="nav-number">2.</span> <span class="nav-text">本篇是这个专栏的第一章：《宏观视角下的浏览器》。本章分为六讲。</span></a></li></ol><li class="nav-item nav-level-4"><a class="nav-link" href="#01-Chrome架构：仅仅打开一个页面，为什么有四个进程"><span class="nav-number"></span> <span class="nav-text">01.Chrome架构：仅仅打开一个页面，为什么有四个进程</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#线程-VS-进程"><span class="nav-number"></span> <span class="nav-text">线程 VS 进程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#单进程浏览器时代"><span class="nav-number"></span> <span class="nav-text">单进程浏览器时代</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#多进程浏览器时代"><span class="nav-number"></span> <span class="nav-text">多进程浏览器时代</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#目前多进程架构"><span class="nav-number"></span> <span class="nav-text">目前多进程架构</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#未来面向服务的架构-SOP"><span class="nav-number"></span> <span class="nav-text">未来面向服务的架构(SOP)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#02｜TCP协议：如何保证页面文件能被完整的送达浏览器"><span class="nav-number"></span> <span class="nav-text">02｜TCP协议：如何保证页面文件能被完整的送达浏览器</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#一个数据包的“旅程”"><span class="nav-number"></span> <span class="nav-text">一个数据包的“旅程”</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#完整的TCP连接过程"><span class="nav-number"></span> <span class="nav-text">完整的TCP连接过程</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#03｜HTTP请求流程：为什么很多站点第二次打开速度会很快？"><span class="nav-number"></span> <span class="nav-text">03｜HTTP请求流程：为什么很多站点第二次打开速度会很快？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#浏览器端发起HTTP请求流程"><span class="nav-number"></span> <span class="nav-text">浏览器端发起HTTP请求流程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#服务器端处理HTTP请求流程"><span class="nav-number"></span> <span class="nav-text">服务器端处理HTTP请求流程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#问题解答"><span class="nav-number"></span> <span class="nav-text">问题解答</span></a></li></ol></li></div>
             
 
           </div>

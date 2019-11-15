@@ -123,7 +123,7 @@
 
 
 
-  <meta name="keywords" content="js,npm intsall,">
+  <meta name="keywords" content="浏览器工作原理与实践,">
 
 
 
@@ -136,18 +136,18 @@
 
 
 
-<meta name="description" content="关于npm在安装的时候，有个小的知识点，一定要小小的补一下，那就是npm install 后面带参数的问题。相信不少在开始接触node的时候，我们肯定都使用过这样的命令npm install -save | npm install -save-dev | npm install -g [--global]但是这些-save | -save-dev | -g的一些小小的区别是什么呢?">
-<meta name="keywords" content="js,npm intsall">
+<meta name="description" content="前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。本篇是这个专栏的第二章：《浏览器中的JavaScript执行机制》。本章分为五节。">
+<meta name="keywords" content="浏览器工作原理与实践">
 <meta property="og:type" content="article">
-<meta property="og:title" content="npm intsall -save 和-save-dev">
-<meta property="og:url" content="http://liugezhou.online/2018/06/28/npm intsall -save 和-save-dev/index.html">
+<meta property="og:title" content="No2.浏览器中的JavaScript执行机制">
+<meta property="og:url" content="http://liugezhou.online/2019/11/11/No2.浏览器中的JavaScript执行机制/index.html">
 <meta property="og:site_name" content="六个周">
-<meta property="og:description" content="关于npm在安装的时候，有个小的知识点，一定要小小的补一下，那就是npm install 后面带参数的问题。相信不少在开始接触node的时候，我们肯定都使用过这样的命令npm install -save | npm install -save-dev | npm install -g [--global]但是这些-save | -save-dev | -g的一些小小的区别是什么呢?">
+<meta property="og:description" content="前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。本篇是这个专栏的第二章：《浏览器中的JavaScript执行机制》。本章分为五节。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-30T03:18:02.112Z">
+<meta property="og:updated_time" content="2019-11-15T03:24:38.142Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="npm intsall -save 和-save-dev">
-<meta name="twitter:description" content="关于npm在安装的时候，有个小的知识点，一定要小小的补一下，那就是npm install 后面带参数的问题。相信不少在开始接触node的时候，我们肯定都使用过这样的命令npm install -save | npm install -save-dev | npm install -g [--global]但是这些-save | -save-dev | -g的一些小小的区别是什么呢?">
+<meta name="twitter:title" content="No2.浏览器中的JavaScript执行机制">
+<meta name="twitter:description" content="前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。本篇是这个专栏的第二章：《浏览器中的JavaScript执行机制》。本章分为五节。">
 
 
 
@@ -177,13 +177,13 @@
 
 
 
-  <link rel="canonical" href="http://liugezhou.online/2018/06/28/npm intsall -save 和-save-dev/">
+  <link rel="canonical" href="http://liugezhou.online/2019/11/11/No2.浏览器中的JavaScript执行机制/">
 
 
 
 
 
-  <title>npm intsall -save 和-save-dev | 六个周</title>
+  <title>No2.浏览器中的JavaScript执行机制 | 六个周</title>
   
 
 
@@ -340,7 +340,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liugezhou.online/2018/06/28/npm intsall -save 和-save-dev/">
+    <link itemprop="mainEntityOfPage" href="http://liugezhou.online/2019/11/11/No2.浏览器中的JavaScript执行机制/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liugezhou">
@@ -357,7 +357,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">npm intsall -save 和-save-dev</h2>
+          <h2 class="post-title" itemprop="name headline">No2.浏览器中的JavaScript执行机制</h2>
         
 
         <div class="post-meta">
@@ -369,8 +369,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-28T00:00:00+08:00">
-                2018-06-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-11T21:40:00+08:00">
+                2019-11-11
               </time>
             
 
@@ -385,8 +385,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-09-30T11:18:02+08:00">
-                2019-09-30
+              <time title="更新于" itemprop="dateModified" datetime="2019-11-15T11:24:38+08:00">
+                2019-11-15
               </time>
             
           </span>
@@ -404,19 +404,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web前端/" itemprop="url" rel="index">
-                    <span itemprop="name">web前端</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web前端/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
+                  <a href="/categories/浏览器工作原理与实践/" itemprop="url" rel="index">
+                    <span itemprop="name">浏览器工作原理与实践</span>
                   </a>
                 </span>
 
@@ -433,8 +422,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/06/28/npm intsall -save 和-save-dev/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/06/28/npm intsall -save 和-save-dev/" itemprop="commentCount"></span>
+                <a href="/2019/11/11/No2.浏览器中的JavaScript执行机制/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/11/11/No2.浏览器中的JavaScript执行机制/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -442,7 +431,7 @@
 
           
           
-             <span id="/2018/06/28/npm intsall -save 和-save-dev/" class="leancloud_visitors" data-flag-title="npm intsall -save 和-save-dev">
+             <span id="/2019/11/11/No2.浏览器中的JavaScript执行机制/" class="leancloud_visitors" data-flag-title="No2.浏览器中的JavaScript执行机制">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -467,7 +456,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  470
+                  2.3k
                 </span>
               
 
@@ -483,7 +472,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  7
                 </span>
               
             </div>
@@ -504,25 +493,93 @@
       
 
       
-        <p>关于npm在安装的时候，有个小的知识点，一定要小小的补一下，那就是npm install 后面带参数的问题。<br>相信不少在开始接触node的时候，我们肯定都使用过这样的命令<br><code>npm install -save</code> | <code>npm install -save-dev</code> | <code>npm install -g [--global]</code><br>但是这些<code>-save</code> | <code>-save-dev</code> | <code>-g</code>的一些小小的区别是什么呢?</p>
+        <h6 id="前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。"><a href="#前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。" class="headerlink" title="前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。"></a>前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。</h6><h6 id="本篇是这个专栏的第二章：《浏览器中的JavaScript执行机制》。本章分为五节。"><a href="#本篇是这个专栏的第二章：《浏览器中的JavaScript执行机制》。本章分为五节。" class="headerlink" title="本篇是这个专栏的第二章：《浏览器中的JavaScript执行机制》。本章分为五节。"></a>本篇是这个专栏的第二章：《浏览器中的JavaScript执行机制》。本章分为五节。</h6><a id="more"></a>
+<h4 id="07｜变量提升：JavaScript代码是按顺序执行的吗？"><a href="#07｜变量提升：JavaScript代码是按顺序执行的吗？" class="headerlink" title="07｜变量提升：JavaScript代码是按顺序执行的吗？"></a>07｜变量提升：JavaScript代码是按顺序执行的吗？</h4><hr>
 <blockquote>
-<a id="more"></a>
+<p>本节主要讲解<code>执行上下文</code>相关的内容。</p>
 </blockquote>
-<h6 id="npm-install-moduleName-命令"><a href="#npm-install-moduleName-命令" class="headerlink" title="npm install moduleName 命令"></a>npm install moduleName 命令</h6><blockquote>
-<p>1.安装模块到项目node_modules目录下。<br>2.不会将模块依赖写入devDependencies或dependencies 节点。<br>3.运行 npm install 初始化项目时不会下载模块。</p>
-</blockquote>
-<h6 id="npm-install-g-moduleName-命令"><a href="#npm-install-g-moduleName-命令" class="headerlink" title="npm install -g moduleName 命令"></a>npm install -g moduleName 命令</h6><blockquote>
-<p>1.安装模块到全局，不会在项目node_modules目录中保存模块包。<br>2.不会将模块依赖写入devDependencies或dependencies 节点。<br>3.运行 npm install 初始化项目时不会下载模块。</p>
-</blockquote>
-<h6 id="npm-install-save-moduleName-命令"><a href="#npm-install-save-moduleName-命令" class="headerlink" title="npm install -save moduleName 命令"></a>npm install -save moduleName 命令</h6><blockquote>
-<p>1.安装模块到项目node_modules目录下。<br>2.会将模块依赖写入dependencies 节点。<br>3.运行 npm install 初始化项目时，会将模块下载到项目目录下。<br>4.运行npm install –production或者注明NODE_ENV变量值为production时，会自动下载模块到node_modules目录中。</p>
-</blockquote>
-<h6 id="npm-install-save-dev-moduleName-命令"><a href="#npm-install-save-dev-moduleName-命令" class="headerlink" title="npm install -save-dev moduleName 命令"></a>npm install -save-dev moduleName 命令</h6><blockquote>
-<p>1.安装模块到项目node_modules目录下。<br>2.会将模块依赖写入devDependencies 节点。<br>3.运行 npm install 初始化项目时，会将模块下载到项目目录下。<br>4.运行npm install –production或者注明NODE_ENV变量值为production时，不会自动下载模块到node_modules目录中。</p>
-</blockquote>
-<p>总结</p>
 <blockquote>
-<p>devDependencies 节点下的模块是我们在开发时需要用的，比如项目中使用的 gulp ，压缩css、js的模块。这些模块在我们的项目部署后是不需要的，所以我们可以使用 -save-dev 的形式安装。像 express 这些模块是项目运行必备的，应该安装在 dependencies 节点下，所以我们应该使用 -save 的形式安装。</p>
+<p>通过一些代码的执行顺序与经验我们知道：    </p>
+<ul>
+<li>在执行过程中，若使用了未声明的变量，那么 JavaScript 执行会报错。    </li>
+<li>在一个变量定义之前使用它，不会出错，但是该变量的值会为 undefined，而不是定义时的值。    </li>
+<li>在一个函数定义之前使用它，不会出错，且函数能正确执行。</li>
+</ul>
+</blockquote>
+<h5 id="变量提升"><a href="#变量提升" class="headerlink" title="变量提升"></a>变量提升</h5><blockquote>
+<p>所谓的变量提升，是指在 JavaScript 代码执行过程中，JavaScript 引擎把变量的声明部分和函数的声明部分提升到代码开头的“行为”。变量被提升后，会给变量设置默认值，这个默认值就是我们熟悉的 undefined.<br>之所以会发生变量提升，是因为一段JavaScript代码在执行之前，需要被JavaScript引擎编译，编译完成之后，才会进入执行阶段。也就是说在编译阶段，变量和函数的声明提升到了开头。    </p>
+</blockquote>
+<h4 id="08-｜调用栈：为什么JavaScript代码会出现栈溢出？"><a href="#08-｜调用栈：为什么JavaScript代码会出现栈溢出？" class="headerlink" title="08 ｜调用栈：为什么JavaScript代码会出现栈溢出？"></a>08 ｜调用栈：为什么JavaScript代码会出现栈溢出？</h4><hr>
+<blockquote>
+<p>一般有三种情况，当一段代码执行的时候JS引擎对其进行编译并创建执行上下文：</p>
+<ol>
+<li>当 JavaScript 执行全局代码的时候，会编译全局代码并创建全局执行上下文，而且在整个页面的生存周期内，全局执行上下文只有一份.  </li>
+<li>当调用一个函数的时候，函数体内的代码会被编译，并创建函数执行上下文，一般情况下，函数执行结束之后，创建的函数执行上下文会被销毁。   </li>
+<li>当使用 eval 函数的时候，eval 的代码也会被编译，并创建执行上下文。</li>
+</ol>
+</blockquote>
+<h5 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h5><blockquote>
+<ul>
+<li>每调用一个函数，JavaScript 引擎会为其创建执行上下文，并把该执行上下文压入调用栈，然后 JavaScript 引擎开始执行函数代码。 </li>
+<li>如果在一个函数 A 中调用了另外一个函数 B，那么 JavaScript 引擎会为 B 函数创建执行上下文，并将 B 函数的执行上下文压入栈顶。   </li>
+<li>当前函数执行完毕后，JavaScript 引擎会将该函数的执行上下文弹出栈。   </li>
+<li>当分配的调用栈空间被占满时，会引发“堆栈溢出”问题。</li>
+</ul>
+</blockquote>
+<h4 id="09-块级作用域：var缺陷以及为什么要引入let和const"><a href="#09-块级作用域：var缺陷以及为什么要引入let和const" class="headerlink" title="09 | 块级作用域：var缺陷以及为什么要引入let和const"></a>09 | 块级作用域：var缺陷以及为什么要引入let和const</h4><hr>
+<h5 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h5><blockquote>
+<p>作用域是指在程序中定义变量的区域，该位置决定了变量的生命周期。通俗地理解，作用域就是变量与函数的可访问范围，即作用域控制着变量和函数的可见性和生命周期。<br>ES6出现之前，JS的作用域只有两种：<code>全局作用域</code>和<code>函数作用域</code>。 ES6出现，引入了<code>块级作用域</code>。</p>
+</blockquote>
+<h5 id="在同一段代码中，ES6-是如何做到既要支持变量提升的特性，又要支持块级作用域的呢？"><a href="#在同一段代码中，ES6-是如何做到既要支持变量提升的特性，又要支持块级作用域的呢？" class="headerlink" title="在同一段代码中，ES6 是如何做到既要支持变量提升的特性，又要支持块级作用域的呢？"></a>在同一段代码中，ES6 是如何做到既要支持变量提升的特性，又要支持块级作用域的呢？</h5><blockquote>
+<p>当一段代码里面既有var声明的变量也有let声明的变量的时候：  </p>
+<ul>
+<li>函数内部通过var声明的变量，在编译阶段全都被存放到<code>变量环境</code>里面.  </li>
+<li>通过let声明的变量，在编译阶段会被存放到<code>词法环境</code>中。 </li>
+<li>在函数作用域内部，通过let声明的变量并没有被存放到词法环境中。<br>也就是说：通过理解词法环境的结构和工作机制，块级作用域是通过词法环境的栈结构来实现的，而变量提升是通过变量环境来实现的，通过两者的结合，JavaScript引擎也就同时支持了变量 提升和块级作用域了。</li>
+</ul>
+</blockquote>
+<h4 id="10-｜-作用域和闭包：代码中出现相同的变量，JavaScript引擎是如何选择的"><a href="#10-｜-作用域和闭包：代码中出现相同的变量，JavaScript引擎是如何选择的" class="headerlink" title="10 ｜ 作用域和闭包：代码中出现相同的变量，JavaScript引擎是如何选择的"></a>10 ｜ 作用域和闭包：代码中出现相同的变量，JavaScript引擎是如何选择的</h4><hr>
+<h5 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h5><blockquote>
+<p>理解作用域链是理解闭包的基础，而闭包在JavaScript中无处不在，同时作用域和作用域链还是作用语言的基础，所以我们先来学习一下<code>作用域链</code>。<br>理解了调用栈、执行上下文、词法环境、变量环境等概念，那么你理解起来作用域链也会很容易,看下面一段代码：</p>
+<pre><code>
+function bar() {
+   console.log(myName)
+}
+function foo() {
+   var myName = &quot;局部变量&quot;
+   bar()
+}
+var myName = &quot;全局变量&quot;
+foo()</code></pre><p>通过上面的代码，我们知道最终打印出来的结果是：”全局变量“。<br>这是因为，当一段代码使用了一个变量后，JavaScript引擎会首先在“当前的执行上下文”中去查找该变量。若没有找到，由于每个执行上下文都包含一个外部引用指向外部执行上下文，所以bar函数中的变量会去全局上下文中区域查找。我们把这个查找的链条就称为作用域链。</p>
+</blockquote>
+<h5 id="词法作用域"><a href="#词法作用域" class="headerlink" title="词法作用域"></a>词法作用域</h5><blockquote>
+<p>foo 函数调用的 bar 函数，那为什么 bar 函数的外部引用是全局执行上下文，而不是 foo 函数的执行上下文？了解这个问题我们继续来学习词法作用域：<br>词法作用域就是指作用域是由代码中函数声明的位置来决定的，所以词法作用域是静态的作用域，通过它就能够预测代码在执行过程中如何查找标识符。<br>然后，根据词法作用域，foo 和 bar 的上级作用域都是全局作用域，所以如果 foo 或者 bar 函数使用了一个它们没有定义的变量，那么它们会到全局作用域去查找。也就是说，词法作用域是代码阶段就决定好的，和函数是怎么调用的没有关系。</p>
+</blockquote>
+<h5 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h5><blockquote>
+<p>在 JavaScript 中，根据词法作用域的规则，内部函数总是可以访问其外部函数中声明的变量，当通过调用一个外部函数返回一个内部函数后，即使该外部函数已经执行结束了，但是内部函数引用外部函数的变量依然保存在内存中，我们就把这些变量的集合称为闭包。比如外部函数是 foo，那么这些变量的集合就称为 foo 函数的闭包。<br>在使用闭包的时候，要尽量注意一个原则：如果该闭包会一直使用，那么它可以作为全局变量而存在；但如果使用频率不高，而且占用内存又比较大的话，那就尽量让它成为一个局部变量。</p>
+</blockquote>
+<h4 id="11-｜-this：从JavaScript执行上下文的视角讲清楚this"><a href="#11-｜-this：从JavaScript执行上下文的视角讲清楚this" class="headerlink" title="11 ｜ this：从JavaScript执行上下文的视角讲清楚this"></a>11 ｜ this：从JavaScript执行上下文的视角讲清楚this</h4><hr>
+<blockquote>
+<p>首先我们要知道，在对象内部的方法中使用对象内部的属性是一个非常普遍的需求，但是JavaScript作用域机制并不支持这一点，基于这个需求，JavaScript搞出了一套this机制。    </p>
+</blockquote>
+<blockquote>
+<p>在前几节中，我们提到执行上下文中包含了：<code>变量环境</code>、<code>词法环境</code>、<code>外部环境</code>、还有一个没有提及的<code>this</code>,this是和执行上下文绑定的，每个执行上下文都有一个this。<br>在08节我们总结了执行上下文主要分三种：全局执行上下文、函数执行上下文和eval执行上下文。<br>对应的this也只有这三种：全局执行上下文中的this、函数执行上下中的this和eval中的this(不做讨论)。    </p>
+<ul>
+<li>全局执行上下文中的this：全局执行上下文中的this指向window对象。  </li>
+<li>函数执行上下文中的this：<ol>
+<li>默认情况下调用一个函数，其执行上下文中的 this 也是指向 window 对象的.  </li>
+<li>通过函数的call方法设置其this指向其他对象（还可以使用bind和apply方法来设置函数执行上下文中的this）。   </li>
+<li>通过对象调用方法设置。（使用对象来调用其内部的一个方法，该方法的 this 是指向对象本身的。在全局环境中调用一个函数，函数内部的this指向的是全局变量window）。   </li>
+<li>通过构造函数中设置。   </li>
+</ol>
+</li>
+</ul>
+</blockquote>
+<h5 id="this的设计缺陷以及应对方案"><a href="#this的设计缺陷以及应对方案" class="headerlink" title="this的设计缺陷以及应对方案"></a>this的设计缺陷以及应对方案</h5><blockquote>
+<ol>
+<li>嵌套函数的this不会从外层函数中继承。==&gt;  1⃣️、将this保存一个self变量，利用变量作用域机制传递给嵌套函数。2⃣️、将乔套函数改为箭头函数。   </li>
+<li>普通函数中的this默认指向全局对象window。==&gt;可以通过设置JavaScript的“严格模式”来解决。</li>
+</ol>
 </blockquote>
 
       
@@ -578,9 +635,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/js/" rel="tag"># js</a>
-          
-            <a href="/tags/npm-intsall/" rel="tag"># npm intsall</a>
+            <a href="/tags/浏览器工作原理与实践/" rel="tag"># 浏览器工作原理与实践</a>
           
         </div>
       
@@ -593,15 +648,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/11/10/每周总结第十八期/" rel="next" title="每周总结第十八期">
+                <i class="fa fa-chevron-left"></i> 每周总结第十八期
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/11/搭建个人博客极简/" rel="prev" title="搭建个人-博客极简">
-                搭建个人-博客极简 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -793,7 +848,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#npm-install-moduleName-命令"><span class="nav-number">1.</span> <span class="nav-text">npm install moduleName 命令</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#npm-install-g-moduleName-命令"><span class="nav-number">2.</span> <span class="nav-text">npm install -g moduleName 命令</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#npm-install-save-moduleName-命令"><span class="nav-number">3.</span> <span class="nav-text">npm install -save moduleName 命令</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#npm-install-save-dev-moduleName-命令"><span class="nav-number">4.</span> <span class="nav-text">npm install -save-dev moduleName 命令</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。"><span class="nav-number">1.</span> <span class="nav-text">前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#本篇是这个专栏的第二章：《浏览器中的JavaScript执行机制》。本章分为五节。"><span class="nav-number">2.</span> <span class="nav-text">本篇是这个专栏的第二章：《浏览器中的JavaScript执行机制》。本章分为五节。</span></a></li></ol><li class="nav-item nav-level-4"><a class="nav-link" href="#07｜变量提升：JavaScript代码是按顺序执行的吗？"><span class="nav-number"></span> <span class="nav-text">07｜变量提升：JavaScript代码是按顺序执行的吗？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#变量提升"><span class="nav-number"></span> <span class="nav-text">变量提升</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#08-｜调用栈：为什么JavaScript代码会出现栈溢出？"><span class="nav-number"></span> <span class="nav-text">08 ｜调用栈：为什么JavaScript代码会出现栈溢出？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#小结"><span class="nav-number"></span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#09-块级作用域：var缺陷以及为什么要引入let和const"><span class="nav-number"></span> <span class="nav-text">09 | 块级作用域：var缺陷以及为什么要引入let和const</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#作用域"><span class="nav-number"></span> <span class="nav-text">作用域</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#在同一段代码中，ES6-是如何做到既要支持变量提升的特性，又要支持块级作用域的呢？"><span class="nav-number"></span> <span class="nav-text">在同一段代码中，ES6 是如何做到既要支持变量提升的特性，又要支持块级作用域的呢？</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-｜-作用域和闭包：代码中出现相同的变量，JavaScript引擎是如何选择的"><span class="nav-number"></span> <span class="nav-text">10 ｜ 作用域和闭包：代码中出现相同的变量，JavaScript引擎是如何选择的</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#作用域链"><span class="nav-number"></span> <span class="nav-text">作用域链</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#词法作用域"><span class="nav-number"></span> <span class="nav-text">词法作用域</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#闭包"><span class="nav-number"></span> <span class="nav-text">闭包</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-｜-this：从JavaScript执行上下文的视角讲清楚this"><span class="nav-number"></span> <span class="nav-text">11 ｜ this：从JavaScript执行上下文的视角讲清楚this</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#this的设计缺陷以及应对方案"><span class="nav-number"></span> <span class="nav-text">this的设计缺陷以及应对方案</span></a></li></ol></li></div>
             
 
           </div>

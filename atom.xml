@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://liugezhou.online/"/>
-  <updated>2019-11-15T03:24:38.142Z</updated>
+  <updated>2019-11-17T09:49:24.318Z</updated>
   <id>http://liugezhou.online/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>每周总结第十九期</title>
+    <link href="http://liugezhou.online/2019/11/17/%E6%AF%8F%E5%91%A8%E6%80%BB%E7%BB%93%E7%AC%AC%E5%8D%81%E4%B9%9D%E6%9C%9F/"/>
+    <id>http://liugezhou.online/2019/11/17/每周总结第十九期/</id>
+    <published>2019-11-17T09:45:00.000Z</published>
+    <updated>2019-11-17T09:49:24.318Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>这里记录过去一周，我的一些小总结。</p></blockquote><a id="more"></a>。<p><img src="http://img.liugezhou.online/weekly19" alt="weekly-19"></p><h4 id="Feeling"><a href="#Feeling" class="headerlink" title="Feeling"></a>Feeling</h4><blockquote><p>由于自己的职业关系，比较关注一些技术、软件、工具、科技等方面的讯息。<br>这些讯息的爆炸、扩散，让我一次又一次在潜意识里提醒自己：淡定下来，无论窗外之事多么热闹，都不要影响自己的心态，按着自己的节奏去学习、吸收、渗透。</p></blockquote><h4 id="Idea永久激活"><a href="#Idea永久激活" class="headerlink" title="Idea永久激活"></a><a href="https://mp.weixin.qq.com/s/1VBxhZNC4kq2KckT6Jqwfw" target="_blank" rel="noopener">Idea永久激活</a></h4><blockquote><p>Idea工具30天体验结束，找了一些网上的激活方法，大多方法都失效了，最终在这篇文章的指引下，成功激活，推荐推荐。<br>激活传送门：<a href="https://mp.weixin.qq.com/s/1VBxhZNC4kq2KckT6Jqwfw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/1VBxhZNC4kq2KckT6Jqwfw</a></p></blockquote><h4 id="GitLens"><a href="#GitLens" class="headerlink" title="GitLens"></a>GitLens</h4><blockquote><p>它是 VSCode 中非常令人推荐的一个插件，简直是Git神器，码农必备。 每一行代码旁边都有日志，代码是谁提交的一目了然。   </p></blockquote><h4 id="Gitbook"><a href="#Gitbook" class="headerlink" title="Gitbook"></a>Gitbook</h4><blockquote><p>Gitbook编写在线文档，可以非常方便快速的将自己的md、html、zip、docx等文件倒入，实现快速部署。<br>不需域名、不需其他的任何配置，即可快速实现在线浏览。<br>但是需要<code>过墙</code>。<br>我花了十分钟导入两篇文章后的效果：<a href="https://mingzhou.gitbook.io/liugezhou/" target="_blank" rel="noopener">https://mingzhou.gitbook.io/liugezhou/</a></p></blockquote><h4 id="诺基亚老照片"><a href="#诺基亚老照片" class="headerlink" title="诺基亚老照片"></a>诺基亚老照片</h4><blockquote><p>这个工具可以生成老式诺基亚手机的短信图片。<br>网页版：<a href="https://zzkia.noddl.me:8020" target="_blank" rel="noopener">https://zzkia.noddl.me:8020</a><br>微信小程序：【次元蜜蜂】。  </p></blockquote><h4 id="Github-for-mobile-iOS-beta"><a href="#Github-for-mobile-iOS-beta" class="headerlink" title="Github for mobile iOS beta"></a><a href="https://github.com/mobile" target="_blank" rel="noopener">Github for mobile iOS beta</a></h4><blockquote><p>11 月 13 日，GitHub 年度开发者大会—GitHub Universe 2019 在美国旧金山举行。<br>为改善用户体验，GitHub 在本次大会上宣布推出移动端，即 GitHub App 。<br>目前，官方已经上线 iOS 版，不过，却是 beta（公测版），因此用户暂时无法通过 App Store 下载，可以通过官方渠道下载尝鲜。<br>但是，我等</p></blockquote><h4 id="Bytespider"><a href="#Bytespider" class="headerlink" title="Bytespider"></a>Bytespider</h4><blockquote><p>[很多社区用户纷纷反馈，一种名为 Bytespider 的爬虫爬取他们的网站信息的频率太高，直接把网站搞瘫痪了。大家顺着爬虫的 IP 地址查了一下，发现 Bytespider 应该就是今日头条的搜索爬虫。]<sup><a href="https://mp.weixin.qq.com/s/KXg8xAf_TOAROMhqJVQQBQ" target="_blank" rel="noopener">来源</a></sup>  </p></blockquote><blockquote><p>robots.txt 协议:<br>也称为爬虫协议、爬虫规则、机器人协议等。robots.txt文件是存储在网站根目录下的 txt 文本文档。这是网站和蜘蛛之间的协议。该网站告诉搜索引擎哪些页面可以被抓取，哪些页面不想通过机器人协议被抓取。</p></blockquote><h4 id="浏览器中的JavaScript执行机制"><a href="#浏览器中的JavaScript执行机制" class="headerlink" title="浏览器中的JavaScript执行机制"></a><a href="https://www.liugezhou.online/2019/11/11/No2.%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E7%9A%84JavaScript%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6/" target="_blank" rel="noopener">浏览器中的JavaScript执行机制</a></h4><blockquote><p>前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。<br>本篇是这个专栏的第二章：<a href="https://www.liugezhou.online/2019/11/11/No2.%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E7%9A%84JavaScript%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6/" target="_blank" rel="noopener">浏览器中的JavaScript执行机制</a>。本章分为五讲。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;这里记录过去一周，我的一些小总结。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="每周分享" scheme="http://liugezhou.online/categories/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
+    
+    
+      <category term="每周分享" scheme="http://liugezhou.online/tags/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
+    
+  </entry>
   
   <entry>
     <title>No2.浏览器中的JavaScript执行机制</title>
@@ -386,9 +410,9 @@
       <category term="js" scheme="http://liugezhou.online/categories/web%E5%89%8D%E7%AB%AF/js/"/>
     
     
-      <category term="js" scheme="http://liugezhou.online/tags/js/"/>
-    
       <category term="jsonp" scheme="http://liugezhou.online/tags/jsonp/"/>
+    
+      <category term="js" scheme="http://liugezhou.online/tags/js/"/>
     
   </entry>
   
@@ -466,33 +490,6 @@
       <category term="HTML/CSS" scheme="http://liugezhou.online/tags/HTML-CSS/"/>
     
       <category term="CSS3" scheme="http://liugezhou.online/tags/CSS3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>每周分享第六期</title>
-    <link href="http://liugezhou.online/2019/07/28/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB%E7%AC%AC%E5%85%AD%E6%9C%9F/"/>
-    <id>http://liugezhou.online/2019/07/28/每周分享第六期/</id>
-    <published>2019-07-27T16:00:00.000Z</published>
-    <updated>2019-09-30T03:18:02.127Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p><strong>这里记录过去一周，我的关注以及值得记录的东西。</strong></p></blockquote><blockquote><p>本周二下午我的公众号便遭遇了灭顶之灾–永久封禁。<br>不知道是什么原因，也找不到申诉入口。<br>于是本周末就花了点时间丰富了下自己的博客，此外没有别的产出了，下面做一个小的记录。</p></blockquote><a id="more"></a><h3 id="Hexo-Next"><a href="#Hexo-Next" class="headerlink" title="Hexo || Next"></a>Hexo || Next</h3><blockquote><p>本周周末的博客搭建经验分享：<br>只需要看两个官方文档就可以了：<br><a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="noopener">Hexo官方文档</a><br><a href="https://theme-next.iissnan.com/" target="_blank" rel="noopener">NexT官方文档</a></p><p>此博客中用到的一些第三方服务：</p><ul><li>七牛云对象存储免费图片存储空间<br>写博客时最好是图片上传，再就是自己的图片存放地址，如果引用别的地方图片，一段时间图片地址就会失效。</li><li>LeanCode<br>在此网站注册且实名认证后，你可以为你的博客文章添加评论、文字统计等功能。</li><li>百度统计<br>在你的博客中加入<code>baidu_analytics</code>,便可以清楚地知道你的网站被访问了些什么。</li><li>TIDIO<br>Tidio Chat 是一款界面极其简洁的网页免费在线聊天工具.只需要简单的配置，你就可以在你的网站上搭建一个聊天窗口。</li></ul></blockquote><h3 id="RSS"><a href="#RSS" class="headerlink" title="RSS"></a>RSS</h3><blockquote><p>RSS（简易信息聚合）是一种消息来源格式规范，用以聚合经常发布更新数据的网站，例如博客文章、新闻、音频或视频的网摘。RSS文件（或称做摘要、网络摘要、或频更新，提供到频道）包含了全文或是节录的文字，再加上发用者所订阅之网摘布数据和授权的元数据。<br>简单来说，就是能通过类似鲜果阅读，ZAKER、Feedly这类阅读器，实现目标网站的聚合阅读。</p><p>通俗易懂的介绍RSS：<a href="https://www.ruanyifeng.com/blog/2006/01/rss.html" target="_blank" rel="noopener">如何使用RSS</a></p><p>你只需要下载一个RSS阅读器，就可以了，App Store 推荐下载：【RSS Prime】。</p><p>我的网站RSS订阅地址为：<a href="https://www.liugezhou.online/atom.xml" target="_blank" rel="noopener">https://www.liugezhou.online/atom.xml</a></p></blockquote><h3 id="7款便捷实用的CSS3工具"><a href="#7款便捷实用的CSS3工具" class="headerlink" title="7款便捷实用的CSS3工具"></a><a href="https://mp.weixin.qq.com/s/Tm6Hhn181MQkyYswMxgVzw" target="_blank" rel="noopener">7款便捷实用的CSS3工具</a></h3><blockquote><p>一些css代码在线生成工具，包括聊天气泡、Loading、triangle 、Button 、box-shadow、border-image等。</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;这里记录过去一周，我的关注以及值得记录的东西。&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;本周二下午我的公众号便遭遇了灭顶之灾–永久封禁。&lt;br&gt;不知道是什么原因，也找不到申诉入口。&lt;br&gt;于是本周末就花了点时间丰富了下自己的博客，此外没有别的产出了，下面做一个小的记录。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="每周分享" scheme="http://liugezhou.online/categories/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
-    
-    
-      <category term="每周分享" scheme="http://liugezhou.online/tags/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
     
   </entry>
   

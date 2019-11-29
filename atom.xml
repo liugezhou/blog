@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://liugezhou.online/"/>
-  <updated>2019-11-25T02:15:31.390Z</updated>
+  <updated>2019-11-29T03:08:12.561Z</updated>
   <id>http://liugezhou.online/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>前端模块化</title>
+    <link href="http://liugezhou.online/2019/11/27/%E5%89%8D%E7%AB%AF%E6%A8%A1%E5%9D%97%E5%8C%96/"/>
+    <id>http://liugezhou.online/2019/11/27/前端模块化/</id>
+    <published>2019-11-27T12:00:00.000Z</published>
+    <updated>2019-11-29T03:08:12.561Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h4><blockquote><p>最近在梳理前端的公众号支付流程，从前端流程微信JSSDK的引入开始查阅文档。<br>在引入JS文件一小段中，文档中备注：“支持使用 AMD/CMD 标准模块加载方法加载”。<br>于是，想到对CommonJS、AMD、CMD、ES6Module等概念与代码实例的理解甚是混淆，于是学习、总结此文。  </p></blockquote><a id="more"></a><h4 id="前端模块化"><a href="#前端模块化" class="headerlink" title="前端模块化"></a>前端模块化</h4><hr><blockquote><p>2009年，美国程序员Ryan Dahl创造了node.js项目，将javascript语言用于服务器端编程。这标志”Javascript模块化编程”正式诞生。<br>因为老实说，在浏览器环境下，没有模块也不是特别大的问题，毕竟网页程序的复杂性有限；但是在服务器端，一定要有模块，与操作系统和其他应用程序互动，否则根本没法编程。NodeJS是CommonJS规范的实现，webpack 也是以CommonJS的形式来书写。</p></blockquote><blockquote><p>为了提高代码的复用率，方便代码进行管理，我也不知先后(应该CommonJS最早吧)的出现了一系列的模块化的规范：CommonJS、AMD、CMD以及（ES6Module）。</p></blockquote><blockquote><p>通常来讲：一个文件就是一个模块，有自己的作用域，只向外暴露特定的变量和函数。</p></blockquote><blockquote><p>这三个规范都是为javascript模块化加载而生的，都是在用到或者预计要用到某些模块时候加载该模块，使得大量的系统巨大的庞杂的代码得以很好的组织和管理。模块化使得我们在使用和管理代码的时候不那么混乱，而且也方便了多人的合作。</p></blockquote><h4 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h4><hr><blockquote><ul><li>CommonJS是一个更偏向于服务端的规范。Node.js就是CommonJS规范的主要实践者。 </li><li>CommonJS不适用浏览器是因为：此规范是同步加载模块，对于服务器端来说，所有的模块都是在本地磁盘，等待模块时间就是硬盘读取文件时间，很小，但对浏览器而言，设计到网速、代理更原因，同步加载会造成阻塞，浏览器处于“假死”状态，所以浏览器端出现了AMD规范。</li></ul></blockquote><blockquote><p>代码实现拓展：<a href="http://javascript.ruanyifeng.com/nodejs/module.html" target="_blank" rel="noopener">CommonJS规范</a></p></blockquote><h4 id="AMD"><a href="#AMD" class="headerlink" title="AMD"></a>AMD</h4><blockquote><ul><li>AMD是<code>Asynchronous Module Definition</code>的缩写，即“异步模块定义”，它采用异步方式加载模块(模块的加载不影响它后面语句的运行),且会提前加载。</li><li>AMD同CommonJS一样也是使用require加载模块，但不同的是，AMD要求两个参数：require([module],callback).<br>实例：</li></ul></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">//定义一个math模块</span><br><span class="line">    // math.js</span><br><span class="line">    define(function() &#123;</span><br><span class="line">    var add = function(x, y) &#123;</span><br><span class="line">        return x + y;</span><br><span class="line">    &#125;</span><br><span class="line">    return  &#123;</span><br><span class="line">        add: add</span><br><span class="line">    &#125;</span><br><span class="line">//加载方法如下</span><br><span class="line">require([&apos;math&apos;], function(math) &#123;</span><br><span class="line">  alert(math.add(1, 1));</span><br><span class="line">&#125;)</span><br><span class="line">//如果math模块还依赖其他模块，写法如下：</span><br><span class="line">define([&apos;dependenceModule&apos;], function(dependenceModule) &#123;</span><br><span class="line">    // todo</span><br><span class="line">&#125;)</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">&gt; + 当require()函数加载math模块的时候，就会先加载dependenceModule模块。当有多个依赖时，就将所有的依赖都写在define()函数第一个参数数组中，所以说AMD是依赖前置的。这不同于CMD规范，它是依赖就近的。</span><br><span class="line"></span><br><span class="line">#### CMD</span><br><span class="line">---</span><br><span class="line">&gt; CMD与AMD最大的不同就是：CMD推崇依赖就近，延迟执行。可以在代码的任意一行写入依赖：    </span><br><span class="line">&gt; `define(factory)`    </span><br><span class="line">&gt; 当factory为函数时，表示是模块的构造方法。    </span><br><span class="line">&gt; 执行该构造方法，可以得到模块向外提供的接口。 </span><br><span class="line">&gt; factory 方法在执行时，默认会传入三个参数：require、exports 和 module.</span><br><span class="line"></span><br><span class="line">&gt; AMD与CMD代码对比：</span><br></pre></td></tr></table></figure><p> // CMD<br>    define(function(require, exports, module) {<br>    var a = require(‘./a’);<br>    a.doSomething();<br>    var b = require(‘./b’);<br>    b.doSomething();<br>    })<br>    // AMDdefine([‘a’, ‘b’], function(a, b) {<br>    a.doSomething();<br>    b.doSomething();<br>    })</p><pre><code>#### ES6---&gt; ES6 在语言标准的层面上，实现了模块功能，而且实现得相当简单，旨在成为浏览器和服务器通用的模块解决方案。其模块功能主要由两个命令构成：export和import.   &gt; export命令用于规定模块的对外接口，import命令用于输入其他模块提供的功能。  &gt; ES6还提供了export default命令，为模块指定默认输出，对应的import语句不需要使用大括号.#### ES6模块与CommonJS模块差异---&gt; + CommonJS 模块输出的是一个值的拷贝，ES6 模块输出的是值的引用。  &gt; +  CommonJS 模块输出的是一个值的拷贝，ES6 模块输出的是值的引用。</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt;最近在梳理前端的公众号支付流程，从前端流程微信JSSDK的引入开始查阅文档。&lt;br&gt;在引入JS文件一小段中，文档中备注：“支持使用 AMD/CMD 标准模块加载方法加载”。&lt;br&gt;于是，想到对CommonJS、AMD、CMD、ES6Module等概念与代码实例的理解甚是混淆，于是学习、总结此文。  &lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="web前端" scheme="http://liugezhou.online/categories/web%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="js" scheme="http://liugezhou.online/categories/web%E5%89%8D%E7%AB%AF/js/"/>
+    
+    
+      <category term="jsonp" scheme="http://liugezhou.online/tags/jsonp/"/>
+    
+      <category term="js" scheme="http://liugezhou.online/tags/js/"/>
+    
+  </entry>
   
   <entry>
     <title>每周总结第二十期</title>
@@ -459,30 +487,6 @@
       <category term="jsonp" scheme="http://liugezhou.online/tags/jsonp/"/>
     
       <category term="js" scheme="http://liugezhou.online/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>每周分享第八期</title>
-    <link href="http://liugezhou.online/2019/08/11/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB%E7%AC%AC%E5%85%AB%E6%9C%9F/"/>
-    <id>http://liugezhou.online/2019/08/11/每周分享第八期/</id>
-    <published>2019-08-10T16:00:00.000Z</published>
-    <updated>2019-09-30T03:18:02.127Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p><strong>这里记录过去一周，我的关注以及值得记录的东西。</strong></p></blockquote><a id="more"></a><h4 id="在线流程图工具"><a href="#在线流程图工具" class="headerlink" title="在线流程图工具"></a><a href="https://www.zenflowchart.com/" target="_blank" rel="noopener">在线流程图工具</a></h4><blockquote><p>简单好用的在线流程图工具。</p><p>之前开发项目的时候，画过【流程图】，为此还专门下载软件进行点点熟悉画图。</p><p>这个网站简单、易用，不论你是做什么工作，在需要绘制流程图的时候不必用专有软件，可直接打开此网站，使用此网站提供的服务进行流程图的绘画。</p></blockquote><h4 id="面包多–为创造者创收"><a href="#面包多–为创造者创收" class="headerlink" title="面包多–为创造者创收"></a>面包多–为创造者创收</h4><blockquote><p>面包多致力于帮助创造者(开发者，写作者，设计师等)获得收入，创造者可以上传作品到面包多，设置价格，然后获得出售链接，这些链接可以放置于任何地方，以供用户购买这些创造成果.</p><p>我在此平台发布了一篇文章：<a href="https://mianbaoduo.com/product/show/mbd-Yp2Ukw==" target="_blank" rel="noopener">作为一名开发者应该收藏的网站</a></p></blockquote><blockquote><p>内容即为本博客的【工具收藏】。</p></blockquote><blockquote><p>未曾想到想到还收到一个付费。</p></blockquote><blockquote><p>大概了解了一下此产品，基于知识付费方面。</p></blockquote><h4 id="今日热榜-APP"><a href="#今日热榜-APP" class="headerlink" title="今日热榜  APP"></a>今日热榜  APP</h4><blockquote><p>知乎热搜、微博热搜、微信热搜、澎湃新闻、豆瓣、百度等等等热点。</p></blockquote><blockquote><p>此APP便是提供这样一个内容。可通过自己的订阅，查看当下舆论新闻的热搜、热点事件。</p></blockquote><h4 id="华为-HarmonyOS-鸿蒙系统"><a href="#华为-HarmonyOS-鸿蒙系统" class="headerlink" title="华为 HarmonyOS 鸿蒙系统"></a>华为 HarmonyOS 鸿蒙系统</h4><blockquote><p>这是本周五的一大热点事件。<br>根据余承东介绍，“鸿蒙”具备以下特点：</p><p>1、基于微内核、面向全场景的分布式操作系统。  </p><p>2、面向的是“下一代”的 IOT 场景，包括已发布的荣耀智慧屏，规划中的PC、手表手环、车机、音箱、耳机、VR 设备，未来还会延伸至工业、航空航天等领域。 </p><p>3、开源。</p><h5 id="微内核"><a href="#微内核" class="headerlink" title="微内核"></a>微内核</h5><p>“内核”指代的是操作系统中的核心架构，大体可分为“宏内核”与“微内核”，前者代表为 iOS 与安卓，后者代表是谷歌 Fuchsia 与鸿蒙。两者的区别在于：内核越小，涉及的操作系统代码越少，进程越简单。</p></blockquote><blockquote><p>由于宏内核包含的系统服务很多，比如文件系统、进程管理、内存管理、声卡显卡驱动程序等，调用起来需要强大的处理器，所以适用于手机、电脑、PC 等产品；但微内核只提供诸如 CPU 管理、进程调度等最基础的功能，其余服务均以后期叠加的形式完成，因此更适合对于运算需求没那么高的手表、智能家居等 IOT 设备。</p><h5 id="分布式"><a href="#分布式" class="headerlink" title="分布式"></a>分布式</h5><p>分布式技术是 IoT 厂商提出“万物互联”的基础。从手机、到手表、到智能家居、汽车，不同设备对于系统的运算需求（本地/云端）、内存处理都不一样，而“分布式”则是用来连接这些设备的操作系统。<br>…………</p><h6 id="更多文章内容：-鸿蒙初问世，华为敛锋芒"><a href="#更多文章内容：-鸿蒙初问世，华为敛锋芒" class="headerlink" title="更多文章内容： 鸿蒙初问世，华为敛锋芒"></a>更多文章内容： <a href="https://mp.weixin.qq.com/s/v61phlapZi5sXiOpIGJJaw" target="_blank" rel="noopener">鸿蒙初问世，华为敛锋芒</a></h6></blockquote><h4 id="Taro与uni-app"><a href="#Taro与uni-app" class="headerlink" title="Taro与uni-app"></a>Taro与uni-app</h4><blockquote><p>开发一次，到处运行，是每个程序员的梦想。<br>对Taro与uni-app两个框架做了一个小小的对比，对于框架的选型我已然有了自己的选择。下面为简单结论。</p><table><thead><tr><th>描述</th><th>Uni-app：10412</th><th>Taro：20662</th></tr></thead><tbody><tr><td>技术栈</td><td>Vue.js</td><td>React.js</td></tr><tr><td>案例</td><td>案例丰富</td><td>案例丰富</td></tr><tr><td>微信小程序</td><td>⭕</td><td>⭕</td></tr><tr><td>支付宝小程序</td><td>⭕</td><td>⭕</td></tr><tr><td>百度小程序</td><td>⭕</td><td>⭕</td></tr><tr><td>头条小程序</td><td>⭕</td><td>⭕</td></tr><tr><td>H5</td><td>⭕</td><td>⭕</td></tr><tr><td>App</td><td>⭕</td><td>⭕</td></tr></tbody></table></blockquote><blockquote><p>公说公有理婆说婆有理,下面为两个框架各自的评测与开发者评测链接：<br>Taro官方评测：<a href="https://juejin.im/post/5c90eb366fb9a070d4199cc9" target="_blank" rel="noopener">Taro评测</a>.<br>uni-app官方评测：<a href="https://ask.dcloud.net.cn/article/35867" target="_blank" rel="noopener">uni-app评测</a>.<br>开发者评测：<a href="https://juejin.im/post/5c4ec383f265da613e229a67" target="_blank" rel="noopener">Taro vs uni-app</a>. </p><h6 id="开发者评测的简单总结："><a href="#开发者评测的简单总结：" class="headerlink" title="开发者评测的简单总结："></a>开发者评测的简单总结：</h6><p><code>质量对比</code>：<br>从两个项目的实际运行来看，uni-app的跨端效果更好（其实不止对比了官方demo，我们自己也写了小demo），特别是在H5平台相比taro要完善不少。<br>taro 的 dist 目录下不区分编译平台，同一时间仅可编译到一个平台，不支持多个平台对比查看运行效果；<br>uni-app 的 dist 目录区分编译平台，故支持同时编译到多个平台，可同时对比查看不同平台运行效果，这个体验是不错的，更有跨端开发的感觉。<br>另外uni-app的条件编译比较完善，这个在处理平台差异时很有用。</p><p><code>案例对比</code>：<br>两个框架都在官网放上了众多案例，只是taro案例清一色是微信小程序，没看到其他端，难道大家使用taro，只是为了用react开发微信小程序，不需要跨端？<br>综合比较，uni-app跨端质量更好，真实跨端案例也更多.</p></blockquote><blockquote><p><code>运行性能:</code><br>taro在性能优化上做的更细致，使用uni-app需要自己注意代码优化。</p></blockquote><blockquote><p><code>开发体验</code>:<br>都挺好。taro官方未特别推荐IDE，但提供了vscode支持的d.ts； uni-app推荐的开发工具是他自家的HBuilderX，用它可以不配环境，开箱即用.  </p></blockquote><blockquote><p><code>学习交流</code>:<br>另外文档角度，uni-app的文档比taro要完善，数了数交流群的数量，也是uni-app.</p></blockquote><h4 id="微信小程序PC端内测"><a href="#微信小程序PC端内测" class="headerlink" title="微信小程序PC端内测"></a>微信小程序PC端内测</h4><blockquote><p>小程序在PC端的使用，正在内测，这是要移动端、PC端通吃的节奏啊。</p></blockquote><blockquote><p>大约是本周五该新闻被爆料，微信强调，希望通过这一探索，帮助用户在聊天场景中更连贯地使用小程序。</p></blockquote><blockquote><p>小程序的红利应该还未真正到来，一切都在酝酿之中。在我看来，一方面是因为苹果的应用商店在那卡着，另一方面就是生态的布局还在继续，很有可能像微信公众平台、微信读书一样，持续不断的给用户、给开发者一个学习使用的机会，成熟之时，便是爆发之日。</p></blockquote><blockquote><p>在此再插一句：这种垄断巨头做出来的产品是真的好，但是由于垄断天然特性，总是会损害一部分人的利益，大体上看可能会慢慢损害大多数，只是会如温水壶青蛙般不知情。慢慢被同化、无力反驳。垄断者的耐心布局给人方面却又使人感到恐惧。</p></blockquote><h4 id="守望先锋-UI-组件库"><a href="#守望先锋-UI-组件库" class="headerlink" title="守望先锋 UI 组件库"></a><a href="https://haixiang6123.github.io/overwatch-ui-doc/#/start" target="_blank" rel="noopener">守望先锋 UI 组件库</a></h4><blockquote><p>一个《守望先锋》游戏风格的组件库，基于 Vue.js。</p></blockquote><h4 id="视频学英语"><a href="#视频学英语" class="headerlink" title="视频学英语"></a>视频学英语</h4><blockquote><p>金山词霸APP里面有个【视频学英语】模块，画风与抖音相似，推荐。下面为一个小段子的摘抄：<br>[对话场景：一场最终面试，面试者对两个候选人进行面试提问]</p><p>Interviewer：<br>‘You both are excellent.’<br>‘But we only have one vacant position.’<br>‘Let me ask you three more questions.’<br>‘First of all:’<br>‘What’s your hobby?’  </p></blockquote><blockquote><p>Candidate 1:<br>‘I enjoy delicious food.’<br>‘I know all the good restaurants in the city.’</p><p>Candidate 2:<br>‘I enjoy working extra hours.’<br>‘I love my work, my work is my hobby.’</p><p>Interviewer：<br>‘What do you first thing when you get to work?’</p><p>Candidate 1:<br>‘I usually make a task list first,’<br>‘so that my whole day is organzied.’</p><p>Candidate 2:<br>‘I open the door’<br>‘I’m always the first one to work.’</p><p>Interviewer：<br>‘What the last thing you do before leaving work?’</p><p>Candidate 1:<br>‘Close the door’<br>‘I enjoy being the last person to leave work.’</p><p>Candidate 2:<br>‘I copy the next day’s tasks to my USB’<br>‘so I can bring it home and get started on the next day’s work.’</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;这里记录过去一周，我的关注以及值得记录的东西。&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="每周分享" scheme="http://liugezhou.online/categories/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
-    
-    
-      <category term="每周分享" scheme="http://liugezhou.online/tags/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
     
   </entry>
   

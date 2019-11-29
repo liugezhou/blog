@@ -123,7 +123,7 @@
 
 
 
-  <meta name="keywords" content="六个周, liugezhou">
+  <meta name="keywords" content="jsonp,js,">
 
 
 
@@ -136,17 +136,18 @@
 
 
 
-<meta name="description" content="enjoy day">
-<meta name="keywords" content="六个周的个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="六个周">
-<meta property="og:url" content="http://liugezhou.online/archives/2018/10/index.html">
+<meta name="description" content="背景 最近在梳理前端的公众号支付流程，从前端流程微信JSSDK的引入开始查阅文档。在引入JS文件一小段中，文档中备注：“支持使用 AMD/CMD 标准模块加载方法加载”。于是，想到对CommonJS、AMD、CMD、ES6Module等概念与代码实例的理解甚是混淆，于是学习、总结此文。">
+<meta name="keywords" content="jsonp,js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端模块化">
+<meta property="og:url" content="http://liugezhou.online/2019/11/27/前端模块化/index.html">
 <meta property="og:site_name" content="六个周">
-<meta property="og:description" content="enjoy day">
+<meta property="og:description" content="背景 最近在梳理前端的公众号支付流程，从前端流程微信JSSDK的引入开始查阅文档。在引入JS文件一小段中，文档中备注：“支持使用 AMD/CMD 标准模块加载方法加载”。于是，想到对CommonJS、AMD、CMD、ES6Module等概念与代码实例的理解甚是混淆，于是学习、总结此文。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-11-29T03:08:12.561Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="六个周">
-<meta name="twitter:description" content="enjoy day">
+<meta name="twitter:title" content="前端模块化">
+<meta name="twitter:description" content="背景 最近在梳理前端的公众号支付流程，从前端流程微信JSSDK的引入开始查阅文档。在引入JS文件一小段中，文档中备注：“支持使用 AMD/CMD 标准模块加载方法加载”。于是，想到对CommonJS、AMD、CMD、ES6Module等概念与代码实例的理解甚是混淆，于是学习、总结此文。">
 
 
 
@@ -176,13 +177,13 @@
 
 
 
-  <link rel="canonical" href="http://liugezhou.online/archives/2018/10/">
+  <link rel="canonical" href="http://liugezhou.online/2019/11/27/前端模块化/">
 
 
 
 
 
-  <title>归档 | 六个周</title>
+  <title>前端模块化 | 六个周</title>
   
 
 
@@ -211,7 +212,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <a href="https://github.com/liugezhou" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#64CEAA; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -325,71 +326,329 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-         
-          
-        好! 目前共计 52 篇日志。 继续努力。
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h2 class="archive-year" id="archive-year-2018">2018</h2>
-          </div>
-        
-        
-
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liugezhou.online/2019/11/27/前端模块化/">
 
-      <h3 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liugezhou">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="http://img.liugezhou.online/time.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="六个周">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/10/15/服务端渲染/" itemprop="url">
-              
-                <span itemprop="name">服务端渲染</span>
-              
-            </a>
         
-      </h3>
+          <h2 class="post-title" itemprop="name headline">前端模块化</h2>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-10-15T00:00:00+08:00" content="2018-10-15">
-          10-15
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-27T20:00:00+08:00">
+                2019-11-27
+              </time>
+            
 
-    </header>
-  </article>
+            
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-11-29T11:08:12+08:00">
+                2019-11-29
+              </time>
+            
+          </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web前端/" itemprop="url" rel="index">
+                    <span itemprop="name">web前端</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web前端/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/11/27/前端模块化/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/11/27/前端模块化/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/11/27/前端模块化/" class="leancloud_visitors" data-flag-title="前端模块化">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
+      
+        <h4 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h4><blockquote>
+<p>最近在梳理前端的公众号支付流程，从前端流程微信JSSDK的引入开始查阅文档。<br>在引入JS文件一小段中，文档中备注：“支持使用 AMD/CMD 标准模块加载方法加载”。<br>于是，想到对CommonJS、AMD、CMD、ES6Module等概念与代码实例的理解甚是混淆，于是学习、总结此文。  </p>
+</blockquote>
+<a id="more"></a>
+
+<h4 id="前端模块化"><a href="#前端模块化" class="headerlink" title="前端模块化"></a>前端模块化</h4><hr>
+<blockquote>
+<p>2009年，美国程序员Ryan Dahl创造了node.js项目，将javascript语言用于服务器端编程。这标志”Javascript模块化编程”正式诞生。<br>因为老实说，在浏览器环境下，没有模块也不是特别大的问题，毕竟网页程序的复杂性有限；但是在服务器端，一定要有模块，与操作系统和其他应用程序互动，否则根本没法编程。NodeJS是CommonJS规范的实现，webpack 也是以CommonJS的形式来书写。</p>
+</blockquote>
+<blockquote>
+<p>为了提高代码的复用率，方便代码进行管理，我也不知先后(应该CommonJS最早吧)的出现了一系列的模块化的规范：CommonJS、AMD、CMD以及（ES6Module）。</p>
+</blockquote>
+<blockquote>
+<p>通常来讲：一个文件就是一个模块，有自己的作用域，只向外暴露特定的变量和函数。</p>
+</blockquote>
+<blockquote>
+<p>这三个规范都是为javascript模块化加载而生的，都是在用到或者预计要用到某些模块时候加载该模块，使得大量的系统巨大的庞杂的代码得以很好的组织和管理。模块化使得我们在使用和管理代码的时候不那么混乱，而且也方便了多人的合作。</p>
+</blockquote>
+<h4 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h4><hr>
+<blockquote>
+<ul>
+<li>CommonJS是一个更偏向于服务端的规范。Node.js就是CommonJS规范的主要实践者。 </li>
+<li>CommonJS不适用浏览器是因为：此规范是同步加载模块，对于服务器端来说，所有的模块都是在本地磁盘，等待模块时间就是硬盘读取文件时间，很小，但对浏览器而言，设计到网速、代理更原因，同步加载会造成阻塞，浏览器处于“假死”状态，所以浏览器端出现了AMD规范。</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>代码实现拓展：<a href="http://javascript.ruanyifeng.com/nodejs/module.html" target="_blank" rel="noopener">CommonJS规范</a></p>
+</blockquote>
+<h4 id="AMD"><a href="#AMD" class="headerlink" title="AMD"></a>AMD</h4><blockquote>
+<ul>
+<li>AMD是<code>Asynchronous Module Definition</code>的缩写，即“异步模块定义”，它采用异步方式加载模块(模块的加载不影响它后面语句的运行),且会提前加载。</li>
+<li>AMD同CommonJS一样也是使用require加载模块，但不同的是，AMD要求两个参数：require([module],callback).<br>实例：</li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">//定义一个math模块</span><br><span class="line">    // math.js</span><br><span class="line">    define(function() &#123;</span><br><span class="line">    var add = function(x, y) &#123;</span><br><span class="line">        return x + y;</span><br><span class="line">    &#125;</span><br><span class="line">    return  &#123;</span><br><span class="line">        add: add</span><br><span class="line">    &#125;</span><br><span class="line">//加载方法如下</span><br><span class="line">require([&apos;math&apos;], function(math) &#123;</span><br><span class="line">  alert(math.add(1, 1));</span><br><span class="line">&#125;)</span><br><span class="line">//如果math模块还依赖其他模块，写法如下：</span><br><span class="line">define([&apos;dependenceModule&apos;], function(dependenceModule) &#123;</span><br><span class="line">    // todo</span><br><span class="line">&#125;)</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">&gt; + 当require()函数加载math模块的时候，就会先加载dependenceModule模块。当有多个依赖时，就将所有的依赖都写在define()函数第一个参数数组中，所以说AMD是依赖前置的。这不同于CMD规范，它是依赖就近的。</span><br><span class="line"></span><br><span class="line">#### CMD</span><br><span class="line">---</span><br><span class="line">&gt; CMD与AMD最大的不同就是：CMD推崇依赖就近，延迟执行。可以在代码的任意一行写入依赖：    </span><br><span class="line">&gt; `define(factory)`    </span><br><span class="line">&gt; 当factory为函数时，表示是模块的构造方法。    </span><br><span class="line">&gt; 执行该构造方法，可以得到模块向外提供的接口。 </span><br><span class="line">&gt; factory 方法在执行时，默认会传入三个参数：require、exports 和 module.</span><br><span class="line"></span><br><span class="line">&gt; AMD与CMD代码对比：</span><br></pre></td></tr></table></figure>
+
+<p> // CMD<br>    define(function(require, exports, module) {<br>    var a = require(‘./a’);<br>    a.doSomething();<br>    var b = require(‘./b’);<br>    b.doSomething();<br>    })<br>    // AMDdefine([‘a’, ‘b’], function(a, b) {<br>    a.doSomething();<br>    b.doSomething();<br>    })</p>
+<pre><code>#### ES6
+---
+&gt; ES6 在语言标准的层面上，实现了模块功能，而且实现得相当简单，旨在成为浏览器和服务器通用的模块解决方案。其模块功能主要由两个命令构成：export和import.   
+&gt; export命令用于规定模块的对外接口，import命令用于输入其他模块提供的功能。  
+&gt; ES6还提供了export default命令，为模块指定默认输出，对应的import语句不需要使用大括号.
+
+#### ES6模块与CommonJS模块差异
+---
+&gt; + CommonJS 模块输出的是一个值的拷贝，ES6 模块输出的是值的引用。  
+&gt; +  CommonJS 模块输出的是一个值的拷贝，ES6 模块输出的是值的引用。
+</code></pre>
+      
     </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="http://img.liugezhou.online/wechatDangerous.jpg" alt="liugezhou wechat" style="width: 200px; max-width: 100%;">
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Enjoy Yourself EveryDay！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="liugezhou 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="liugezhou 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/jsonp/" rel="tag"># jsonp</a>
+          
+            <a href="/tags/js/" rel="tag"># js</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/24/每周总结第二十期/" rel="next" title="每周总结第二十期">
+                <i class="fa fa-chevron-left"></i> 每周总结第二十期
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -397,6 +656,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -417,8 +683,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -535,6 +810,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#前端模块化"><span class="nav-number">2.</span> <span class="nav-text">前端模块化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CommonJS"><span class="nav-number">3.</span> <span class="nav-text">CommonJS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AMD"><span class="nav-number">4.</span> <span class="nav-text">AMD</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -684,6 +975,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://liugezhou.online/"/>
-  <updated>2019-12-06T02:49:13.345Z</updated>
+  <updated>2019-12-08T14:09:36.568Z</updated>
   <id>http://liugezhou.online/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>每周总结第二十二期</title>
+    <link href="http://liugezhou.online/2019/12/07/%E6%AF%8F%E5%91%A8%E6%80%BB%E7%BB%93%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%BA%8C%E6%9C%9F/"/>
+    <id>http://liugezhou.online/2019/12/07/每周总结第二十二期/</id>
+    <published>2019-12-07T14:08:00.000Z</published>
+    <updated>2019-12-08T14:09:36.568Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>这里记录过去一周，我的一些小总结。<br><img src="http://img.liugezhou.online/20191206weekly.jpeg" alt="weekly-22"></p></blockquote><a id="more"></a><h4 id="Feeling"><a href="#Feeling" class="headerlink" title="Feeling"></a>Feeling</h4><blockquote><p>推出一个新产品很难，组建一个能够持续推出新产品的团队更难。<br>我最引以为傲的产品，就是苹果公司和我在苹果公司建立的团队。<br><cite>史蒂夫·乔布斯</cite></p></blockquote><h4 id="消费者办手机号全面开启人脸比对"><a href="#消费者办手机号全面开启人脸比对" class="headerlink" title="消费者办手机号全面开启人脸比对"></a>消费者办手机号全面开启人脸比对</h4><blockquote><p>据工信部的相关规定，自12月1日起，电信企业需在实体渠道全面实施人像比对技术措施，人像比对一致方可办理入网手续。<br>这意味着，今后，中国所有注册新SIM卡的手机用户都必须接受面部识别扫描。同时，规定要求电信企业部署“人工智能和其他技术方法”以检查注册SIM卡的人员的身份。<br>今年以来，人脸识别技术在国内出现了一系列的负面新闻，比如曾红极一时的换脸软件——ZAO，还有一位大学教授起诉动物园违规采集面部信息的“中国人脸识别第一案”。这些事件背后，说明中国人脸识别行业缺乏统一标准，管理仍然比较混乱，对用户的隐私保护做得不到位。就像“办手机卡”这件事，已经有一些声音开始担心：电信运营商真的能保证我们的人脸数据不外泄吗,不会用于其他的某方面用途吗？</p></blockquote><h4 id="华为作过的恶"><a href="#华为作过的恶" class="headerlink" title="华为作过的恶"></a><a href="https://github.com/evil-huawei/evil-huawei" target="_blank" rel="noopener">华为作过的恶</a></h4><blockquote><p>Gitub上，本周star数凑凑上涨的一个项目：<br>项目介绍：「由于部分内容被控评和删帖，已经无法在中文互联网搜索到，所以本项目将收集华为作过的恶，记录这些不应该被遗忘的历史。」</p></blockquote><h4 id="一键抠图神器"><a href="#一键抠图神器" class="headerlink" title="一键抠图神器"></a><a href="http://www.picup.ai/#/" target="_blank" rel="noopener">一键抠图神器</a></h4><blockquote><p>识别图像中的人体轮廓，与背景进行分离.有人体抠图和物体抠图。   </p></blockquote><h4 id="沙拉查词"><a href="#沙拉查词" class="headerlink" title="沙拉查词"></a>沙拉查词</h4><blockquote><p>一款浏览器插件，推荐。<br><img src="https://user-gold-cdn.xitu.io/2019/10/21/16dec06bb7790bd3?imageView2/2/w/800/q/85" alt="查词"></p></blockquote><h4 id="Grid-代码生成器"><a href="#Grid-代码生成器" class="headerlink" title="Grid 代码生成器"></a><a href="https://cssgrid-generator.netlify.com/" target="_blank" rel="noopener">Grid 代码生成器</a></h4><blockquote><p>可视化地配置 Grid，你可以设置行与列的个数、指定每个格子的类、长宽占比、行间距与列间距大小等，再一键生成 Grid 的 CSS 代码.<br><img src="https://user-gold-cdn.xitu.io/2019/12/6/16eda0f218272486?imageView2/2/w/800/q/85" alt="演示"></p></blockquote><h4 id="GitHub中文排行榜"><a href="#GitHub中文排行榜" class="headerlink" title="GitHub中文排行榜"></a><a href="https://github.com/kon9chunkit/GitHub-Chinese-Top-Charts" target="_blank" rel="noopener">GitHub中文排行榜</a></h4><blockquote><p>GitHub中文排行榜，帮助你发现高分优秀中文项目、更高效地吸收国人的优秀经验成果；榜单每周更新一次.   </p></blockquote><h4 id="浏览器中的页面"><a href="#浏览器中的页面" class="headerlink" title="浏览器中的页面"></a><a href="https://www.liugezhou.online/2019/12/03/No5.%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E7%9A%84%E9%A1%B5%E9%9D%A2/" target="_blank" rel="noopener">浏览器中的页面</a></h4><blockquote><p>前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。<br>本篇是这个专栏的第四章：<a href="https://www.liugezhou.online/2019/12/03/No5.%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E7%9A%84%E9%A1%B5%E9%9D%A2/" target="_blank" rel="noopener">浏览器中的页面</a>。本章分为八讲。</p></blockquote><h4 id="HTTP请求中的Form-Data和Request-Payload的区别"><a href="#HTTP请求中的Form-Data和Request-Payload的区别" class="headerlink" title="HTTP请求中的Form Data和Request Payload的区别"></a>HTTP请求中的Form Data和Request Payload的区别</h4><blockquote><p>前端开发中经常会用到AJAX发送异步请求，对于POST类型的请求会附带请求数据。而常用的两种传参方式为：Form Data 和 Request Payload。    </p></blockquote><blockquote><p>方式一： Form Data形式<br>当POST请求的请求头里设置Content-Type: application/x-www-form-urlencoded(默认), 参数在请求体以标准的Form Data的形式提交，以&amp;符号拼接，参数格式为key=value&amp;key=value&amp;key=value…<br>方式二：Request Payload形式<br>如果使用AJAX原生POST请求,请求头里设置Content-Type:application/json，请求的参数会显示在Request Payload中，参数格式为JSON格式：{“key”:”value”,”key”:”value”…}，这种方式可读性会更好. 后端可以使用getRequestPayload方法来获取.<br><code>Form Data 和 Request Payload 区别</code><br>如果请求头里设置Content-Type: application/x-www-form-urlencoded，那么这个请求被认为是表单请求，参数出现在Form Data里，格式为key=value&amp;key=value&amp;key=value…<br>原生的AJAX请求头里设置Content-Type:application/json，或者使用默认的请求头Content-Type:text/plain;参数会显示在Request payload块里提交。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;这里记录过去一周，我的一些小总结。&lt;br&gt;&lt;img src=&quot;http://img.liugezhou.online/20191206weekly.jpeg&quot; alt=&quot;weekly-22&quot;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="每周分享" scheme="http://liugezhou.online/categories/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
+    
+    
+      <category term="每周分享" scheme="http://liugezhou.online/tags/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
+    
+  </entry>
   
   <entry>
     <title>No5.浏览器中的页面</title>
@@ -450,29 +474,6 @@
     
       &lt;blockquote&gt;
 &lt;h4 id=&quot;这两周疲于总结，想到之前写简书文章的时候，也是坚持日更到五十来天便停滞不前了。这两者最后都中断了下的原因，大概是对一件事的忠诚度不够，驱动力不足、对做的这件事回报感不强烈，越写越疲于应付，实在是一个不好的苗头。我们中华文化传统常言道要坚持，我想-搞清楚坚持的目的是什么-才是当下比较重要的一件事。&quot;&gt;&lt;a href=&quot;#这两周疲于总结，想到之前写简书文章的时候，也是坚持日更到五十来天便停滞不前了。这两者最后都中断了下的原因，大概是对一件事的忠诚度不够，驱动力不足、对做的这件事回报感不强烈，越写越疲于应付，实在是一个不好的苗头。我们中华文化传统常言道要坚持，我想-搞清楚坚持的目的是什么-才是当下比较重要的一件事。&quot; class=&quot;headerlink&quot; title=&quot;这两周疲于总结，想到之前写简书文章的时候，也是坚持日更到五十来天便停滞不前了。这两者最后都中断了下的原因，大概是对一件事的忠诚度不够，驱动力不足、对做的这件事回报感不强烈，越写越疲于应付，实在是一个不好的苗头。我们中华文化传统常言道要坚持，我想 搞清楚坚持的目的是什么,才是当下比较重要的一件事。&quot;&gt;&lt;/a&gt;这两周疲于总结，想到之前写简书文章的时候，也是坚持日更到五十来天便停滞不前了。这两者最后都中断了下的原因，大概是对一件事的忠诚度不够，驱动力不足、对做的这件事回报感不强烈，越写越疲于应付，实在是一个不好的苗头。我们中华文化传统常言道要坚持，我想 搞清楚坚持的目的是什么,才是当下比较重要的一件事。&lt;/h4&gt;&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="每周分享" scheme="http://liugezhou.online/categories/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
-    
-    
-      <category term="每周分享" scheme="http://liugezhou.online/tags/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>每周分享第十期</title>
-    <link href="http://liugezhou.online/2019/08/26/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB%E7%AC%AC%E5%8D%81%E6%9C%9F/"/>
-    <id>http://liugezhou.online/2019/08/26/每周分享第十期/</id>
-    <published>2019-08-26T02:06:00.000Z</published>
-    <updated>2019-09-30T03:18:02.129Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><h4 id="原本计划第十期做一个之前文章记录的总结、将一些收藏的网站等内容再做个消化，然后不可饶恕的偷了个懒！"><a href="#原本计划第十期做一个之前文章记录的总结、将一些收藏的网站等内容再做个消化，然后不可饶恕的偷了个懒！" class="headerlink" title="原本计划第十期做一个之前文章记录的总结、将一些收藏的网站等内容再做个消化，然后不可饶恕的偷了个懒！"></a>原本计划第十期做一个之前文章记录的总结、将一些收藏的网站等内容再做个消化，然后不可饶恕的偷了个懒！</h4></blockquote><a id="more"></a><blockquote><p>前天跟小天去给小盘子搬家。</p><p>三个人夜晚把酒言欢，从一个聊到另一个，我一堆疯狂的输出，宣泄着自己的情绪–淋漓尽致的嘚吧嘚。</p><p>昨天回到家中，有了一点小小的自省。</p><p>这些想法的产生首先是持续关注某一类事的结果导向，看到了自我认为的不公、欺骗、谎言。于是看到社会事件便会有角色代入感，慢慢便心中隐藏起来一些戾气。</p><p>就像之前感受的那样，可能自身还处在一个明辨是非的阶段。</p><p>如果看够了不对的，质疑的、怀疑的、气愤的，那么接下来的一步：应该去追求那些认为对的，值得去追寻的东西。不要再去关注那些不认同，更不要花时间和精力去批判质疑那些，皆为无用功。</p><p>当我们谈论的时候，应该是梦想、目标。那些让人热泪盈眶、富有激情的散发在我们日常生活中的点滴。</p><p>众生皆苦，唯有自渡。保留一身正气，生活便没有恐惧。</p></blockquote><h3 id="设计网站大全"><a href="#设计网站大全" class="headerlink" title="设计网站大全"></a><a href="http://hao.shejidaren.com/index.html" target="_blank" rel="noopener">设计网站大全</a></h3><blockquote><p>做设计的应该去关注的一个网站，此网站的知识、工具等聚合应该会让做设计的人产生一丝共鸣。</p></blockquote><h3 id="美化二维码"><a href="#美化二维码" class="headerlink" title="美化二维码"></a><a href="http://www.mobanma.com" target="_blank" rel="noopener">美化二维码</a></h3><blockquote><p>之前二维码的制作用的是草料二维码，无意间发现这样一个网站，也是关于二维码的制作。</p></blockquote><h3 id="Instagram"><a href="#Instagram" class="headerlink" title="Instagram"></a><a href="https://www.instagram.com/liugezhou/" target="_blank" rel="noopener">Instagram</a></h3><blockquote><p>上面链接为我在ins上发的日常生活照片，感觉是非常滴优美，欢迎互关互粉。</p></blockquote><h3 id="人类简史"><a href="#人类简史" class="headerlink" title="人类简史"></a>人类简史</h3><blockquote><p>最早读到这本书的时候是在三四年前，那会为书中的种种思想感叹唏嘘，现在想来也可能是由于收此书的影响，在那之后的生活中思考发生了些变化。上周在地铁、睡前的碎片时间又在重看，希望可以站在旁观者而不是代入感的角色去重新感受这本书。推荐，另外还有两部《未来简史》、《今日简史》为以色列作家尤瓦尔·赫拉利的三重奏。</p><p>另外还对犹太民族做了一个简单的资料查询，为之文化、教育、贡献而感叹。</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;h4 id=&quot;原本计划第十期做一个之前文章记录的总结、将一些收藏的网站等内容再做个消化，然后不可饶恕的偷了个懒！&quot;&gt;&lt;a href=&quot;#原本计划第十期做一个之前文章记录的总结、将一些收藏的网站等内容再做个消化，然后不可饶恕的偷了个懒！&quot; class=&quot;headerlink&quot; title=&quot;原本计划第十期做一个之前文章记录的总结、将一些收藏的网站等内容再做个消化，然后不可饶恕的偷了个懒！&quot;&gt;&lt;/a&gt;原本计划第十期做一个之前文章记录的总结、将一些收藏的网站等内容再做个消化，然后不可饶恕的偷了个懒！&lt;/h4&gt;&lt;/blockquote&gt;
     
     </summary>
     

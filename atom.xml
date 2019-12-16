@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://liugezhou.online/"/>
-  <updated>2019-12-10T07:15:46.027Z</updated>
+  <updated>2019-12-16T03:01:55.118Z</updated>
   <id>http://liugezhou.online/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>每周总结第二十三期</title>
+    <link href="http://liugezhou.online/2019/12/15/%E6%AF%8F%E5%91%A8%E6%80%BB%E7%BB%93%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%89%E6%9C%9F/"/>
+    <id>http://liugezhou.online/2019/12/15/每周总结第二十三期/</id>
+    <published>2019-12-15T15:08:00.000Z</published>
+    <updated>2019-12-16T03:01:55.118Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>这里记录过去一周，我的一些小总结。<br> <img src="http://img.liugezhou.online/weekly23.jpeg" alt="weekly-23"></p></blockquote><a id="more"></a><h4 id="Feeling"><a href="#Feeling" class="headerlink" title="Feeling"></a>Feeling</h4><blockquote><p>周末去参加了两个群体聚会，本来是有很多的感受的，但是由于本性是善于遗忘，这篇周总结拖沓了一些，什么感受不感受的也都忘光了。  </p></blockquote><h4 id="普法-如果你被裁员，赔偿金是N、N-1、2N呢？"><a href="#普法-如果你被裁员，赔偿金是N、N-1、2N呢？" class="headerlink" title="普法 | 如果你被裁员，赔偿金是N、N+1、2N呢？"></a><a href="https://mp.weixin.qq.com/s/uFUhMlittAbNDcHWjLeZLA" target="_blank" rel="noopener">普法 | 如果你被裁员，赔偿金是N、N+1、2N呢？</a></h4><blockquote><p>最近几个大厂闹了不少事情，各家对裁员的赔偿金额不尽相同，导致很多朋友有所疑惑：到底裁员应该赔偿多少？又一波科普《劳动合同法》的。</p></blockquote><h4 id="二师兄法力无边–CPI破4"><a href="#二师兄法力无边–CPI破4" class="headerlink" title="二师兄法力无边–CPI破4"></a><a href="https://mp.weixin.qq.com/s/DIxLlp9cbrcKm47WQX6oyQ" target="_blank" rel="noopener">二师兄法力无边–CPI破4</a></h4><blockquote><p>据国家统计局发布的数据，11月份全国CPI（居民消费价格指数）同比上涨4.5%，连续9个月涨幅扩大.上一次CPI处在4%以上的高位，还是7年多前.那一轮通胀周期始于2010年下半年，直到2012年初才缓解.<br>猪肉是测算CPI的一篮子商品中权重最大的单品（约占2.5%），对CPI的拉动效果极为明显。</p></blockquote><h4 id="Chrome79发布"><a href="#Chrome79发布" class="headerlink" title="Chrome79发布"></a><a href="https://mp.weixin.qq.com/s/MEV6YhBUcpT82VryKsezgg" target="_blank" rel="noopener">Chrome79发布</a></h4><blockquote><p>Google 发布了适用于 Windows、Mac、Linux、Chrome OS、Android 和 iOS 用户的 Chrome 79。</p><p>Chrome 79 是 2019 年最后一次特性更新。自今年秋天初以来，Chrome 79 一直处在开发中，并于 10 月底进入 Beta 测试。Chrome 79 的更改主要面向开发人员，但安全浏览和内置密码检查工具方面也已有一些改进。</p></blockquote><h4 id="WebAssembly"><a href="#WebAssembly" class="headerlink" title="WebAssembly"></a><a href="https://mp.weixin.qq.com/s/XxdrxkU5ZZKX4kcqIIXIQw" target="_blank" rel="noopener">WebAssembly</a></h4><blockquote><p>2019年的12月5日，WebAssembly(简称WASM) ，被W3C推荐为正式标准，这是继html、css、javascript之后的第4门web语言，同时为Web带来一种支持代码在浏览器中运行的新语言.<br>通过即时编译或解析，WebAssembly引擎可以接近原生平台的速度执行代码编译。   </p><p>关于明年的前端发展趋势，该作者给出以下几点的预测:</p><ol><li>WebAssembly变得越来越普遍，得到了实际采用，并被用于产品中。        </li><li>GraphQL在新的创业公司和新项目上超过了REST，而老牌公司则向其迁移。      </li><li>TypeScript成为创业公司和新项目的默认选择。           </li><li>CSS-in-JS可能会成为默认的样式设置方法，而不是普通的CSS。     </li><li>Flutter可能会取代React Native成为构建跨平台移动应用的最佳方式。 </li></ol></blockquote><h4 id="themostdangerouswritingapp"><a href="#themostdangerouswritingapp" class="headerlink" title="themostdangerouswritingapp"></a><a href="https://github.com/maebert/themostdangerouswritingapp" target="_blank" rel="noopener">themostdangerouswritingapp</a></h4><blockquote><p>最危险的应用写作程序。<br>一旦你开始写作，那就不要停，必须时刻不停的打字。一旦停下（5秒倒计时），便立刻把先前写的所有内容删得一干二净。</p><p>体验地址：<a href="http://www.themostdangerouswritingapp.com" target="_blank" rel="noopener">http://www.themostdangerouswritingapp.com</a></p></blockquote><h4 id="Github或正式登录中国"><a href="#Github或正式登录中国" class="headerlink" title="Github或正式登录中国"></a>Github或正式登录中国</h4><blockquote><p>2019年12月10日，据英国《金融时报》报道， 全球最大程序员交友平台 GitHub <code>渴望</code>在中国开子公司。</p></blockquote><h4 id="力扣"><a href="#力扣" class="headerlink" title="力扣"></a><a href="https://leetcode-cn.com/" target="_blank" rel="noopener">力扣</a></h4><blockquote><p>力扣（LeetCode）上的题目已经有 1000+ 了。一目了然的题目分类力扣的题覆盖面极大，目前已有 1000+ 公开题目资源，涉及了许多算法与数据结构，有贪心，搜索，动态规划，链表，二叉树，哈希表等。<br>如果你是一名程序员，力扣一定要提前准备起来。</p></blockquote><h4 id="浏览器中的网络"><a href="#浏览器中的网络" class="headerlink" title="浏览器中的网络"></a><a href="https://www.liugezhou.online/2019/12/10/No6.%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E7%9A%84%E7%BD%91%E7%BB%9C/" target="_blank" rel="noopener">浏览器中的网络</a></h4><blockquote><p>前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。<br>本篇是这个专栏的第六章：<a href="https://www.liugezhou.online/2019/12/10/No6.%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E7%9A%84%E7%BD%91%E7%BB%9C/" target="_blank" rel="noopener">浏览器中的网络</a>。本章分为三讲。    </p><p>这三讲从浏览器的视角对HTTP的历史演进，进行了整体介绍，分别是即将完成使命的HTTP/1，正在我们走向的HTTP/2，以及未来的HTTP/3.</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;这里记录过去一周，我的一些小总结。&lt;br&gt; &lt;img src=&quot;http://img.liugezhou.online/weekly23.jpeg&quot; alt=&quot;weekly-23&quot;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="每周分享" scheme="http://liugezhou.online/categories/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
+    
+    
+      <category term="每周分享" scheme="http://liugezhou.online/tags/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
+    
+  </entry>
   
   <entry>
     <title>No6.浏览器中的网络</title>
@@ -457,29 +481,6 @@
     
     
       <category term="浏览器工作原理与实践" scheme="http://liugezhou.online/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>每周分享第十二期</title>
-    <link href="http://liugezhou.online/2019/09/15/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB%E7%AC%AC%E5%8D%81%E4%BA%8C%E6%9C%9F/"/>
-    <id>http://liugezhou.online/2019/09/15/每周分享第十二期/</id>
-    <published>2019-09-15T07:00:00.000Z</published>
-    <updated>2019-09-30T03:18:02.129Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><h4 id="有的人-将跑步贯穿自己的生命"><a href="#有的人-将跑步贯穿自己的生命" class="headerlink" title="有的人 将跑步贯穿自己的生命"></a>有的人 将跑步贯穿自己的生命</h4><h4 id="有的人-把对动物的呵护作为一种消遣"><a href="#有的人-把对动物的呵护作为一种消遣" class="headerlink" title="有的人 把对动物的呵护作为一种消遣"></a>有的人 把对动物的呵护作为一种消遣</h4><h4 id="有的人-通过看书来来作为自己追求自由的一种方式"><a href="#有的人-通过看书来来作为自己追求自由的一种方式" class="headerlink" title="有的人 通过看书来来作为自己追求自由的一种方式"></a>有的人 通过看书来来作为自己追求自由的一种方式</h4><h4 id="有的人-读史写史，想要观测人生的意义"><a href="#有的人-读史写史，想要观测人生的意义" class="headerlink" title="有的人 读史写史，想要观测人生的意义"></a>有的人 读史写史，想要观测人生的意义</h4><h4 id="有的人-无为而治-平淡的对着一切喜怒哀乐"><a href="#有的人-无为而治-平淡的对着一切喜怒哀乐" class="headerlink" title="有的人 无为而治 平淡的对着一切喜怒哀乐"></a>有的人 无为而治 平淡的对着一切喜怒哀乐</h4><h4 id="有的人-悲观乐观交至，无奈的挥洒着每一滴汗水"><a href="#有的人-悲观乐观交至，无奈的挥洒着每一滴汗水" class="headerlink" title="有的人 悲观乐观交至，无奈的挥洒着每一滴汗水"></a>有的人 悲观乐观交至，无奈的挥洒着每一滴汗水</h4><h4 id="有的人-不喜思考不愿作为，按着别人的意识走着自以为的康庄大道"><a href="#有的人-不喜思考不愿作为，按着别人的意识走着自以为的康庄大道" class="headerlink" title="有的人 不喜思考不愿作为，按着别人的意识走着自以为的康庄大道"></a>有的人 不喜思考不愿作为，按着别人的意识走着自以为的康庄大道</h4></blockquote><a id="more"></a><blockquote><h4 id="不管怎样，在未来或者现在，当回收往事的时候，有那么一件、两件、三四件我们为之自豪、骄傲、坚持的事，那我们便是幸运的。"><a href="#不管怎样，在未来或者现在，当回收往事的时候，有那么一件、两件、三四件我们为之自豪、骄傲、坚持的事，那我们便是幸运的。" class="headerlink" title="不管怎样，在未来或者现在，当回收往事的时候，有那么一件、两件、三四件我们为之自豪、骄傲、坚持的事，那我们便是幸运的。"></a>不管怎样，在未来或者现在，当回收往事的时候，有那么一件、两件、三四件我们为之自豪、骄傲、坚持的事，那我们便是幸运的。</h4></blockquote><h3 id="门萨俱乐部"><a href="#门萨俱乐部" class="headerlink" title="门萨俱乐部"></a>门萨俱乐部</h3><hr><blockquote><p>门萨的英文名为：<code>MENSA</code>, 是拉丁语中”圆桌”的意思。</p><p>MENSA不涉及任何政治、宗教及社会事务而只关注纯粹的智商问题。</p><p>MENSA特别注重的是它是一个非营利性社团，在其运作中可能产生的少量获利都用作其活动经费且受到严格监控。</p><p>除了高智商外，MENSA的会员可以说并无其他特征。参加MENSA的惟一途径便是参加考试并脱颖而出（平均每一百人中有两人有机会被吸纳为正式会员）。</p><p>MENSA拥有十万会员，分布遍及世界100个国家和地区.</p></blockquote><h3 id="双峰干涉实验–《天才最左，疯子在右》"><a href="#双峰干涉实验–《天才最左，疯子在右》" class="headerlink" title="双峰干涉实验–《天才最左，疯子在右》"></a>双峰干涉实验–《天才最左，疯子在右》</h3><hr><blockquote><p>这本书在三四年前看了一些，根本不知道写的是个什么，最近打开这本书瞅了瞅激起了一些兴趣。</p></blockquote><blockquote><p>其中印象比较深刻的一节–<code>迷失的旅行者</code>，提到了关于双峰干涉实验的一个解释–多重宇宙。</p></blockquote><blockquote><p>未曾查到此书是真记录还是真噱头，只是抱着一种不求甚解的感觉，引发一些遐想。</p></blockquote><h3 id="左耳朵耗子"><a href="#左耳朵耗子" class="headerlink" title="左耳朵耗子"></a>左耳朵耗子</h3><hr><blockquote><p>微博用户【左耳朵耗子】。</p></blockquote><blockquote><p>陈皓：20年软件开发相关工作经验，10年以上项目和团队管理经验，个人网站：<a href="https://coolshell.cn/" target="_blank" rel="noopener">https://coolshell.cn/</a></p><p>之前读过他的好几篇文章，很有想法。时不时的跟人在网上怼两句，也被人怼。</p><p>他在微博的很多言论、有意思。</p></blockquote><h3 id="Zoom"><a href="#Zoom" class="headerlink" title="Zoom"></a>Zoom</h3><hr><blockquote><p>如果你的团队需要开视频会议，可以使用Zoom。<br>但不幸的是前几天：左耳朵耗子在他的微博上说Zoom被墙。</p></blockquote><h3 id="邮箱"><a href="#邮箱" class="headerlink" title="邮箱"></a>邮箱</h3><hr><blockquote><p>由于邮箱众多，很早之前便开始使用网易邮箱大师，今天突然发现还是IPhone自带的邮件功能好用很多，纯天然无广告。</p></blockquote><h3 id="Research"><a href="#Research" class="headerlink" title="Research"></a><a href="http://www.suiyuanka.com" target="_blank" rel="noopener">Research</a></h3><blockquote><p>一个中文搜索的聚合网站，显示同一个关键字在不同网站的搜索结果。</p></blockquote><h3 id="在开源项目中展示广告的后续"><a href="#在开源项目中展示广告的后续" class="headerlink" title="在开源项目中展示广告的后续"></a><a href="https://mp.weixin.qq.com/s/UnRg1CuiupNos_h2XRNf-w" target="_blank" rel="noopener">在开源项目中展示广告的后续</a></h3><hr><blockquote><p>前一段时间，一个 Star 数超过 2.2 万的 Standard JS 开源项目做了一个尝试，通过终端安装后展示赞助商的广告。<br><b>事件后续:</b><br>0、该实验自开启后就遭到很多批评，两个赞助商也退出了；<br>1、实验发起人之一的 feross，在其个人博客发文，宣告实验终结；<br>2、npm 公司的 CTO 已对外作出回应，不接受在终端展示商业广告。另外，npm 会修改更新政策.</p></blockquote><h3 id="better-scroll"><a href="#better-scroll" class="headerlink" title="better-scroll"></a>better-scroll</h3><hr><blockquote><p>BetterScroll 是一款重点解决移动端（已支持 PC）各种滚动场景需求的插件。它的核心是借鉴的 iscroll 的实现，它的 API 设计基本兼容 iscroll，在 iscroll 的基础上又扩展了一些 feature 以及做了一些性能优化。</p></blockquote><blockquote><p>关于此插件：<br><a href="https://better-scroll.github.io/docs/zh-CN/guide/" target="_blank" rel="noopener">better-scroll的官方文档</a><br><a href="https://zhuanlan.zhihu.com/p/27407024" target="_blank" rel="noopener">当better-scroll遇见Vue</a></p></blockquote><h3 id="数据记录"><a href="#数据记录" class="headerlink" title="数据记录"></a>数据记录</h3><hr><blockquote><p>阮一峰的本周分享刊首语提到了如何让三分钟热度的用户坚持下来的一个解决方法：就是数据记录。每天都记录下来干的事情。可以看到自己的进步，产生一种不断挑战自己、超越自己的愿望。<br>正如文中提到的，GitHub 个人页的日历栏目，以及我现在所磕磕盼盼的周总结，希望可以通过数据记录的方式、看到自己的进步，让自己在这个做什么都像是浪费生命的世界里有些记录。</p></blockquote><h3 id="蚂蚁搬家工具"><a href="#蚂蚁搬家工具" class="headerlink" title="蚂蚁搬家工具"></a><a href="https://github.com/ant-move/antmove" target="_blank" rel="noopener">蚂蚁搬家工具</a></h3><hr><blockquote><p>小程序跨平台开发工具。一键实现微信小程序项目到支付宝小程序的迁徙，不再为重复开发而烦恼。</p></blockquote><h3 id="HelloDjango-Django-博客教程"><a href="#HelloDjango-Django-博客教程" class="headerlink" title="HelloDjango - Django 博客教程"></a><a href="https://www.zmrenwu.com/courses/hellodjango-blog-tutorial/" target="_blank" rel="noopener">HelloDjango - Django 博客教程</a></h3><hr><blockquote><p>Django 框架的中文入门教程，免费带你学 django 全栈。</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;h4 id=&quot;有的人-将跑步贯穿自己的生命&quot;&gt;&lt;a href=&quot;#有的人-将跑步贯穿自己的生命&quot; class=&quot;headerlink&quot; title=&quot;有的人 将跑步贯穿自己的生命&quot;&gt;&lt;/a&gt;有的人 将跑步贯穿自己的生命&lt;/h4&gt;&lt;h4 id=&quot;有的人-把对动物的呵护作为一种消遣&quot;&gt;&lt;a href=&quot;#有的人-把对动物的呵护作为一种消遣&quot; class=&quot;headerlink&quot; title=&quot;有的人 把对动物的呵护作为一种消遣&quot;&gt;&lt;/a&gt;有的人 把对动物的呵护作为一种消遣&lt;/h4&gt;&lt;h4 id=&quot;有的人-通过看书来来作为自己追求自由的一种方式&quot;&gt;&lt;a href=&quot;#有的人-通过看书来来作为自己追求自由的一种方式&quot; class=&quot;headerlink&quot; title=&quot;有的人 通过看书来来作为自己追求自由的一种方式&quot;&gt;&lt;/a&gt;有的人 通过看书来来作为自己追求自由的一种方式&lt;/h4&gt;&lt;h4 id=&quot;有的人-读史写史，想要观测人生的意义&quot;&gt;&lt;a href=&quot;#有的人-读史写史，想要观测人生的意义&quot; class=&quot;headerlink&quot; title=&quot;有的人 读史写史，想要观测人生的意义&quot;&gt;&lt;/a&gt;有的人 读史写史，想要观测人生的意义&lt;/h4&gt;&lt;h4 id=&quot;有的人-无为而治-平淡的对着一切喜怒哀乐&quot;&gt;&lt;a href=&quot;#有的人-无为而治-平淡的对着一切喜怒哀乐&quot; class=&quot;headerlink&quot; title=&quot;有的人 无为而治 平淡的对着一切喜怒哀乐&quot;&gt;&lt;/a&gt;有的人 无为而治 平淡的对着一切喜怒哀乐&lt;/h4&gt;&lt;h4 id=&quot;有的人-悲观乐观交至，无奈的挥洒着每一滴汗水&quot;&gt;&lt;a href=&quot;#有的人-悲观乐观交至，无奈的挥洒着每一滴汗水&quot; class=&quot;headerlink&quot; title=&quot;有的人 悲观乐观交至，无奈的挥洒着每一滴汗水&quot;&gt;&lt;/a&gt;有的人 悲观乐观交至，无奈的挥洒着每一滴汗水&lt;/h4&gt;&lt;h4 id=&quot;有的人-不喜思考不愿作为，按着别人的意识走着自以为的康庄大道&quot;&gt;&lt;a href=&quot;#有的人-不喜思考不愿作为，按着别人的意识走着自以为的康庄大道&quot; class=&quot;headerlink&quot; title=&quot;有的人 不喜思考不愿作为，按着别人的意识走着自以为的康庄大道&quot;&gt;&lt;/a&gt;有的人 不喜思考不愿作为，按着别人的意识走着自以为的康庄大道&lt;/h4&gt;&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="每周分享" scheme="http://liugezhou.online/categories/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
-    
-    
-      <category term="每周分享" scheme="http://liugezhou.online/tags/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
     
   </entry>
   

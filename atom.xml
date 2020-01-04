@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://liugezhou.online/"/>
-  <updated>2019-12-29T04:15:49.761Z</updated>
+  <updated>2020-01-04T15:38:54.595Z</updated>
   <id>http://liugezhou.online/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>node入门</title>
+    <link href="http://liugezhou.online/2020/01/03/node%E5%85%A5%E9%97%A8/"/>
+    <id>http://liugezhou.online/2020/01/03/node入门/</id>
+    <published>2020-01-03T10:00:00.000Z</published>
+    <updated>2020-01-04T15:38:54.595Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><hr><blockquote><p>最近有一个node服务的项目需要去接手，于是在阅读学习各种有关node的文章，零零总总的看了一些文章，感觉还是一团浆糊，遂整理总结出此文。<br>此文并未加入自己的理解，主要是从网上查阅资料看到的一些入门教程，将教程中的讲解进行重点知识的记录、梳理。</p></blockquote><a id="more"></a><h3 id="教程一-廖雪峰官网的Node-js"><a href="#教程一-廖雪峰官网的Node-js" class="headerlink" title="教程一:廖雪峰官网的Node.js"></a>教程一:<a href="https://www.liaoxuefeng.com/wiki/1022910821149312/1023025235359040" target="_blank" rel="noopener">廖雪峰官网的Node.js</a></h3><h4 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h4><hr><blockquote><p>在2009年，Ryan正式推出了基于JavaScript语言和V8引擎的开源Web服务器项目，命名为Node.js。虽然名字很土，但是，Node第一次把JavaScript带入到后端服务器开发，加上世界上已经有无数的JavaScript开发人员，所以Node一下子就火了起来。    </p></blockquote><blockquote><p>由于一群开发者对Joyent公司的策略不满(Node幕后一直由Joyent公司资助)，于2014年从Node.js项目fork出了io.js项目，决定单独发展，但两者实际上是兼容的。  </p></blockquote><blockquote><p>“分久必合，合久必分”,Joyent公司表示要和解,io.js项目又决定回归Node.js。    </p></blockquote><blockquote><p>将来io.js将首先添加新的特性，如果大家测试用得爽，就把新特性加入Node.js。io.js是“尝鲜版”，而Node.js是线上稳定版，</p></blockquote><h4 id="安装node-js和npm"><a href="#安装node-js和npm" class="headerlink" title="安装node.js和npm"></a>安装node.js和npm</h4><hr><blockquote><p>首先，从Node.js官网下载对应平台的安装程序.<br>安装完成后，在终端中输出：<code>node -v</code>,显示版本号，说明安装成功。</p></blockquote><blockquote><p>npm是Node.js的包管理工具（package manager）。<br>npm已经在Node.js安装的时候顺带装好了。我们在命令提示符或者终端输入<code>npm -v</code>,显示版本号。</p></blockquote><h4 id="第一个Node程序"><a href="#第一个Node程序" class="headerlink" title="第一个Node程序"></a>第一个Node程序</h4><hr><blockquote><p>命令行模式下，输入<code>node</code>回车，进入Node交互式环境。<br>或者也可以直接<code>node hello.js</code>运行一个.js文件。</p></blockquote><h4 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h4><hr><blockquote><p>在Node环境中，一个.js文件就称之为一个模块（module）。<br>使用模块可以避免函数名和变量名冲突。这是因为：JavaScript是一种<code>函数式编程语言</code>，它支持闭包。如果我们把一段JavaScript代码用一个函数包装起来，这段代码的所有“全局”变量就变成了函数内部的局部变量。而Node加载一个模块，其实就是对代码进行了一层包装。</p></blockquote><blockquote><p>要在模块中对外输出变量，用：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports = variable;</span><br></pre></td></tr></table></figure></blockquote><blockquote><p>输出的变量可以是任意对象、函数、数组等等。<br>要引入其他模块输出的对象，用：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var foo = require(&apos;other_module&apos;);</span><br></pre></td></tr></table></figure></blockquote><blockquote><p> 引入的对象具体是什么，取决于引入模块输出的对象。</p></blockquote><blockquote><p>关于Node.js的模块原理：<br>JavaScript语言本身并没有一种模块机制来保证不同模块可以使用相同的变量名。而是因为由于JavaScript是一种函数式编程语言，它支持闭包，Node加载一个js文件，就相当于把代码包装了一下，原来代码中的全局变量变成了函数内部的局部变量，因此每个模块中定义的全局变量并不会相互干扰。</p></blockquote><h4 id="基本模块"><a href="#基本模块" class="headerlink" title="基本模块"></a>基本模块</h4><hr><blockquote><p>Node.js内置的常用模块是为了实现基本的服务器功能，这些模块在浏览器环境中是无法执行的，因为它们的底层代码是用C/C++在Node.js运行环境中实现的。   </p></blockquote><blockquote><ul><li>global:相当于浏览器环境中的window。<br>在终端中输入node进入node环境，然后输入：<code>for (var k of Object.keys(global)) { console.log(k);}</code>,可以查看输出的结果，以更好理解global。</li></ul></blockquote><blockquote><ul><li>process: 是Node.js提供的一个对象，它代表当前Node.js进程。<br>如果我们想要在下一次事件响应中执行代码，可以调用process.nextTick().</li></ul></blockquote><h4 id="fs"><a href="#fs" class="headerlink" title="fs"></a>fs</h4><hr><blockquote><p>Node.js内置的fs模块是文件系统模块，负责读写文件。<br>fs模块同时提供了异步和同步的方法。 </p></blockquote><h5 id="异步读取文件"><a href="#异步读取文件" class="headerlink" title="异步读取文件"></a>异步读取文件</h5><blockquote><p>异步读取一个文件的代码如下： <code>fs.readFile(&#39;sample.txt&#39;,&#39;utf-8&#39;,function(err, data){})</code><br>异步读取时，传入的回调函数接受两个参数，当正常读取时，err参数为null，data参数为读取到的string。当读取发生错误时，err参数代表一个错误对象，data为undefined。<br>这也是Node.js标准的回调函数：第一个参数代表错误信息，第二个参数代表结果。后面我们会经常用到这种回调函数。 </p></blockquote><blockquote><p>读取二进制文件时，<code>fs.readFile(&#39;demo.png&#39;,function(err, data){}</code><br>不传入文件编码时，回调函数的data返回的是一个Buffer对象。在Node中，Buffer对象就是一个包含零个或任意个字节数的数组(与Array不同)。<br>Buffer对象转换为String：<code>data.toString(&#39;utf-8&#39;)</code>;<br>String对象转换为Buffer：<code>Buffer.from(data,&#39;utf-8&#39;)</code>;  </p></blockquote><h5 id="同步读取文件"><a href="#同步读取文件" class="headerlink" title="同步读取文件"></a>同步读取文件</h5><blockquote><p><code>fs.readFileSync()</code>;</p></blockquote><h5 id="写文件"><a href="#写文件" class="headerlink" title="写文件"></a>写文件</h5><blockquote><p><code>fs.writeFile(&#39;output.txt&#39;,data, function(err){}</code>;<br>writeFile()的参数依次为文件名、数据和回调函数。<br>和readFileSync()类似，写入文件也有一个同步方法：writeFileSync();  </p></blockquote><h5 id="stat"><a href="#stat" class="headerlink" title="stat"></a>stat</h5><blockquote><p>如果我们要获取文件大小、创建时间等信息，可以使用fs.stat()方法，此方法返回一个stat对象，能告诉我们目录文件详细信息。<br>是否是文件：<code>stat.isFile()</code>;<br>是否是目录：<code>stat.isDirectory()</code>;<br>若是文件，文件大小： <code>stat.size</code>;<br>若是文件，文件创建时间：<code>stat.birthtime</code>;<br>若是文件，文件修改时间：<code>stat.mtime</code>; </p></blockquote><blockquote><p><code>stat()</code>也有一个对应的同步方法：<code>statSync()</code>;</p></blockquote><h4 id="stream"><a href="#stream" class="headerlink" title="stream"></a>stream</h4><hr><blockquote><p>stream是Node.js提供的又一个仅在服务端可用的模块，目的是支持“流”这种数据结构。<br>流分为：stain(标准输入流)、staout(标准输出流)。   </p></blockquote><blockquote><p>读取文件流的核心语法是： <code>fs.createReadStream()</code>,代码见：<a href="https://github.com/liugezhou/koa/blob/master/basic/steam/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E6%96%87%E6%9C%AC.js" target="_blank" rel="noopener">文件读取文本</a>  </p></blockquote><blockquote><p>以流的形式写入文件，只有不断调用write()方法，代码见：<a href="https://github.com/liugezhou/koa/blob/master/basic/steam/%E6%96%87%E4%BB%B6%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6.js" target="_blank" rel="noopener">文本写入文件</a></p></blockquote><blockquote><p>将Readable流和Writable流串起来，所有的数据从Readable流进入Writable流，这种操作叫做pipe。在Node.js中，Readable流有一个pipe()方法，就是用来干这件事的。代码见：<a href="https://github.com/liugezhou/koa/blob/master/basic/steam/pipe.js" target="_blank" rel="noopener">pipe</a></p></blockquote><h4 id="http"><a href="#http" class="headerlink" title="http"></a>http</h4><hr><blockquote><p>要开发HTTP服务器程序，从头处理TCP连接，解析HTTP是不现实的。这些工作实际上已经由Node.js自带的http模块完成了。应用程序并不直接和HTTP协议打交道，而是操作http模块提供的request和response对象。</p></blockquote><blockquote><p>request对象封装了HTTP请求，我们调用request对象的属性和方法就可以拿到所有HTTP请求的信息；</p></blockquote><blockquote><p>response对象封装了HTTP响应，我们操作response对象的方法，就可以把HTTP响应返回给浏览器。</p></blockquote><h4 id="crypto"><a href="#crypto" class="headerlink" title="crypto"></a>crypto</h4><hr><blockquote><p>crypto模块的目的是为了提供通用的加密和哈希算法。用纯JavaScript代码实现这些功能不是不可能，但速度会非常慢。Nodejs用C/C++实现这些算法后，通过crypto这个模块暴露为JavaScript接口，这样用起来方便，速度也快。 </p></blockquote><blockquote><ul><li>MD5和SHA1是常用的哈希算法，用于给任意数据一个“签名”，这个签名通常用一个十六进制的字符串表示。   </li><li>Hmac算法：也是一种哈希算法，不同的是，它还需要加一个密钥。  </li><li>AES算法：是一种常用的对称加密算法，加解密都用同一个密钥。   </li><li>Diffie-Hellman：DH算法是一种密钥交换协议。  </li><li>RAS：RAS算法是一种对称加密算法</li></ul></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h3&gt;&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;最近有一个node服务的项目需要去接手，于是在阅读学习各种有关node的文章，零零总总的看了一些文章，感觉还是一团浆糊，遂整理总结出此文。&lt;br&gt;此文并未加入自己的理解，主要是从网上查阅资料看到的一些入门教程，将教程中的讲解进行重点知识的记录、梳理。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Node.js" scheme="http://liugezhou.online/categories/Node-js/"/>
+    
+    
+      <category term="node" scheme="http://liugezhou.online/tags/node/"/>
+    
+      <category term="js" scheme="http://liugezhou.online/tags/js/"/>
+    
+  </entry>
   
   <entry>
     <title>每周总结第二十五期</title>
@@ -224,9 +251,9 @@
       <category term="js" scheme="http://liugezhou.online/categories/web%E5%89%8D%E7%AB%AF/js/"/>
     
     
-      <category term="jsonp" scheme="http://liugezhou.online/tags/jsonp/"/>
-    
       <category term="js" scheme="http://liugezhou.online/tags/js/"/>
+    
+      <category term="jsonp" scheme="http://liugezhou.online/tags/jsonp/"/>
     
   </entry>
   
@@ -459,28 +486,6 @@
     
     
       <category term="每周分享" scheme="http://liugezhou.online/tags/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>弱(强)类型语言、静(动)态语言、编译(解释)型语言概念总览</title>
-    <link href="http://liugezhou.online/2019/10/15/%E5%BC%B1(%E5%BC%BA)%E7%B1%BB%E5%9E%8B%E8%AF%AD%E8%A8%80%E3%80%81%E9%9D%99(%E5%8A%A8)%E6%80%81%E8%AF%AD%E8%A8%80%E3%80%81%E7%BC%96%E8%AF%91(%E8%A7%A3%E9%87%8A)%E5%9E%8B%E8%AF%AD%E8%A8%80%E6%A6%82%E5%BF%B5%E6%80%BB%E8%A7%88/"/>
-    <id>http://liugezhou.online/2019/10/15/弱(强)类型语言、静(动)态语言、编译(解释)型语言概念总览/</id>
-    <published>2019-10-14T16:00:00.000Z</published>
-    <updated>2019-10-15T02:56:46.475Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="这篇文章用来彻底区分各种语言概念的区别"><a href="#这篇文章用来彻底区分各种语言概念的区别" class="headerlink" title="这篇文章用来彻底区分各种语言概念的区别."></a>这篇文章用来彻底区分各种<code>语言</code>概念的区别.</h4><a id="more"></a><h3 id="动态语言-VS-静态语言"><a href="#动态语言-VS-静态语言" class="headerlink" title="动态语言 VS 静态语言"></a>动态语言 VS 静态语言</h3><blockquote><p>每种编程语言都具有内建的数据类型，但它们的数据类型常有不同之处，使用方式也不一样，比如C语言、Java语言在定义变量前，就需要确定变量的类型。<br>这种声明变量的特点是：在声明变量之前需要先定义变量类型。我们把这种在使用之前就需要确认其变量数据类型的称为<code>静态语言</code>。<br>相反地，我们把在运行过程中需要检查数据类型的语言称为<code>动态语言</code>。</p></blockquote><h3 id="强类型语言-VS-弱类型语言"><a href="#强类型语言-VS-弱类型语言" class="headerlink" title="强类型语言 VS 弱类型语言"></a>强类型语言 VS 弱类型语言</h3><blockquote><p>虽然 C 语言是静态，但是在 C 语言中，我们可以把其他类型的数据赋予给一个声明好的变量， 比如在C语言中声明好了两个变量 ： </p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int a = 1;</span><br><span class="line">bool b = true;</span><br><span class="line">b = a;</span><br></pre></td></tr></table></figure><blockquote><p>我们把 int 型的变量 a 赋值给了 bool 型的变量b，这段代码也是可以编译执行的，因为在赋值过程中，C编译器会把 int 型的变量悄悄转换为 bool 型的变量.<br>通常把偷偷进行类型转换的操作成为<code>隐式类型转换</code>：<br>支持因此类型转换的语言称为<code>弱类型语言</code>，不支持隐式类型转换的语言称为<code>强类型语言</code>。</p></blockquote><h3 id="编译型语言-VS-解释型语言"><a href="#编译型语言-VS-解释型语言" class="headerlink" title="编译型语言 VS 解释型语言"></a>编译型语言 VS 解释型语言</h3><blockquote><p>编译型语言代表有：C语言，C++、Object-C以及swift.<br>通常都会对源代码进行编译，生成可以执行的二进制代码，执行的是编译后的结果. </p><p>解释型语言代表有：JavaScript、Python、Erlang、PHP、Perl、Ruby<br>通常不用对源代码进行编译，一般是通过解释器载入脚本后运行。由于每个语句都是执行的时候才进行解释翻译，这样解释性语言每次执行就要翻译一次，效率相对要低。</p><p>Java具有编译与解释两种特性：既可以将其源代码当作脚本执行，也可以进行编译成.class代码（字节码）载入运行.</p><p><a href="https://www.liugezhou.online/2018/12/31/编译型语言与解释型语言的区别/" target="_blank" rel="noopener">拓展–编译型语言与解释型语言的区别–详细介绍</a></p></blockquote><h4 id="盗图"><a href="#盗图" class="headerlink" title="盗图"></a>盗图</h4><blockquote><p><img src="http://img.liugezhou.online/language.jpg" alt="语言类型"></p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;这篇文章用来彻底区分各种语言概念的区别&quot;&gt;&lt;a href=&quot;#这篇文章用来彻底区分各种语言概念的区别&quot; class=&quot;headerlink&quot; title=&quot;这篇文章用来彻底区分各种语言概念的区别.&quot;&gt;&lt;/a&gt;这篇文章用来彻底区分各种&lt;code&gt;语言&lt;/code&gt;概念的区别.&lt;/h4&gt;
-    
-    </summary>
-    
-      <category term="编程概念类" scheme="http://liugezhou.online/categories/%E7%BC%96%E7%A8%8B%E6%A6%82%E5%BF%B5%E7%B1%BB/"/>
-    
-    
-      <category term="编程概念类" scheme="http://liugezhou.online/tags/%E7%BC%96%E7%A8%8B%E6%A6%82%E5%BF%B5%E7%B1%BB/"/>
     
   </entry>
   

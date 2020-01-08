@@ -157,7 +157,7 @@
     root: '/',
     scheme: 'Gemini',
     version: '5.1.4',
-    sidebar: {"position":"right","display":"remove","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"toTophideinMobile":false},
+    sidebar: {"position":"right","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"toTophideinMobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -679,6 +679,157 @@
 
         </div>
         
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="http://img.liugezhou.online/time.png" alt="liugezhou">
+            
+              <p class="site-author-name" itemprop="name">liugezhou</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-user"></i>
+                个人主页
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://github.com/liugezhou" title="GitHub" target="_blank">GitHub</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://liugezhou.gitbook.io/liugezhou/" title="Gitbook" target="_blank">Gitbook</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.instagram.com/liugezhou/" title="ins" target="_blank">ins</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.jianshu.com/u/5842abb77bd1" title="简书" target="_blank">简书</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://juejin.im/user/5afcc0a66fb9a07aad17b79e" title="掘金" target="_blank">掘金</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#文章背景"><span class="nav-number">1.</span> <span class="nav-text">文章背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简单经历"><span class="nav-number">2.</span> <span class="nav-text">简单经历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文章正文"><span class="nav-number">3.</span> <span class="nav-text">文章正文</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1️⃣、概念"><span class="nav-number">3.0.1.</span> <span class="nav-text">1️⃣、概念</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2️⃣、对比"><span class="nav-number">3.0.2.</span> <span class="nav-text">2️⃣、对比</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#编译型语言："><span class="nav-number">3.0.2.1.</span> <span class="nav-text">编译型语言：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#解释型语言"><span class="nav-number">3.0.2.2.</span> <span class="nav-text">解释型语言</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3️⃣、区别（本段落参考文章地址-戳这里）"><span class="nav-number">3.0.3.</span> <span class="nav-text">3️⃣、区别（本段落参考文章地址 戳这里）</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#区别1：从效果上来比"><span class="nav-number">3.0.3.1.</span> <span class="nav-text">区别1：从效果上来比</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#区别2：运行的时候是否需要编译器"><span class="nav-number">3.0.3.2.</span> <span class="nav-text">区别2：运行的时候是否需要编译器</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#区别3：执行速度对比"><span class="nav-number">3.0.3.3.</span> <span class="nav-text">区别3：执行速度对比</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#区别4：可移植性对比"><span class="nav-number">3.0.3.4.</span> <span class="nav-text">区别4：可移植性对比</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#区别5：升级上对比"><span class="nav-number">3.0.3.5.</span> <span class="nav-text">区别5：升级上对比</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#区别6：应用领域"><span class="nav-number">3.0.3.6.</span> <span class="nav-text">区别6：应用领域</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4️⃣、实现原理"><span class="nav-number">3.0.4.</span> <span class="nav-text">4️⃣、实现原理</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
       </div>
     </main>
 
@@ -698,7 +849,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">102.6k</span>
+    <span title="Site words total count">102.7k</span>
   
 </div>
 

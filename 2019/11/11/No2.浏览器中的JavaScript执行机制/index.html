@@ -144,7 +144,7 @@
 <meta property="og:site_name" content="六个周">
 <meta property="og:description" content="前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。本篇是这个专栏的第二章：《浏览器中的JavaScript执行机制》。本章分为五节。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-15T03:24:38.142Z">
+<meta property="og:updated_time" content="2020-01-08T08:57:46.926Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="No2.浏览器中的JavaScript执行机制">
 <meta name="twitter:description" content="前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。本篇是这个专栏的第二章：《浏览器中的JavaScript执行机制》。本章分为五节。">
@@ -157,7 +157,7 @@
     root: '/',
     scheme: 'Gemini',
     version: '5.1.4',
-    sidebar: {"position":"right","display":"remove","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"toTophideinMobile":false},
+    sidebar: {"position":"right","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"toTophideinMobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -397,8 +397,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-11-15T11:24:38+08:00">
-                2019-11-15
+              <time title="更新于" itemprop="dateModified" datetime="2020-01-08T16:57:46+08:00">
+                2020-01-08
               </time>
             
           </span>
@@ -710,6 +710,157 @@ foo()</code></pre><p>通过上面的代码，我们知道最终打印出来的�
 
         </div>
         
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="http://img.liugezhou.online/time.png" alt="liugezhou">
+            
+              <p class="site-author-name" itemprop="name">liugezhou</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-user"></i>
+                个人主页
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://github.com/liugezhou" title="GitHub" target="_blank">GitHub</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://liugezhou.gitbook.io/liugezhou/" title="Gitbook" target="_blank">Gitbook</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.instagram.com/liugezhou/" title="ins" target="_blank">ins</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.jianshu.com/u/5842abb77bd1" title="简书" target="_blank">简书</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://juejin.im/user/5afcc0a66fb9a07aad17b79e" title="掘金" target="_blank">掘金</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。"><span class="nav-number">1.</span> <span class="nav-text">前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#本篇是这个专栏的第二章：《浏览器中的JavaScript执行机制》。本章分为五节。"><span class="nav-number">2.</span> <span class="nav-text">本篇是这个专栏的第二章：《浏览器中的JavaScript执行机制》。本章分为五节。</span></a></li></ol><li class="nav-item nav-level-4"><a class="nav-link" href="#07｜变量提升：JavaScript代码是按顺序执行的吗？"><span class="nav-number"></span> <span class="nav-text">07｜变量提升：JavaScript代码是按顺序执行的吗？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#变量提升"><span class="nav-number"></span> <span class="nav-text">变量提升</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#08-｜调用栈：为什么JavaScript代码会出现栈溢出？"><span class="nav-number"></span> <span class="nav-text">08 ｜调用栈：为什么JavaScript代码会出现栈溢出？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#小结"><span class="nav-number"></span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#09-块级作用域：var缺陷以及为什么要引入let和const"><span class="nav-number"></span> <span class="nav-text">09 | 块级作用域：var缺陷以及为什么要引入let和const</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#作用域"><span class="nav-number"></span> <span class="nav-text">作用域</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#在同一段代码中，ES6-是如何做到既要支持变量提升的特性，又要支持块级作用域的呢？"><span class="nav-number"></span> <span class="nav-text">在同一段代码中，ES6 是如何做到既要支持变量提升的特性，又要支持块级作用域的呢？</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-｜-作用域和闭包：代码中出现相同的变量，JavaScript引擎是如何选择的"><span class="nav-number"></span> <span class="nav-text">10 ｜ 作用域和闭包：代码中出现相同的变量，JavaScript引擎是如何选择的</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#作用域链"><span class="nav-number"></span> <span class="nav-text">作用域链</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#词法作用域"><span class="nav-number"></span> <span class="nav-text">词法作用域</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#闭包"><span class="nav-number"></span> <span class="nav-text">闭包</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-｜-this：从JavaScript执行上下文的视角讲清楚this"><span class="nav-number"></span> <span class="nav-text">11 ｜ this：从JavaScript执行上下文的视角讲清楚this</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#this的设计缺陷以及应对方案"><span class="nav-number"></span> <span class="nav-text">this的设计缺陷以及应对方案</span></a></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
       </div>
     </main>
 
@@ -729,7 +880,7 @@ foo()</code></pre><p>通过上面的代码，我们知道最终打印出来的�
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">102.6k</span>
+    <span title="Site words total count">102.7k</span>
   
 </div>
 

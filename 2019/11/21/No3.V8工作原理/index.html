@@ -144,7 +144,7 @@
 <meta property="og:site_name" content="六个周">
 <meta property="og:description" content="前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。本篇是这个专栏的第三章：《V8工作原理》。本章分为三节。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-21T01:56:53.220Z">
+<meta property="og:updated_time" content="2020-01-08T08:57:46.926Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="No3.V8工作原理">
 <meta name="twitter:description" content="前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。本篇是这个专栏的第三章：《V8工作原理》。本章分为三节。">
@@ -157,7 +157,7 @@
     root: '/',
     scheme: 'Gemini',
     version: '5.1.4',
-    sidebar: {"position":"right","display":"remove","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"toTophideinMobile":false},
+    sidebar: {"position":"right","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"toTophideinMobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -397,8 +397,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-11-21T09:56:53+08:00">
-                2019-11-21
+              <time title="更新于" itemprop="dateModified" datetime="2020-01-08T16:57:46+08:00">
+                2020-01-08
               </time>
             
           </span>
@@ -707,6 +707,157 @@
 
         </div>
         
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="http://img.liugezhou.online/time.png" alt="liugezhou">
+            
+              <p class="site-author-name" itemprop="name">liugezhou</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-user"></i>
+                个人主页
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://github.com/liugezhou" title="GitHub" target="_blank">GitHub</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://liugezhou.gitbook.io/liugezhou/" title="Gitbook" target="_blank">Gitbook</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.instagram.com/liugezhou/" title="ins" target="_blank">ins</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.jianshu.com/u/5842abb77bd1" title="简书" target="_blank">简书</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://juejin.im/user/5afcc0a66fb9a07aad17b79e" title="掘金" target="_blank">掘金</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。"><span class="nav-number">1.</span> <span class="nav-text">前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#本篇是这个专栏的第三章：《V8工作原理》。本章分为三节。"><span class="nav-number">2.</span> <span class="nav-text">本篇是这个专栏的第三章：《V8工作原理》。本章分为三节。</span></a></li></ol><li class="nav-item nav-level-4"><a class="nav-link" href="#12｜栈空间和堆空间：数据是如何存储的？"><span class="nav-number"></span> <span class="nav-text">12｜栈空间和堆空间：数据是如何存储的？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#JavaScript是什么类型的语言"><span class="nav-number"></span> <span class="nav-text">JavaScript是什么类型的语言</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#JavaScript的数据类型"><span class="nav-number"></span> <span class="nav-text">JavaScript的数据类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#内存空间"><span class="nav-number"></span> <span class="nav-text">内存空间</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#产生闭包的核心"><span class="nav-number"></span> <span class="nav-text">产生闭包的核心</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13-｜-垃圾回收：垃圾数据是如何自动回收的？"><span class="nav-number"></span> <span class="nav-text">13 ｜ 垃圾回收：垃圾数据是如何自动回收的？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#不同语言的垃圾回收策略"><span class="nav-number"></span> <span class="nav-text">不同语言的垃圾回收策略</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#调用栈中的数据是如何回收的"><span class="nav-number"></span> <span class="nav-text">调用栈中的数据是如何回收的</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#堆中的数据是如何回收的"><span class="nav-number"></span> <span class="nav-text">堆中的数据是如何回收的</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#垃圾回收器的工作流程"><span class="nav-number"></span> <span class="nav-text">垃圾回收器的工作流程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#副垃圾回收器"><span class="nav-number"></span> <span class="nav-text">副垃圾回收器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#主垃圾回收器"><span class="nav-number"></span> <span class="nav-text">主垃圾回收器</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14-编译器和解释器：V8是如何执行一段JavaScript代码的"><span class="nav-number"></span> <span class="nav-text">14 | 编译器和解释器：V8是如何执行一段JavaScript代码的</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#编译器和解释器"><span class="nav-number"></span> <span class="nav-text">编译器和解释器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#V8是如何执行一段JavaScript代码的"><span class="nav-number"></span> <span class="nav-text">V8是如何执行一段JavaScript代码的</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-生成抽象语法树-AST-和执行上下文"><span class="nav-number">1.</span> <span class="nav-text">1.生成抽象语法树(AST)和执行上下文</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-生成字节码"><span class="nav-number">2.</span> <span class="nav-text">2.生成字节码</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-执行代码"><span class="nav-number">3.</span> <span class="nav-text">3.执行代码</span></a></li></ol></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
       </div>
     </main>
 
@@ -726,7 +877,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">102.6k</span>
+    <span title="Site words total count">102.7k</span>
   
 </div>
 

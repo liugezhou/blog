@@ -157,7 +157,7 @@
     root: '/',
     scheme: 'Gemini',
     version: '5.1.4',
-    sidebar: {"position":"right","display":"remove","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"toTophideinMobile":false},
+    sidebar: {"position":"right","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"toTophideinMobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -708,6 +708,157 @@
 
         </div>
         
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="http://img.liugezhou.online/time.png" alt="liugezhou">
+            
+              <p class="site-author-name" itemprop="name">liugezhou</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-user"></i>
+                个人主页
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://github.com/liugezhou" title="GitHub" target="_blank">GitHub</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://liugezhou.gitbook.io/liugezhou/" title="Gitbook" target="_blank">Gitbook</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.instagram.com/liugezhou/" title="ins" target="_blank">ins</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.jianshu.com/u/5842abb77bd1" title="简书" target="_blank">简书</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://juejin.im/user/5afcc0a66fb9a07aad17b79e" title="掘金" target="_blank">掘金</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#学习Vue也有差不多两年了，业务代码呱呱的写，一来二去就那两下子，只有拳脚功夫渐涨，而忽略了内功的修炼，气运丹田，将Vue秘籍再次翻阅咀嚼一下子。"><span class="nav-number">1.</span> <span class="nav-text">学习Vue也有差不多两年了，业务代码呱呱的写，一来二去就那两下子，只有拳脚功夫渐涨，而忽略了内功的修炼，气运丹田，将Vue秘籍再次翻阅咀嚼一下子。</span></a></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-freeze"><span class="nav-number"></span> <span class="nav-text">Object.freeze()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生命周期"><span class="nav-number"></span> <span class="nav-text">生命周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-once"><span class="nav-number"></span> <span class="nav-text">v-once</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-if条件渲染–template"><span class="nav-number"></span> <span class="nav-text">v-if条件渲染–template</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vue中包含的七个观察数组的方法"><span class="nav-number"></span> <span class="nav-text">Vue中包含的七个观察数组的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-for-with-v-if"><span class="nav-number"></span> <span class="nav-text">v-for with v-if</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件修饰符"><span class="nav-number"></span> <span class="nav-text">事件修饰符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#记住全局注册的行为必须在根Vue实例（通过new-Vue）创建之前发生。"><span class="nav-number"></span> <span class="nav-text">记住全局注册的行为必须在根Vue实例（通过new Vue）创建之前发生。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将原生事件绑定到组件上"><span class="nav-number"></span> <span class="nav-text">将原生事件绑定到组件上</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#访问根实例"><span class="nav-number"></span> <span class="nav-text">访问根实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#混入"><span class="nav-number"></span> <span class="nav-text">混入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过渡类名"><span class="nav-number"></span> <span class="nav-text">过渡类名</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
       </div>
     </main>
 
@@ -727,7 +878,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">102.6k</span>
+    <span title="Site words total count">102.7k</span>
   
 </div>
 

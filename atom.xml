@@ -61,9 +61,9 @@
       <category term="Node.js" scheme="http://liugezhou.online/categories/Node-js/"/>
     
     
-      <category term="node" scheme="http://liugezhou.online/tags/node/"/>
-    
       <category term="js" scheme="http://liugezhou.online/tags/js/"/>
+    
+      <category term="node" scheme="http://liugezhou.online/tags/node/"/>
     
   </entry>
   
@@ -275,9 +275,9 @@
       <category term="js" scheme="http://liugezhou.online/categories/web%E5%89%8D%E7%AB%AF/js/"/>
     
     
-      <category term="js" scheme="http://liugezhou.online/tags/js/"/>
-    
       <category term="jsonp" scheme="http://liugezhou.online/tags/jsonp/"/>
+    
+      <category term="js" scheme="http://liugezhou.online/tags/js/"/>
     
   </entry>
   

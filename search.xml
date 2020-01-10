@@ -54,11 +54,11 @@
     
     
     <entry>
-      <title>node入门</title>
+      <title>Node入门</title>
       <link href="/2020/01/03/node%E5%85%A5%E9%97%A8/"/>
       <url>/2020/01/03/node%E5%85%A5%E9%97%A8/</url>
       
-        <content type="html"><![CDATA[<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><hr><blockquote><p>最近有一个node服务的项目需要去接手，于是在阅读学习各种有关node的文章，零零总总的看了一些文章，感觉还是一团浆糊，遂整理总结出此文。<br>此文并未加入自己的理解，主要是从网上查阅资料看到的一些入门教程，将教程中的讲解进行重点知识的记录、梳理。</p></blockquote><a id="more"></a><h3 id="教程一-廖雪峰官网的Node-js"><a href="#教程一-廖雪峰官网的Node-js" class="headerlink" title="教程一:廖雪峰官网的Node.js"></a>教程一:<a href="https://www.liaoxuefeng.com/wiki/1022910821149312/1023025235359040" target="_blank" rel="noopener">廖雪峰官网的Node.js</a></h3><h4 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h4><hr><blockquote><p>在2009年，Ryan正式推出了基于JavaScript语言和V8引擎的开源Web服务器项目，命名为Node.js。虽然名字很土，但是，Node第一次把JavaScript带入到后端服务器开发，加上世界上已经有无数的JavaScript开发人员，所以Node一下子就火了起来。    </p></blockquote><blockquote><p>由于一群开发者对Joyent公司的策略不满(Node幕后一直由Joyent公司资助)，于2014年从Node.js项目fork出了io.js项目，决定单独发展，但两者实际上是兼容的。  </p></blockquote><blockquote><p>“分久必合，合久必分”,Joyent公司表示要和解,io.js项目又决定回归Node.js。    </p></blockquote><blockquote><p>将来io.js将首先添加新的特性，如果大家测试用得爽，就把新特性加入Node.js。io.js是“尝鲜版”，而Node.js是线上稳定版，</p></blockquote><h4 id="安装node-js和npm"><a href="#安装node-js和npm" class="headerlink" title="安装node.js和npm"></a>安装node.js和npm</h4><hr><blockquote><p>首先，从Node.js官网下载对应平台的安装程序.<br>安装完成后，在终端中输出：<code>node -v</code>,显示版本号，说明安装成功。</p></blockquote><blockquote><p>npm是Node.js的包管理工具（package manager）。<br>npm已经在Node.js安装的时候顺带装好了。我们在命令提示符或者终端输入<code>npm -v</code>,显示版本号。</p></blockquote><h4 id="第一个Node程序"><a href="#第一个Node程序" class="headerlink" title="第一个Node程序"></a>第一个Node程序</h4><hr><blockquote><p>命令行模式下，输入<code>node</code>回车，进入Node交互式环境。<br>或者也可以直接<code>node hello.js</code>运行一个.js文件。</p></blockquote><h4 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h4><hr><blockquote><p>在Node环境中，一个.js文件就称之为一个模块（module）。<br>使用模块可以避免函数名和变量名冲突。这是因为：JavaScript是一种<code>函数式编程语言</code>，它支持闭包。如果我们把一段JavaScript代码用一个函数包装起来，这段代码的所有“全局”变量就变成了函数内部的局部变量。而Node加载一个模块，其实就是对代码进行了一层包装。</p></blockquote><blockquote><p>要在模块中对外输出变量，用：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports = variable;</span><br></pre></td></tr></table></figure></blockquote><blockquote><p>输出的变量可以是任意对象、函数、数组等等。<br>要引入其他模块输出的对象，用：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var foo = require(&apos;other_module&apos;);</span><br></pre></td></tr></table></figure></blockquote><blockquote><p> 引入的对象具体是什么，取决于引入模块输出的对象。</p></blockquote><blockquote><p>关于Node.js的模块原理：<br>JavaScript语言本身并没有一种模块机制来保证不同模块可以使用相同的变量名。而是因为由于JavaScript是一种函数式编程语言，它支持闭包，Node加载一个js文件，就相当于把代码包装了一下，原来代码中的全局变量变成了函数内部的局部变量，因此每个模块中定义的全局变量并不会相互干扰。</p></blockquote><h4 id="基本模块"><a href="#基本模块" class="headerlink" title="基本模块"></a>基本模块</h4><hr><blockquote><p>Node.js内置的常用模块是为了实现基本的服务器功能，这些模块在浏览器环境中是无法执行的，因为它们的底层代码是用C/C++在Node.js运行环境中实现的。   </p></blockquote><blockquote><ul><li>global:相当于浏览器环境中的window。<br>在终端中输入node进入node环境，然后输入：<code>for (var k of Object.keys(global)) { console.log(k);}</code>,可以查看输出的结果，以更好理解global。</li></ul></blockquote><blockquote><ul><li>process: 是Node.js提供的一个对象，它代表当前Node.js进程。<br>如果我们想要在下一次事件响应中执行代码，可以调用process.nextTick().</li></ul></blockquote><h4 id="fs"><a href="#fs" class="headerlink" title="fs"></a>fs</h4><hr><blockquote><p>Node.js内置的fs模块是文件系统模块，负责读写文件。<br>fs模块同时提供了异步和同步的方法。 </p></blockquote><h5 id="异步读取文件"><a href="#异步读取文件" class="headerlink" title="异步读取文件"></a>异步读取文件</h5><blockquote><p>异步读取一个文件的代码如下： <code>fs.readFile(&#39;sample.txt&#39;,&#39;utf-8&#39;,function(err, data){})</code><br>异步读取时，传入的回调函数接受两个参数，当正常读取时，err参数为null，data参数为读取到的string。当读取发生错误时，err参数代表一个错误对象，data为undefined。<br>这也是Node.js标准的回调函数：第一个参数代表错误信息，第二个参数代表结果。后面我们会经常用到这种回调函数。 </p></blockquote><blockquote><p>读取二进制文件时，<code>fs.readFile(&#39;demo.png&#39;,function(err, data){}</code><br>不传入文件编码时，回调函数的data返回的是一个Buffer对象。在Node中，Buffer对象就是一个包含零个或任意个字节数的数组(与Array不同)。<br>Buffer对象转换为String：<code>data.toString(&#39;utf-8&#39;)</code>;<br>String对象转换为Buffer：<code>Buffer.from(data,&#39;utf-8&#39;)</code>;  </p></blockquote><h5 id="同步读取文件"><a href="#同步读取文件" class="headerlink" title="同步读取文件"></a>同步读取文件</h5><blockquote><p><code>fs.readFileSync()</code>;</p></blockquote><h5 id="写文件"><a href="#写文件" class="headerlink" title="写文件"></a>写文件</h5><blockquote><p><code>fs.writeFile(&#39;output.txt&#39;,data, function(err){}</code>;<br>writeFile()的参数依次为文件名、数据和回调函数。<br>和readFileSync()类似，写入文件也有一个同步方法：writeFileSync();  </p></blockquote><h5 id="stat"><a href="#stat" class="headerlink" title="stat"></a>stat</h5><blockquote><p>如果我们要获取文件大小、创建时间等信息，可以使用fs.stat()方法，此方法返回一个stat对象，能告诉我们目录文件详细信息。<br>是否是文件：<code>stat.isFile()</code>;<br>是否是目录：<code>stat.isDirectory()</code>;<br>若是文件，文件大小： <code>stat.size</code>;<br>若是文件，文件创建时间：<code>stat.birthtime</code>;<br>若是文件，文件修改时间：<code>stat.mtime</code>; </p></blockquote><blockquote><p><code>stat()</code>也有一个对应的同步方法：<code>statSync()</code>;</p></blockquote><h4 id="stream"><a href="#stream" class="headerlink" title="stream"></a>stream</h4><hr><blockquote><p>stream是Node.js提供的又一个仅在服务端可用的模块，目的是支持“流”这种数据结构。<br>流分为：stain(标准输入流)、staout(标准输出流)。   </p></blockquote><blockquote><p>读取文件流的核心语法是： <code>fs.createReadStream()</code>,代码见：<a href="https://github.com/liugezhou/koa/blob/master/basic/steam/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E6%96%87%E6%9C%AC.js" target="_blank" rel="noopener">文件读取文本</a>  </p></blockquote><blockquote><p>以流的形式写入文件，只有不断调用write()方法，代码见：<a href="https://github.com/liugezhou/koa/blob/master/basic/steam/%E6%96%87%E4%BB%B6%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6.js" target="_blank" rel="noopener">文本写入文件</a></p></blockquote><blockquote><p>将Readable流和Writable流串起来，所有的数据从Readable流进入Writable流，这种操作叫做pipe。在Node.js中，Readable流有一个pipe()方法，就是用来干这件事的。代码见：<a href="https://github.com/liugezhou/koa/blob/master/basic/steam/pipe.js" target="_blank" rel="noopener">pipe</a></p></blockquote><h4 id="http"><a href="#http" class="headerlink" title="http"></a>http</h4><hr><blockquote><p>要开发HTTP服务器程序，从头处理TCP连接，解析HTTP是不现实的。这些工作实际上已经由Node.js自带的http模块完成了。应用程序并不直接和HTTP协议打交道，而是操作http模块提供的request和response对象。</p></blockquote><blockquote><p>request对象封装了HTTP请求，我们调用request对象的属性和方法就可以拿到所有HTTP请求的信息；</p></blockquote><blockquote><p>response对象封装了HTTP响应，我们操作response对象的方法，就可以把HTTP响应返回给浏览器。</p></blockquote><h4 id="crypto"><a href="#crypto" class="headerlink" title="crypto"></a>crypto</h4><hr><blockquote><p>crypto模块的目的是为了提供通用的加密和哈希算法。用纯JavaScript代码实现这些功能不是不可能，但速度会非常慢。Nodejs用C/C++实现这些算法后，通过crypto这个模块暴露为JavaScript接口，这样用起来方便，速度也快。 </p></blockquote><blockquote><ul><li>MD5和SHA1是常用的哈希算法，用于给任意数据一个“签名”，这个签名通常用一个十六进制的字符串表示。   </li><li>Hmac算法：也是一种哈希算法，不同的是，它还需要加一个密钥。  </li><li>AES算法：是一种常用的对称加密算法，加解密都用同一个密钥。   </li><li>Diffie-Hellman：DH算法是一种密钥交换协议。  </li><li>RAS：RAS算法是一种对称加密算法</li></ul></blockquote>]]></content>
+        <content type="html"><![CDATA[<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><hr><blockquote><p>最近有一个node服务的项目需要去接手，于是在阅读学习各种有关node的文章，零零总总的看了一些文章，感觉还是一团浆糊，遂整理总结出此文。<br>此文并未加入自己的理解，主要是从网上查阅资料看到的一些入门教程，将教程中的讲解进行重点知识的记录、梳理。</p></blockquote><a id="more"></a><h3 id="廖雪峰官网的Node-js"><a href="#廖雪峰官网的Node-js" class="headerlink" title="廖雪峰官网的Node.js"></a><a href="https://www.liaoxuefeng.com/wiki/1022910821149312/1023025235359040" target="_blank" rel="noopener">廖雪峰官网的Node.js</a></h3><h4 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h4><hr><blockquote><p>在2009年，Ryan正式推出了基于JavaScript语言和V8引擎的开源Web服务器项目，命名为Node.js。虽然名字很土，但是，Node第一次把JavaScript带入到后端服务器开发，加上世界上已经有无数的JavaScript开发人员，所以Node一下子就火了起来。    </p></blockquote><blockquote><p>由于一群开发者对Joyent公司的策略不满(Node幕后一直由Joyent公司资助)，于2014年从Node.js项目fork出了io.js项目，决定单独发展，但两者实际上是兼容的。  </p></blockquote><blockquote><p>“分久必合，合久必分”,Joyent公司表示要和解,io.js项目又决定回归Node.js。    </p></blockquote><blockquote><p>将来io.js将首先添加新的特性，如果大家测试用得爽，就把新特性加入Node.js。io.js是“尝鲜版”，而Node.js是线上稳定版，</p></blockquote><h4 id="安装node-js和npm"><a href="#安装node-js和npm" class="headerlink" title="安装node.js和npm"></a>安装node.js和npm</h4><hr><blockquote><p>首先，从Node.js官网下载对应平台的安装程序.<br>安装完成后，在终端中输出：<code>node -v</code>,显示版本号，说明安装成功。</p></blockquote><blockquote><p>npm是Node.js的包管理工具（package manager）。<br>npm已经在Node.js安装的时候顺带装好了。我们在命令提示符或者终端输入<code>npm -v</code>,显示版本号。</p></blockquote><h4 id="第一个Node程序"><a href="#第一个Node程序" class="headerlink" title="第一个Node程序"></a>第一个Node程序</h4><hr><blockquote><p>命令行模式下，输入<code>node</code>回车，进入Node交互式环境。<br>或者也可以直接<code>node hello.js</code>运行一个.js文件。</p></blockquote><h4 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h4><hr><blockquote><p>在Node环境中，一个.js文件就称之为一个模块（module）。<br>使用模块可以避免函数名和变量名冲突。这是因为：JavaScript是一种<code>函数式编程语言</code>，它支持闭包。如果我们把一段JavaScript代码用一个函数包装起来，这段代码的所有“全局”变量就变成了函数内部的局部变量。而Node加载一个模块，其实就是对代码进行了一层包装。</p></blockquote><blockquote><p>要在模块中对外输出变量，用：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports = variable;</span><br></pre></td></tr></table></figure></blockquote><blockquote><p>输出的变量可以是任意对象、函数、数组等等。<br>要引入其他模块输出的对象，用：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var foo = require(&apos;other_module&apos;);</span><br></pre></td></tr></table></figure></blockquote><blockquote><p> 引入的对象具体是什么，取决于引入模块输出的对象。</p></blockquote><blockquote><p>关于Node.js的模块原理：<br>JavaScript语言本身并没有一种模块机制来保证不同模块可以使用相同的变量名。而是因为由于JavaScript是一种函数式编程语言，它支持闭包，Node加载一个js文件，就相当于把代码包装了一下，原来代码中的全局变量变成了函数内部的局部变量，因此每个模块中定义的全局变量并不会相互干扰。</p></blockquote><h4 id="基本模块"><a href="#基本模块" class="headerlink" title="基本模块"></a>基本模块</h4><hr><blockquote><p>Node.js内置的常用模块是为了实现基本的服务器功能，这些模块在浏览器环境中是无法执行的，因为它们的底层代码是用C/C++在Node.js运行环境中实现的。   </p></blockquote><blockquote><ul><li>global:相当于浏览器环境中的window。<br>在终端中输入node进入node环境，然后输入：<code>for (var k of Object.keys(global)) { console.log(k);}</code>,可以查看输出的结果，以更好理解global。</li></ul></blockquote><blockquote><ul><li>process: 是Node.js提供的一个对象，它代表当前Node.js进程。<br>如果我们想要在下一次事件响应中执行代码，可以调用process.nextTick().</li></ul></blockquote><h4 id="fs"><a href="#fs" class="headerlink" title="fs"></a>fs</h4><hr><blockquote><p>Node.js内置的fs模块是文件系统模块，负责读写文件。<br>fs模块同时提供了异步和同步的方法。 </p></blockquote><h5 id="异步读取文件"><a href="#异步读取文件" class="headerlink" title="异步读取文件"></a>异步读取文件</h5><blockquote><p>异步读取一个文件的代码如下： <code>fs.readFile(&#39;sample.txt&#39;,&#39;utf-8&#39;,function(err, data){})</code><br>异步读取时，传入的回调函数接受两个参数，当正常读取时，err参数为null，data参数为读取到的string。当读取发生错误时，err参数代表一个错误对象，data为undefined。<br>这也是Node.js标准的回调函数：第一个参数代表错误信息，第二个参数代表结果。后面我们会经常用到这种回调函数。 </p></blockquote><blockquote><p>读取二进制文件时，<code>fs.readFile(&#39;demo.png&#39;,function(err, data){}</code><br>不传入文件编码时，回调函数的data返回的是一个Buffer对象。在Node中，Buffer对象就是一个包含零个或任意个字节数的数组(与Array不同)。<br>Buffer对象转换为String：<code>data.toString(&#39;utf-8&#39;)</code>;<br>String对象转换为Buffer：<code>Buffer.from(data,&#39;utf-8&#39;)</code>;  </p></blockquote><h5 id="同步读取文件"><a href="#同步读取文件" class="headerlink" title="同步读取文件"></a>同步读取文件</h5><blockquote><p><code>fs.readFileSync()</code>;</p></blockquote><h5 id="写文件"><a href="#写文件" class="headerlink" title="写文件"></a>写文件</h5><blockquote><p><code>fs.writeFile(&#39;output.txt&#39;,data, function(err){}</code>;<br>writeFile()的参数依次为文件名、数据和回调函数。<br>和readFileSync()类似，写入文件也有一个同步方法：writeFileSync();  </p></blockquote><h5 id="stat"><a href="#stat" class="headerlink" title="stat"></a>stat</h5><blockquote><p>如果我们要获取文件大小、创建时间等信息，可以使用fs.stat()方法，此方法返回一个stat对象，能告诉我们目录文件详细信息。<br>是否是文件：<code>stat.isFile()</code>;<br>是否是目录：<code>stat.isDirectory()</code>;<br>若是文件，文件大小： <code>stat.size</code>;<br>若是文件，文件创建时间：<code>stat.birthtime</code>;<br>若是文件，文件修改时间：<code>stat.mtime</code>; </p></blockquote><blockquote><p><code>stat()</code>也有一个对应的同步方法：<code>statSync()</code>;</p></blockquote><h4 id="stream"><a href="#stream" class="headerlink" title="stream"></a>stream</h4><hr><blockquote><p>stream是Node.js提供的又一个仅在服务端可用的模块，目的是支持“流”这种数据结构。<br>流分为：stain(标准输入流)、staout(标准输出流)。   </p></blockquote><blockquote><p>读取文件流的核心语法是： <code>fs.createReadStream()</code>,代码见：<a href="https://github.com/liugezhou/koa/blob/master/basic/steam/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E6%96%87%E6%9C%AC.js" target="_blank" rel="noopener">文件读取文本</a>  </p></blockquote><blockquote><p>以流的形式写入文件，只有不断调用write()方法，代码见：<a href="https://github.com/liugezhou/koa/blob/master/basic/steam/%E6%96%87%E4%BB%B6%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6.js" target="_blank" rel="noopener">文本写入文件</a></p></blockquote><blockquote><p>将Readable流和Writable流串起来，所有的数据从Readable流进入Writable流，这种操作叫做pipe。在Node.js中，Readable流有一个pipe()方法，就是用来干这件事的。代码见：<a href="https://github.com/liugezhou/koa/blob/master/basic/steam/pipe.js" target="_blank" rel="noopener">pipe</a></p></blockquote><h4 id="http"><a href="#http" class="headerlink" title="http"></a>http</h4><hr><blockquote><p>要开发HTTP服务器程序，从头处理TCP连接，解析HTTP是不现实的。这些工作实际上已经由Node.js自带的http模块完成了。应用程序并不直接和HTTP协议打交道，而是操作http模块提供的request和response对象。</p></blockquote><blockquote><p>request对象封装了HTTP请求，我们调用request对象的属性和方法就可以拿到所有HTTP请求的信息；</p></blockquote><blockquote><p>response对象封装了HTTP响应，我们操作response对象的方法，就可以把HTTP响应返回给浏览器。</p></blockquote><h4 id="crypto"><a href="#crypto" class="headerlink" title="crypto"></a>crypto</h4><hr><blockquote><p>crypto模块的目的是为了提供通用的加密和哈希算法。用纯JavaScript代码实现这些功能不是不可能，但速度会非常慢。Nodejs用C/C++实现这些算法后，通过crypto这个模块暴露为JavaScript接口，这样用起来方便，速度也快。 </p></blockquote><blockquote><ul><li>MD5和SHA1是常用的哈希算法，用于给任意数据一个“签名”，这个签名通常用一个十六进制的字符串表示。   </li><li>Hmac算法：也是一种哈希算法，不同的是，它还需要加一个密钥。  </li><li>AES算法：是一种常用的对称加密算法，加解密都用同一个密钥。   </li><li>Diffie-Hellman：DH算法是一种密钥交换协议。  </li><li>RAS：RAS算法是一种对称加密算法</li></ul></blockquote>]]></content>
       
       
       <categories>
@@ -69,8 +69,6 @@
       
       
         <tags>
-            
-            <tag> js </tag>
             
             <tag> node </tag>
             
@@ -292,16 +290,12 @@
           
           <category> web前端 </category>
           
-          <category> js </category>
-          
       </categories>
       
       
         <tags>
             
-            <tag> jsonp </tag>
-            
-            <tag> js </tag>
+            <tag> 前端模块化 </tag>
             
         </tags>
       
@@ -576,7 +570,7 @@
       
         <tags>
             
-            <tag> 编程概念类 </tag>
+            <tag> XX型语言 </tag>
             
         </tags>
       
@@ -721,8 +715,6 @@
           
           <category> web前端 </category>
           
-          <category> Vue.js </category>
-          
       </categories>
       
       
@@ -773,16 +765,12 @@
           
           <category> web前端 </category>
           
-          <category> js </category>
-          
       </categories>
       
       
         <tags>
             
             <tag> jsonp </tag>
-            
-            <tag> js </tag>
             
         </tags>
       
@@ -852,14 +840,10 @@
           
           <category> web前端 </category>
           
-          <category> HTML/CSS </category>
-          
       </categories>
       
       
         <tags>
-            
-            <tag> HTML/CSS </tag>
             
             <tag> CSS3 </tag>
             
@@ -929,14 +913,14 @@
       
       <categories>
           
-          <category> 杂感 </category>
+          <category> 吐槽 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 杂感 </tag>
+            <tag> 吐槽 </tag>
             
         </tags>
       
@@ -981,14 +965,10 @@
           
           <category> web前端 </category>
           
-          <category> 小程序 </category>
-          
       </categories>
       
       
         <tags>
-            
-            <tag> 小程序 </tag>
             
             <tag> iconfont </tag>
             
@@ -1160,14 +1140,12 @@
           
           <category> web前端 </category>
           
-          <category> 小程序 </category>
-          
       </categories>
       
       
         <tags>
             
-            <tag> 小程序 </tag>
+            <tag> 小程序request封装 </tag>
             
         </tags>
       
@@ -1186,8 +1164,6 @@
       <categories>
           
           <category> web前端 </category>
-          
-          <category> 小程序 </category>
           
       </categories>
       
@@ -1471,8 +1447,6 @@
       
         <tags>
             
-            <tag> 编程概念类 </tag>
-            
             <tag> 前端跨域 </tag>
             
         </tags>
@@ -1498,8 +1472,6 @@
       
         <tags>
             
-            <tag> 编程概念类 </tag>
-            
             <tag> 服务端渲染 </tag>
             
         </tags>
@@ -1520,16 +1492,12 @@
           
           <category> web前端 </category>
           
-          <category> HTML/CSS </category>
-          
       </categories>
       
       
         <tags>
             
-            <tag> flex </tag>
-            
-            <tag> HTML/CSS </tag>
+            <tag> Flex </tag>
             
         </tags>
       
@@ -1555,8 +1523,6 @@
         <tags>
             
             <tag> Chrome </tag>
-            
-            <tag> 编程概念类 </tag>
             
         </tags>
       
@@ -1601,14 +1567,10 @@
           
           <category> web前端 </category>
           
-          <category> js </category>
-          
       </categories>
       
       
         <tags>
-            
-            <tag> js </tag>
             
             <tag> npm intsall </tag>
             
@@ -1637,7 +1599,7 @@
       <link href="/collectionlink/index.html"/>
       <url>/collectionlink/index.html</url>
       
-        <content type="html"><![CDATA[<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script><div id="hbe-security">  <div class="hbe-input-container">  <input type="password" class="hbe-form-control" id="pass" placeholder="你需要输入密码访问." />    <label for="pass">你需要输入密码访问.</label>    <div class="bottom-line"></div>  </div></div><div id="decryptionError" style="display: none;">Incorrect Password!</div><div id="noContentError" style="display: none;">No content to display!</div><div id="encrypt-blog" style="display:none">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</div><script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
+        <content type="html"><![CDATA[<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script><div id="hbe-security">  <div class="hbe-input-container">  <input type="password" class="hbe-form-control" id="pass" placeholder="你需要输入密码访问." />    <label for="pass">你需要输入密码访问.</label>    <div class="bottom-line"></div>  </div></div><div id="decryptionError" style="display: none;">Incorrect Password!</div><div id="noContentError" style="display: none;">No content to display!</div><div id="encrypt-blog" style="display:none">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</div><script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
       
     </entry>
     

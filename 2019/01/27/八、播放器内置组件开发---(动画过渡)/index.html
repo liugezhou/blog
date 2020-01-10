@@ -136,19 +136,19 @@
 
 
 
-<meta name="description" content="本节总览  本节代码提交至：chapter8  效果预览：">
+<meta name="description" content="本节总览 本节代码提交至：chapter8  效果预览：">
 <meta name="keywords" content="移动音乐APP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="八、播放器内置组件开发---(动画过渡)">
 <meta property="og:url" content="http://liugezhou.online/2019/01/27/八、播放器内置组件开发---(动画过渡)/index.html">
 <meta property="og:site_name" content="六个周">
-<meta property="og:description" content="本节总览  本节代码提交至：chapter8  效果预览：">
+<meta property="og:description" content="本节总览 本节代码提交至：chapter8  效果预览：">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://img.liugezhou.online/Vue2-08.gif">
-<meta property="og:updated_time" content="2019-09-30T03:18:02.116Z">
+<meta property="og:updated_time" content="2020-01-10T06:06:22.061Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="八、播放器内置组件开发---(动画过渡)">
-<meta name="twitter:description" content="本节总览  本节代码提交至：chapter8  效果预览：">
+<meta name="twitter:description" content="本节总览 本节代码提交至：chapter8  效果预览：">
 <meta name="twitter:image" content="http://img.liugezhou.online/Vue2-08.gif">
 
 
@@ -399,8 +399,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-09-30T11:18:02+08:00">
-                2019-09-30
+              <time title="更新于" itemprop="dateModified" datetime="2020-01-10T14:06:22+08:00">
+                2020-01-10
               </time>
             
           </span>
@@ -507,8 +507,7 @@
       
 
       
-        <h4 id="本节总览"><a href="#本节总览" class="headerlink" title="本节总览"></a>本节总览</h4><hr>
-<blockquote>
+        <h4 id="本节总览"><a href="#本节总览" class="headerlink" title="本节总览"></a>本节总览</h4><blockquote>
 <p>本节代码提交至：<a href="https://github.com/liugezhou/liugezhou_music/tree/chapter8" target="_blank" rel="noopener">chapter8</a></p>
 </blockquote>
 <h4 id="效果预览："><a href="#效果预览：" class="headerlink" title="效果预览："></a>效果预览：</h4><p><img src="http://img.liugezhou.online/Vue2-08.gif" alt="chapter8--动画.gif"></p>
@@ -517,11 +516,9 @@
 <blockquote>
 <p>本节主要是在进入歌手详情页后，点击某一首歌曲后的页面–播放页面的代码开发。<br>包含底部mini播放器的Vuex状态控制显示与掩藏（之前已写好）、播放器页面布局、播放器页面的动画效果。</p>
 </blockquote>
-<h4 id="代码主要更新"><a href="#代码主要更新" class="headerlink" title="代码主要更新"></a>代码主要更新</h4><hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">liugezhou_music/src/store</span><br><span class="line">liugezhou_music/src/common/js/config.js</span><br><span class="line">liugezhou_music/package.json</span><br><span class="line">liugezhou_music/src/components/music-list/music-list.vue</span><br><span class="line">liugezhou_music/src/components/player/player.vue</span><br><span class="line">liugezhou_music/src/App.vue</span><br></pre></td></tr></table></figure>
+<h4 id="代码主要更新"><a href="#代码主要更新" class="headerlink" title="代码主要更新"></a>代码主要更新</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">liugezhou_music/src/store</span><br><span class="line">liugezhou_music/src/common/js/config.js</span><br><span class="line">liugezhou_music/package.json</span><br><span class="line">liugezhou_music/src/components/music-list/music-list.vue</span><br><span class="line">liugezhou_music/src/components/player/player.vue</span><br><span class="line">liugezhou_music/src/App.vue</span><br></pre></td></tr></table></figure>
 
-<h4 id="本节代码开发知识点及代码思路"><a href="#本节代码开发知识点及代码思路" class="headerlink" title="本节代码开发知识点及代码思路"></a>本节代码开发知识点及代码思路</h4><hr>
-<h5 id="1-store-播放器Vuex数据设计"><a href="#1-store-播放器Vuex数据设计" class="headerlink" title="1.store || 播放器Vuex数据设计"></a>1.store || 播放器Vuex数据设计</h5><blockquote>
+<h4 id="本节代码开发知识点及代码思路"><a href="#本节代码开发知识点及代码思路" class="headerlink" title="本节代码开发知识点及代码思路"></a>本节代码开发知识点及代码思路</h4><h5 id="1-store-播放器Vuex数据设计"><a href="#1-store-播放器Vuex数据设计" class="headerlink" title="1.store || 播放器Vuex数据设计"></a>1.store || 播放器Vuex数据设计</h5><blockquote>
 <p>上节内容主要介绍了一下Vuex，这节课因为要开始进行播放器内置组件的开发，开始使用Vuex。分析播放器内置组件页面的需求，我们发现有几个变量我们是需要写进全局变量控制中的。</p>
 <blockquote>
 <p><code>singer</code>:(默认{}):存储歌手数据<br><code>playing</code>(默认false)：控制歌曲是否正在播放<br><code>fullScreen</code>(默认flase)：控制播放器是否全屏播放<br><code>playlist</code>(默认[])：存储播放器播放列表<br><code>sequenceList</code>(默认[])：存储播放器顺序播放列表<br><code>mode</code>(默认playMode.sequence)：播放器播放方式<br><code>currentIndex</code>（默认为-1）：播放歌曲的索引</p>
@@ -705,7 +702,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">63</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -831,7 +828,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">102.6k</span>
+    <span title="Site words total count">92.1k</span>
   
 </div>
 

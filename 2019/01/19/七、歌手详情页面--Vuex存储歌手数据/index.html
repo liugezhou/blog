@@ -136,19 +136,19 @@
 
 
 
-<meta name="description" content="本节总览  本节代码提交至：chapter7  效果预览：">
+<meta name="description" content="本节总览 本节代码提交至：chapter7  效果预览：">
 <meta name="keywords" content="移动音乐APP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="七、歌手详情页面--Vuex存储歌手数据">
 <meta property="og:url" content="http://liugezhou.online/2019/01/19/七、歌手详情页面--Vuex存储歌手数据/index.html">
 <meta property="og:site_name" content="六个周">
-<meta property="og:description" content="本节总览  本节代码提交至：chapter7  效果预览：">
+<meta property="og:description" content="本节总览 本节代码提交至：chapter7  效果预览：">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://img.liugezhou.online/Vue2-07.png">
-<meta property="og:updated_time" content="2019-09-30T03:18:02.114Z">
+<meta property="og:updated_time" content="2020-01-10T06:12:05.248Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="七、歌手详情页面--Vuex存储歌手数据">
-<meta name="twitter:description" content="本节总览  本节代码提交至：chapter7  效果预览：">
+<meta name="twitter:description" content="本节总览 本节代码提交至：chapter7  效果预览：">
 <meta name="twitter:image" content="http://img.liugezhou.online/Vue2-07.png">
 
 
@@ -399,8 +399,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-09-30T11:18:02+08:00">
-                2019-09-30
+              <time title="更新于" itemprop="dateModified" datetime="2020-01-10T14:12:05+08:00">
+                2020-01-10
               </time>
             
           </span>
@@ -507,8 +507,7 @@
       
 
       
-        <h4 id="本节总览"><a href="#本节总览" class="headerlink" title="本节总览"></a>本节总览</h4><hr>
-<blockquote>
+        <h4 id="本节总览"><a href="#本节总览" class="headerlink" title="本节总览"></a>本节总览</h4><blockquote>
 <p>本节代码提交至：<a href="https://github.com/liugezhou/liugezhou_music/tree/chapter7" target="_blank" rel="noopener">chapter7</a></p>
 </blockquote>
 <h4 id="效果预览："><a href="#效果预览：" class="headerlink" title="效果预览："></a>效果预览：</h4><p><img src="http://img.liugezhou.online/Vue2-07.png" alt="singer-detail.png"></p>
@@ -516,12 +515,10 @@
 <blockquote>
 <p>本节实现点击歌手提交mutation，将歌手数据存储在store中，涉及到整个Vuex技术栈。<br>本节主要代码开发是singer-detail组件。<br>singer-detail调用开发的music-list组件：将歌手歌曲数据、背景图片以及歌手姓名传入到music-list组件中。<br>music-list组件中分为上半部分与下半部分两块，下半部分的歌曲列表再分离成song-list组件。<br>即总共包含三个组件的开发，还有一些酷炫、美丽的花朵、图片拖拽等的效果。</p>
 </blockquote>
-<h4 id="代码更新"><a href="#代码更新" class="headerlink" title="代码更新"></a>代码更新</h4><hr>
-<blockquote>
+<h4 id="代码更新"><a href="#代码更新" class="headerlink" title="代码更新"></a>代码更新</h4><blockquote>
 <p><code>主要</code>更新代码列表如下：<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/src/components/singer-detail/singer-detail.vue</span><br><span class="line">/src/store  //文件夹下包含多个文件</span><br><span class="line">/src/api/singer.js</span><br><span class="line">/src/components/music-list/music-list.vue</span><br><span class="line">/src/base/song-list/song-list.vue</span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<h3 id="本节代码开发知识点及代码思路："><a href="#本节代码开发知识点及代码思路：" class="headerlink" title="本节代码开发知识点及代码思路："></a>本节代码开发知识点及代码思路：</h3><hr>
-<h4 id="一、transition-进入-离开-amp-列表过渡"><a href="#一、transition-进入-离开-amp-列表过渡" class="headerlink" title="一、transition | 进入/离开 &amp; 列表过渡"></a>一、<code>transition</code> | 进入/离开 &amp; 列表过渡</h4><blockquote>
+<h3 id="本节代码开发知识点及代码思路："><a href="#本节代码开发知识点及代码思路：" class="headerlink" title="本节代码开发知识点及代码思路："></a>本节代码开发知识点及代码思路：</h3><h4 id="一、transition-进入-离开-amp-列表过渡"><a href="#一、transition-进入-离开-amp-列表过渡" class="headerlink" title="一、transition | 进入/离开 &amp; 列表过渡"></a>一、<code>transition</code> | 进入/离开 &amp; 列表过渡</h4><blockquote>
 <p>官方学习：<a href="https://cn.vuejs.org/v2/guide/transitions.html" target="_blank" rel="noopener">https://cn.vuejs.org/v2/guide/transitions.html</a><br>小结：<br>1.transition标签包裹<br>2.进入时：<code>name-enter</code>与<code>name-enter-active</code><br>3.离开时：<code>name-leave-to</code>与<code>name-leave-active</code><br>4.CSS3-3D转换(<code>translate3d</code>)<br>关于Vue的动画效果与CSS3动画效果的学习，一定要去Vue的官方文档进行一个系统的学习。</p>
 </blockquote>
 <h4 id="二、Vuex"><a href="#二、Vuex" class="headerlink" title="二、Vuex"></a>二、Vuex</h4><blockquote>
@@ -726,7 +723,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">63</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -852,7 +849,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">102.6k</span>
+    <span title="Site words total count">92.1k</span>
   
 </div>
 

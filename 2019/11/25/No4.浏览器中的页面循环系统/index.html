@@ -144,7 +144,7 @@
 <meta property="og:site_name" content="六个周">
 <meta property="og:description" content="前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。本篇是这个专栏的第四章：《浏览器中的页面循环系统》。本章分为六节。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-30T03:11:31.000Z">
+<meta property="og:updated_time" content="2020-01-10T06:17:45.071Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="No4.浏览器中的页面循环系统">
 <meta name="twitter:description" content="前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。本篇是这个专栏的第四章：《浏览器中的页面循环系统》。本章分为六节。">
@@ -397,8 +397,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-11-30T11:11:31+08:00">
-                2019-11-30
+              <time title="更新于" itemprop="dateModified" datetime="2020-01-10T14:17:45+08:00">
+                2020-01-10
               </time>
             
           </span>
@@ -506,8 +506,7 @@
 
       
         <h6 id="前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。"><a href="#前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。" class="headerlink" title="前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。"></a>前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。</h6><h6 id="本篇是这个专栏的第四章：《浏览器中的页面循环系统》。本章分为六节。"><a href="#本篇是这个专栏的第四章：《浏览器中的页面循环系统》。本章分为六节。" class="headerlink" title="本篇是这个专栏的第四章：《浏览器中的页面循环系统》。本章分为六节。"></a>本篇是这个专栏的第四章：《浏览器中的页面循环系统》。本章分为六节。</h6><a id="more"></a>
-<h4 id="15｜消息队列和事件循环：页面是怎么“活”起来的？"><a href="#15｜消息队列和事件循环：页面是怎么“活”起来的？" class="headerlink" title="15｜消息队列和事件循环：页面是怎么“活”起来的？"></a>15｜消息队列和事件循环：页面是怎么“活”起来的？</h4><hr>
-<blockquote>
+<h4 id="15｜消息队列和事件循环：页面是怎么“活”起来的？"><a href="#15｜消息队列和事件循环：页面是怎么“活”起来的？" class="headerlink" title="15｜消息队列和事件循环：页面是怎么“活”起来的？"></a>15｜消息队列和事件循环：页面是怎么“活”起来的？</h4><blockquote>
 <p>本节主要专门介绍页面的事件循环系统，希望通过几段总结能对页面的事件循环系统有一个整体上的理解。    </p>
 </blockquote>
 <h5 id="使用单线程处理安排好的任务"><a href="#使用单线程处理安排好的任务" class="headerlink" title="使用单线程处理安排好的任务"></a>使用单线程处理安排好的任务</h5><blockquote>
@@ -543,8 +542,7 @@
 <h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><blockquote>
 <p>如果有一些确定好的任务，可以使用一个单线程来按照顺序处理这些任务，这是第一版线程模型。<br>要在线程执行过程中接收并处理新的任务，就需要引入循环语句和事件系统，这是第二版线程模型。<br>如果要接收其他线程发送过来的任务，就需要引入消息队列，这是第三版线程模型。<br>如果其他进程想要发送任务给页面主线程，那么先通过 IPC 把任务发送给渲染进程的 IO 线程，IO 线程再把任务发送给页面主线程。<br>消息队列机制并不是太灵活，为了适应效率和实时性，引入了微任务。</p>
 </blockquote>
-<h4 id="16-｜-WebAPI-setTimeout是如何实现的"><a href="#16-｜-WebAPI-setTimeout是如何实现的" class="headerlink" title="16 ｜ WebAPI : setTimeout是如何实现的"></a>16 ｜ WebAPI : setTimeout是如何实现的</h4><hr>
-<h5 id="浏览器怎么实现setTimeout"><a href="#浏览器怎么实现setTimeout" class="headerlink" title="浏览器怎么实现setTimeout"></a>浏览器怎么实现setTimeout</h5><blockquote>
+<h4 id="16-｜-WebAPI-setTimeout是如何实现的"><a href="#16-｜-WebAPI-setTimeout是如何实现的" class="headerlink" title="16 ｜ WebAPI : setTimeout是如何实现的"></a>16 ｜ WebAPI : setTimeout是如何实现的</h4><h5 id="浏览器怎么实现setTimeout"><a href="#浏览器怎么实现setTimeout" class="headerlink" title="浏览器怎么实现setTimeout"></a>浏览器怎么实现setTimeout</h5><blockquote>
 <p>通过上一小节的学习，我们知道：对于一些事件执行的过程是：这些事件先被添加到消息队列，然后事件循环系统就会按照消息队列中的顺序来执行事件。也就是说，执行一段异步任务，需要先将任务添加到消息队列中。<br>不过通过定时器设置回调函数有点特别，它们需要在指定的时间间隔内被调用，但消息队列中的任务是按照顺序执行的，所以为了保证回调函数能在指定时间内执行，你不能将定时器的回调函数直接添加到消息队列中。<br>从Chromium队列的部分源码中我们知道，在Chrome中除了正常使用的消息队列外，还有另外一个消息队列，这个队列中维护了<code>需要延迟执行的任务列表</code>，包括了定时器和Chromium内部一些需要延迟执行的任务。<br>由于消息队列排队和一些系统级别的限制，通过setTimeout设置的回调任务并非总是可以实时的执行，这样就不能满足一些实时性要求较高的需求。    </p>
 </blockquote>
 <h5 id="使用setTimeout的一些注意事项"><a href="#使用setTimeout的一些注意事项" class="headerlink" title="使用setTimeout的一些注意事项"></a>使用setTimeout的一些注意事项</h5><blockquote>
@@ -556,8 +554,7 @@
 <li>使用 setTimeout 设置的回调函数中的 this 不符合直觉. </li>
 </ul>
 </blockquote>
-<h4 id="17-WebAPI：XMLHttpRequest是怎么实现的"><a href="#17-WebAPI：XMLHttpRequest是怎么实现的" class="headerlink" title="17 | WebAPI：XMLHttpRequest是怎么实现的?"></a>17 | WebAPI：XMLHttpRequest是怎么实现的?</h4><hr>
-<blockquote>
+<h4 id="17-WebAPI：XMLHttpRequest是怎么实现的"><a href="#17-WebAPI：XMLHttpRequest是怎么实现的" class="headerlink" title="17 | WebAPI：XMLHttpRequest是怎么实现的?"></a>17 | WebAPI：XMLHttpRequest是怎么实现的?</h4><blockquote>
 <p>在深入讲解 XMLHttpRequest 之前，我们得先介绍下<code>同步回调</code>和<code>异步回调</code>这两个概念.   </p>
 </blockquote>
 <h5 id="回调函数-VS-系统调用栈"><a href="#回调函数-VS-系统调用栈" class="headerlink" title="回调函数 VS 系统调用栈"></a>回调函数 VS 系统调用栈</h5><blockquote>
@@ -594,8 +591,7 @@
 <h5 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h5><blockquote>
 <p>setTimeout 是直接将延迟任务添加到延迟队列中，而 XMLHttpRequest 发起请求，是由浏览器的其他进程或者线程去执行，然后再将执行结果利用 IPC 的方式通知渲染进程，之后渲染进程再将对应的消息添加到消息队列中。    </p>
 </blockquote>
-<h4 id="18-宏任务和微任务：不是所有的任务都是一个待遇"><a href="#18-宏任务和微任务：不是所有的任务都是一个待遇" class="headerlink" title="18 | 宏任务和微任务：不是所有的任务都是一个待遇"></a>18 | 宏任务和微任务：不是所有的任务都是一个待遇</h4><hr>
-<blockquote>
+<h4 id="18-宏任务和微任务：不是所有的任务都是一个待遇"><a href="#18-宏任务和微任务：不是所有的任务都是一个待遇" class="headerlink" title="18 | 宏任务和微任务：不是所有的任务都是一个待遇"></a>18 | 宏任务和微任务：不是所有的任务都是一个待遇</h4><blockquote>
 <p>前面我们已经知道微任务可以在实时性和效率之间做一个有效的权衡。微任务已被广泛应用，比如Promise以及以Promise为基础开发出来的很多其他的技术。<br>宏任务与微任务的区别：    </p>
 </blockquote>
 <h5 id="宏任务"><a href="#宏任务" class="headerlink" title="宏任务"></a>宏任务</h5><blockquote>
@@ -827,7 +823,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">63</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -953,7 +949,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">102.6k</span>
+    <span title="Site words total count">92.1k</span>
   
 </div>
 

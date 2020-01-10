@@ -144,7 +144,7 @@
 <meta property="og:site_name" content="六个周">
 <meta property="og:description" content="前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。本篇是这个专栏的第二章：《浏览器中的JavaScript执行机制》。本章分为五节。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-15T03:24:38.000Z">
+<meta property="og:updated_time" content="2020-01-10T06:17:21.184Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="No2.浏览器中的JavaScript执行机制">
 <meta name="twitter:description" content="前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。本篇是这个专栏的第二章：《浏览器中的JavaScript执行机制》。本章分为五节。">
@@ -397,8 +397,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-11-15T11:24:38+08:00">
-                2019-11-15
+              <time title="更新于" itemprop="dateModified" datetime="2020-01-10T14:17:21+08:00">
+                2020-01-10
               </time>
             
           </span>
@@ -506,8 +506,7 @@
 
       
         <h6 id="前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。"><a href="#前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。" class="headerlink" title="前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。"></a>前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。</h6><h6 id="本篇是这个专栏的第二章：《浏览器中的JavaScript执行机制》。本章分为五节。"><a href="#本篇是这个专栏的第二章：《浏览器中的JavaScript执行机制》。本章分为五节。" class="headerlink" title="本篇是这个专栏的第二章：《浏览器中的JavaScript执行机制》。本章分为五节。"></a>本篇是这个专栏的第二章：《浏览器中的JavaScript执行机制》。本章分为五节。</h6><a id="more"></a>
-<h4 id="07｜变量提升：JavaScript代码是按顺序执行的吗？"><a href="#07｜变量提升：JavaScript代码是按顺序执行的吗？" class="headerlink" title="07｜变量提升：JavaScript代码是按顺序执行的吗？"></a>07｜变量提升：JavaScript代码是按顺序执行的吗？</h4><hr>
-<blockquote>
+<h4 id="07｜变量提升：JavaScript代码是按顺序执行的吗？"><a href="#07｜变量提升：JavaScript代码是按顺序执行的吗？" class="headerlink" title="07｜变量提升：JavaScript代码是按顺序执行的吗？"></a>07｜变量提升：JavaScript代码是按顺序执行的吗？</h4><blockquote>
 <p>本节主要讲解<code>执行上下文</code>相关的内容。</p>
 </blockquote>
 <blockquote>
@@ -521,8 +520,7 @@
 <h5 id="变量提升"><a href="#变量提升" class="headerlink" title="变量提升"></a>变量提升</h5><blockquote>
 <p>所谓的变量提升，是指在 JavaScript 代码执行过程中，JavaScript 引擎把变量的声明部分和函数的声明部分提升到代码开头的“行为”。变量被提升后，会给变量设置默认值，这个默认值就是我们熟悉的 undefined.<br>之所以会发生变量提升，是因为一段JavaScript代码在执行之前，需要被JavaScript引擎编译，编译完成之后，才会进入执行阶段。也就是说在编译阶段，变量和函数的声明提升到了开头。    </p>
 </blockquote>
-<h4 id="08-｜调用栈：为什么JavaScript代码会出现栈溢出？"><a href="#08-｜调用栈：为什么JavaScript代码会出现栈溢出？" class="headerlink" title="08 ｜调用栈：为什么JavaScript代码会出现栈溢出？"></a>08 ｜调用栈：为什么JavaScript代码会出现栈溢出？</h4><hr>
-<blockquote>
+<h4 id="08-｜调用栈：为什么JavaScript代码会出现栈溢出？"><a href="#08-｜调用栈：为什么JavaScript代码会出现栈溢出？" class="headerlink" title="08 ｜调用栈：为什么JavaScript代码会出现栈溢出？"></a>08 ｜调用栈：为什么JavaScript代码会出现栈溢出？</h4><blockquote>
 <p>一般有三种情况，当一段代码执行的时候JS引擎对其进行编译并创建执行上下文：</p>
 <ol>
 <li>当 JavaScript 执行全局代码的时候，会编译全局代码并创建全局执行上下文，而且在整个页面的生存周期内，全局执行上下文只有一份.  </li>
@@ -538,8 +536,7 @@
 <li>当分配的调用栈空间被占满时，会引发“堆栈溢出”问题。</li>
 </ul>
 </blockquote>
-<h4 id="09-块级作用域：var缺陷以及为什么要引入let和const"><a href="#09-块级作用域：var缺陷以及为什么要引入let和const" class="headerlink" title="09 | 块级作用域：var缺陷以及为什么要引入let和const"></a>09 | 块级作用域：var缺陷以及为什么要引入let和const</h4><hr>
-<h5 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h5><blockquote>
+<h4 id="09-块级作用域：var缺陷以及为什么要引入let和const"><a href="#09-块级作用域：var缺陷以及为什么要引入let和const" class="headerlink" title="09 | 块级作用域：var缺陷以及为什么要引入let和const"></a>09 | 块级作用域：var缺陷以及为什么要引入let和const</h4><h5 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h5><blockquote>
 <p>作用域是指在程序中定义变量的区域，该位置决定了变量的生命周期。通俗地理解，作用域就是变量与函数的可访问范围，即作用域控制着变量和函数的可见性和生命周期。<br>ES6出现之前，JS的作用域只有两种：<code>全局作用域</code>和<code>函数作用域</code>。 ES6出现，引入了<code>块级作用域</code>。</p>
 </blockquote>
 <h5 id="在同一段代码中，ES6-是如何做到既要支持变量提升的特性，又要支持块级作用域的呢？"><a href="#在同一段代码中，ES6-是如何做到既要支持变量提升的特性，又要支持块级作用域的呢？" class="headerlink" title="在同一段代码中，ES6 是如何做到既要支持变量提升的特性，又要支持块级作用域的呢？"></a>在同一段代码中，ES6 是如何做到既要支持变量提升的特性，又要支持块级作用域的呢？</h5><blockquote>
@@ -550,8 +547,7 @@
 <li>在函数作用域内部，通过let声明的变量并没有被存放到词法环境中。<br>也就是说：通过理解词法环境的结构和工作机制，块级作用域是通过词法环境的栈结构来实现的，而变量提升是通过变量环境来实现的，通过两者的结合，JavaScript引擎也就同时支持了变量 提升和块级作用域了。</li>
 </ul>
 </blockquote>
-<h4 id="10-｜-作用域和闭包：代码中出现相同的变量，JavaScript引擎是如何选择的"><a href="#10-｜-作用域和闭包：代码中出现相同的变量，JavaScript引擎是如何选择的" class="headerlink" title="10 ｜ 作用域和闭包：代码中出现相同的变量，JavaScript引擎是如何选择的"></a>10 ｜ 作用域和闭包：代码中出现相同的变量，JavaScript引擎是如何选择的</h4><hr>
-<h5 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h5><blockquote>
+<h4 id="10-｜-作用域和闭包：代码中出现相同的变量，JavaScript引擎是如何选择的"><a href="#10-｜-作用域和闭包：代码中出现相同的变量，JavaScript引擎是如何选择的" class="headerlink" title="10 ｜ 作用域和闭包：代码中出现相同的变量，JavaScript引擎是如何选择的"></a>10 ｜ 作用域和闭包：代码中出现相同的变量，JavaScript引擎是如何选择的</h4><h5 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h5><blockquote>
 <p>理解作用域链是理解闭包的基础，而闭包在JavaScript中无处不在，同时作用域和作用域链还是作用语言的基础，所以我们先来学习一下<code>作用域链</code>。<br>理解了调用栈、执行上下文、词法环境、变量环境等概念，那么你理解起来作用域链也会很容易,看下面一段代码：</p>
 <pre><code>
 function bar() {
@@ -570,8 +566,7 @@ foo()</code></pre><p>通过上面的代码，我们知道最终打印出来的�
 <h5 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h5><blockquote>
 <p>在 JavaScript 中，根据词法作用域的规则，内部函数总是可以访问其外部函数中声明的变量，当通过调用一个外部函数返回一个内部函数后，即使该外部函数已经执行结束了，但是内部函数引用外部函数的变量依然保存在内存中，我们就把这些变量的集合称为闭包。比如外部函数是 foo，那么这些变量的集合就称为 foo 函数的闭包。<br>在使用闭包的时候，要尽量注意一个原则：如果该闭包会一直使用，那么它可以作为全局变量而存在；但如果使用频率不高，而且占用内存又比较大的话，那就尽量让它成为一个局部变量。</p>
 </blockquote>
-<h4 id="11-｜-this：从JavaScript执行上下文的视角讲清楚this"><a href="#11-｜-this：从JavaScript执行上下文的视角讲清楚this" class="headerlink" title="11 ｜ this：从JavaScript执行上下文的视角讲清楚this"></a>11 ｜ this：从JavaScript执行上下文的视角讲清楚this</h4><hr>
-<blockquote>
+<h4 id="11-｜-this：从JavaScript执行上下文的视角讲清楚this"><a href="#11-｜-this：从JavaScript执行上下文的视角讲清楚this" class="headerlink" title="11 ｜ this：从JavaScript执行上下文的视角讲清楚this"></a>11 ｜ this：从JavaScript执行上下文的视角讲清楚this</h4><blockquote>
 <p>首先我们要知道，在对象内部的方法中使用对象内部的属性是一个非常普遍的需求，但是JavaScript作用域机制并不支持这一点，基于这个需求，JavaScript搞出了一套this机制。    </p>
 </blockquote>
 <blockquote>
@@ -754,7 +749,7 @@ foo()</code></pre><p>通过上面的代码，我们知道最终打印出来的�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">63</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -880,7 +875,7 @@ foo()</code></pre><p>通过上面的代码，我们知道最终打印出来的�
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">102.6k</span>
+    <span title="Site words total count">92.1k</span>
   
 </div>
 

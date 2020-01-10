@@ -145,7 +145,7 @@
 <meta property="og:description" content="前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。本篇是这个专栏的最后一章：《浏览器安全》。本章分为六节。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://static001.geekbang.org/resource/image/9e/cf/9e99f797de30a15a11b0e4b4c8f810cf.png">
-<meta property="og:updated_time" content="2019-12-20T07:05:54.000Z">
+<meta property="og:updated_time" content="2020-01-10T06:19:10.483Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="No7.浏览器安全">
 <meta name="twitter:description" content="前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。本篇是这个专栏的最后一章：《浏览器安全》。本章分为六节。">
@@ -399,8 +399,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-12-20T15:05:54+08:00">
-                2019-12-20
+              <time title="更新于" itemprop="dateModified" datetime="2020-01-10T14:19:10+08:00">
+                2020-01-10
               </time>
             
           </span>
@@ -509,13 +509,11 @@
       
         <h6 id="前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。"><a href="#前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。" class="headerlink" title="前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。"></a>前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。</h6><h6 id="本篇是这个专栏的最后一章：《浏览器安全》。本章分为六节。"><a href="#本篇是这个专栏的最后一章：《浏览器安全》。本章分为六节。" class="headerlink" title="本篇是这个专栏的最后一章：《浏览器安全》。本章分为六节。"></a>本篇是这个专栏的最后一章：《浏览器安全》。本章分为六节。</h6><a id="more"></a>
 
-<h4 id="32-同源策略：为什么XMLHttpRequest不能跨域请求资源？"><a href="#32-同源策略：为什么XMLHttpRequest不能跨域请求资源？" class="headerlink" title="32 | 同源策略：为什么XMLHttpRequest不能跨域请求资源？"></a>32 | 同源策略：为什么XMLHttpRequest不能跨域请求资源？</h4><hr>
-<blockquote>
+<h4 id="32-同源策略：为什么XMLHttpRequest不能跨域请求资源？"><a href="#32-同源策略：为什么XMLHttpRequest不能跨域请求资源？" class="headerlink" title="32 | 同源策略：为什么XMLHttpRequest不能跨域请求资源？"></a>32 | 同源策略：为什么XMLHttpRequest不能跨域请求资源？</h4><blockquote>
 <p>浏览器安全可以分为三大块–Web页面安全、浏览器网络安全、浏览器系统安全。<br>本节来分析页面中的安全策略。  </p>
 <p>在没有安全保障的 Web 世界中，我们是没有隐私的，因此需要安全策略来保障我们的隐私和数据的安全。这就引出了页面中最基础、最核心的安全策略：<code>同源策略（Same-origin policy）</code>。</p>
 </blockquote>
-<h5 id="什么是同源策略"><a href="#什么是同源策略" class="headerlink" title="什么是同源策略"></a>什么是同源策略</h5><hr>
-<blockquote>
+<h5 id="什么是同源策略"><a href="#什么是同源策略" class="headerlink" title="什么是同源策略"></a>什么是同源策略</h5><blockquote>
 <p>如果两个 URL 的协议、域名和端口都相同，我们就称这两个 URL 同源.<br>浏览器默认两个相同的源之间是可以相互访问资源和操作 DOM 的。两个不同的源之间若想要相互访问资源或者操作 DOM，那么会有一套基础的安全策略的制约，我们把这称为同源策略。<br>具体来讲，同源策略主要表现在 DOM、Web 数据和网络这三个层面。  </p>
 <ul>
 <li>第一个：DOM层面。同源策略限制了来自不同源的 JavaScript 脚本对当前 DOM 对象读和写的操作。    </li>
@@ -523,8 +521,7 @@
 <li>第三个，网络层面。同源策略限制了通过 XMLHttpRequest 等方式将站点的数据发送给不同源的站点。</li>
 </ul>
 </blockquote>
-<h5 id="安全和便利性的权衡"><a href="#安全和便利性的权衡" class="headerlink" title="安全和便利性的权衡"></a>安全和便利性的权衡</h5><hr>
-<blockquote>
+<h5 id="安全和便利性的权衡"><a href="#安全和便利性的权衡" class="headerlink" title="安全和便利性的权衡"></a>安全和便利性的权衡</h5><blockquote>
 <p>浏览器出让了同源策略的一些安全性。    </p>
 </blockquote>
 <h6 id="1-页面中可以嵌入第三方资源"><a href="#1-页面中可以嵌入第三方资源" class="headerlink" title="1. 页面中可以嵌入第三方资源"></a>1. 页面中可以嵌入第三方资源</h6><blockquote>
@@ -533,8 +530,7 @@
 <h6 id="2-跨域资源共享和跨文档消息机制"><a href="#2-跨域资源共享和跨文档消息机制" class="headerlink" title="2. 跨域资源共享和跨文档消息机制"></a>2. 跨域资源共享和跨文档消息机制</h6><blockquote>
 <p>为了解决不同源的资源不能共享问题，引入了<code>跨域资源共享(CORS)</code>，使用该机制可以进行跨域访问控制，从而使跨域数据传输得以安全进行。<br>在介绍同源策略时，我们说明了如果两个页面不是同源的，则无法相互操纵 DOM。不过在实际应用中，经常需要两个不同源的 DOM 之间进行通信，于是浏览器中又引入了跨文档消息机制，可以通过 window.postMessage 的 JavaScript 接口来和不同源的 DOM 进行通信。    </p>
 </blockquote>
-<h4 id="33-跨站脚本攻击-XSS-为什么Cookie中有HttpOnly属性？"><a href="#33-跨站脚本攻击-XSS-为什么Cookie中有HttpOnly属性？" class="headerlink" title="33 | 跨站脚本攻击(XSS):为什么Cookie中有HttpOnly属性？"></a>33 | 跨站脚本攻击(XSS):为什么Cookie中有HttpOnly属性？</h4><hr>
-<blockquote>
+<h4 id="33-跨站脚本攻击-XSS-为什么Cookie中有HttpOnly属性？"><a href="#33-跨站脚本攻击-XSS-为什么Cookie中有HttpOnly属性？" class="headerlink" title="33 | 跨站脚本攻击(XSS):为什么Cookie中有HttpOnly属性？"></a>33 | 跨站脚本攻击(XSS):为什么Cookie中有HttpOnly属性？</h4><blockquote>
 <p>通过上一节我们知道：同源策略可以隔离各个站点之间的 DOM 交互、页面数据和网络通信，虽然严格的同源策略会带来更多的安全，但是也束缚了 Web。这就需要在安全和自由之间找到一个平衡点，所以我们默认页面中可以引用任意第三方资源，然后又引入 CSP 策略来加以限制；默认 XMLHttpRequest 和 Fetch 不能跨站请求资源，然后又通过 CORS 策略来支持其跨域。不过支持页面中的第三方资源引用和 CORS 也带来了很多安全问题，其中最典型的就是 XSS 攻击。  </p>
 </blockquote>
 <h5 id="什么是XSS攻击"><a href="#什么是XSS攻击" class="headerlink" title="什么是XSS攻击"></a>什么是XSS攻击</h5><blockquote>
@@ -556,8 +552,7 @@
 <li>使用 HttpOnly 属性。   </li>
 </ol>
 </blockquote>
-<h4 id="34-CSRF攻击：陌生链接不要点"><a href="#34-CSRF攻击：陌生链接不要点" class="headerlink" title="34 | CSRF攻击：陌生链接不要点"></a>34 | CSRF攻击：陌生链接不要点</h4><hr>
-<blockquote>
+<h4 id="34-CSRF攻击：陌生链接不要点"><a href="#34-CSRF攻击：陌生链接不要点" class="headerlink" title="34 | CSRF攻击：陌生链接不要点"></a>34 | CSRF攻击：陌生链接不要点</h4><blockquote>
 <p>在上一节中我们简单了解了 XSS 攻击，XSS 的攻击方式是黑客往用户的页面中注入恶意脚本，然后再通过恶意脚本将用户页面的数据上传到黑客的服务器上，最后黑客再利用这些数据进行一些恶意操作。XSS 攻击能够带来很大的破坏性，不过另外一种类型的攻击也不容忽视，它就是 CSRF 攻击。 </p>
 </blockquote>
 <h5 id="什么是CSRF攻击"><a href="#什么是CSRF攻击" class="headerlink" title="什么是CSRF攻击"></a>什么是CSRF攻击</h5><blockquote>
@@ -593,15 +588,13 @@
 </li>
 </ol>
 </blockquote>
-<h4 id="35-安全沙箱：页面和系统之间的隔离墙"><a href="#35-安全沙箱：页面和系统之间的隔离墙" class="headerlink" title="35 | 安全沙箱：页面和系统之间的隔离墙"></a>35 | 安全沙箱：页面和系统之间的隔离墙</h4><hr>
-<h5 id="安全视角下的多进程架构"><a href="#安全视角下的多进程架构" class="headerlink" title="安全视角下的多进程架构"></a>安全视角下的多进程架构</h5><blockquote>
+<h4 id="35-安全沙箱：页面和系统之间的隔离墙"><a href="#35-安全沙箱：页面和系统之间的隔离墙" class="headerlink" title="35 | 安全沙箱：页面和系统之间的隔离墙"></a>35 | 安全沙箱：页面和系统之间的隔离墙</h4><h5 id="安全视角下的多进程架构"><a href="#安全视角下的多进程架构" class="headerlink" title="安全视角下的多进程架构"></a>安全视角下的多进程架构</h5><blockquote>
 <p>我们通过学习第一节《宏观视角下的浏览器》，了解了浏览器的发展史以及架构的演变，这节是从操作系统安全的视角来看浏览器的多进程架构的。<br>浏览器是被划分为<code>浏览器内核</code>和<code>渲染内核</code>两个核心模块，其中浏览器内核是由网络进程、浏览器主进程和GPU主进程组成的。渲染内核就是渲染进程。这两个模块通过IPC来通信。<br>浏览器多进程架构的设计不单单是为了增加其稳定性，重要的一点也是因为从安全角度去考虑、设计的。   </p>
 </blockquote>
 <h5 id="安全沙箱"><a href="#安全沙箱" class="headerlink" title="安全沙箱"></a>安全沙箱</h5><blockquote>
 <p>基于安全原因(主要是为防止危险资源获取系统权限)，在渲染进程和操作系统之间建了一道墙，即便渲染进程由于存在漏洞被黑客攻击，但由于这道墙，黑客就获取不到渲染进程之外的任何操作权限。将渲染进程和操作系统隔离的这道墙就是安全沙箱。<br>浏览器中的安全沙箱是利用操作系统提供的安全技术，让渲染进程在执行过程中无法访问或者修改操作系统中的数据，在渲染进程需要访问系统资源的时候，需要通过浏览器内核来实现，然后将访问的结果通过 IPC 转发给渲染进程。<br>安全沙箱最小的保护单位是进程。因为单进程浏览器需要频繁访问或者修改操作系统的数据，所以单进程浏览器是无法被安全沙箱保护的，而现代浏览器采用的多进程架构使得安全沙箱可以发挥作用。  </p>
 </blockquote>
-<h4 id="36-｜-HTTPS：让数据传输更安全"><a href="#36-｜-HTTPS：让数据传输更安全" class="headerlink" title="36 ｜ HTTPS：让数据传输更安全"></a>36 ｜ HTTPS：让数据传输更安全</h4><hr>
-<blockquote>
+<h4 id="36-｜-HTTPS：让数据传输更安全"><a href="#36-｜-HTTPS：让数据传输更安全" class="headerlink" title="36 ｜ HTTPS：让数据传输更安全"></a>36 ｜ HTTPS：让数据传输更安全</h4><blockquote>
 <p>浏览器安全主要分为三大块内容：页面安全、系统安全、网络完全，本节主要学习网络安全。</p>
 <p>我们使用 HTTP 传输的内容很容易被中间人窃取、伪造和篡改，通常我们把这种攻击方式称为中间人攻击。<br>具体来讲，在将HTTP数据提交给TCP后，数据会经过用户电脑、WIFI路由器、运营商和目标服务器，在这中间的每个环节中，数据都有可能被窃取或篡改。</p>
 </blockquote>
@@ -776,7 +769,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">63</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -902,7 +895,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">102.6k</span>
+    <span title="Site words total count">92.1k</span>
   
 </div>
 

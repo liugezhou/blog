@@ -144,7 +144,7 @@
 <meta property="og:site_name" content="六个周">
 <meta property="og:description" content="背景 最近在梳理前端的公众号支付流程，从前端流程微信JSSDK的引入开始查阅文档。在引入JS文件一小段中，文档中备注：“支持使用 AMD/CMD 标准模块加载方法加载”。于是，想到对CommonJS、AMD、CMD、ES6Module等概念与代码实例的理解甚是混淆，于是学习、总结此文。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-29T03:11:13.000Z">
+<meta property="og:updated_time" content="2020-01-10T06:12:32.362Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端模块化">
 <meta name="twitter:description" content="背景 最近在梳理前端的公众号支付流程，从前端流程微信JSSDK的引入开始查阅文档。在引入JS文件一小段中，文档中备注：“支持使用 AMD/CMD 标准模块加载方法加载”。于是，想到对CommonJS、AMD、CMD、ES6Module等概念与代码实例的理解甚是混淆，于是学习、总结此文。">
@@ -397,8 +397,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-11-29T11:11:13+08:00">
-                2019-11-29
+              <time title="更新于" itemprop="dateModified" datetime="2020-01-10T14:12:32+08:00">
+                2020-01-10
               </time>
             
           </span>
@@ -521,8 +521,7 @@
 </blockquote>
 <a id="more"></a>
 
-<h4 id="前端模块化"><a href="#前端模块化" class="headerlink" title="前端模块化"></a>前端模块化</h4><hr>
-<blockquote>
+<h4 id="前端模块化"><a href="#前端模块化" class="headerlink" title="前端模块化"></a>前端模块化</h4><blockquote>
 <p>2009年，美国程序员Ryan Dahl创造了node.js项目，将javascript语言用于服务器端编程。这标志”Javascript模块化编程”正式诞生。<br>因为老实说，在浏览器环境下，没有模块也不是特别大的问题，毕竟网页程序的复杂性有限；但是在服务器端，一定要有模块，与操作系统和其他应用程序互动，否则根本没法编程。NodeJS是CommonJS规范的实现，webpack 也是以CommonJS的形式来书写。</p>
 </blockquote>
 <blockquote>
@@ -534,8 +533,7 @@
 <blockquote>
 <p>这三个规范都是为javascript模块化加载而生的，都是在用到或者预计要用到某些模块时候加载该模块，使得大量的系统巨大的庞杂的代码得以很好的组织和管理。模块化使得我们在使用和管理代码的时候不那么混乱，而且也方便了多人的合作。</p>
 </blockquote>
-<h4 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h4><hr>
-<blockquote>
+<h4 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h4><blockquote>
 <ul>
 <li>CommonJS是一个更偏向于服务端的规范。Node.js就是CommonJS规范的主要实践者。 </li>
 <li>CommonJS不适用浏览器是因为：此规范是同步加载模块，对于服务器端来说，所有的模块都是在本地磁盘，等待模块时间就是硬盘读取文件时间，很小，但对浏览器而言，设计到网速、代理更原因，同步加载会造成阻塞，浏览器处于“假死”状态，所以浏览器端出现了AMD规范。</li>
@@ -558,8 +556,7 @@
 <li>当require()函数加载math模块的时候，就会先加载dependenceModule模块。当有多个依赖时，就将所有的依赖都写在define()函数第一个参数数组中，所以说AMD是依赖前置的。这不同于CMD规范，它是依赖就近的。</li>
 </ul>
 </blockquote>
-<h4 id="CMD"><a href="#CMD" class="headerlink" title="CMD"></a>CMD</h4><hr>
-<blockquote>
+<h4 id="CMD"><a href="#CMD" class="headerlink" title="CMD"></a>CMD</h4><blockquote>
 <p>CMD与AMD最大的不同就是：CMD推崇依赖就近，延迟执行。可以在代码的任意一行写入依赖：<br><code>define(factory)</code><br>当factory为函数时，表示是模块的构造方法。<br>执行该构造方法，可以得到模块向外提供的接口。<br>factory 方法在执行时，默认会传入三个参数：require、exports 和 module.</p>
 </blockquote>
 <blockquote>
@@ -567,12 +564,10 @@
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// CMD</span><br><span class="line">   define(function(require, exports, module) &#123;</span><br><span class="line">   var a = require(&apos;./a&apos;);</span><br><span class="line">   a.doSomething();</span><br><span class="line">   var b = require(&apos;./b&apos;);</span><br><span class="line">   b.doSomething();</span><br><span class="line">   &#125;)</span><br><span class="line">   // AMDdefine([&apos;a&apos;, &apos;b&apos;], function(a, b) &#123;</span><br><span class="line">   a.doSomething();</span><br><span class="line">   b.doSomething();</span><br><span class="line">   &#125;)</span><br></pre></td></tr></table></figure>
 
-<h4 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h4><hr>
-<blockquote>
+<h4 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h4><blockquote>
 <p>ES6 在语言标准的层面上，实现了模块功能，而且实现得相当简单，旨在成为浏览器和服务器通用的模块解决方案。其模块功能主要由两个命令构成：export和import.<br>export命令用于规定模块的对外接口，import命令用于输入其他模块提供的功能。<br>ES6还提供了export default命令，为模块指定默认输出，对应的import语句不需要使用大括号.</p>
 </blockquote>
-<h4 id="ES6模块与CommonJS模块差异"><a href="#ES6模块与CommonJS模块差异" class="headerlink" title="ES6模块与CommonJS模块差异"></a>ES6模块与CommonJS模块差异</h4><hr>
-<blockquote>
+<h4 id="ES6模块与CommonJS模块差异"><a href="#ES6模块与CommonJS模块差异" class="headerlink" title="ES6模块与CommonJS模块差异"></a>ES6模块与CommonJS模块差异</h4><blockquote>
 <ul>
 <li>CommonJS 模块输出的是一个值的拷贝，ES6 模块输出的是值的引用。  </li>
 <li>CommonJS 模块输出的是一个值的拷贝，ES6 模块输出的是值的引用。</li>
@@ -741,7 +736,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">63</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -867,7 +862,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">102.6k</span>
+    <span title="Site words total count">92.1k</span>
   
 </div>
 

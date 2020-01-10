@@ -144,7 +144,7 @@
 <meta property="og:site_name" content="六个周">
 <meta property="og:description" content="文章背景看了一些Python的基础，说Python是解释型语言，于是昨天晚上躺到床上跟aliya语音，便说起了编译型语言跟解释型语言的区别，特地去查找了一些相关资料，结结实实的探讨了好一会，才发现自己作为一个靠程序吃饭的人，真是对不起程序员这个职业，不是计算机出身，对很多的计算机原理、名词几乎都没有理解，没有研究，甚至都不知道它的存在，真是硬伤。 但幸好还有一个想去了解的心情，于是作为一个记录，整">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-30T03:18:02.131Z">
+<meta property="og:updated_time" content="2020-01-10T06:07:05.947Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="编译型语言与解释型语言的区别">
 <meta name="twitter:description" content="文章背景看了一些Python的基础，说Python是解释型语言，于是昨天晚上躺到床上跟aliya语音，便说起了编译型语言跟解释型语言的区别，特地去查找了一些相关资料，结结实实的探讨了好一会，才发现自己作为一个靠程序吃饭的人，真是对不起程序员这个职业，不是计算机出身，对很多的计算机原理、名词几乎都没有理解，没有研究，甚至都不知道它的存在，真是硬伤。 但幸好还有一个想去了解的心情，于是作为一个记录，整">
@@ -397,8 +397,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-09-30T11:18:02+08:00">
-                2019-09-30
+              <time title="更新于" itemprop="dateModified" datetime="2020-01-10T14:07:05+08:00">
+                2020-01-10
               </time>
             
           </span>
@@ -514,16 +514,14 @@
 <h3 id="文章正文"><a href="#文章正文" class="headerlink" title="文章正文"></a>文章正文</h3><blockquote>
 <p>那么到底什么是<code>编译型语言</code>，什么是<code>解释型语言</code>呢？他们之间有什么共同点和区别呢？</p>
 </blockquote>
-<h5 id="1️⃣、概念"><a href="#1️⃣、概念" class="headerlink" title="1️⃣、概念"></a>1️⃣、概念</h5><hr>
-<blockquote>
+<h5 id="1️⃣、概念"><a href="#1️⃣、概念" class="headerlink" title="1️⃣、概念"></a>1️⃣、概念</h5><blockquote>
 <ul>
 <li>编译型语言代表有：<code>C</code>语言，<code>C++</code>、<code>Object-C</code>以及最近很火的苹果新语言<code>swift</code><br>通常都会对源代码进行编译，生成可以执行的二进制代码，执行的是编译后的结果</li>
 <li>解释型语言代表有：<code>JavaScript</code>、<code>Python</code>、<br><code>Erlang</code>、<code>PHP</code>、<code>Perl</code>、<code>Ruby</code><br>通常不用对源代码进行编译，一般是通过解释器载入脚本后运行。由于每个语句都是执行的时候才进行解释翻译，这样解释性语言每次执行就要翻译一次，效率相对要低。</li>
 <li><code>Java</code>具有编译与解释两种特性：既可以将其源代码当作脚本执行，也可以进行编译成.class代码（字节码）载入运行</li>
 </ul>
 </blockquote>
-<h5 id="2️⃣、对比"><a href="#2️⃣、对比" class="headerlink" title="2️⃣、对比"></a>2️⃣、对比</h5><hr>
-<h6 id="编译型语言："><a href="#编译型语言：" class="headerlink" title="编译型语言："></a>编译型语言：</h6><blockquote>
+<h5 id="2️⃣、对比"><a href="#2️⃣、对比" class="headerlink" title="2️⃣、对比"></a>2️⃣、对比</h5><h6 id="编译型语言："><a href="#编译型语言：" class="headerlink" title="编译型语言："></a>编译型语言：</h6><blockquote>
 <ul>
 <li>优点：编译器一般会有预编译的过程对代码进行优化。因为编译只做一次，运行时不需要编译，所以编译型语言的程序执行效率高。可以脱离语言环境独立运行。</li>
 <li>缺点：编译之后如果需要修改就需要整个模块重新编译。编译的时候根据对应的运行环境生成机器码，不同的操作系统之间移植就会有问题，需要根据运行的操作系统环境编译不同的可执行文件。</li>
@@ -535,7 +533,6 @@
 <li>缺点：每次运行的时候都要解释一遍，性能上不如编译型语言。</li>
 </ul>
 </blockquote>
-<hr>
 <h5 id="3️⃣、区别（本段落参考文章地址-戳这里）"><a href="#3️⃣、区别（本段落参考文章地址-戳这里）" class="headerlink" title="3️⃣、区别（本段落参考文章地址 戳这里）"></a>3️⃣、区别（本段落参考文章地址 戳<a href="https://www.jianshu.com/p/f726e4766ac7" target="_blank" rel="noopener">这里</a>）</h5><h6 id="区别1：从效果上来比"><a href="#区别1：从效果上来比" class="headerlink" title="区别1：从效果上来比"></a>区别1：从效果上来比</h6><blockquote>
 <p>编译型语言要全部写完之后，然后通过某个编译器，去生成一个类似*.exe的二进制文件，然后手工双击这个文件才看的到效果；解释型语言则没生成你看的到的那种.exe文件，而是直接发出效果。那么区别之一就是：是否显性的生成二进制文件供你去双击。</p>
 </blockquote>
@@ -723,7 +720,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">63</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -849,7 +846,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">102.6k</span>
+    <span title="Site words total count">92.1k</span>
   
 </div>
 

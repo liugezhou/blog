@@ -144,7 +144,7 @@
 <meta property="og:site_name" content="六个周">
 <meta property="og:description" content="关于npm在安装的时候，有个小的知识点，一定要小小的补一下，那就是npm install 后面带参数的问题。相信不少在开始接触node的时候，我们肯定都使用过这样的命令npm install -save | npm install -save-dev | npm install -g [--global]但是这些-save | -save-dev | -g的一些小小的区别是什么呢?">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-01-10T06:27:26.611Z">
+<meta property="og:updated_time" content="2020-01-11T11:25:06.500Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="npm intsall -save 和-save-dev">
 <meta name="twitter:description" content="关于npm在安装的时候，有个小的知识点，一定要小小的补一下，那就是npm install 后面带参数的问题。相信不少在开始接触node的时候，我们肯定都使用过这样的命令npm install -save | npm install -save-dev | npm install -g [--global]但是这些-save | -save-dev | -g的一些小小的区别是什么呢?">
@@ -397,8 +397,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-01-10T14:27:26+08:00">
-                2020-01-10
+              <time title="更新于" itemprop="dateModified" datetime="2020-01-11T19:25:06+08:00">
+                2020-01-11
               </time>
             
           </span>
@@ -468,7 +468,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  470
+                  541
                 </span>
               
 
@@ -484,7 +484,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -506,9 +506,8 @@
 
       
         <p>关于npm在安装的时候，有个小的知识点，一定要小小的补一下，那就是npm install 后面带参数的问题。<br>相信不少在开始接触node的时候，我们肯定都使用过这样的命令<br><code>npm install -save</code> | <code>npm install -save-dev</code> | <code>npm install -g [--global]</code><br>但是这些<code>-save</code> | <code>-save-dev</code> | <code>-g</code>的一些小小的区别是什么呢?</p>
-<blockquote>
 <a id="more"></a>
-</blockquote>
+
 <h6 id="npm-install-moduleName-命令"><a href="#npm-install-moduleName-命令" class="headerlink" title="npm install moduleName 命令"></a>npm install moduleName 命令</h6><blockquote>
 <p>1.安装模块到项目node_modules目录下。<br>2.不会将模块依赖写入devDependencies或dependencies 节点。<br>3.运行 npm install 初始化项目时不会下载模块。</p>
 </blockquote>
@@ -525,7 +524,10 @@
 <blockquote>
 <p>devDependencies 节点下的模块是我们在开发时需要用的，比如项目中使用的 gulp ，压缩css、js的模块。这些模块在我们的项目部署后是不需要的，所以我们可以使用 -save-dev 的形式安装。像 express 这些模块是项目运行必备的，应该安装在 dependencies 节点下，所以我们应该使用 -save 的形式安装。</p>
 </blockquote>
-
+<h6 id="添加一个npm-install的小知识点-2020-01-11"><a href="#添加一个npm-install的小知识点-2020-01-11" class="headerlink" title="添加一个npm install的小知识点(2020-01-11)"></a>添加一个npm install的小知识点(2020-01-11)</h6><blockquote>
+<p>npm init 命令用来初始化一个简单的 package.json 文件。<br>而如果想要偷懒步免去一直按 enter，在命令后追加 –yes 参数即可，其作用与一路下一步相同。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init --yes</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -774,7 +776,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#npm-install-moduleName-命令"><span class="nav-number">1.</span> <span class="nav-text">npm install moduleName 命令</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#npm-install-g-moduleName-命令"><span class="nav-number">2.</span> <span class="nav-text">npm install -g moduleName 命令</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#npm-install-save-moduleName-命令"><span class="nav-number">3.</span> <span class="nav-text">npm install -save moduleName 命令</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#npm-install-save-dev-moduleName-命令"><span class="nav-number">4.</span> <span class="nav-text">npm install -save-dev moduleName 命令</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#npm-install-moduleName-命令"><span class="nav-number">1.</span> <span class="nav-text">npm install moduleName 命令</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#npm-install-g-moduleName-命令"><span class="nav-number">2.</span> <span class="nav-text">npm install -g moduleName 命令</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#npm-install-save-moduleName-命令"><span class="nav-number">3.</span> <span class="nav-text">npm install -save moduleName 命令</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#npm-install-save-dev-moduleName-命令"><span class="nav-number">4.</span> <span class="nav-text">npm install -save-dev moduleName 命令</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#添加一个npm-install的小知识点-2020-01-11"><span class="nav-number">5.</span> <span class="nav-text">添加一个npm install的小知识点(2020-01-11)</span></a></li></ol></div>
             
 
           </div>
@@ -808,7 +810,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">92.5k</span>
+    <span title="Site words total count">92.9k</span>
   
 </div>
 

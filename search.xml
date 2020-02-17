@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>zsh本地别名配置</title>
+      <link href="/2020/02/18/zsh%E6%9C%AC%E5%9C%B0%E5%88%AB%E5%90%8D%E9%85%8D%E7%BD%AE/"/>
+      <url>/2020/02/18/zsh%E6%9C%AC%E5%9C%B0%E5%88%AB%E5%90%8D%E9%85%8D%E7%BD%AE/</url>
+      
+        <content type="html"><![CDATA[<h4 id="zsh切换"><a href="#zsh切换" class="headerlink" title="zsh切换"></a>zsh切换</h4><blockquote><p>首先确保本地终端shell是zsh。更改详见<a href="https://www.liugezhou.online/2020/01/10/%E6%AF%8F%E5%91%A8%E6%80%BB%E7%BB%93%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%83%E6%9C%9F/" target="_blank" rel="noopener">每周总结第二十七期</a></p><a id="more"></a></blockquote><h4 id="zsh配置连接服务端别名"><a href="#zsh配置连接服务端别名" class="headerlink" title="zsh配置连接服务端别名"></a>zsh配置连接服务端别名</h4><blockquote><p>这篇短文要解决的是这么一个小问题：购买了ECS，获得了公网IP，知晓密码。 </p><p>这个时候不想在sheel中每次输入<code>ssh root@47.104.85.127</code>去连接服务器。   </p><p>这个时候就可以更改.zshrc配置文件(<code>vi ~/.zshrc</code>).<br>在该配置文件中加入以下一段声明即可：<br><code>alias ssh_liugezhou=&quot;ssh root@47.104.85.127&quot;</code></p><p>更改完成后，执行<code>source ~/.zshrc</code>命令。<br>这个时候在终端直接输入:<code>ssh_liugezhou</code>,接着输入服务器密码即可。   </p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 服务端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> zsh </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Mac下使用brew安装mongodb</title>
       <link href="/2020/02/17/Mac%E4%B8%8B%E4%BD%BF%E7%94%A8brew%E5%AE%89%E8%A3%85mongodb/"/>
       <url>/2020/02/17/Mac%E4%B8%8B%E4%BD%BF%E7%94%A8brew%E5%AE%89%E8%A3%85mongodb/</url>
@@ -1129,31 +1154,6 @@
     
     
     <entry>
-      <title>开源许可证介绍</title>
-      <link href="/2019/07/11/%E5%BC%80%E6%BA%90%E8%AE%B8%E5%8F%AF%E8%AF%81%E4%BB%8B%E7%BB%8D/"/>
-      <url>/2019/07/11/%E5%BC%80%E6%BA%90%E8%AE%B8%E5%8F%AF%E8%AF%81%E4%BB%8B%E7%BB%8D/</url>
-      
-        <content type="html"><![CDATA[<blockquote><p>Github上新建项目的时候，会让添加开源许可证，一搬情况下我们自己建项目的时候：<code>Add a licence:None</code>,即：不添加许可证。<br>刚开始的时候我们都不会在意这个许可证到底是什么，但是随着项目专业、职业化，我们一定要d对开源许可证有个清楚的了解。<br>那么，现在就动脑、动手记录一下关于开源许可证的小介绍。</p></blockquote><a id="more"></a><h5 id="分析图"><a href="#分析图" class="headerlink" title="分析图"></a>分析图</h5><blockquote><p>乌克兰程序员Paul Bagwell，画了一张分析图，说明应该怎么选择。只用两分钟，你就能搞清楚这六种许可证之间的最大区别。<br>下面的图片是来自阮一峰博客制作的中文版，请点击看大图。</p></blockquote><blockquote><p><img src="http://img.liugezhou.online/licence.jpg" alt="Licence"></p><p>这里介绍的是最流行的五种开源许可证：  MIT BSD  Apache GPL  LGPL </p></blockquote><h5 id="MIT"><a href="#MIT" class="headerlink" title="MIT"></a>MIT</h5><blockquote><p>非常宽松的许可证，就是说你什么都可以干，但是开发方不负责质量，相当于免责声明。<br>MIT内容与三条款BSD许可证（3-clause BSD license）内容颇为近似，但是赋予软件被授权人更大的权利与更少的限制。<br>应用该许可证的项目：jQuery Rails Express Lua等</p></blockquote><h5 id="BSD"><a href="#BSD" class="headerlink" title="BSD"></a>BSD</h5><blockquote><p>也是宽松的协议，但比起MIT，BSD不允许软件的衍生版用原作者名字促销，BSD依然是一个免责声明，与MIT相比差异很少。<br>Javascript常用BSD许可协议。因为javascript库很多，替代品也多。作者要做的仅仅是免责而已。</p></blockquote><h5 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h5><blockquote><p>Apache的许可很长，比BSD和MIT要严格不少,需要保留全部的原始版权，如果修改，则需要加上主要的修改通知。</p></blockquote><h5 id="GPL"><a href="#GPL" class="headerlink" title="GPL"></a>GPL</h5><blockquote><p>GPL是常用许可协议中最严格的。<br>GPL最最重要的一条就是GPL的衍生品也必须是GPL协议，也就是说GPL协议发布的软件，其后继版本将都是GPL.<br>Linux就是GPL。</p></blockquote><h5 id="LGPL"><a href="#LGPL" class="headerlink" title="LGPL"></a>LGPL</h5><blockquote><p>GPL过于严格于是GUN发布了LGPL这个限制较少的许可证。<br>LGPL和GPL最大的不同是LGPL允许在私有软件上使用它，而GPL只允许在自由软件上使用。<br>如果你使用一个LGPL下的库，你需要遵循LGOL，如果仅仅是连接这个库，则不需要遵循LGPL。</p></blockquote>]]></content>
-      
-      
-      <categories>
-          
-          <category> 编程概念类 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Licence </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>最近搭建博客遇到的一系列问题</title>
       <link href="/2019/07/11/%E6%9C%80%E8%BF%91%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E7%B3%BB%E5%88%97%E9%97%AE%E9%A2%98/"/>
       <url>/2019/07/11/%E6%9C%80%E8%BF%91%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E7%B3%BB%E5%88%97%E9%97%AE%E9%A2%98/</url>
@@ -1171,6 +1171,31 @@
         <tags>
             
             <tag> 博客 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>开源许可证介绍</title>
+      <link href="/2019/07/11/%E5%BC%80%E6%BA%90%E8%AE%B8%E5%8F%AF%E8%AF%81%E4%BB%8B%E7%BB%8D/"/>
+      <url>/2019/07/11/%E5%BC%80%E6%BA%90%E8%AE%B8%E5%8F%AF%E8%AF%81%E4%BB%8B%E7%BB%8D/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>Github上新建项目的时候，会让添加开源许可证，一搬情况下我们自己建项目的时候：<code>Add a licence:None</code>,即：不添加许可证。<br>刚开始的时候我们都不会在意这个许可证到底是什么，但是随着项目专业、职业化，我们一定要d对开源许可证有个清楚的了解。<br>那么，现在就动脑、动手记录一下关于开源许可证的小介绍。</p></blockquote><a id="more"></a><h5 id="分析图"><a href="#分析图" class="headerlink" title="分析图"></a>分析图</h5><blockquote><p>乌克兰程序员Paul Bagwell，画了一张分析图，说明应该怎么选择。只用两分钟，你就能搞清楚这六种许可证之间的最大区别。<br>下面的图片是来自阮一峰博客制作的中文版，请点击看大图。</p></blockquote><blockquote><p><img src="http://img.liugezhou.online/licence.jpg" alt="Licence"></p><p>这里介绍的是最流行的五种开源许可证：  MIT BSD  Apache GPL  LGPL </p></blockquote><h5 id="MIT"><a href="#MIT" class="headerlink" title="MIT"></a>MIT</h5><blockquote><p>非常宽松的许可证，就是说你什么都可以干，但是开发方不负责质量，相当于免责声明。<br>MIT内容与三条款BSD许可证（3-clause BSD license）内容颇为近似，但是赋予软件被授权人更大的权利与更少的限制。<br>应用该许可证的项目：jQuery Rails Express Lua等</p></blockquote><h5 id="BSD"><a href="#BSD" class="headerlink" title="BSD"></a>BSD</h5><blockquote><p>也是宽松的协议，但比起MIT，BSD不允许软件的衍生版用原作者名字促销，BSD依然是一个免责声明，与MIT相比差异很少。<br>Javascript常用BSD许可协议。因为javascript库很多，替代品也多。作者要做的仅仅是免责而已。</p></blockquote><h5 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h5><blockquote><p>Apache的许可很长，比BSD和MIT要严格不少,需要保留全部的原始版权，如果修改，则需要加上主要的修改通知。</p></blockquote><h5 id="GPL"><a href="#GPL" class="headerlink" title="GPL"></a>GPL</h5><blockquote><p>GPL是常用许可协议中最严格的。<br>GPL最最重要的一条就是GPL的衍生品也必须是GPL协议，也就是说GPL协议发布的软件，其后继版本将都是GPL.<br>Linux就是GPL。</p></blockquote><h5 id="LGPL"><a href="#LGPL" class="headerlink" title="LGPL"></a>LGPL</h5><blockquote><p>GPL过于严格于是GUN发布了LGPL这个限制较少的许可证。<br>LGPL和GPL最大的不同是LGPL允许在私有软件上使用它，而GPL只允许在自由软件上使用。<br>如果你使用一个LGPL下的库，你需要遵循LGOL，如果仅仅是连接这个库，则不需要遵循LGPL。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 编程概念类 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Licence </tag>
             
         </tags>
       
@@ -1709,6 +1734,17 @@
     
     
     <entry>
+      <title>Secret</title>
+      <link href="/collectionlink/index.html"/>
+      <url>/collectionlink/index.html</url>
+      
+        <content type="html"><![CDATA[<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script><div id="hbe-security">  <div class="hbe-input-container">  <input type="password" class="hbe-form-control" id="pass" placeholder="你需要输入密码访问." />    <label for="pass">你需要输入密码访问.</label>    <div class="bottom-line"></div>  </div></div><div id="decryptionError" style="display: none;">Incorrect Password!</div><div id="noContentError" style="display: none;">No content to display!</div><div id="encrypt-blog" style="display:none">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</div><script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>分类</title>
       <link href="/categories/index.html"/>
       <url>/categories/index.html</url>
@@ -1720,11 +1756,11 @@
     
     
     <entry>
-      <title>Secret</title>
-      <link href="/collectionlink/index.html"/>
-      <url>/collectionlink/index.html</url>
+      <title>标签</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
-        <content type="html"><![CDATA[<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script><div id="hbe-security">  <div class="hbe-input-container">  <input type="password" class="hbe-form-control" id="pass" placeholder="你需要输入密码访问." />    <label for="pass">你需要输入密码访问.</label>    <div class="bottom-line"></div>  </div></div><div id="decryptionError" style="display: none;">Incorrect Password!</div><div id="noContentError" style="display: none;">No content to display!</div><div id="encrypt-blog" style="display:none">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</div><script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
@@ -1736,17 +1772,6 @@
       <url>/websitelink/index.html</url>
       
         <content type="html"><![CDATA[<h3 id="第三方网站构建"><a href="#第三方网站构建" class="headerlink" title="第三方网站构建"></a>第三方网站构建</h3><hr><h4 id="吐个槽"><a href="#吐个槽" class="headerlink" title="吐个槽"></a><a href="https://tucao.qq.com/" target="_blank" rel="noopener">吐个槽</a></h4><blockquote><p>吐个槽反馈平台。几行代码 拥有和腾讯网一样的互动社区。<br>让运营人员不再疲于运营,无需登录后台即可简单管理,你与客户的沟通平台永远简洁有序.<br>如果你是程序员,何必自建反馈,几行代码将吐个槽入放在任何地方，包括公众号、APP、H5、网站等.<br>帮产品经理,微信推送回复,户通过微信收到你的回复,你与用户沟通更加高效 .</p></blockquote><h4 id="Tidio"><a href="#Tidio" class="headerlink" title="Tidio"></a><a href="https://www.tidio.com/panel/dashboard" target="_blank" rel="noopener">Tidio</a></h4><blockquote><p>Tidio Chat 是一款界面极其简洁的网页即时聊天工具.</p></blockquote><h3 id="开发者"><a href="#开发者" class="headerlink" title="开发者"></a>开发者</h3><hr><h4 id="Font-Awesome中文网"><a href="#Font-Awesome中文网" class="headerlink" title="Font Awesome中文网"></a><a href="http://www.fontawesome.com.cn/faicons/" target="_blank" rel="noopener">Font Awesome中文网</a></h4><blockquote><p>本网站用到的所有icon均为此直接选词调用</p></blockquote><h4 id="Table-Convert-Online"><a href="#Table-Convert-Online" class="headerlink" title="Table Convert Online"></a><a href="https://tableconvert.com/" target="_blank" rel="noopener">Table Convert Online</a></h4><blockquote><p>一个网页工具，可以在线表格转成 Markdown、JSON、HTML、XML、YAML 等数据格式，并支持格式之间互相转化。</p></blockquote><h4 id="zenflowchart"><a href="#zenflowchart" class="headerlink" title="zenflowchart"></a><a href="https://www.zenflowchart.com" target="_blank" rel="noopener">zenflowchart</a></h4><blockquote><p>一可以制作流程图的简易在线网站。</p></blockquote><h4 id="算法可视化"><a href="#算法可视化" class="headerlink" title="算法可视化"></a><a href="https://algorithm-visualizer.org/branch-and-bound/binary-search" target="_blank" rel="noopener">算法可视化</a></h4><blockquote><p>该网站收集了50多种算法，每种算法都有可视化动画和示例代码。</p></blockquote><h4 id="APIJSON"><a href="#APIJSON" class="headerlink" title="APIJSON"></a><a href="https://github.com/APIJSON/APIJSON" target="_blank" rel="noopener">APIJSON</a></h4><blockquote><p>自动化接口管理工具，后端自动生成接口文档，前端可以定制任何数据、任何结构.</p></blockquote><h3 id="oktools"><a href="#oktools" class="headerlink" title="oktools"></a><a href="https://oktools.net/" target="_blank" rel="noopener">oktools</a></h3><blockquote><p>该网站收集了程序员需要的10多个在线小工具，包含JSON 格式化、Base64 编解码、颜色值转换、图片压缩、正则测试、时间戳转换、HASH 计算等。</p></blockquote><h3 id="设计图片相关"><a href="#设计图片相关" class="headerlink" title="设计图片相关"></a>设计图片相关</h3><hr><h4 id="无版权美丽图片"><a href="#无版权美丽图片" class="headerlink" title="无版权美丽图片"></a><a href="https://www.ssyer.com/home" target="_blank" rel="noopener">无版权美丽图片</a></h4><blockquote><p>美丽的图片，可做背景图片使用</p></blockquote><h4 id="无版权插图的网站"><a href="#无版权插图的网站" class="headerlink" title="无版权插图的网站"></a><a href="https://gallery.manypixels.co/category" target="_blank" rel="noopener">无版权插图的网站</a></h4><blockquote><p>一个收集无版权插图的网站，提供 SVG / PNG 格式下载，并且允许更改颜色。</p></blockquote><h4 id="图片压缩–网站"><a href="#图片压缩–网站" class="headerlink" title="图片压缩–网站"></a><a href="https://www.iloveimg.com/zh-cn/compress-image/compress-jpg" target="_blank" rel="noopener">图片压缩–网站</a></h4><blockquote><p>有的时候你需要快速对一张图片进行压缩，可以收藏此网站，方便下回使用，降低搜索成本。</p></blockquote><h3 id="设计网站大全"><a href="#设计网站大全" class="headerlink" title="设计网站大全"></a><a href="http://hao.shejidaren.com/index.html" target="_blank" rel="noopener">设计网站大全</a></h3><blockquote><p>做设计的应该去关注的一个网站，此网站的知识、工具等聚合应该会让做设计的人产生一丝共鸣。</p></blockquote><h3 id="美化二维码"><a href="#美化二维码" class="headerlink" title="美化二维码"></a><a href="http://www.mobanma.com" target="_blank" rel="noopener">美化二维码</a></h3><blockquote><p>之前二维码的制作用的是草料二维码，无意间发现这样一个网站，也是关于二维码的制作。</p></blockquote><h3 id="CSS相关"><a href="#CSS相关" class="headerlink" title="CSS相关"></a>CSS相关</h3><hr><h4 id="CSS-ARROW-PLEASE"><a href="#CSS-ARROW-PLEASE" class="headerlink" title="CSS ARROW PLEASE"></a><a href="http://www.cssarrowplease.com/" target="_blank" rel="noopener">CSS ARROW PLEASE</a></h4><blockquote><p>这是一个在线生成气泡的工具，你可以在线制作一个你需要的气泡，可以调整宽度大小、颜色，箭头方向，边框等属性，是一款非常好用的工具.</p></blockquote><h4 id="CSS-Load"><a href="#CSS-Load" class="headerlink" title="CSS Load"></a><a href="https://icons8.com/cssload/" target="_blank" rel="noopener">CSS Load</a></h4><blockquote><p>这是一款纯代码制作loading效果的工具，里面也提供了非常多的案例供大家学习使用。</p></blockquote><h4 id="CSS-triangle-generator"><a href="#CSS-triangle-generator" class="headerlink" title="CSS triangle generator"></a><a href="http://apps.eky.hk/css-triangle-generator/" target="_blank" rel="noopener">CSS triangle generator</a></h4><blockquote><p>CSS triangle generator是一款在线制作三角图形的工具</p></blockquote><h4 id="Webarti-CSS3-Button-Maker"><a href="#Webarti-CSS3-Button-Maker" class="headerlink" title="Webarti CSS3 Button Maker"></a><a href="https://www.bestcssbuttongenerator.com/" target="_blank" rel="noopener">Webarti CSS3 Button Maker</a></h4><blockquote><p>Webarti CSS3 Button Maker是一款非常强大的按钮在线生成工具，有非常多样式可以供你选择，里面的按钮颜色，大小，文字，你可以随意设置，当你设定好后，点【Get Code】按钮，你就可以得到按钮的CSS代码.</p></blockquote><h4 id="盒子阴影box-shadow"><a href="#盒子阴影box-shadow" class="headerlink" title="盒子阴影box-shadow"></a><a href="https://www.themeshock.com/css-drop-shadow/" target="_blank" rel="noopener">盒子阴影box-shadow</a></h4><blockquote><p>这款阴影工具可以在线直接生成不同类型的阴影效果，也可是非常方便的调整阴影大小，如果你不知道怎么写阴影效果，你借用这个在线工具进行直接生成你想要的阴影效果。</p></blockquote><h4 id="border-image工具"><a href="#border-image工具" class="headerlink" title="border-image工具"></a><a href="https://border-image.com/" target="_blank" rel="noopener">border-image工具</a></h4><blockquote><p>这是一款可以在线设置边框的工具，通过这款工具，可以非常轻松的学习了解border-image这个属性。</p></blockquote>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>标签</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
       
     </entry>
     

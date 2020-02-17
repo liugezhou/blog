@@ -1,0 +1,1675 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next gemini" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+      
+    
+    
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+  <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/favicon.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="浏览器工作原理与实践,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="六个周" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。本篇是这个专栏的第五章：《No5.浏览器中的页面》。本章分为八节。">
+<meta name="keywords" content="浏览器工作原理与实践">
+<meta property="og:type" content="article">
+<meta property="og:title" content="No5.浏览器中的页面">
+<meta property="og:url" content="http://liugezhou.online/2019/12/03/No5.浏览器中的页面/index.html">
+<meta property="og:site_name" content="六个周">
+<meta property="og:description" content="前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。本篇是这个专栏的第五章：《No5.浏览器中的页面》。本章分为八节。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-01-10T06:18:12.196Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="No5.浏览器中的页面">
+<meta name="twitter:description" content="前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。本篇是这个专栏的第五章：《No5.浏览器中的页面》。本章分为八节。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"toTophideinMobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://liugezhou.online/2019/12/03/No5.浏览器中的页面/">
+
+
+
+
+
+  <title>No5.浏览器中的页面 | 六个周</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?a6ce5d6d4a02e5fc27dfd3a7d7a875b0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/liugezhou" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#64CEAA; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">六个周</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">liugezhou</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liugezhou.online/2019/12/03/No5.浏览器中的页面/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liugezhou">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="http://img.liugezhou.online/time.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="六个周">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">No5.浏览器中的页面</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-03T20:40:00+08:00">
+                2019-12-03
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2020-01-10T14:18:12+08:00">
+                2020-01-10
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/浏览器工作原理与实践/" itemprop="url" rel="index">
+                    <span itemprop="name">浏览器工作原理与实践</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/12/03/No5.浏览器中的页面/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/12/03/No5.浏览器中的页面/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/12/03/No5.浏览器中的页面/" class="leancloud_visitors" data-flag-title="No5.浏览器中的页面">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  4.8k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  16
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h6 id="前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。"><a href="#前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。" class="headerlink" title="前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。"></a>前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。</h6><h6 id="本篇是这个专栏的第五章：《No5-浏览器中的页面》。本章分为八节。"><a href="#本篇是这个专栏的第五章：《No5-浏览器中的页面》。本章分为八节。" class="headerlink" title="本篇是这个专栏的第五章：《No5.浏览器中的页面》。本章分为八节。"></a>本篇是这个专栏的第五章：《No5.浏览器中的页面》。本章分为八节。</h6><a id="more"></a>
+
+<h4 id="21-｜-Chrome开发者工具：利用网络面板做性能分析"><a href="#21-｜-Chrome开发者工具：利用网络面板做性能分析" class="headerlink" title="21 ｜ Chrome开发者工具：利用网络面板做性能分析"></a>21 ｜ Chrome开发者工具：利用网络面板做性能分析</h4><blockquote>
+<p>本节首先对开发者工具的各个模块进行了一个简单介绍，然后重点讲解的是NetWork面板。<br>网络面板包括：控制器、过滤器、抓图信息、时间线、详细列表和下载信息概要六个区域构成。    </p>
+</blockquote>
+<h5 id="1-控制器"><a href="#1-控制器" class="headerlink" title="1.控制器"></a>1.控制器</h5><blockquote>
+<ul>
+<li>“开始/暂停”抓包。   </li>
+<li>全局搜索。    </li>
+<li>Disable cache:禁止从Cache中加载资源。</li>
+<li>Online按钮：模拟2G/3G 网络，模拟弱网环境。  </li>
+</ul>
+</blockquote>
+<h5 id="2-过滤器"><a href="#2-过滤器" class="headerlink" title="2.过滤器"></a>2.过滤器</h5><blockquote>
+<p>过滤功能。 </p>
+</blockquote>
+<h5 id="3-抓图信息"><a href="#3-抓图信息" class="headerlink" title="3.抓图信息"></a>3.抓图信息</h5><blockquote>
+<p>抓图信息区域，可以用来分析用户等待页面加载时间内所看到的内容，分析用户实际的体验情况。  </p>
+</blockquote>
+<h5 id="4-时间线"><a href="#4-时间线" class="headerlink" title="4.时间线"></a>4.时间线</h5><blockquote>
+<p>时间线，主要用来展示 HTTP、HTTPS、WebSocket 加载的状态和时间的一个关系，用于直观感受页面的加载过程。</p>
+</blockquote>
+<h5 id="5-详细列表"><a href="#5-详细列表" class="headerlink" title="5.详细列表"></a>5.详细列表</h5><blockquote>
+<p>详细记录了每个资源从发起请求到完成请求这中间所有过程的状态，以及最终请求完成的数据信息.<br>Queuing：当浏览器发起一个请求的时候，会有很多原因导致该请求不能被立即执行，而是需要排队等待。<br>Stalled： 在发起连接之前，还有一些原因可能导致连接过程被推迟，这个推迟就表现在面板中的 Stalled 上。<br>Proxy Negotiation:若使用代理服务器，会增加一个此阶段。<br>Waiting (TTFB):通常也称为“第一字节时间”。 TTFB 是反映服务端响应速度的重要指标，对服务器来说，TTFB 时间越短，就说明服务器响应越快。<br>Content Download :这意味着从第一字节时间到接收到全部响应数据所用的时间。  </p>
+</blockquote>
+<h5 id="6-下载信息概要"><a href="#6-下载信息概要" class="headerlink" title="6.下载信息概要"></a>6.下载信息概要</h5><blockquote>
+<p>重点关注 DOMContentLoaded和Load两个事件。 </p>
+<ul>
+<li>DOMContentLoaded:这个事件发生后，说明页面已经构建好DOM了，即DOM需要的HTML、JavaScript、CSS等文件已下载完成了。  </li>
+<li>Load：说明浏览器已经加载了所有的资源(图像、样式等)。    </li>
+</ul>
+</blockquote>
+<h4 id="22-DOM树：JavaScript是如何影响DOM树构建的？"><a href="#22-DOM树：JavaScript是如何影响DOM树构建的？" class="headerlink" title="22 | DOM树：JavaScript是如何影响DOM树构建的？"></a>22 | DOM树：JavaScript是如何影响DOM树构建的？</h4><h5 id="什么是DOM"><a href="#什么是DOM" class="headerlink" title="什么是DOM"></a>什么是DOM</h5><blockquote>
+<p>DOM 是表述 HTML 的内部数据结构，它会将 Web 页面和 JavaScript 脚本连接起来，并过滤一些不安全的内容。   </p>
+</blockquote>
+<h5 id="DOM树如何生成"><a href="#DOM树如何生成" class="headerlink" title="DOM树如何生成"></a>DOM树如何生成</h5><blockquote>
+<p>在渲染引擎内部，有一个叫 HTML 解析器（HTMLParser）的模块，它的职责就是负责将 HTML 字节流转换为 DOM 结构。<br>HTML解析器过程是：网络进程加载了多少数据，HTML解析器便解析多少数据。  </p>
+</blockquote>
+<h5 id="JavaScript是如何影响DOM生成的"><a href="#JavaScript是如何影响DOM生成的" class="headerlink" title="JavaScript是如何影响DOM生成的"></a>JavaScript是如何影响DOM生成的</h5><blockquote>
+<ul>
+<li>在两段 div 中间插入了一段 JavaScript 脚本：当HTML解析器解析到script标签的时候会暂停DOM解析，去执行这段JS脚本。 </li>
+<li>在页面中引入 JavaScript文件：整个执行流程还是一样的，执行到 JavaScript 标签时，暂停整个 DOM 的解析，执行 JavaScript 代码，不过这里执行 JavaScript 时，需要先<code>下载这段 JavaScript 代码</code>。这里需要重点关注<code>下载环境</code>，因为 JavaScript 文件的下载过程会阻塞 DOM 解析(Chrome浏览器做的一个主要优化是预解析操作)。<br>另外也有一些相关的策略：比如使用 CDN 来加速 JavaScript 文件的加载，压缩 JavaScript 文件的体积。如果 JavaScript 文件中没有操作 DOM 相关代码，就可以将该 JavaScript 脚本设置为<code>异步加载</code>，通过 <code>async</code>或<code>defer</code> 来标记代码.  </li>
+</ul>
+<ol>
+<li>async:使用 async 标志的脚本文件一旦加载完成，会立即执行.    </li>
+<li>defer:使用了 defer 标记的脚本文件，需要在 DOMContentLoaded 事件之前执行.</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>通过上面的分析，我们知道了 JavaScript 会阻塞 DOM 生成，而样式文件又会阻塞 JavaScript 的执行，所以在实际的工程中需要重点关注 JavaScript 文件和样式表文件，使用不当会影响到页面性能的。</p>
+</blockquote>
+<h4 id="23-｜-渲染流水线：CSS如何影响首次加载时的白屏问题"><a href="#23-｜-渲染流水线：CSS如何影响首次加载时的白屏问题" class="headerlink" title="23 ｜ 渲染流水线：CSS如何影响首次加载时的白屏问题"></a>23 ｜ 渲染流水线：CSS如何影响首次加载时的白屏问题</h4><blockquote>
+<p>CSS资源是页面中非常重要的一环，本节首先站在渲染流水线的视角来介绍CSS是如何工作的、然后通过CSS工作流程来分分析性能瓶颈、最后讨论如何减少首次加载时的白屏问题。 </p>
+</blockquote>
+<h5 id="渲染流水线视角下的CSS"><a href="#渲染流水线视角下的CSS" class="headerlink" title="渲染流水线视角下的CSS"></a>渲染流水线视角下的CSS</h5><blockquote>
+<p>首先是发起页面请求，网络进程接收到返回的HTML数据，将其发送给渲染进程，渲染进程解析HTML数据并构建DOM。<br>需要特别注意下，请求 HTML 数据和构建 DOM 中间有一段空闲时间，这个空闲时间有可能成为页面渲染的瓶颈。   </p>
+</blockquote>
+<blockquote>
+<p>前面提到一嘴：Chrome浏览器做的一个主要优化是预解析操作。<br>因此，Chrome开启这个预解析进程后，在遇到JavaScript或CSS文件后，会提前下载这些文件。<br>这里也有一个空闲时间需要注意一下，就是在 DOM 构建结束之后、css 文件还未下载完成的这段时间内，渲染流水线无事可做，因为下一步是合成布局树，而合成布局树需要 CSSOM 和 DOM，所以这里需要等待 CSS 加载结束并解析成 CSSOM。 </p>
+</blockquote>
+<blockquote>
+<p>CSSOM的两个作用： </p>
+<ul>
+<li>提供给 JavaScript 操作样式表的能力. </li>
+<li>为布局树的合成提供基础的样式信息。</li>
+</ul>
+</blockquote>
+<h5 id="影响页面展示的因素以及优化策略"><a href="#影响页面展示的因素以及优化策略" class="headerlink" title="影响页面展示的因素以及优化策略"></a>影响页面展示的因素以及优化策略</h5><blockquote>
+<p>从发起 URL 请求开始，到首次显示页面的内容，在视觉上经历的三个阶段:    </p>
+<ol>
+<li>等请求发出去之后，到提交数据阶段，这时页面展示出来的还是之前页面的内容。   </li>
+<li>提交数据之后渲染进程会创建一个空白页面，我们通常把这段时间称为解析白屏，并等待 CSS 文件和 JavaScript 文件的加载完成，生成 CSSOM 和 DOM，然后合成布局树，最后还要经过一系列的步骤准备首次渲染.  </li>
+<li>等首次渲染完成之后，就开始进入完整页面的生成阶段了，然后页面会一点点被绘制出来。   </li>
+</ol>
+</blockquote>
+<blockquote>
+<p>这里重点关注第二个阶段：<br>该阶段的主要任务包括了：解析 HTML、下载 CSS、下载 JavaScript、生成 CSSOM、执行 JavaScript、生成布局树、绘制页面一系列操作。<br>对应策略：</p>
+<ul>
+<li>通过内联 JavaScript、内联 CSS 来移除这两种类型的文件下载，这样获取到 HTML 文件之后就可以直接开始渲染流程了。    </li>
+<li>但并不是所有的场合都适合内联，那么还可以尽量减少文件大小，比如通过 webpack 等工具移除一些不必要的注释，并压缩 JavaScript 文件。 </li>
+<li>还可以将一些不需要在解析 HTML 阶段使用的 JavaScript 标记上 sync 或者 defer。    </li>
+<li>对于大的 CSS 文件，可以通过媒体查询属性，将其拆分为多个不同用途的 CSS 文件，这样只有在特定的场景下才会加载特定的 CSS 文件。 </li>
+</ul>
+</blockquote>
+<h4 id="24-分层和合成机制：为什么CSS动画比JavaScript高效"><a href="#24-分层和合成机制：为什么CSS动画比JavaScript高效" class="headerlink" title="24 | 分层和合成机制：为什么CSS动画比JavaScript高效"></a>24 | 分层和合成机制：为什么CSS动画比JavaScript高效</h4><blockquote>
+<p>在第五节的时候，我们知道DOM构建成功后还要经历布局、分层、绘制、合成、显示等阶段后才能显示出漂亮的页面。<br>这一节主要讲解的是渲染引擎的分层和合成机制，作者说分层和合成机制代表了浏览器最为先进的合成技术，请注意是<code>最为先进的</code>. </p>
+</blockquote>
+<h5 id="显示器是怎么显示图像的"><a href="#显示器是怎么显示图像的" class="headerlink" title="显示器是怎么显示图像的"></a>显示器是怎么显示图像的</h5><blockquote>
+<p>每个显示器的固定刷新频率通常是60HZ，即每秒更新60张图片，更新的图片都来自显卡中一个叫前缓冲区的地方，，显示器所做的任务很简单，就是每秒固定读取 60 次前缓冲区中的图像，并将读取的图像显示到显示器上。<br>显卡的作用：显卡的职责就是合成新的图像，并将图像保存到后缓冲区中，一旦显卡把合成的图像写到后缓冲区，系统就会让后缓冲区和前缓冲区互换，这样就能保证显示器能读取到最新显卡合成的图像。  </p>
+</blockquote>
+<h5 id="帧-VS-帧率"><a href="#帧-VS-帧率" class="headerlink" title="帧 VS 帧率"></a>帧 VS 帧率</h5><blockquote>
+<p>渲染流水线生成的每一张图片称为一帧，渲染流水线每秒更新了多少帧称为帧率。  </p>
+</blockquote>
+<h5 id="如何生成一帧图像"><a href="#如何生成一帧图像" class="headerlink" title="如何生成一帧图像"></a>如何生成一帧图像</h5><blockquote>
+<p>生成一帧图像有三种方式：重排、重绘、合成。 这三种方式的渲染路径不同，通常渲染路径越长，生成图像花费的时间越久。<br>这里聚焦点在合成上 ，为了提升每帧的渲染效率，Chrome 引入了分层和合成的机制，Chrome的合成技术用三个词来概括：分层、分块、合成。</p>
+</blockquote>
+<h5 id="分层和合成"><a href="#分层和合成" class="headerlink" title="分层和合成"></a>分层和合成</h5><blockquote>
+<p>你可以把一张网页想象成是由很多个图片叠加在一起的，每个图片就对应一个图层，将素材分解为多个图层的操作就称为分层。最后将这些图层合并到一起的操作就称为合成。<br>在Chrome渲染流水线中，分层体现在生成布局树之后，渲染引擎根据布局树的特点将其转化为层树，层树是渲染流水线后续流程的基础结构。<br>需要重点关注的是，合成操作是在合成线程上完成的，这也就意味着在执行合成操作时，是不会影响到主线程执行的。这就是为什么经常主线程卡住了，但是 CSS 动画依然能执行的原因。</p>
+</blockquote>
+<h5 id="分块"><a href="#分块" class="headerlink" title="分块"></a>分块</h5><blockquote>
+<p>如果说分层是从宏观上提升了渲染效率，那么分块则是从微观层面提升了渲染效率。<br>在首次合成图块的时候使用一个低分辨率的图片。</p>
+</blockquote>
+<h5 id="如何利用分层技术优化代码"><a href="#如何利用分层技术优化代码" class="headerlink" title="如何利用分层技术优化代码"></a>如何利用分层技术优化代码</h5><blockquote>
+<p>在写 Web 应用的时候，你可能经常需要对某个元素做几何形状变换、透明度变换或者一些缩放操作，如果使用 JavaScript 来写这些效果，会牵涉到整个渲染流水线，所以 JavaScript 的绘制效率会非常低下.<br>这时你可以使用 will-change 来告诉渲染引擎你会对该元素做一些特效变换，CSS 代码如下：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">    will-change: transform, opacity;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>这段代码就是提前告诉渲染引擎 box 元素将要做几何变换和透明度变换操作，这时候渲染引擎会将该元素单独实现一帧，等这些变换发生时，渲染引擎会通过合成线程直接去处理变换，这些变换并没有涉及到主线程，这样就大大提升了渲染的效率。这也是 CSS 动画比 JavaScript 动画高效的原因.   </p>
+</blockquote>
+<h4 id="25-｜-页面性能：如何系统地优化页面？"><a href="#25-｜-页面性能：如何系统地优化页面？" class="headerlink" title="25 ｜ 页面性能：如何系统地优化页面？"></a>25 ｜ 页面性能：如何系统地优化页面？</h4><blockquote>
+<p>本节所谈论的页面优化，其实就是让页面更快的显示和响应。<br>通常一个页面有三个阶段：加载阶段、交互阶段和关闭阶段。    </p>
+<ul>
+<li>加载阶段，是指从发出请求到渲染出完整页面的过程，影响到这个阶段的主要因素有网络和 JavaScript 脚本。  </li>
+<li>交互阶段，主要是从页面加载完成到用户交互的整合过程，影响到这个阶段的主要因素是 JavaScript 脚本。    </li>
+<li>关闭阶段，主要是用户发出关闭指令后页面所做的一些清理操作。<br>这里我们需要重点关注加载阶段和交互阶段，因为影响到我们体验的因素主要都在这两个阶段.</li>
+</ul>
+</blockquote>
+<h5 id="加载阶段"><a href="#加载阶段" class="headerlink" title="加载阶段"></a>加载阶段</h5><blockquote>
+<p>并非所有的资源都会阻塞页面的首次绘制，比如图片、音频、视频等文件就不会阻塞页面的首次渲染。而JavaScript、首次请求的HTML资源文件、CSS文件是会阻塞首次渲染的。把这些能阻塞页面渲染的称为关键资源。基于关键资源，细化出三个影响页面首次渲染的核心因素：   </p>
+<ul>
+<li>第一个是关键资源个数。  </li>
+<li>第二个是关键资源大小。  </li>
+<li>第三个是请求关键资源需要多少个RTT(Round Trip Time).[通常1个HTTP的数据包在14KB左右，所以0.1M的页面需要拆分成8个包来传输，也就是说需要8个RTT]。   </li>
+</ul>
+</blockquote>
+<blockquote>
+<p>然后针对核心因素，考虑优化方案：总的优化原则就是减少关键资源个数、降低关键资源大小、降低关键资源的RTT次数。</p>
+</blockquote>
+<h5 id="交互阶段"><a href="#交互阶段" class="headerlink" title="交互阶段"></a>交互阶段</h5><blockquote>
+<p>交互阶段的优化，一个大的原则就是让单个帧的生成速度变快。  </p>
+<ol>
+<li>减少JavaScript脚本执行时间。</li>
+<li>避免强制同步布局。【所谓强制同步布局，是指JavaScript强制将计算样式和布局操作提前到当前的任务中。】 </li>
+<li>避免布局抖动。 </li>
+<li>合理利用CSS合成动画。  </li>
+<li>避免频繁的垃圾回收。   </li>
+</ol>
+</blockquote>
+<h4 id="26-｜-虚拟DOM：虚拟DOM和实际的DOM有何不同？"><a href="#26-｜-虚拟DOM：虚拟DOM和实际的DOM有何不同？" class="headerlink" title="26 ｜ 虚拟DOM：虚拟DOM和实际的DOM有何不同？"></a>26 ｜ 虚拟DOM：虚拟DOM和实际的DOM有何不同？</h4><blockquote>
+<p>本节先聊一些DOM的缺陷，然后在此基础上介绍虚拟DOM如何解决这些缺陷，最后站在双缓存和MVC的视角来聊聊虚拟DOM。</p>
+</blockquote>
+<h5 id="DOM的缺陷"><a href="#DOM的缺陷" class="headerlink" title="DOM的缺陷"></a>DOM的缺陷</h5><blockquote>
+<p>通过前面对DOM的学习，我们知道对于一些复杂的页面或者目前使用非常多的单页面应用来说，其DOM结构复杂，每次操作需要去不断修改DOM树，每次操作渲染引擎都需要进行重绘、重排或者合成操作，执行一次重排或者重绘操作是非常耗时的，这样就带来了性能问题。<br>所以就需要一直方式来减少JavaScript对DOM的操作，这时候虚拟DOM就上场了。    </p>
+</blockquote>
+<h5 id="什么是虚拟DOM"><a href="#什么是虚拟DOM" class="headerlink" title="什么是虚拟DOM"></a>什么是虚拟DOM</h5><blockquote>
+<p>虚拟DOM要解决的事情：  </p>
+<ul>
+<li>将页面改变的内容应用到虚拟DOM上，而不是直接应用在DOM上。  </li>
+<li>变化被应用到虚拟DOM上时，虚拟DOM并不急着去渲染页面，而仅仅是调整虚拟DOM的内部状态，这样操作虚拟DOM的代价就变得非常轻了。    </li>
+<li>在虚拟DOM收集到足够的改变时，再把这些变化一次性应用到真实的DOM上。  </li>
+</ul>
+</blockquote>
+<blockquote>
+<p>接下来从双缓存和MVC模型这两个视角来聊聊虚拟DOM：  </p>
+<ul>
+<li><ol>
+<li>双缓存<br>双换粗是一种经典的思路，应用哎很多场合，能解决页面无效刷新和闪屏的问题，虚拟DOM就是双缓存思想的一种实现。<br>使用双缓存，可以先将计算的中间结果存放到另一个缓冲区中，等全部的计算结束，该缓冲区已经存储了完整的图形，这样使得整个图像的输出非常稳定。  </li>
+</ol>
+</li>
+</ul>
+<ol start="2">
+<li>MVC模式<br>基于MVC的设计思想广泛地渗透到各种场合，且基于MVC又衍生出了很多其他模式(如MVP、MVVM)，不过万变不离其宗，它们的基础框架都是基于MVC而来。站在MVC视角来理解虚拟DOM能让你看到更为“广阔的世界”. </li>
+</ol>
+</blockquote>
+<h4 id="27-渐进式网页应用-PWA-它究竟解决了Web应用的哪些问题？"><a href="#27-渐进式网页应用-PWA-它究竟解决了Web应用的哪些问题？" class="headerlink" title="27 | 渐进式网页应用(PWA):它究竟解决了Web应用的哪些问题？"></a>27 | 渐进式网页应用(PWA):它究竟解决了Web应用的哪些问题？</h4><blockquote>
+<p>PWA,全称是Progressive Web App，渐进式网页应用。   </p>
+</blockquote>
+<blockquote>
+<p>渐进式：</p>
+<ul>
+<li>站在Web应用开发者来说，PWA提供了一个渐进式的过度方案，让普通站点逐步过度到Web应用。采取渐进式可以降低站点改造的代价，使得站点逐步支持各项新技术，而不是一步到位。   </li>
+<li>站在技术角度来说，PWA技术也是一个渐进式的演化过程，在技术层面会一点点演进，比如逐渐提供更好的设备特性支持，不断优化更加流畅的动画效果，不断让页面的加载速度变得更快，不断实现本地应用的特性。<br>可以这么理解：PWA是一套理念，渐进式增强Web的优势，并通过技术手段渐进式缩短和本地应用或者小程序的距离。</li>
+</ul>
+</blockquote>
+<h5 id="Web应用-VS-本地应用"><a href="#Web应用-VS-本地应用" class="headerlink" title="Web应用 VS 本地应用"></a>Web应用 VS 本地应用</h5><blockquote>
+<p>相较于本地应用，Web应用缺陷：   </p>
+<ul>
+<li>首先，Web应用缺少离线使用能力，在离线或者弱网环境下基本上是无法使用的。 </li>
+<li>其次，Web应用还缺少了消息推送的能力。   </li>
+<li>最后，Web缺少一级入口。</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>针对以上缺陷，PWA提出了两种解决方案：通过引入Service Worker来试着解决离线存储和消息推送的问题，通过引入manifest.json来解决一级入口的问题。</p>
+</blockquote>
+<h5 id="Service-Worker"><a href="#Service-Worker" class="headerlink" title="Service Worker"></a>Service Worker</h5><blockquote>
+<p>在2014年的时候，标准委员会就提出来Service Worker的概念，主要思想是在页面和网络之间增加一个拦截器，主要功能就是用来缓存资源和拦截请求。</p>
+</blockquote>
+<blockquote>
+<p>设计思路：<br>为避免JavaScript过多占用页面主线程时长的情况，浏览器实现了Web Worker的功能。Web Worker的目的是让JavaScript能够运行在页面主线程之外，且只能执行一些与DOM无关的JS脚本。在Chrome中，Web Worker其实就是在渲染进程中开启一个新线程，它的生命周期和页面关联。<br>“让其运行在主线程之外”就是Service Worker来自Web Worker的一个核心思想。但需要在Web Worker的基础上加上储存功能。且Service Worker还需要会为多个页面提供服务，所以还不能把Service Worker和单个页面绑定起来。<br>消息推送也是基于Service Worker来实现的。<br>最后，若要使站点支持Service Worker，首先必要的一步就是要将站点升级到HTTPS。</p>
+</blockquote>
+<h4 id="28-｜-WebComponent：像搭积木一样构建Web应用"><a href="#28-｜-WebComponent：像搭积木一样构建Web应用" class="headerlink" title="28 ｜ WebComponent：像搭积木一样构建Web应用"></a>28 ｜ WebComponent：像搭积木一样构建Web应用</h4><blockquote>
+<p>首先，本节介绍了组件化开发是程序员的刚需，所谓组件化就是功能模块要实现高内聚、低耦合的特性。<br>不过由于 DOM 和 CSSOM 都是全局的，所以它们是影响了前端组件化的主要元素。<br>基于这个原因，就出现 WebComponent，它包含自定义元素、影子 DOM 和 HTML 模板三种技术，使得开发者可以隔离 CSS 和 DOM。<br>在此基础上，还重点介绍了影子 DOM 到底是怎么实现的。<br>关于 WebComponent 的未来如何，这里我们不好预测和评判，但是有一点可以肯定，WebComponent 也会采用渐进式迭代的方式向前推进，未来依然有很多坑需要去填。</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="http://img.liugezhou.online/wechatDangerous.jpg" alt="liugezhou wechat" style="width: 200px; max-width: 100%;">
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Enjoy Yourself EveryDay！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="liugezhou 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="liugezhou 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/浏览器工作原理与实践/" rel="tag"># 浏览器工作原理与实践</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/30/每周总结第二十一期/" rel="next" title="每周总结第二十一期">
+                <i class="fa fa-chevron-left"></i> 每周总结第二十一期
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/12/07/每周总结第二十二期/" rel="prev" title="每周总结第二十二期">
+                每周总结第二十二期 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="http://img.liugezhou.online/time.png" alt="liugezhou">
+            
+              <p class="site-author-name" itemprop="name">liugezhou</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">67</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-user"></i>
+                个人主页
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://github.com/liugezhou" title="GitHub" target="_blank">GitHub</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://liugezhou.gitbook.io/liugezhou/" title="Gitbook" target="_blank">Gitbook</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.instagram.com/liugezhou/" title="ins" target="_blank">ins</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.jianshu.com/u/5842abb77bd1" title="简书" target="_blank">简书</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://juejin.im/user/5afcc0a66fb9a07aad17b79e" title="掘金" target="_blank">掘金</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。"><span class="nav-number">1.</span> <span class="nav-text">前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#本篇是这个专栏的第五章：《No5-浏览器中的页面》。本章分为八节。"><span class="nav-number">2.</span> <span class="nav-text">本篇是这个专栏的第五章：《No5.浏览器中的页面》。本章分为八节。</span></a></li></ol><li class="nav-item nav-level-4"><a class="nav-link" href="#21-｜-Chrome开发者工具：利用网络面板做性能分析"><span class="nav-number"></span> <span class="nav-text">21 ｜ Chrome开发者工具：利用网络面板做性能分析</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-控制器"><span class="nav-number"></span> <span class="nav-text">1.控制器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-过滤器"><span class="nav-number"></span> <span class="nav-text">2.过滤器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-抓图信息"><span class="nav-number"></span> <span class="nav-text">3.抓图信息</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-时间线"><span class="nav-number"></span> <span class="nav-text">4.时间线</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-详细列表"><span class="nav-number"></span> <span class="nav-text">5.详细列表</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-下载信息概要"><span class="nav-number"></span> <span class="nav-text">6.下载信息概要</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#22-DOM树：JavaScript是如何影响DOM树构建的？"><span class="nav-number"></span> <span class="nav-text">22 | DOM树：JavaScript是如何影响DOM树构建的？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#什么是DOM"><span class="nav-number"></span> <span class="nav-text">什么是DOM</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#DOM树如何生成"><span class="nav-number"></span> <span class="nav-text">DOM树如何生成</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#JavaScript是如何影响DOM生成的"><span class="nav-number"></span> <span class="nav-text">JavaScript是如何影响DOM生成的</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#23-｜-渲染流水线：CSS如何影响首次加载时的白屏问题"><span class="nav-number"></span> <span class="nav-text">23 ｜ 渲染流水线：CSS如何影响首次加载时的白屏问题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#渲染流水线视角下的CSS"><span class="nav-number"></span> <span class="nav-text">渲染流水线视角下的CSS</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#影响页面展示的因素以及优化策略"><span class="nav-number"></span> <span class="nav-text">影响页面展示的因素以及优化策略</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#24-分层和合成机制：为什么CSS动画比JavaScript高效"><span class="nav-number"></span> <span class="nav-text">24 | 分层和合成机制：为什么CSS动画比JavaScript高效</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#显示器是怎么显示图像的"><span class="nav-number"></span> <span class="nav-text">显示器是怎么显示图像的</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#帧-VS-帧率"><span class="nav-number"></span> <span class="nav-text">帧 VS 帧率</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#如何生成一帧图像"><span class="nav-number"></span> <span class="nav-text">如何生成一帧图像</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#分层和合成"><span class="nav-number"></span> <span class="nav-text">分层和合成</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#分块"><span class="nav-number"></span> <span class="nav-text">分块</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#如何利用分层技术优化代码"><span class="nav-number"></span> <span class="nav-text">如何利用分层技术优化代码</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#25-｜-页面性能：如何系统地优化页面？"><span class="nav-number"></span> <span class="nav-text">25 ｜ 页面性能：如何系统地优化页面？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#加载阶段"><span class="nav-number"></span> <span class="nav-text">加载阶段</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#交互阶段"><span class="nav-number"></span> <span class="nav-text">交互阶段</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#26-｜-虚拟DOM：虚拟DOM和实际的DOM有何不同？"><span class="nav-number"></span> <span class="nav-text">26 ｜ 虚拟DOM：虚拟DOM和实际的DOM有何不同？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#DOM的缺陷"><span class="nav-number"></span> <span class="nav-text">DOM的缺陷</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#什么是虚拟DOM"><span class="nav-number"></span> <span class="nav-text">什么是虚拟DOM</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#27-渐进式网页应用-PWA-它究竟解决了Web应用的哪些问题？"><span class="nav-number"></span> <span class="nav-text">27 | 渐进式网页应用(PWA):它究竟解决了Web应用的哪些问题？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Web应用-VS-本地应用"><span class="nav-number"></span> <span class="nav-text">Web应用 VS 本地应用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Service-Worker"><span class="nav-number"></span> <span class="nav-text">Service Worker</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#28-｜-WebComponent：像搭积木一样构建Web应用"><span class="nav-number"></span> <span class="nav-text">28 ｜ WebComponent：像搭积木一样构建Web应用</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-github"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">liugezhou</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">97.8k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '7Y2MfUyJAFLBIDtKaHckAXbO-gzGzoHsz',
+        appKey: 'QzorRYCide4mEYVhrEGCOHh7',
+        placeholder: 'Just write something!',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === '') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("7Y2MfUyJAFLBIDtKaHckAXbO-gzGzoHsz", "QzorRYCide4mEYVhrEGCOHh7");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  <script async src="//code.tidio.co/6brxboofvivexcnvw6lnczwguzplcfgz.js"></script>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/moment-precise-range-plugin@1.3.0/moment-precise-range.min.js"></script>
+  <script>
+    function timer() {
+      var ages = moment.preciseDiff(moment(),moment(20190101,"YYYYMMDD"));
+      ages = ages.replace(/years?/, "年");
+      ages = ages.replace(/months?/, "月");
+      ages = ages.replace(/days?/, "天");
+      ages = ages.replace(/hours?/, "小时");
+      ages = ages.replace(/minutes?/, "分");
+      ages = ages.replace(/seconds?/, "秒");
+      ages = ages.replace(/\d+/g, '<span style="color:#1890ff">$&</span>');
+      div.innerHTML = `我已在此等候你 ${ages}`;
+    }
+    var div = document.createElement("div");
+    //插入到copyright之后
+    var copyright = document.querySelector(".copyright");
+    document.querySelector(".footer-inner").insertBefore(div, copyright.nextSibling);
+    timer();
+    setInterval("timer()",1000)
+  </script>
+
+</body>
+</html>

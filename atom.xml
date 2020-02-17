@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://liugezhou.online/"/>
-  <updated>2020-02-17T10:58:49.809Z</updated>
+  <updated>2020-02-17T17:45:56.678Z</updated>
   <id>http://liugezhou.online/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>zsh本地别名配置</title>
+    <link href="http://liugezhou.online/2020/02/18/zsh%E6%9C%AC%E5%9C%B0%E5%88%AB%E5%90%8D%E9%85%8D%E7%BD%AE/"/>
+    <id>http://liugezhou.online/2020/02/18/zsh本地别名配置/</id>
+    <published>2020-02-17T17:35:00.000Z</published>
+    <updated>2020-02-17T17:45:56.678Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="zsh切换"><a href="#zsh切换" class="headerlink" title="zsh切换"></a>zsh切换</h4><blockquote><p>首先确保本地终端shell是zsh。更改详见<a href="https://www.liugezhou.online/2020/01/10/%E6%AF%8F%E5%91%A8%E6%80%BB%E7%BB%93%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%83%E6%9C%9F/" target="_blank" rel="noopener">每周总结第二十七期</a></p><a id="more"></a></blockquote><h4 id="zsh配置连接服务端别名"><a href="#zsh配置连接服务端别名" class="headerlink" title="zsh配置连接服务端别名"></a>zsh配置连接服务端别名</h4><blockquote><p>这篇短文要解决的是这么一个小问题：购买了ECS，获得了公网IP，知晓密码。 </p><p>这个时候不想在sheel中每次输入<code>ssh root@47.104.85.127</code>去连接服务器。   </p><p>这个时候就可以更改.zshrc配置文件(<code>vi ~/.zshrc</code>).<br>在该配置文件中加入以下一段声明即可：<br><code>alias ssh_liugezhou=&quot;ssh root@47.104.85.127&quot;</code></p><p>更改完成后，执行<code>source ~/.zshrc</code>命令。<br>这个时候在终端直接输入:<code>ssh_liugezhou</code>,接着输入服务器密码即可。   </p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;zsh切换&quot;&gt;&lt;a href=&quot;#zsh切换&quot; class=&quot;headerlink&quot; title=&quot;zsh切换&quot;&gt;&lt;/a&gt;zsh切换&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt;首先确保本地终端shell是zsh。更改详见&lt;a href=&quot;https://www.liugezhou.online/2020/01/10/%E6%AF%8F%E5%91%A8%E6%80%BB%E7%BB%93%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%83%E6%9C%9F/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;每周总结第二十七期&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="服务端" scheme="http://liugezhou.online/categories/%E6%9C%8D%E5%8A%A1%E7%AB%AF/"/>
+    
+    
+      <category term="zsh" scheme="http://liugezhou.online/tags/zsh/"/>
+    
+  </entry>
   
   <entry>
     <title>Mac下使用brew安装mongodb</title>
@@ -464,28 +487,6 @@
     
     
       <category term="每周分享" scheme="http://liugezhou.online/tags/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>No3.V8工作原理</title>
-    <link href="http://liugezhou.online/2019/11/21/No3.V8%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/"/>
-    <id>http://liugezhou.online/2019/11/21/No3.V8工作原理/</id>
-    <published>2019-11-21T13:40:00.000Z</published>
-    <updated>2020-01-10T06:17:27.455Z</updated>
-    
-    <content type="html"><![CDATA[<h6 id="前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。"><a href="#前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。" class="headerlink" title="前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。"></a>前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。</h6><h6 id="本篇是这个专栏的第三章：《V8工作原理》。本章分为三节。"><a href="#本篇是这个专栏的第三章：《V8工作原理》。本章分为三节。" class="headerlink" title="本篇是这个专栏的第三章：《V8工作原理》。本章分为三节。"></a>本篇是这个专栏的第三章：《V8工作原理》。本章分为三节。</h6><a id="more"></a><h4 id="12｜栈空间和堆空间：数据是如何存储的？"><a href="#12｜栈空间和堆空间：数据是如何存储的？" class="headerlink" title="12｜栈空间和堆空间：数据是如何存储的？"></a>12｜栈空间和堆空间：数据是如何存储的？</h4><h5 id="JavaScript是什么类型的语言"><a href="#JavaScript是什么类型的语言" class="headerlink" title="JavaScript是什么类型的语言"></a>JavaScript是什么类型的语言</h5><blockquote><p>在使用之前就需要确认其变量数据类型的语言称为<code>静态语言</code>，相反地，我们把运行过程中需要检查数据类型的语言称为<code>动态语言</code>。<br>我们把变量直接可以偷偷进行转换的操作称为隐式类型转换，支持隐式类型的语言称为<code>弱类型语言</code>，不支持隐式类型转换的语言称为<code>强类型语言</code>。      </p></blockquote><blockquote><p>显然，JavaScript是动态弱类型语言。    </p></blockquote><h5 id="JavaScript的数据类型"><a href="#JavaScript的数据类型" class="headerlink" title="JavaScript的数据类型"></a>JavaScript的数据类型</h5><blockquote><p>JavaScript的数据类型一共有八种：<br>基本数据类型：Boolean、Undefined、Null、String、Number、Bigint、Symbol<br>引用数据类型：Object  </p></blockquote><h5 id="内存空间"><a href="#内存空间" class="headerlink" title="内存空间"></a>内存空间</h5><blockquote><p>在JavaScript的执行过程中，主要有三种类型内存空间：代码空间、栈空间、堆空间。<br>原始类型的数据值都是直接保存在栈中的，引用类型的值都是保存在堆空间中的。<br>通常情况下，栈空间都不会设置太大，主要用来存放一些原始类型的小数据。堆空间很大，能存放很多大的数据。<br>原始类型的赋值会完整复制变量值，而引用类型的赋值是复制引用地址。    </p></blockquote><h5 id="产生闭包的核心"><a href="#产生闭包的核心" class="headerlink" title="产生闭包的核心"></a>产生闭包的核心</h5><blockquote><p>第一步是需要预扫描内部函数。<br>第二步是把内部函数引用的外部变量保存到堆中。  </p></blockquote><h4 id="13-｜-垃圾回收：垃圾数据是如何自动回收的？"><a href="#13-｜-垃圾回收：垃圾数据是如何自动回收的？" class="headerlink" title="13 ｜ 垃圾回收：垃圾数据是如何自动回收的？"></a>13 ｜ 垃圾回收：垃圾数据是如何自动回收的？</h4><hr><blockquote><p>对一些不需要的数据，我们称之为垃圾数据，由于内存是有限的，为了释放内存，我们需要对这么垃圾数据进行回收。  </p></blockquote><h5 id="不同语言的垃圾回收策略"><a href="#不同语言的垃圾回收策略" class="headerlink" title="不同语言的垃圾回收策略"></a>不同语言的垃圾回收策略</h5><blockquote><p>通常情况，垃圾回收分为手动回收到自动回收两种策略。<br>如C/C++C++使用的是手动回收策略，何时分配内存、何时销毁内存都是由代码控制的。<br>如JavaScript、Java、Python等语言使用的是自动回收策略，产生的垃圾数据是由垃圾回收器来释放的。  </p></blockquote><h5 id="调用栈中的数据是如何回收的"><a href="#调用栈中的数据是如何回收的" class="headerlink" title="调用栈中的数据是如何回收的"></a>调用栈中的数据是如何回收的</h5><blockquote><p>栈中的垃圾回收相对比较简单：JavaScript引擎会通过向下移动ESP来销毁该函数保存在栈中的执行上下文。<br>ESP：记录当前执行状态的指针。</p></blockquote><h5 id="堆中的数据是如何回收的"><a href="#堆中的数据是如何回收的" class="headerlink" title="堆中的数据是如何回收的"></a>堆中的数据是如何回收的</h5><blockquote><p>要回收堆中的数据，需要用到JavaScript中的垃圾回收器。</p></blockquote><blockquote><p>在介绍V8如何实现回收之前，首先要了解下<code>代际假说</code>内容。这是垃圾回收领域一个重要的术语，代际假说有两个特点：    </p><ul><li>第一个是大部分对象在内存中存在的时间很短，简单来说，就是很多对象一经分配内存，很快就变得不可访问.  </li><li>第二个是不死的对象，会活得更久.<br>这两个特点不仅仅适用于JavaScript，同样适应于大多数动态语言，如Java、Python等。    </li></ul></blockquote><blockquote><p>在V8中会把堆分为新生代(支持1-8M容量)和老生代(容量大很多)两个区域，新生代中存放的是生存时间短的对象，老生代中存放的是生存时间久的对象。  </p><ul><li>副垃圾回收器，主要负责新生代的垃圾回收。    </li><li>主垃圾回收器，主要负责老生代的垃圾回收。   </li></ul></blockquote><h5 id="垃圾回收器的工作流程"><a href="#垃圾回收器的工作流程" class="headerlink" title="垃圾回收器的工作流程"></a>垃圾回收器的工作流程</h5><blockquote><p>不论是主垃圾回收器还是副垃圾回收器，它们都有一套共同的执行流程。  </p><ul><li>第一步为标记活动对象与非活动对象。活动对象为还在使用的对象，非活动对象为要准备进行垃圾回收的对象。  </li><li>第二步是回收非活动对象所占用的内存。既在标记后统一清理被标记为可回收的对象的内存。    </li><li>第三步是内存整理。这是因为在频繁回收对象后，内存中会存在不连续空间，把这些不连续空间称为内存碎片。因此需要整理这些碎片，这是为了当那些较大连续内存出现时可以方便分配。【这步是可选的，副垃圾回收器不会产生内存碎片】。<br>然后按照上述流程来分析新生代垃圾回收器（副垃圾回收器）和老生代垃圾回收器（主垃圾回收器）是如何处理垃圾回收的。    </li></ul></blockquote><h5 id="副垃圾回收器"><a href="#副垃圾回收器" class="headerlink" title="副垃圾回收器"></a>副垃圾回收器</h5><blockquote><p>副垃圾回收器主要负责新生代区的垃圾回收，虽然老生代区域不大，但是垃圾回收比较频繁。<br>新生代中用Scavenge算法来处理。【Scavenge算法：把新生代空间对半划分为两个区域，一个是对象区域，一个是空闲区域。】<br>过程大概就是：新加入对象放入都对象区域，快写满时进行垃圾清理操作，副垃圾回收器把这些对象复制到空闲区域，复制后的空闲区域没有内存碎片。完成复制后，对象区域与空闲区域角色翻转。角色翻转的操作能让新生代中的两块区域无限重复使用下去。<br>因为新生区的空间不大，所以很容易被存活的对象装满整个区域。为了解决这个问题，JavaScript 引擎采用了对象晋升策略，也就是经过两次垃圾回收依然还存活的对象，会被移动到老生区中。</p></blockquote><h5 id="主垃圾回收器"><a href="#主垃圾回收器" class="headerlink" title="主垃圾回收器"></a>主垃圾回收器</h5><blockquote><p>主垃圾回收器主要负责老生区中的垃圾回收.<br>老生区中对象的两个特点：一是存活时间长，二是对象占用空间大。<br>由特点我们知道采用副垃圾回收器的Scavenge算法显然不满足需求，因此，主垃圾回收器采用的是<code>标记-清除（Mark-Sweep）</code>算法进行垃圾回收。碎片过多会导致大对象无法分配到足够的连续内存，于是又产生了另外一种算法——<code>标记 - 整理（Mark-Compact）</code> .</p></blockquote><h4 id="14-编译器和解释器：V8是如何执行一段JavaScript代码的"><a href="#14-编译器和解释器：V8是如何执行一段JavaScript代码的" class="headerlink" title="14 | 编译器和解释器：V8是如何执行一段JavaScript代码的"></a>14 | 编译器和解释器：V8是如何执行一段JavaScript代码的</h4><hr><blockquote><p>深入了解V8的工作原理，我们需要弄清除一些概念和原理，比如本节要学习的：<code>编译器(Compiler)</code>、<code>解释器(Interpreter)</code>、<code>抽象语法树(AST)</code>、<code>字节码(Bytecode)</code>、<code>即时编译器(JIT)</code>等概念。 </p></blockquote><h5 id="编译器和解释器"><a href="#编译器和解释器" class="headerlink" title="编译器和解释器"></a>编译器和解释器</h5><blockquote><p>编译器和解释器“翻译”代码的流程大致可阐述如下：    </p><ol><li>在编译型语言的编译过程中，编译器首先会依次对源代码进行词法分析、语法分析，生成抽象语法树（AST），然后是优化代码，最后再生成处理器能够理解的机器码。如果编译成功，将会生成一个可执行的文件。但如果编译过程发生了语法或者其他的错误，那么编译器就会抛出异常，最后的二进制文件也不会生成成功。    </li><li>在解释型语言的解释过程中，同样解释器也会对源代码进行词法分析、语法分析，并生成抽象语法树（AST），不过它会再基于抽象语法树生成字节码，最后再根据字节码来执行程序、输出结果。    </li></ol></blockquote><h5 id="V8是如何执行一段JavaScript代码的"><a href="#V8是如何执行一段JavaScript代码的" class="headerlink" title="V8是如何执行一段JavaScript代码的"></a>V8是如何执行一段JavaScript代码的</h5><blockquote><p>V8在执行过程中既有解释器，又有编译器。分解其执行流程如下：    </p></blockquote><h6 id="1-生成抽象语法树-AST-和执行上下文"><a href="#1-生成抽象语法树-AST-和执行上下文" class="headerlink" title="1.生成抽象语法树(AST)和执行上下文"></a>1.生成抽象语法树(AST)和执行上下文</h6><blockquote><p>那么这个抽象语法树AST是什么呢？<br>首先我们知道高级语言只是开发者可以理解的语言，但是让编译器或者解释器来理解就非常困难了。对于编译器或者解释器来说，他可以理解的是AST，所以无论是解释性语言还是编译型语言，在编译过程中，都会生成一个AST。<br>一段代码经过javascript-ast站点处理后，AST的结构和代码结构非常之相似，具体结构就不展示了，类似于DOM树。AST的生成需要经过两个阶段： </p><ul><li>第一阶段是<code>分词</code>，又称为<code>词法分析</code>。其作用是将一行行的源码拆解成一个个 token。所谓 token，指的是语法上不可能再分的、最小的单个字符或字符串。  </li><li>第二阶段是<code>解析</code>,又称为<code>语法分析</code>。其作用是将上一步生成的 token 数据，根据语法规则转为 AST。    </li></ul></blockquote><h6 id="2-生成字节码"><a href="#2-生成字节码" class="headerlink" title="2.生成字节码"></a>2.生成字节码</h6><blockquote><p>有了 AST 和执行上下文后，那接下来的第二步，解释器 Ignition 就登场了，它会根据 AST 生成字节码，并解释执行字节码。<br>字节码就是介于 AST 和机器码之间的一种代码。但是与特定类型的机器码无关，字节码需要通过解释器将其转换为机器码后才能执行.之所以出现字节码，是Chrome团队为了解决内存占用问题而引入的。    </p></blockquote><h6 id="3-执行代码"><a href="#3-执行代码" class="headerlink" title="3.执行代码"></a>3.执行代码</h6><blockquote><p>生成字节码之后，接下来就进入了执行阶段。<br>在执行阶段，通常解释器逐条执行字节码，如果发现有热点代码(一段代码被重复执行多次)，那后台编译器会把该段热点的字节码编译为高效的机器码，然后当再次执行这段被优化的代码时，只需要执行编译后的机器码就可以了。这种字节码配合解释器和编译器的技术就称为<code>即时编译(JIT)</code>.</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h6 id=&quot;前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。&quot;&gt;&lt;a href=&quot;#前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。&quot; class=&quot;headerlink&quot; title=&quot;前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。&quot;&gt;&lt;/a&gt;前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。&lt;/h6&gt;&lt;h6 id=&quot;本篇是这个专栏的第三章：《V8工作原理》。本章分为三节。&quot;&gt;&lt;a href=&quot;#本篇是这个专栏的第三章：《V8工作原理》。本章分为三节。&quot; class=&quot;headerlink&quot; title=&quot;本篇是这个专栏的第三章：《V8工作原理》。本章分为三节。&quot;&gt;&lt;/a&gt;本篇是这个专栏的第三章：《V8工作原理》。本章分为三节。&lt;/h6&gt;
-    
-    </summary>
-    
-      <category term="浏览器工作原理与实践" scheme="http://liugezhou.online/categories/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5/"/>
-    
-    
-      <category term="浏览器工作原理与实践" scheme="http://liugezhou.online/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5/"/>
     
   </entry>
   

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://liugezhou.online/"/>
-  <updated>2020-02-16T15:00:39.597Z</updated>
+  <updated>2020-02-17T10:58:49.809Z</updated>
   <id>http://liugezhou.online/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mac下使用brew安装mongodb</title>
+    <link href="http://liugezhou.online/2020/02/17/Mac%E4%B8%8B%E4%BD%BF%E7%94%A8brew%E5%AE%89%E8%A3%85mongodb/"/>
+    <id>http://liugezhou.online/2020/02/17/Mac下使用brew安装mongodb/</id>
+    <published>2020-02-17T11:00:00.000Z</published>
+    <updated>2020-02-17T10:58:49.809Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="brew"><a href="#brew" class="headerlink" title="brew"></a>brew</h3><blockquote><p>brew又叫Homebrew，是Mac OSX上的软件包管理工具，能在Mac中方便的安装软件或者卸载软件， 只需要一个命令， 非常方便</p></blockquote><a id="more"></a><blockquote><p>brew类似ubuntu系统下的apt-get的功能</p><p>安装：<code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</code></p><ul><li>brew list           列出已安装的软件</li><li>brew update     更新brew</li><li>brew home       用浏览器打开brew的官方网站</li><li>brew info         显示软件信息</li><li>brew deps        显示包依赖</li></ul></blockquote><h3 id="安装mongodb"><a href="#安装mongodb" class="headerlink" title="安装mongodb"></a>安装mongodb</h3><blockquote><p>如果你用 brew install mongodb，可能会报错：<br><code>No available formula with the name &quot;mongodb&quot;</code></p><p>然后你需要的操作是：  </p><ul><li><code>brew services stop mongodb</code></li><li><code>brew uninstall mongodb</code></li><li><code>brew tap mongodb/brew</code></li><li><code>brew install mongodb-community</code></li><li><code>brew services start mongodb-community</code></li></ul></blockquote><blockquote><p>查看mongodb版本：mongo。<br>接着在终端中输入 <code>mongod</code>,新建终端接着输入<code>mongo</code>，连接成功。</p></blockquote><h3 id="文件路径"><a href="#文件路径" class="headerlink" title="文件路径"></a>文件路径</h3><blockquote><p>配置文件：/usr/local/etc/mongod.conf<br>日志目录路径：/usr/local/var/log/mongodb<br>数据目录路径：/usr/local/var/mongodb</p></blockquote><h3 id="启动-amp-amp-停止-mongodb-community服务器"><a href="#启动-amp-amp-停止-mongodb-community服务器" class="headerlink" title="启动 &amp;&amp; 停止 mongodb-community服务器"></a>启动 &amp;&amp; 停止 mongodb-community服务器</h3><h4 id="mongod作为服务运行"><a href="#mongod作为服务运行" class="headerlink" title="mongod作为服务运行"></a>mongod作为服务运行</h4><blockquote><p><code>brew services start mongodb-community</code><br><code>brew services stop mongodb-community</code></p></blockquote><h4 id="手动启动-mongod"><a href="#手动启动-mongod" class="headerlink" title="手动启动 mongod"></a>手动启动 mongod</h4><blockquote><p><code>mongod --config /usr/local/etc/mongod.conf</code><br>注意：如果您不包含–config带有配置文件路径的选项，则MongoDB服务器没有默认配置文件或日志目录路径，并将使用数据目录路径/data/db。<br>要mongod手动关闭，请使用admin数据库并运行db.shutdownServer()：<br><code>mongo admin --eval &quot;db.shutdownServer()&quot;</code></p></blockquote><h5 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a><a href="https://segmentfault.com/a/1190000020400235" target="_blank" rel="noopener">参考文章</a></h5>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;brew&quot;&gt;&lt;a href=&quot;#brew&quot; class=&quot;headerlink&quot; title=&quot;brew&quot;&gt;&lt;/a&gt;brew&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;brew又叫Homebrew，是Mac OSX上的软件包管理工具，能在Mac中方便的安装软件或者卸载软件， 只需要一个命令， 非常方便&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Mac" scheme="http://liugezhou.online/categories/Mac/"/>
+    
+    
+      <category term="brew" scheme="http://liugezhou.online/tags/brew/"/>
+    
+  </entry>
   
   <entry>
     <title>每周总结第三十期</title>
@@ -462,30 +486,6 @@
     
     
       <category term="浏览器工作原理与实践" scheme="http://liugezhou.online/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>每周总结第十九期</title>
-    <link href="http://liugezhou.online/2019/11/17/%E6%AF%8F%E5%91%A8%E6%80%BB%E7%BB%93%E7%AC%AC%E5%8D%81%E4%B9%9D%E6%9C%9F/"/>
-    <id>http://liugezhou.online/2019/11/17/每周总结第十九期/</id>
-    <published>2019-11-17T09:45:00.000Z</published>
-    <updated>2019-11-17T09:49:24.000Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>这里记录过去一周，我的一些小总结。</p></blockquote><a id="more"></a>。<p><img src="http://img.liugezhou.online/weekly19" alt="weekly-19"></p><h4 id="Feeling"><a href="#Feeling" class="headerlink" title="Feeling"></a>Feeling</h4><blockquote><p>由于自己的职业关系，比较关注一些技术、软件、工具、科技等方面的讯息。<br>这些讯息的爆炸、扩散，让我一次又一次在潜意识里提醒自己：淡定下来，无论窗外之事多么热闹，都不要影响自己的心态，按着自己的节奏去学习、吸收、渗透。</p></blockquote><h4 id="Idea永久激活"><a href="#Idea永久激活" class="headerlink" title="Idea永久激活"></a><a href="https://mp.weixin.qq.com/s/1VBxhZNC4kq2KckT6Jqwfw" target="_blank" rel="noopener">Idea永久激活</a></h4><blockquote><p>Idea工具30天体验结束，找了一些网上的激活方法，大多方法都失效了，最终在这篇文章的指引下，成功激活，推荐推荐。<br>激活传送门：<a href="https://mp.weixin.qq.com/s/1VBxhZNC4kq2KckT6Jqwfw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/1VBxhZNC4kq2KckT6Jqwfw</a></p></blockquote><h4 id="GitLens"><a href="#GitLens" class="headerlink" title="GitLens"></a>GitLens</h4><blockquote><p>它是 VSCode 中非常令人推荐的一个插件，简直是Git神器，码农必备。 每一行代码旁边都有日志，代码是谁提交的一目了然。   </p></blockquote><h4 id="Gitbook"><a href="#Gitbook" class="headerlink" title="Gitbook"></a>Gitbook</h4><blockquote><p>Gitbook编写在线文档，可以非常方便快速的将自己的md、html、zip、docx等文件倒入，实现快速部署。<br>不需域名、不需其他的任何配置，即可快速实现在线浏览。<br>但是需要<code>过墙</code>。<br>我花了十分钟导入两篇文章后的效果：<a href="https://mingzhou.gitbook.io/liugezhou/" target="_blank" rel="noopener">https://mingzhou.gitbook.io/liugezhou/</a></p></blockquote><h4 id="诺基亚老照片"><a href="#诺基亚老照片" class="headerlink" title="诺基亚老照片"></a>诺基亚老照片</h4><blockquote><p>这个工具可以生成老式诺基亚手机的短信图片。<br>网页版：<a href="https://zzkia.noddl.me:8020" target="_blank" rel="noopener">https://zzkia.noddl.me:8020</a><br>微信小程序：【次元蜜蜂】。  </p></blockquote><h4 id="Github-for-mobile-iOS-beta"><a href="#Github-for-mobile-iOS-beta" class="headerlink" title="Github for mobile iOS beta"></a><a href="https://github.com/mobile" target="_blank" rel="noopener">Github for mobile iOS beta</a></h4><blockquote><p>11 月 13 日，GitHub 年度开发者大会—GitHub Universe 2019 在美国旧金山举行。<br>为改善用户体验，GitHub 在本次大会上宣布推出移动端，即 GitHub App 。<br>目前，官方已经上线 iOS 版，不过，却是 beta（公测版），因此用户暂时无法通过 App Store 下载，可以通过官方渠道下载尝鲜。<br>但是，我等</p></blockquote><h4 id="Bytespider"><a href="#Bytespider" class="headerlink" title="Bytespider"></a>Bytespider</h4><blockquote><p>[很多社区用户纷纷反馈，一种名为 Bytespider 的爬虫爬取他们的网站信息的频率太高，直接把网站搞瘫痪了。大家顺着爬虫的 IP 地址查了一下，发现 Bytespider 应该就是今日头条的搜索爬虫。]<sup><a href="https://mp.weixin.qq.com/s/KXg8xAf_TOAROMhqJVQQBQ" target="_blank" rel="noopener">来源</a></sup>  </p></blockquote><blockquote><p>robots.txt 协议:<br>也称为爬虫协议、爬虫规则、机器人协议等。robots.txt文件是存储在网站根目录下的 txt 文本文档。这是网站和蜘蛛之间的协议。该网站告诉搜索引擎哪些页面可以被抓取，哪些页面不想通过机器人协议被抓取。</p></blockquote><h4 id="浏览器中的JavaScript执行机制"><a href="#浏览器中的JavaScript执行机制" class="headerlink" title="浏览器中的JavaScript执行机制"></a><a href="https://www.liugezhou.online/2019/11/11/No2.%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E7%9A%84JavaScript%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6/" target="_blank" rel="noopener">浏览器中的JavaScript执行机制</a></h4><blockquote><p>前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。<br>本篇是这个专栏的第二章：<a href="https://www.liugezhou.online/2019/11/11/No2.%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E7%9A%84JavaScript%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6/" target="_blank" rel="noopener">浏览器中的JavaScript执行机制</a>。本章分为五讲。</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;这里记录过去一周，我的一些小总结。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="每周分享" scheme="http://liugezhou.online/categories/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
-    
-    
-      <category term="每周分享" scheme="http://liugezhou.online/tags/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
     
   </entry>
   

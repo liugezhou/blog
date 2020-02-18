@@ -144,7 +144,7 @@
 <meta property="og:site_name" content="六个周">
 <meta property="og:description" content="一、zsh1.zsh切换 首先确保本地终端shell是zsh。更改详见每周总结第二十七期">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-02-18T08:13:08.031Z">
+<meta property="og:updated_time" content="2020-02-18T10:47:04.865Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ssh远程登录服务器的一些问题">
 <meta name="twitter:description" content="一、zsh1.zsh切换 首先确保本地终端shell是zsh。更改详见每周总结第二十七期">
@@ -397,7 +397,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-02-18T16:13:08+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2020-02-18T18:47:04+08:00">
                 2020-02-18
               </time>
             
@@ -468,7 +468,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  920
+                  1.2k
                 </span>
               
 
@@ -484,7 +484,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  4
                 </span>
               
             </div>
@@ -549,6 +549,18 @@
 </blockquote>
 <h3 id="六、配置iptables和Fail2Ban增强安全防护-未进行实战"><a href="#六、配置iptables和Fail2Ban增强安全防护-未进行实战" class="headerlink" title="六、配置iptables和Fail2Ban增强安全防护[未进行实战]"></a>六、配置iptables和Fail2Ban增强安全防护[未进行实战]</h3><blockquote>
 <p>暂不总结。</p>
+</blockquote>
+<h3 id="七、ECS服务器是否设置连接超时时间"><a href="#七、ECS服务器是否设置连接超时时间" class="headerlink" title="七、ECS服务器是否设置连接超时时间"></a>七、ECS服务器是否设置连接超时时间</h3><blockquote>
+<p>用SSH客户端连接linux服务器时，经常会出现与服务器会话连接中断现象，造成这个问题的原因便是SSH服务有自己独特的会话连接机制。<br>解决方案：<br>1、设置服务器向SSH客户端连接会话发送频率和时间<br><code>#vi /etc/ssh/sshd_config，添加如下两行</code><br><code>ClientAliveInterval 60</code><br><code>ClientAliveCountMax 86400</code><br>注：ClientAliveInterval选项定义了每隔多少秒给SSH客户端发送一次信号；ClientAliveCountMax选项定义了超过多少秒后断开与ssh客户端连接<br>2、重新启动系统SSH服务<br><del><code>service sshd restart</code></del><br>云服务器 ECS Linux CentOS 7 下重启服务不再通过 service 操作，而是通过 systemctl 操作。    </p>
+<ul>
+<li>查看：systemctl status sshd.service     </li>
+<li>启动：systemctl start sshd.service      </li>
+<li>重启：systemctl restart sshd.service    </li>
+<li>自启：systemctl enable sshd.service  </li>
+</ul>
+</blockquote>
+<h3 id="八、借助pm2让nodejs服务常驻"><a href="#八、借助pm2让nodejs服务常驻" class="headerlink" title="八、借助pm2让nodejs服务常驻"></a>八、借助pm2让nodejs服务常驻</h3><blockquote>
+<p>服务器下载pm2后，如果要启动一个app.js的项目(该文件内为一个连接http服务的段代码);<br>如果使用<code>node app.js</code>，退出文件或者关闭终端，则该文件就不能访问了，这个时候可以使用pm2.<br>启动项目：<code>pm2 app.js</code><br>pm2启动列表：<code>pm2 list</code><br>pm2查看某信息：<code>pm2 show app</code><br>查看pm2在线日志：<code>pm2 logs</code><br>关闭服务：<code>pm2 stop app</code></p>
 </blockquote>
 <h5 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h5><blockquote>
 <p>在终端下或者VSCode中，或者idea中，如果想让光标回到行首，可以使用 ctrl + a，回到行尾，使用ctrl + e。</p>
@@ -802,7 +814,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、zsh"><span class="nav-number">1.</span> <span class="nav-text">一、zsh</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-zsh切换"><span class="nav-number">1.1.</span> <span class="nav-text">1.zsh切换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-zsh配置连接服务端别名"><span class="nav-number">1.2.</span> <span class="nav-text">2.zsh配置连接服务端别名</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、服务器信息"><span class="nav-number">2.</span> <span class="nav-text">二、服务器信息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据盘与磁盘空间"><span class="nav-number">2.1.</span> <span class="nav-text">数据盘与磁盘空间</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、配置root用户管理"><span class="nav-number">3.</span> <span class="nav-text">三、配置root用户管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-增加用户"><span class="nav-number">3.1.</span> <span class="nav-text">1.增加用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-删除用户"><span class="nav-number">3.2.</span> <span class="nav-text">2.删除用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-查看用户信息-uid、gid、组"><span class="nav-number">3.3.</span> <span class="nav-text">3.查看用户信息(uid、gid、组)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-为新用户添加sudo权限"><span class="nav-number">3.4.</span> <span class="nav-text">4.为新用户添加sudo权限</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-切换用户"><span class="nav-number">3.5.</span> <span class="nav-text">5.切换用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-相关文件"><span class="nav-number">3.6.</span> <span class="nav-text">6.相关文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-更多Linux用户和用户组的管理"><span class="nav-number">3.7.</span> <span class="nav-text">7.更多Linux用户和用户组的管理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、配置本地无密码ssh登录"><span class="nav-number">4.</span> <span class="nav-text">四、配置本地无密码ssh登录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-查看本地是否已配置私钥、公钥。"><span class="nav-number">4.1.</span> <span class="nav-text">1.查看本地是否已配置私钥、公钥。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-服务器根目录下配置"><span class="nav-number">4.2.</span> <span class="nav-text">2.服务器根目录下配置</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、修改服务器默认登录端口-未进行实战"><span class="nav-number">5.</span> <span class="nav-text">五、修改服务器默认登录端口[未进行实战]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六、配置iptables和Fail2Ban增强安全防护-未进行实战"><span class="nav-number">6.</span> <span class="nav-text">六、配置iptables和Fail2Ban增强安全防护[未进行实战]</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#小技巧"><span class="nav-number">6.0.1.</span> <span class="nav-text">小技巧</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、zsh"><span class="nav-number">1.</span> <span class="nav-text">一、zsh</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-zsh切换"><span class="nav-number">1.1.</span> <span class="nav-text">1.zsh切换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-zsh配置连接服务端别名"><span class="nav-number">1.2.</span> <span class="nav-text">2.zsh配置连接服务端别名</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、服务器信息"><span class="nav-number">2.</span> <span class="nav-text">二、服务器信息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据盘与磁盘空间"><span class="nav-number">2.1.</span> <span class="nav-text">数据盘与磁盘空间</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、配置root用户管理"><span class="nav-number">3.</span> <span class="nav-text">三、配置root用户管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-增加用户"><span class="nav-number">3.1.</span> <span class="nav-text">1.增加用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-删除用户"><span class="nav-number">3.2.</span> <span class="nav-text">2.删除用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-查看用户信息-uid、gid、组"><span class="nav-number">3.3.</span> <span class="nav-text">3.查看用户信息(uid、gid、组)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-为新用户添加sudo权限"><span class="nav-number">3.4.</span> <span class="nav-text">4.为新用户添加sudo权限</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-切换用户"><span class="nav-number">3.5.</span> <span class="nav-text">5.切换用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-相关文件"><span class="nav-number">3.6.</span> <span class="nav-text">6.相关文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-更多Linux用户和用户组的管理"><span class="nav-number">3.7.</span> <span class="nav-text">7.更多Linux用户和用户组的管理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、配置本地无密码ssh登录"><span class="nav-number">4.</span> <span class="nav-text">四、配置本地无密码ssh登录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-查看本地是否已配置私钥、公钥。"><span class="nav-number">4.1.</span> <span class="nav-text">1.查看本地是否已配置私钥、公钥。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-服务器根目录下配置"><span class="nav-number">4.2.</span> <span class="nav-text">2.服务器根目录下配置</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、修改服务器默认登录端口-未进行实战"><span class="nav-number">5.</span> <span class="nav-text">五、修改服务器默认登录端口[未进行实战]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六、配置iptables和Fail2Ban增强安全防护-未进行实战"><span class="nav-number">6.</span> <span class="nav-text">六、配置iptables和Fail2Ban增强安全防护[未进行实战]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#七、ECS服务器是否设置连接超时时间"><span class="nav-number">7.</span> <span class="nav-text">七、ECS服务器是否设置连接超时时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#八、借助pm2让nodejs服务常驻"><span class="nav-number">8.</span> <span class="nav-text">八、借助pm2让nodejs服务常驻</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#小技巧"><span class="nav-number">8.0.1.</span> <span class="nav-text">小技巧</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -836,7 +848,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">99k</span>
+    <span title="Site words total count">99.4k</span>
   
 </div>
 

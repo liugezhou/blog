@@ -144,7 +144,7 @@
 <meta property="og:site_name" content="六个周">
 <meta property="og:description" content="一、zsh1.zsh切换 首先确保本地终端shell是zsh。更改详见每周总结第二十七期">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-02-18T10:47:04.865Z">
+<meta property="og:updated_time" content="2020-02-20T07:48:23.532Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ssh远程登录服务器的一些问题">
 <meta name="twitter:description" content="一、zsh1.zsh切换 首先确保本地终端shell是zsh。更改详见每周总结第二十七期">
@@ -397,8 +397,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-02-18T18:47:04+08:00">
-                2020-02-18
+              <time title="更新于" itemprop="dateModified" datetime="2020-02-20T15:48:23+08:00">
+                2020-02-20
               </time>
             
           </span>
@@ -468,7 +468,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.2k
+                  1.4k
                 </span>
               
 
@@ -484,7 +484,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  5
                 </span>
               
             </div>
@@ -562,8 +562,16 @@
 <h3 id="八、借助pm2让nodejs服务常驻"><a href="#八、借助pm2让nodejs服务常驻" class="headerlink" title="八、借助pm2让nodejs服务常驻"></a>八、借助pm2让nodejs服务常驻</h3><blockquote>
 <p>服务器下载pm2后，如果要启动一个app.js的项目(该文件内为一个连接http服务的段代码);<br>如果使用<code>node app.js</code>，退出文件或者关闭终端，则该文件就不能访问了，这个时候可以使用pm2.<br>启动项目：<code>pm2 app.js</code><br>pm2启动列表：<code>pm2 list</code><br>pm2查看某信息：<code>pm2 show app</code><br>查看pm2在线日志：<code>pm2 logs</code><br>关闭服务：<code>pm2 stop app</code></p>
 </blockquote>
+<h3 id="九、利用SCP-远程上传下载文件-文件夹"><a href="#九、利用SCP-远程上传下载文件-文件夹" class="headerlink" title="九、利用SCP 远程上传下载文件/文件夹"></a>九、利用SCP 远程上传下载文件/文件夹</h3><blockquote>
+<p>向目标服务器的/home/liugezhou/test文件夹下上传一个本地压缩文件[实战命令]。<br><code>scp [-P 22] /Users/liumingzhou/Desktop/demo/test  username@XX.XXX.XX.XXX:/home/liugezhou/test</code> </p>
+<p>从目标服务器下载某一文件到本地：<br><code>scp username@servername:/path/filename /tmp/local_destination</code></p>
+<p>向目标服务器上传本地一文件夹[实战命令]：<br><code>scp -r /Users/liumingzhou/Desktop/demo/test username@XX.XXX.XX.XXX:/home/liugezhou/test</code><br>从目标服务器下载某一文件夹到本地：<br><code>scp -r username@servername:/path/filename /tmp/local_destination</code>    </p>
+</blockquote>
 <h5 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h5><blockquote>
-<p>在终端下或者VSCode中，或者idea中，如果想让光标回到行首，可以使用 ctrl + a，回到行尾，使用ctrl + e。</p>
+<ul>
+<li>在终端下或者VSCode中，或者idea中，如果想让光标回到行首，可以使用 ctrl + a，回到行尾，使用ctrl + e。 </li>
+<li>vi文件时，我们可以通过:set number显示行号，为了每次直接打开就显示行号，我们可以通过修改<code>vi ~/.vimrc</code>文件，添加<code>set number</code>. </li>
+</ul>
 </blockquote>
 
       
@@ -641,6 +649,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/02/20/English places to visit every day/" rel="prev" title="English places to visit every day">
+                English places to visit every day <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -722,7 +734,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">69</span>
+                  <span class="site-state-item-count">70</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -733,7 +745,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -744,7 +756,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -814,7 +826,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、zsh"><span class="nav-number">1.</span> <span class="nav-text">一、zsh</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-zsh切换"><span class="nav-number">1.1.</span> <span class="nav-text">1.zsh切换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-zsh配置连接服务端别名"><span class="nav-number">1.2.</span> <span class="nav-text">2.zsh配置连接服务端别名</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、服务器信息"><span class="nav-number">2.</span> <span class="nav-text">二、服务器信息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据盘与磁盘空间"><span class="nav-number">2.1.</span> <span class="nav-text">数据盘与磁盘空间</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、配置root用户管理"><span class="nav-number">3.</span> <span class="nav-text">三、配置root用户管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-增加用户"><span class="nav-number">3.1.</span> <span class="nav-text">1.增加用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-删除用户"><span class="nav-number">3.2.</span> <span class="nav-text">2.删除用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-查看用户信息-uid、gid、组"><span class="nav-number">3.3.</span> <span class="nav-text">3.查看用户信息(uid、gid、组)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-为新用户添加sudo权限"><span class="nav-number">3.4.</span> <span class="nav-text">4.为新用户添加sudo权限</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-切换用户"><span class="nav-number">3.5.</span> <span class="nav-text">5.切换用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-相关文件"><span class="nav-number">3.6.</span> <span class="nav-text">6.相关文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-更多Linux用户和用户组的管理"><span class="nav-number">3.7.</span> <span class="nav-text">7.更多Linux用户和用户组的管理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、配置本地无密码ssh登录"><span class="nav-number">4.</span> <span class="nav-text">四、配置本地无密码ssh登录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-查看本地是否已配置私钥、公钥。"><span class="nav-number">4.1.</span> <span class="nav-text">1.查看本地是否已配置私钥、公钥。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-服务器根目录下配置"><span class="nav-number">4.2.</span> <span class="nav-text">2.服务器根目录下配置</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、修改服务器默认登录端口-未进行实战"><span class="nav-number">5.</span> <span class="nav-text">五、修改服务器默认登录端口[未进行实战]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六、配置iptables和Fail2Ban增强安全防护-未进行实战"><span class="nav-number">6.</span> <span class="nav-text">六、配置iptables和Fail2Ban增强安全防护[未进行实战]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#七、ECS服务器是否设置连接超时时间"><span class="nav-number">7.</span> <span class="nav-text">七、ECS服务器是否设置连接超时时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#八、借助pm2让nodejs服务常驻"><span class="nav-number">8.</span> <span class="nav-text">八、借助pm2让nodejs服务常驻</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#小技巧"><span class="nav-number">8.0.1.</span> <span class="nav-text">小技巧</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、zsh"><span class="nav-number">1.</span> <span class="nav-text">一、zsh</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-zsh切换"><span class="nav-number">1.1.</span> <span class="nav-text">1.zsh切换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-zsh配置连接服务端别名"><span class="nav-number">1.2.</span> <span class="nav-text">2.zsh配置连接服务端别名</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、服务器信息"><span class="nav-number">2.</span> <span class="nav-text">二、服务器信息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据盘与磁盘空间"><span class="nav-number">2.1.</span> <span class="nav-text">数据盘与磁盘空间</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、配置root用户管理"><span class="nav-number">3.</span> <span class="nav-text">三、配置root用户管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-增加用户"><span class="nav-number">3.1.</span> <span class="nav-text">1.增加用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-删除用户"><span class="nav-number">3.2.</span> <span class="nav-text">2.删除用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-查看用户信息-uid、gid、组"><span class="nav-number">3.3.</span> <span class="nav-text">3.查看用户信息(uid、gid、组)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-为新用户添加sudo权限"><span class="nav-number">3.4.</span> <span class="nav-text">4.为新用户添加sudo权限</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-切换用户"><span class="nav-number">3.5.</span> <span class="nav-text">5.切换用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-相关文件"><span class="nav-number">3.6.</span> <span class="nav-text">6.相关文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-更多Linux用户和用户组的管理"><span class="nav-number">3.7.</span> <span class="nav-text">7.更多Linux用户和用户组的管理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、配置本地无密码ssh登录"><span class="nav-number">4.</span> <span class="nav-text">四、配置本地无密码ssh登录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-查看本地是否已配置私钥、公钥。"><span class="nav-number">4.1.</span> <span class="nav-text">1.查看本地是否已配置私钥、公钥。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-服务器根目录下配置"><span class="nav-number">4.2.</span> <span class="nav-text">2.服务器根目录下配置</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、修改服务器默认登录端口-未进行实战"><span class="nav-number">5.</span> <span class="nav-text">五、修改服务器默认登录端口[未进行实战]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六、配置iptables和Fail2Ban增强安全防护-未进行实战"><span class="nav-number">6.</span> <span class="nav-text">六、配置iptables和Fail2Ban增强安全防护[未进行实战]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#七、ECS服务器是否设置连接超时时间"><span class="nav-number">7.</span> <span class="nav-text">七、ECS服务器是否设置连接超时时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#八、借助pm2让nodejs服务常驻"><span class="nav-number">8.</span> <span class="nav-text">八、借助pm2让nodejs服务常驻</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#九、利用SCP-远程上传下载文件-文件夹"><span class="nav-number">9.</span> <span class="nav-text">九、利用SCP 远程上传下载文件/文件夹</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#小技巧"><span class="nav-number">9.0.1.</span> <span class="nav-text">小技巧</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -848,7 +860,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">99.4k</span>
+    <span title="Site words total count">99.8k</span>
   
 </div>
 

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://liugezhou.online/"/>
-  <updated>2020-02-21T17:45:01.185Z</updated>
+  <updated>2020-02-21T17:48:25.886Z</updated>
   <id>http://liugezhou.online/</id>
   
   <author>
@@ -18,12 +18,12 @@
   
   <entry>
     <title>pm2 Quick Start</title>
-    <link href="http://liugezhou.online/2020/02/21/pm2/"/>
-    <id>http://liugezhou.online/2020/02/21/pm2/</id>
+    <link href="http://liugezhou.online/2020/02/21/pm2%20Quick%20Start/"/>
+    <id>http://liugezhou.online/2020/02/21/pm2 Quick Start/</id>
     <published>2020-02-21T15:54:00.000Z</published>
-    <updated>2020-02-21T17:45:01.185Z</updated>
+    <updated>2020-02-21T17:48:25.886Z</updated>
     
-    <content type="html"><![CDATA[<h4 id="Welcome"><a href="#Welcome" class="headerlink" title="Welcome"></a>Welcome</h4><blockquote><p>PM2是守护程序进程管理器，它将帮助您管理和保持应用程序在线。 PM2入门非常简单，它是一个简单直观的CLI，可以通过NPM安装。</p></blockquote><a id="more"></a><h4 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h4><blockquote><p><code>npm install pm2@latest -g</code> or<br><code>yarn global add pm2</code><br><code>pm2 update</code>  </p></blockquote><h4 id="Start-an-app"><a href="#Start-an-app" class="headerlink" title="Start an app"></a>Start an app</h4><blockquote><p><code>pm2 start app.js</code><br><code>pm2 start bashscript.sh</code><br><code>pm2 start python-app.py --watch</code><br><code>pm2 start binary-file -- --port 1520</code></p></blockquote><h4 id="Managing-processes"><a href="#Managing-processes" class="headerlink" title="Managing processes"></a>Managing processes</h4><blockquote><p><code>pm2 restart app_name</code><br><code>pm2 reload app_name</code><br><code>pm2 stop app_name</code><br><code>pm2 delete app_name</code><br><code>pm2 list/status/ls</code><br><code>pm2 logs</code><br><code>pm2 logs --lines 50</code><br><code>pm2 monit</code></p></blockquote><h4 id="Ecosystem-File"><a href="#Ecosystem-File" class="headerlink" title="Ecosystem File"></a>Ecosystem File</h4><blockquote><p>生成ecosystem文件,在指定目录下执行命令：<br><code>pm2 ecosystem</code><br>依据<a href>从本地发布上线和更新服务器的Node.js项目</a>修改配置文件   </p><p>setup:  <code>pm2 deploy production setup</code><br>启动、更新：<code>pm2 deploy production update</code></p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h4 id="Welcome"><a href="#Welcome" class="headerlink" title="Welcome"></a>Welcome</h4><blockquote><p>PM2是守护程序进程管理器，它将帮助您管理和保持应用程序在线。 PM2入门非常简单，它是一个简单直观的CLI，可以通过NPM安装。</p></blockquote><a id="more"></a><h4 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h4><blockquote><p><code>npm install pm2@latest -g</code> or<br><code>yarn global add pm2</code><br><code>pm2 update</code>  </p></blockquote><h4 id="Start-an-app"><a href="#Start-an-app" class="headerlink" title="Start an app"></a>Start an app</h4><blockquote><p><code>pm2 start app.js</code><br><code>pm2 start bashscript.sh</code><br><code>pm2 start python-app.py --watch</code><br><code>pm2 start binary-file -- --port 1520</code></p></blockquote><h4 id="Managing-processes"><a href="#Managing-processes" class="headerlink" title="Managing processes"></a>Managing processes</h4><blockquote><p><code>pm2 restart app_name</code><br><code>pm2 reload app_name</code><br><code>pm2 stop app_name</code><br><code>pm2 delete app_name</code><br><code>pm2 list/status/ls</code><br><code>pm2 logs</code><br><code>pm2 logs --lines 50</code><br><code>pm2 monit</code></p></blockquote><h4 id="Ecosystem-File"><a href="#Ecosystem-File" class="headerlink" title="Ecosystem File"></a>Ecosystem File</h4><blockquote><p>生成ecosystem文件,在指定目录下执行命令：<br><code>pm2 ecosystem</code><br>依据<a href="https://www.liugezhou.online/2020/02/21/%E4%BB%8E%E6%9C%AC%E5%9C%B0%E5%8F%91%E5%B8%83%E4%B8%8A%E7%BA%BF%E5%92%8C%E6%9B%B4%E6%96%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84Node.js%E9%A1%B9%E7%9B%AE/" target="_blank" rel="noopener">从本地发布上线和更新服务器的Node.js项目</a>修改配置文件   </p><p>setup:  <code>pm2 deploy production setup</code><br>启动、更新：<code>pm2 deploy production update</code></p></blockquote>]]></content>
     
     <summary type="html">
     

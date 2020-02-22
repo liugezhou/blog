@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://liugezhou.online/"/>
-  <updated>2020-02-22T03:46:46.447Z</updated>
+  <updated>2020-02-22T14:44:54.309Z</updated>
   <id>http://liugezhou.online/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>每周总结第三十一期</title>
+    <link href="http://liugezhou.online/2020/02/22/%E6%AF%8F%E5%91%A8%E6%80%BB%E7%BB%93%E7%AC%AC%E4%B8%89%E5%8D%81%E4%B8%80%E6%9C%9F/"/>
+    <id>http://liugezhou.online/2020/02/22/每周总结第三十一期/</id>
+    <published>2020-02-22T10:48:00.000Z</published>
+    <updated>2020-02-22T14:44:54.309Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>本周是2020年的第八个周末。<br>这里记录过去一周，我的一些总结。</p></blockquote><p><img src="http://img.liugezhou.online/weekly31.jpeg" alt="weekly-31"></p><a id="more"></a><h3 id="Feeling"><a href="#Feeling" class="headerlink" title="Feeling"></a>Feeling</h3><blockquote><p>读书与电影会扩展我们的生活半径,唯有读书人是最自由，唯有看电影人是最畅想。<br>看一部电影，读一本书都有身临其境、思想解放的感受。<br>而由于新时代下电影审查的严苛，读书便成为了不二选择。    </p></blockquote><h3 id="指路明灯"><a href="#指路明灯" class="headerlink" title="指路明灯"></a>指路明灯</h3><blockquote><p>世界上最长的电视剧《指路明灯》，该剧最初该剧由ABS在1937年1月25日首次播出,于2009年9月播出最后一集，合计播出18262集，该剧从电台广播剧开始，已播放了72年。吉尼斯纪录称它是世界上最长的电视剧。</p></blockquote><h3 id="视频号"><a href="#视频号" class="headerlink" title="视频号"></a>视频号</h3><blockquote><p>微信公灰度发布视频号，目前进入视频号，视频不能暂停、不能快进、不能静音，只能点赞和评论。</p></blockquote><h3 id="拉里～特斯勒"><a href="#拉里～特斯勒" class="headerlink" title="拉里～特斯勒"></a><a href="https://www.bbc.com/zhongwen/simp/science-51569946?at_campaign=64&at_custom2=twitter&at_custom1=%5Bpost+type%5D&at_custom3=BBC+Chinese&at_medium=custom7&at_custom4=1B94F308-53C9-11EA-8759-A0FEC28169F1" target="_blank" rel="noopener">拉里～特斯勒</a></h3><blockquote><p>早期计算机科学标志性人物拉里·特斯勒（Larry Tesler）–“复制粘贴剪切”功能发明人,于2020年2月17日去世，终年74岁。    </p></blockquote><h3 id="MacOS中如何快读调出终端"><a href="#MacOS中如何快读调出终端" class="headerlink" title="MacOS中如何快读调出终端"></a><a href="https://www.zhihu.com/question/20692634" target="_blank" rel="noopener">MacOS中如何快读调出终端</a></h3><blockquote><p>MacOS中没有快捷键打开终端的快捷键，这篇文章总结了通过 Automator.app设置快捷键打开终端。</p></blockquote><h3 id="Commond-T"><a href="#Commond-T" class="headerlink" title="Commond + T"></a>Commond + T</h3><blockquote><p>Commond + T快捷键可以在浏览器或者终端中开启一个新的标签、终端。</p></blockquote><h3 id="IDEA过期"><a href="#IDEA过期" class="headerlink" title="IDEA过期"></a>IDEA过期</h3><blockquote><p>本周IDEA又一次过期(还可以打开，只有过期提示)，此次更新步骤是：<br>菜单栏依次打开：help、register、Licence、server：<br> 根据提示，将之前licence-server address ,<br>由<a href="http://jetbrains-license-server改为" target="_blank" rel="noopener">http://jetbrains-license-server改为</a><br><a href="http://fls.jetbrains-agent.com" target="_blank" rel="noopener">http://fls.jetbrains-agent.com</a>    </p><p>若不是以server的，又看到了一篇过期激活教程：<a href="https://mp.weixin.qq.com/s/WwLSaNCHL7FeB2mOxNt2dw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/WwLSaNCHL7FeB2mOxNt2dw</a></p></blockquote><h3 id="https-www-npmjs-com"><a href="#https-www-npmjs-com" class="headerlink" title="https://www.npmjs.com/"></a><a href="https://www.npmjs.com/" target="_blank" rel="noopener">https://www.npmjs.com/</a></h3><blockquote><p>npmjs网站用来查看npm包基本信息，包括周下载量、版本号、证书类型、包大小、文件数量、Issues、仓库地址、包使用介绍等等。</p></blockquote><h3 id="包管理工具"><a href="#包管理工具" class="headerlink" title="包管理工具"></a>包管理工具</h3><p><img src="http://img.liugezhou.online/blog%2Fpackagetools.png" alt="packagetools"></p><h3 id="How-to-Install-MongoDB-on-CentOS-7"><a href="#How-to-Install-MongoDB-on-CentOS-7" class="headerlink" title="How to Install MongoDB on CentOS 7"></a><a href="https://linuxize.com/post/how-to-install-mongodb-on-centos-7/" target="_blank" rel="noopener">How to Install MongoDB on CentOS 7</a></h3><blockquote><p>一篇在CentOS7上安装MongoDB的最简单教程。 步骤如下： </p><ol><li><code>vi /etc/yum.repos.d/</code>       </li><li>编辑内容如下： <pre><code class="[mongodb-org-4.0]">name=MongoDB Repositorybaseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/4.0/x86_64/gpgcheck=1  enabled=1gpgkey=https://www.mongodb.org/static/pgp/server-4.0.asc</code></pre></li><li><code>yum install mongodb-org(验证安装结果：rpm -qa |grep mongodb)</code>    </li><li>启动服务：<code>sudo systemctl start mongod</code>、<br>停止服务：<code>sudo systemctl stop mongod</code>、<br>修改配置文件后重启：<code>systemctl restart mongod</code>     </li><li>MongoDB默认端口上27017，检查端口是否开启：<code>netstat -natp | grep 27017</code></li><li><code>mongo</code>，验证服务开启，进入命令行可查看版本：db.version();     </li><li>想要修改mongo默认端口，<code>vi /etc/mongd.conf</code>      </li></ol></blockquote><h3 id="本周产出"><a href="#本周产出" class="headerlink" title="本周产出"></a>本周产出</h3><blockquote><p>本周总结了两篇博文：  </p><ul><li><a href="https://www.liugezhou.online/2020/02/18/ssh%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/" target="_blank" rel="noopener">ssh远程登录服务器的一些问题</a> </li><li><a href="https://www.liugezhou.online/2020/02/21/%E4%BB%8E%E6%9C%AC%E5%9C%B0%E5%8F%91%E5%B8%83%E4%B8%8A%E7%BA%BF%E5%92%8C%E6%9B%B4%E6%96%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84Node.js%E9%A1%B9%E7%9B%AE/" target="_blank" rel="noopener">从本地发布上线和更新服务器的Node.js项目</a></li></ul></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;本周是2020年的第八个周末。&lt;br&gt;这里记录过去一周，我的一些总结。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;http://img.liugezhou.online/weekly31.jpeg&quot; alt=&quot;weekly-31&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="每周分享" scheme="http://liugezhou.online/categories/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
+    
+    
+      <category term="每周分享" scheme="http://liugezhou.online/tags/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
+    
+  </entry>
   
   <entry>
     <title>从本地发布上线和更新服务器的Node.js项目</title>
@@ -471,30 +496,6 @@
     
     
       <category term="每周分享" scheme="http://liugezhou.online/tags/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>前端模块化</title>
-    <link href="http://liugezhou.online/2019/11/27/%E5%89%8D%E7%AB%AF%E6%A8%A1%E5%9D%97%E5%8C%96/"/>
-    <id>http://liugezhou.online/2019/11/27/前端模块化/</id>
-    <published>2019-11-27T12:00:00.000Z</published>
-    <updated>2020-01-10T06:24:49.959Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h4><blockquote><p>最近在梳理前端的公众号支付流程，从前端流程微信JSSDK的引入开始查阅文档。<br>在引入JS文件一小段中，文档中备注：“支持使用 AMD/CMD 标准模块加载方法加载”。<br>于是，想到对CommonJS、AMD、CMD、ES6Module等概念与代码实例的理解甚是混淆，于是学习、总结此文。  </p></blockquote><a id="more"></a><h4 id="前端模块化"><a href="#前端模块化" class="headerlink" title="前端模块化"></a>前端模块化</h4><blockquote><p>2009年，美国程序员Ryan Dahl创造了node.js项目，将javascript语言用于服务器端编程。这标志”Javascript模块化编程”正式诞生。<br>因为老实说，在浏览器环境下，没有模块也不是特别大的问题，毕竟网页程序的复杂性有限；但是在服务器端，一定要有模块，与操作系统和其他应用程序互动，否则根本没法编程。NodeJS是CommonJS规范的实现，webpack 也是以CommonJS的形式来书写。</p></blockquote><blockquote><p>为了提高代码的复用率，方便代码进行管理，我也不知先后(应该CommonJS最早吧)的出现了一系列的模块化的规范：CommonJS、AMD、CMD以及（ES6Module）。</p></blockquote><blockquote><p>通常来讲：一个文件就是一个模块，有自己的作用域，只向外暴露特定的变量和函数。</p></blockquote><blockquote><p>这三个规范都是为javascript模块化加载而生的，都是在用到或者预计要用到某些模块时候加载该模块，使得大量的系统巨大的庞杂的代码得以很好的组织和管理。模块化使得我们在使用和管理代码的时候不那么混乱，而且也方便了多人的合作。</p></blockquote><h4 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h4><blockquote><ul><li>CommonJS是一个更偏向于服务端的规范。Node.js就是CommonJS规范的主要实践者。 </li><li>CommonJS不适用浏览器是因为：此规范是同步加载模块，对于服务器端来说，所有的模块都是在本地磁盘，等待模块时间就是硬盘读取文件时间，很小，但对浏览器而言，设计到网速、代理更原因，同步加载会造成阻塞，浏览器处于“假死”状态，所以浏览器端出现了AMD规范。</li></ul></blockquote><blockquote><p>代码实现拓展：<a href="http://javascript.ruanyifeng.com/nodejs/module.html" target="_blank" rel="noopener">CommonJS规范</a></p></blockquote><h4 id="AMD"><a href="#AMD" class="headerlink" title="AMD"></a>AMD</h4><blockquote><ul><li>AMD是<code>Asynchronous Module Definition</code>的缩写，即“异步模块定义”，它采用异步方式加载模块(模块的加载不影响它后面语句的运行),且会提前加载。</li><li>AMD同CommonJS一样也是使用require加载模块，但不同的是，AMD要求两个参数：require([module],callback).  </li></ul></blockquote><p>实例：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> // 定义一个模块--math.js</span><br><span class="line">    define(function() &#123;</span><br><span class="line">    var add = function(x, y) &#123;</span><br><span class="line">        return x + y;</span><br><span class="line">    &#125;</span><br><span class="line">    return  &#123;</span><br><span class="line">        add: add</span><br><span class="line">    &#125;</span><br><span class="line">//加载方法如下</span><br><span class="line">require([&apos;math&apos;], function(math) &#123;</span><br><span class="line">  alert(math.add(1, 1));</span><br><span class="line">&#125;)</span><br><span class="line">//如果math模块还依赖其他模块，写法如下：</span><br><span class="line">define([&apos;dependenceModule&apos;], function(dependenceModule) &#123;</span><br><span class="line">    // todo</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><blockquote><ul><li>当require()函数加载math模块的时候，就会先加载dependenceModule模块。当有多个依赖时，就将所有的依赖都写在define()函数第一个参数数组中，所以说AMD是依赖前置的。这不同于CMD规范，它是依赖就近的。</li></ul></blockquote><h4 id="CMD"><a href="#CMD" class="headerlink" title="CMD"></a>CMD</h4><blockquote><p>CMD与AMD最大的不同就是：CMD推崇依赖就近，延迟执行。可以在代码的任意一行写入依赖：<br><code>define(factory)</code><br>当factory为函数时，表示是模块的构造方法。<br>执行该构造方法，可以得到模块向外提供的接口。<br>factory 方法在执行时，默认会传入三个参数：require、exports 和 module.</p></blockquote><blockquote><p>AMD与CMD代码对比：</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// CMD</span><br><span class="line">   define(function(require, exports, module) &#123;</span><br><span class="line">   var a = require(&apos;./a&apos;);</span><br><span class="line">   a.doSomething();</span><br><span class="line">   var b = require(&apos;./b&apos;);</span><br><span class="line">   b.doSomething();</span><br><span class="line">   &#125;)</span><br><span class="line">   // AMDdefine([&apos;a&apos;, &apos;b&apos;], function(a, b) &#123;</span><br><span class="line">   a.doSomething();</span><br><span class="line">   b.doSomething();</span><br><span class="line">   &#125;)</span><br></pre></td></tr></table></figure><h4 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h4><blockquote><p>ES6 在语言标准的层面上，实现了模块功能，而且实现得相当简单，旨在成为浏览器和服务器通用的模块解决方案。其模块功能主要由两个命令构成：export和import.<br>export命令用于规定模块的对外接口，import命令用于输入其他模块提供的功能。<br>ES6还提供了export default命令，为模块指定默认输出，对应的import语句不需要使用大括号.</p></blockquote><h4 id="ES6模块与CommonJS模块差异"><a href="#ES6模块与CommonJS模块差异" class="headerlink" title="ES6模块与CommonJS模块差异"></a>ES6模块与CommonJS模块差异</h4><blockquote><ul><li>CommonJS 模块输出的是一个值的拷贝，ES6 模块输出的是值的引用。  </li><li>CommonJS 模块输出的是一个值的拷贝，ES6 模块输出的是值的引用。</li></ul></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h4&gt;&lt;blockquote&gt;
-&lt;p&gt;最近在梳理前端的公众号支付流程，从前端流程微信JSSDK的引入开始查阅文档。&lt;br&gt;在引入JS文件一小段中，文档中备注：“支持使用 AMD/CMD 标准模块加载方法加载”。&lt;br&gt;于是，想到对CommonJS、AMD、CMD、ES6Module等概念与代码实例的理解甚是混淆，于是学习、总结此文。  &lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="web前端" scheme="http://liugezhou.online/categories/web%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="前端模块化" scheme="http://liugezhou.online/tags/%E5%89%8D%E7%AB%AF%E6%A8%A1%E5%9D%97%E5%8C%96/"/>
     
   </entry>
   

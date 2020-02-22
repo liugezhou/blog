@@ -144,7 +144,7 @@
 <meta property="og:site_name" content="六个周">
 <meta property="og:description" content="一、直接部署一个简单的app.js项目 在进行本地发布上线和更新服务器的Node.js项目前，先来总结一下之前的方法">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-02-21T17:41:59.666Z">
+<meta property="og:updated_time" content="2020-02-22T03:15:24.595Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从本地发布上线和更新服务器的Node.js项目">
 <meta name="twitter:description" content="一、直接部署一个简单的app.js项目 在进行本地发布上线和更新服务器的Node.js项目前，先来总结一下之前的方法">
@@ -397,7 +397,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-02-22T01:41:59+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2020-02-22T11:15:24+08:00">
                 2020-02-22
               </time>
             
@@ -468,7 +468,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  914
+                  1k
                 </span>
               
 
@@ -520,26 +520,32 @@
 <li>编辑nginx配置文件：<code>vi  /etc/nginx/conf.d/node-test-3000.conf</code>内容如下：   </li>
 </ol>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">upstream nodetest &#123;</span><br><span class="line">	server 127.0.0.1:3000;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">	listen 80;</span><br><span class="line">	server_name 47.104.85.127;</span><br><span class="line"></span><br><span class="line">	location /&#123;</span><br><span class="line">		proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">		proxy_set_header X-Forward-For $proxy_add_x_forwarded_for;</span><br><span class="line">		proxy_set_header Host $http_host;</span><br><span class="line">		proxy_set_header x-Nginx-Proxy true;</span><br><span class="line">		proxy_pass http://nodetest;</span><br><span class="line">		proxy_redirect off;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">upstream nodetest &#123;</span><br><span class="line">	server 127.0.0.1:3000;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">	listen 80;</span><br><span class="line">	server_name 47.104.XX.XXX;</span><br><span class="line"></span><br><span class="line">	location /&#123;</span><br><span class="line">		proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">		proxy_set_header X-Forward-For $proxy_add_x_forwarded_for;</span><br><span class="line">		proxy_set_header Host $http_host;</span><br><span class="line">		proxy_set_header x-Nginx-Proxy true;</span><br><span class="line">		proxy_pass http://nodetest;</span><br><span class="line">		proxy_redirect off;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <ol start="4">
 <li>在服务器，进入到3000文件夹目录，使用<code>pm2 delete app</code>掉之前开的app服务，然后<code>pm2 start app</code>,即可直接访问(<a href="http://node.liugezhou.online--这里需要域名解析A记录)。" target="_blank" rel="noopener">http://node.liugezhou.online--这里需要域名解析A记录)。</a></li>
 </ol>
 </blockquote>
-<h3 id="二、从本地发布上线和更新服务器的Node-js项目"><a href="#二、从本地发布上线和更新服务器的Node-js项目" class="headerlink" title="二、从本地发布上线和更新服务器的Node.js项目"></a>二、从本地发布上线和更新服务器的Node.js项目</h3><h4 id="步骤一：项目与私有git仓库"><a href="#步骤一：项目与私有git仓库" class="headerlink" title="步骤一：项目与私有git仓库"></a><del>步骤一：项目与私有git仓库</del></h4><blockquote>
+<h3 id="二、从本地发布上线和更新服务器的Node-js项目"><a href="#二、从本地发布上线和更新服务器的Node-js项目" class="headerlink" title="二、从本地发布上线和更新服务器的Node.js项目"></a>二、从本地发布上线和更新服务器的Node.js项目</h3><h4 id="步骤一：测试服务器从git上克隆拉取代码"><a href="#步骤一：测试服务器从git上克隆拉取代码" class="headerlink" title="步骤一：测试服务器从git上克隆拉取代码"></a>步骤一：测试服务器从git上克隆拉取代码</h4><blockquote>
 <ul>
-<li><del>首先将本地项目包含app.js的项目上传至私有仓库。</del>     </li>
-<li><del>其次要确保本地以及服务器的公钥已在git上配置。</del>      </li>
-<li><del>最后，从git上拉取代码到服务器上（与本地操作一致）。</del> </li>
+<li>首先将本地项目包含app.js的项目上传至私有仓库。      </li>
+<li>其次要确保本地以及服务器的公钥已在git上配置。      </li>
+<li>最后，从git上拉取代码到服务器上（与本地操作一致）。  </li>
 </ul>
 </blockquote>
-<h4 id="步骤二：配置PM2一键部署线上项目结构"><a href="#步骤二：配置PM2一键部署线上项目结构" class="headerlink" title="步骤二：配置PM2一键部署线上项目结构"></a>步骤二：配置PM2一键部署线上项目结构</h4><blockquote>
-<p><a href="https://pm2.keymetrics.io/docs/usage/pm2-doc-single-page/" target="_blank" rel="noopener">pm2官方文档</a>  </p>
+<h4 id="步骤二：了解pm2的相关命令"><a href="#步骤二：了解pm2的相关命令" class="headerlink" title="步骤二：了解pm2的相关命令"></a>步骤二：了解pm2的相关命令</h4><blockquote>
+<h5 id="Welcome"><a href="#Welcome" class="headerlink" title="Welcome"></a>Welcome</h5><p>PM2是守护程序进程管理器，它将帮助您管理和保持应用程序在线。 PM2入门非常简单，它是一个简单直观的CLI，可以通过NPM安装。</p>
+<h5 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h5><p><code>npm install pm2@latest -g</code> or<br><code>yarn global add pm2</code><br><code>pm2 update</code>  </p>
+<h5 id="Start-an-app"><a href="#Start-an-app" class="headerlink" title="Start an app"></a>Start an app</h5><p><code>pm2 start app.js</code><br><code>pm2 start bashscript.sh</code><br><code>pm2 start python-app.py --watch</code><br><code>pm2 start binary-file -- --port 1520</code></p>
+<h5 id="Managing-processes"><a href="#Managing-processes" class="headerlink" title="Managing processes"></a>Managing processes</h5><p><code>pm2 restart app_name</code><br><code>pm2 reload app_name</code><br><code>pm2 stop app_name</code><br><code>pm2 delete app_name</code><br><code>pm2 list/status/ls</code><br><code>pm2 logs</code><br><code>pm2 logs --lines 50</code><br><code>pm2 monit</code></p>
 </blockquote>
 <blockquote>
+<h5 id="Ecosystem-File"><a href="#Ecosystem-File" class="headerlink" title="Ecosystem File"></a>Ecosystem File</h5><p>生成ecosystem文件,在指定目录下执行命令：<br><code>pm2 ecosystem</code><br>启动:  <code>pm2 deploy production setup</code><br>更新部署：<code>pm2 deploy production update</code></p>
+</blockquote>
+<h4 id="步骤三：配置PM2一键部署线上项目结构"><a href="#步骤三：配置PM2一键部署线上项目结构" class="headerlink" title="步骤三：配置PM2一键部署线上项目结构"></a>步骤三：配置PM2一键部署线上项目结构</h4><blockquote>
 <ol>
-<li><p>根据官方文档，使用以下命令创建ecosystem.config文件：<br><code>pm2 ecosystem</code>.</p>
+<li><p>首先创建创建ecosystem.config文件：<br><code>pm2 ecosystem</code>.</p>
 </li>
 <li><p>然后修改该配置文件中deploy下production中的字段：<br>“user”为远程服务器的登录名。<br>“host”为远程服务器的主机名。<br>“ref”为远程git仓库的主分支。<br>“path”为远程服务器要部署的代码地址(与步骤一中的地址不一样)</p>
 </li>
@@ -548,7 +554,7 @@
 </ol>
 <p>在远程服务器上查看,生成三个文件夹依次为:<br>“current”:当前的服务所运行的文件夹<br>“shared”: 日志文件、pid等<br>“source”:clone下的源代码</p>
 </blockquote>
-<h4 id="步骤三：本地控制远端代码更新、服务重启"><a href="#步骤三：本地控制远端代码更新、服务重启" class="headerlink" title="步骤三：本地控制远端代码更新、服务重启"></a>步骤三：本地控制远端代码更新、服务重启</h4><blockquote>
+<h4 id="步骤四：本地控制远端代码更新、服务重启"><a href="#步骤四：本地控制远端代码更新、服务重启" class="headerlink" title="步骤四：本地控制远端代码更新、服务重启"></a>步骤四：本地控制远端代码更新、服务重启</h4><blockquote>
 <p>首先确保本地项目已经上传至git仓库。然后打开本地项目命令行，直接键入：<br><code>pm2 deploy production update</code><br>发现远程服务器项目更新且部署完毕，这个时候在浏览器中输入”<a href="http://node.liugezhou.online&quot;即可查看部署的项目。" target="_blank" rel="noopener">http://node.liugezhou.online&quot;即可查看部署的项目。</a></p>
 </blockquote>
 
@@ -630,10 +636,6 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/02/21/pm2 Quick Start/" rel="prev" title="pm2 Quick Start">
-                pm2 Quick Start <i class="fa fa-chevron-right"></i>
-              </a>
-            
           </div>
         </div>
       
@@ -714,7 +716,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">72</span>
+                  <span class="site-state-item-count">71</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -806,7 +808,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、直接部署一个简单的app-js项目"><span class="nav-number">1.</span> <span class="nav-text">一、直接部署一个简单的app.js项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、从本地发布上线和更新服务器的Node-js项目"><span class="nav-number">2.</span> <span class="nav-text">二、从本地发布上线和更新服务器的Node.js项目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#步骤一：项目与私有git仓库"><span class="nav-number">2.1.</span> <span class="nav-text">步骤一：项目与私有git仓库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#步骤二：配置PM2一键部署线上项目结构"><span class="nav-number">2.2.</span> <span class="nav-text">步骤二：配置PM2一键部署线上项目结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#步骤三：本地控制远端代码更新、服务重启"><span class="nav-number">2.3.</span> <span class="nav-text">步骤三：本地控制远端代码更新、服务重启</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、直接部署一个简单的app-js项目"><span class="nav-number">1.</span> <span class="nav-text">一、直接部署一个简单的app.js项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、从本地发布上线和更新服务器的Node-js项目"><span class="nav-number">2.</span> <span class="nav-text">二、从本地发布上线和更新服务器的Node.js项目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#步骤一：测试服务器从git上克隆拉取代码"><span class="nav-number">2.1.</span> <span class="nav-text">步骤一：测试服务器从git上克隆拉取代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#步骤二：了解pm2的相关命令"><span class="nav-number">2.2.</span> <span class="nav-text">步骤二：了解pm2的相关命令</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Welcome"><span class="nav-number">2.2.1.</span> <span class="nav-text">Welcome</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Installation"><span class="nav-number">2.2.2.</span> <span class="nav-text">Installation</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Start-an-app"><span class="nav-number">2.2.3.</span> <span class="nav-text">Start an app</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Managing-processes"><span class="nav-number">2.2.4.</span> <span class="nav-text">Managing processes</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Ecosystem-File"><span class="nav-number">2.2.5.</span> <span class="nav-text">Ecosystem File</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#步骤三：配置PM2一键部署线上项目结构"><span class="nav-number">2.3.</span> <span class="nav-text">步骤三：配置PM2一键部署线上项目结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#步骤四：本地控制远端代码更新、服务重启"><span class="nav-number">2.4.</span> <span class="nav-text">步骤四：本地控制远端代码更新、服务重启</span></a></li></ol></li></ol></div>
             
 
           </div>

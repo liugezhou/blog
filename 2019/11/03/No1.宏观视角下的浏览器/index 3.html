@@ -1,0 +1,1684 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next gemini" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+      
+    
+    
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+  <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/favicon.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="浏览器工作原理与实践,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="六个周" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。本篇是这个专栏的第一章：《宏观视角下的浏览器》。本章分为六讲。">
+<meta name="keywords" content="浏览器工作原理与实践">
+<meta property="og:type" content="article">
+<meta property="og:title" content="No1.宏观视角下的浏览器">
+<meta property="og:url" content="http://liugezhou.online/2019/11/03/No1.宏观视角下的浏览器/index.html">
+<meta property="og:site_name" content="六个周">
+<meta property="og:description" content="前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。本篇是这个专栏的第一章：《宏观视角下的浏览器》。本章分为六讲。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-01-10T06:17:13.102Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="No1.宏观视角下的浏览器">
+<meta name="twitter:description" content="前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。本篇是这个专栏的第一章：《宏观视角下的浏览器》。本章分为六讲。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"toTophideinMobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://liugezhou.online/2019/11/03/No1.宏观视角下的浏览器/">
+
+
+
+
+
+  <title>No1.宏观视角下的浏览器 | 六个周</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?a6ce5d6d4a02e5fc27dfd3a7d7a875b0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/liugezhou" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#64CEAA; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">六个周</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">liugezhou</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liugezhou.online/2019/11/03/No1.宏观视角下的浏览器/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liugezhou">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="http://img.liugezhou.online/time.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="六个周">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">No1.宏观视角下的浏览器</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-03T23:20:00+08:00">
+                2019-11-03
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2020-01-10T14:17:13+08:00">
+                2020-01-10
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/浏览器工作原理与实践/" itemprop="url" rel="index">
+                    <span itemprop="name">浏览器工作原理与实践</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/11/03/No1.宏观视角下的浏览器/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/11/03/No1.宏观视角下的浏览器/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/11/03/No1.宏观视角下的浏览器/" class="leancloud_visitors" data-flag-title="No1.宏观视角下的浏览器">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  5.3k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  18
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h6 id="前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。"><a href="#前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。" class="headerlink" title="前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。"></a>前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。</h6><h6 id="本篇是这个专栏的第一章：《宏观视角下的浏览器》。本章分为六讲。"><a href="#本篇是这个专栏的第一章：《宏观视角下的浏览器》。本章分为六讲。" class="headerlink" title="本篇是这个专栏的第一章：《宏观视角下的浏览器》。本章分为六讲。"></a>本篇是这个专栏的第一章：《宏观视角下的浏览器》。本章分为六讲。</h6><a id="more"></a>
+<h4 id="01-Chrome架构：仅仅打开一个页面，为什么有四个进程"><a href="#01-Chrome架构：仅仅打开一个页面，为什么有四个进程" class="headerlink" title="01.Chrome架构：仅仅打开一个页面，为什么有四个进程"></a>01.Chrome架构：仅仅打开一个页面，为什么有四个进程</h4><blockquote>
+<p>在谷歌浏览器随便打开一个页面，点击“选项”菜单，选择“更多工具”，点击“任务管理器”，这将打开Chrome的任务管理器的窗口，你会发现一个页面上有四个以上的进程。为什么会有四个进程呢？<br>本章通过分析浏览器的进化史而展开探讨这个问题。<br>开始之前，我们必须得了解一下这个<code>进程</code>与<code>线程</code>的概念。  </p>
+</blockquote>
+<h5 id="线程-VS-进程"><a href="#线程-VS-进程" class="headerlink" title="线程 VS 进程"></a>线程 VS 进程</h5><blockquote>
+<p><code>线程这个东西它是不能单独存在的，它是由进程来启动和管理的。</code> </p>
+<p><code>一个进程就是一个程序的运行实例</code>。</p>
+<p><code>线程是依附于进程的，而进程中使用多线程并行处理能提升运算效率</code>。  </p>
+<p>总结，线程与进程之间的关系有以下四个特点：</p>
+<ol>
+<li>进程中任一线程执行出错，都会导致整个进程崩溃。 </li>
+<li>线程之间共享进程的数据。   </li>
+<li>当一个进程关闭之后，操作系统会回收进程所占用的内存。   </li>
+<li>进程之间的内容都互相隔离。(如果进程之间需要进行数据的通信，这时候需要使用用于进程间通讯(IPC)机制了)。</li>
+</ol>
+</blockquote>
+<h5 id="单进程浏览器时代"><a href="#单进程浏览器时代" class="headerlink" title="单进程浏览器时代"></a>单进程浏览器时代</h5><blockquote>
+<p>早在07年之前，市面上的浏览器都是单进程的。单进程，顾名思义是指：浏览器的所有功能模块都运行在同一个进程里。<br>如此多的功能模块运行在一个进程里，导致单进程浏览器<code>不稳定</code>、<code>不流畅</code>、<code>不安全</code>。<br>具体的表现就不说了，总之体验非常差，于是进入了“多线程浏览器”时代。    </p>
+</blockquote>
+<h5 id="多进程浏览器时代"><a href="#多进程浏览器时代" class="headerlink" title="多进程浏览器时代"></a>多进程浏览器时代</h5><blockquote>
+<ul>
+<li>多进程浏览器由于进程相互隔离，所以当一个页面或者插件崩溃的时候，影响的仅仅是当前的页面进程或者插件过程。这就完美解决了页面或者插件崩溃而导致的整个浏览器崩溃问题。JS的渲染若出现问题，影响的同样是当前的渲染页面，没有响应的仅对当前页面。而且在多进程浏览器时代，当关闭一个页面的时候，整个渲染进程会被关闭，该进程占用的内存都会被系统回收，这样也就轻松解决了浏览器页面的内存泄露问题。    </li>
+<li>此外有关安全方面的问题：使用多线程架构可以使用<code>安全沙箱</code>。  </li>
+</ul>
+<p>可以把沙箱看成是操作系统给进程上了一把锁，沙箱里面的程序可以运行，但是不能在硬盘上写入任何数据，也不能在敏感位置读取任何数据(例如文档和桌面)，Chrome把插件进程和渲染进程锁在沙箱里面，这样即使在渲染进程或者插件进程里面执行了恶意程序，恶意程序也无法突破沙箱去获取系统权限。</p>
+</blockquote>
+<h5 id="目前多进程架构"><a href="#目前多进程架构" class="headerlink" title="目前多进程架构"></a>目前多进程架构</h5><blockquote>
+<p>最新的Chrome进程架构：Chrome浏览器包括：<code>1个浏览器(Brower)主进程，1个GPU进程、一个网络(NetWork)进程、多个渲染进程和多个插件进程</code>。<br>虽然多进程模型提升了浏览器的稳定性、流畅性、安全性，但是同样也会不可避免带来一些问题：  </p>
+<ul>
+<li><code>更高的资源占用</code> ：因为每个进程都会包含公共基础结构的副本（如JavaScript运行环境），这意味着浏览器会消耗更多的资源。  </li>
+<li><code>更复杂的体系架构</code>：浏览器各模块之间耦合性高、扩展性差等问题，会导致现在的架构已经很难适应新的需求。 </li>
+</ul>
+</blockquote>
+<h5 id="未来面向服务的架构-SOP"><a href="#未来面向服务的架构-SOP" class="headerlink" title="未来面向服务的架构(SOP)"></a>未来面向服务的架构(SOP)</h5><blockquote>
+<p>为了解决这些问题，2016年，Chrome团队使用“面向服务的架构“（SOP）思想设计了新的Chrome架构，这也是现阶段Chrome团队的一个主要任务。</p>
+</blockquote>
+<h4 id="02｜TCP协议：如何保证页面文件能被完整的送达浏览器"><a href="#02｜TCP协议：如何保证页面文件能被完整的送达浏览器" class="headerlink" title="02｜TCP协议：如何保证页面文件能被完整的送达浏览器"></a>02｜TCP协议：如何保证页面文件能被完整的送达浏览器</h4><blockquote>
+<p>在衡量Web页面性能的时候有一个重要的指标叫”FP(First Paint)”,是指从页面加载到首次开始绘制的时长。其中影响FP的一个重要因素就是<code>网络加载速度</code>。 </p>
+<p>要优化网络加载速度，需要对网络有充分的了解，这一节重点介绍<code>在Web世界中的TCP/IP是如何工作的</code>。 </p>
+<p>在网络中，一个文件通常会被拆分为很多数据包来进行传输，而数据包在传输过程中有很大概览丢失或者出错，那么如何保证页面文件能被完整地送达浏览器？</p>
+</blockquote>
+<h5 id="一个数据包的“旅程”"><a href="#一个数据包的“旅程”" class="headerlink" title="一个数据包的“旅程”"></a>一个数据包的“旅程”</h5><blockquote>
+<ol>
+<li><p>IP:把数据包送达目的主机<br>计算机的地址称为IP地址，访问任何网站实际上只是你的计算机向另外一台计算机请求信息。<br>当从主机A向主机B发送数据(即发送数据包)，传输前，数据包会被附加上主机A和主机B的IP地址信息，这些信息会被封到一个叫做IP头的数据结构里，在这个IP头中包含IP数据包开头的信息(IP版本、源IP地址、目标地址、生存时间等信息)，于是数据包从主机A发送到主机B。  </p>
+</li>
+<li><p>UDP:把数据包送达应用程序<br>IP通过IP地址信息把数据包发送给指定的电脑，而UDP通过端口号把数据包发给正确的程序。<br>UDP发送数据，有各种因素会导致数据包出错，虽然UDP可以校验数据是否正确，但是<code>UDP不提供重发机制</code>，只是丢弃当前的包，且UDP在发送之后无法知道能否到达目的地。<br><code>UDP不能保证数据可靠性，但是传输速度却非常快</code>，因此UDP应用在一些关注速度但不那么严格要求数据完整性的领域，例如：在线视频、互动游戏等。  </p>
+</li>
+<li><p>TCP:把数据完整的送达应用程序<br>TCP(Transmission Control Protocol,传输控制协议)：他是一种面向连接的、可靠的、基于字节流的传输层通信协议。相对于UDP而言：  </p>
+</li>
+</ol>
+<ul>
+<li>对于数据包丢失情况，提供重传机制。  </li>
+<li>TCP引入数据包排序机制，用来保证把乱序的数据包组合成一个完整的文件。 </li>
+</ul>
+</blockquote>
+<h5 id="完整的TCP连接过程"><a href="#完整的TCP连接过程" class="headerlink" title="完整的TCP连接过程"></a>完整的TCP连接过程</h5><blockquote>
+<p>我们现在已经知道TCP单个数据包的传输流程和UDP流程差不多，不同在于，通过TCP头信息可以保证一块大的数据传输的完整性。<br>一个完整的TCP连接过程，其生命周期包括了“建立连接“、”数据传输“、”断开连接“三个阶段。</p>
+<ul>
+<li>建立连接阶段：这个阶段通过“三次握手”来建立客户端和服务器之间的连接。  </li>
+<li>数据传输阶段：在该阶段，接收端需要对每个数据包进行确认操作。接收端应该在接收数据后要发送确认数据包给发送端，若发送端没有接收到这个确认，则判断数据包丢失，并触发发送端的重发机制。  </li>
+<li>断开连接阶段：数据传输完毕，终止连接，通过最后一个阶段“四次挥手”来保证双方都能断开连接。</li>
+</ul>
+</blockquote>
+<h4 id="03｜HTTP请求流程：为什么很多站点第二次打开速度会很快？"><a href="#03｜HTTP请求流程：为什么很多站点第二次打开速度会很快？" class="headerlink" title="03｜HTTP请求流程：为什么很多站点第二次打开速度会很快？"></a>03｜HTTP请求流程：为什么很多站点第二次打开速度会很快？</h4><blockquote>
+<p>首先的首先我们知道：HTTP协议建立在TCP连接基础之上的。<code>HTTP是一种允许浏览器向服务器获取资源的协议，是Web的基础。HTTP是浏览器使用最广的协议</code>。</p>
+<p>简单说说HTTP和TCP的关系：浏览器使用HTTP协议作为<code>应用层协议</code>，用来封装请求的文本信息，并使用TCP/IP作为<code>传输层协议</code>将它发到网路上,所以HTTP工作前，需要通过TCP与服务器建立连接，也就是说：<code>HTTP的内容是通过TCP的传输数据阶段来实现的</code>。</p>
+</blockquote>
+<h5 id="浏览器端发起HTTP请求流程"><a href="#浏览器端发起HTTP请求流程" class="headerlink" title="浏览器端发起HTTP请求流程"></a>浏览器端发起HTTP请求流程</h5><blockquote>
+<p>如果在浏览器地址栏里输入：<a href="https://www.liugezhou.online" target="_blank" rel="noopener">https://www.liugezhou.online</a> 这个网址后,浏览器这个庞然大物，它的背后都做些什么呢？</p>
+</blockquote>
+<ul>
+<li>构建请求<blockquote>
+<p>首先浏览器构建请求行信息，构建好之后，浏览器准备发起网路请求。</p>
+</blockquote>
+</li>
+<li>查找缓存<blockquote>
+<p>在准备发起网路请求阶段，浏览器偷偷的在它的缓存中查询是否有要请求的资源。<br>若有：拦截请求，返回资源副本，直接结束请求。<br>若缓存查找失败：继续下一步。  </p>
+</blockquote>
+</li>
+<li>准备IP地址和端口号<blockquote>
+<p>这个IP地址和端口号的获取，肯定是通过域名与其映射，即“域名系统”，也就是我们熟知的DNS。<br>于是，浏览器第一步会请求DNS返回域名对应的IP，如果没有特别指明端口号，则默认为80。<br>(浏览器提供了DNS数据缓存服务，若缓存过也就不会去请求，直接解析。从而减少一次网络请求)</p>
+</blockquote>
+</li>
+<li>等待TCP队列<blockquote>
+<p>拿到IP地址与端口号后，还需要在TCP队列中排队才能建立TCP连接。<br>这是因为：Chrome有个机制，同一个域名同时最多只能建立6个TCP连接，若此刻同时有10个请求发生。则四个会进入TCP队列进行排队。<br>当然，若当前请求数量少于6个，则会直接进入下一步。 </p>
+</blockquote>
+</li>
+<li>建立TCP连接 <blockquote>
+<p>建立TCP连接，上一节我们已经知道，一个完整的TCP连接过程包括“建立连接”、“数据传输”、“断开连接“三个阶段。  </p>
+</blockquote>
+</li>
+<li>发送HTTP请求<blockquote>
+<p>HTTP请求是在TCP连接的数据传输阶段工作的，这个时候浏览器向服务器发送请求行，它包括请求方法、请求URI、HTTP版本协议。，HTTP中的数据在这个通信过程中传输。</p>
+</blockquote>
+</li>
+</ul>
+<h5 id="服务器端处理HTTP请求流程"><a href="#服务器端处理HTTP请求流程" class="headerlink" title="服务器端处理HTTP请求流程"></a>服务器端处理HTTP请求流程</h5><blockquote>
+<p>这里可以在命令行中输入<code>curl -i https://www.google.com</code>来查看返回请求数据。 (-i 返回响应行、响应头和响应体信息。 -I 不返回响应体。)<br>返回网站的HTTP协议、Connection、Location、Cache-Control等信息。 </p>
+<p>通常情况，一旦服务器向客户端返回了请求数据，它就要关闭TCP连接，但是如果浏览器或者服务器设置了<code>Connection:keep-alive</code>，那么TCP连接在发送后将仍保持打开状态。<code>保持TCP连接可以省去下次请求时需要建立连接的时间，提升资源加载速度</code>。</p>
+</blockquote>
+<h5 id="问题解答"><a href="#问题解答" class="headerlink" title="问题解答"></a>问题解答</h5><ol>
+<li>为什么很多站点第二次打开速度会很快？<blockquote>
+<p>主要原因肯定是第一次加载页面的过程中，缓存了一些数据(从上面的过程分析，我们知道<code>DNS缓存</code>和<code>页面资源缓存</code>这两块数据是会被浏览器缓存起来的).<br>网站把很多资源都缓存到了本地，浏览器缓存直接使用本地副本来回应请求，而不会产生真实的网络请求，从而节省了时间。</p>
+</blockquote>
+</li>
+<li>登录状态是如何保持的 <blockquote>
+<p>简单地说，如果服务器端发送的响应头内有 Set-Cookie 的字段，那么浏览器就会将该字段的内容保持到本地。当下次客户端再往该服务器发送请求时，客户端会自动在请求头中加入 Cookie 值后再发送出去。服务器端发现客户端发送过来的 Cookie 后，会去检查究竟是从哪一个客户端发来的连接请求，然后对比服务器上的记录，最后得到该用户的状态信息。</p>
+</blockquote>
+</li>
+</ol>
+<h4 id="04｜导航流程：从输入URl到页面展示，这中间发生了什么"><a href="#04｜导航流程：从输入URl到页面展示，这中间发生了什么" class="headerlink" title="04｜导航流程：从输入URl到页面展示，这中间发生了什么"></a>04｜导航流程：从输入URl到页面展示，这中间发生了什么</h4><blockquote>
+<p>流程开始前，回顾下浏览器进程、网络进程、渲染进程的各自主要职责：  </p>
+<ul>
+<li>浏览器进程：主要负责<code>用户交互</code>、<code>子进程管理</code>和<code>文件储存</code>等功能。  </li>
+<li>网络进程：面向渲染进程或浏览器进程提供<code>网络资源下载</code>。  </li>
+<li>渲染进程：将HTML、CSS、JS、图片等资源解析为可以显示和交互的页面。 </li>
+</ul>
+</blockquote>
+<h5 id="过程大致描述"><a href="#过程大致描述" class="headerlink" title="过程大致描述"></a>过程大致描述</h5><blockquote>
+<ul>
+<li>首先，用户从浏览器进程中输入请求信息。  </li>
+<li>然后，网络进程发起URL请求。 </li>
+<li>服务器响应URL请求后，浏览器进程开始准备渲染进程。 </li>
+<li>渲染进程准备好以后，需要先向渲染进程提交页面数据，这称之为文档提交阶段。  </li>
+<li>渲染进程接收到文档信息之后，便开始解析页面和加载子资源，完成页面的渲染。<br>这其中，用户发出URL请求到页面开始解析的过程，就叫做导航。</li>
+</ul>
+</blockquote>
+<h5 id="从输入URL到页面展示–过程细节"><a href="#从输入URL到页面展示–过程细节" class="headerlink" title="从输入URL到页面展示–过程细节"></a>从输入URL到页面展示–过程细节</h5><blockquote>
+<ul>
+<li>响应数据类型处理：根据服务端返回的<code>Content-Type</code>字段来决定如何显示响应体的内容。</li>
+<li>同一站点下的多个页面会运行在一个渲染进程中。</li>
+</ul>
+</blockquote>
+<h5 id="“从输入-URL-到页面展示，这中间发生了什么？”-留言总结"><a href="#“从输入-URL-到页面展示，这中间发生了什么？”-留言总结" class="headerlink" title="“从输入 URL 到页面展示，这中间发生了什么？”(留言总结)"></a>“从输入 URL 到页面展示，这中间发生了什么？”(留言总结)</h5><blockquote>
+<ol>
+<li>用户输入url并回车·</li>
+<li>浏览器进程检查url，组装协议，构成完整的url</li>
+<li>浏览器进程通过进程间通信（IPC）把url请求发送给网络进程</li>
+<li>网络进程接收到url请求后检查本地缓存是否缓存了该请求资源，如果有则将该资源返回给浏览器进程</li>
+<li>如果没有，网络进程向web服务器发起http请求（网络请求），请求流程如下：<br>5.1 进行DNS解析，获取服务器ip地址，端口<br>5.2 利用ip地址和服务器建立tcp连接<br>5.3 构建请求头信息<br>5.4 发送请求头信息<br>5.5 服务器响应后，网络进程接收响应头和响应信息，并解析响应内容</li>
+<li>网络进程解析响应流程；<br>6.1 检查状态码，如果是301/302，则需要重定向，从Location自动中读取地址，重新进行第4步<br>6.2 200响应处理： <pre><code>检查响应类型Content-Type，如果是字节流类型，则将该请求提交给下载管理器，该导航流程结束，不再进行后续的渲染，如果是html则通知浏览器进程准备渲染进程准备进行渲染。</code></pre></li>
+<li>准备渲染进程<br>7.1 浏览器进程检查当前url是否和之前打开的渲染进程根域名是否相同，如果相同，则复用原来的进程，如果不同，则开启新的渲染进程</li>
+<li>传输数据、更新状态<br>8.1 渲染进程准备好后，浏览器向渲染进程发起“提交文档”的消息，渲染进程接收到消息和网络进程建立传输数据的“管道”<br>8.2 渲染进程接收完数据后，向浏览器发送“确认提交”<br>8.3 浏览器进程接收到确认消息后更新浏览器界面状态：安全、地址栏url、前进后退的历史状态、更新web页面。</li>
+</ol>
+</blockquote>
+<h4 id="05｜渲染流程-上-：HTML、CSS和JavaScript，是如何变成页面的"><a href="#05｜渲染流程-上-：HTML、CSS和JavaScript，是如何变成页面的" class="headerlink" title="05｜渲染流程(上)：HTML、CSS和JavaScript，是如何变成页面的"></a>05｜渲染流程(上)：HTML、CSS和JavaScript，是如何变成页面的</h4><blockquote>
+<p>按照渲染的时间顺序，渲染流水线可分为以下几个构建阶段：<br><code>构建DOM树</code>、<code>样式计算</code>、<code>布局阶段</code>、<code>分层</code>、<code>绘制</code>、<code>光栅化</code>、<code>合成</code>。<br>本节主要讨论前三个阶段。  </p>
+</blockquote>
+<h5 id="构建DOM树"><a href="#构建DOM树" class="headerlink" title="构建DOM树"></a>构建DOM树</h5><blockquote>
+<p>因为浏览器无法直接理解和使用 HTML，所以需要将 HTML 转换为浏览器能够理解的结构——DOM 树。<br>DOM树和HTML内容几乎一样，但和HTML不同的是：DOM是保存在内存中的树结构。  </p>
+</blockquote>
+<h5 id="样式计算"><a href="#样式计算" class="headerlink" title="样式计算"></a>样式计算</h5><blockquote>
+<ol>
+<li>把CSS转换为浏览器能够理解的结构。</li>
+<li>转换样式表中的属性值，使其标准化。<br>「例如rem -&gt; px, red -&gt; rgb(255,0,0),bold -&gt; 700」  </li>
+<li>计算出DOM树中每个节点的具体样式。<br>「CSS继承：每个DOM节点都包含有父节点的样式」<br>「CSS层叠：它在 CSS 处于核心地位，定义了如何合并来自多个源的属性值的算法」<br>「样式来源：如果一个元素不提供任何样式，默认使用的是UserAgent样式—浏览器提供的一组默认样式」。</li>
+</ol>
+</blockquote>
+<h5 id="布局阶段"><a href="#布局阶段" class="headerlink" title="布局阶段"></a>布局阶段</h5><blockquote>
+<p>内容： 布局阶段是根据DOM树和样式计算出元素的几何位置。 </p>
+<ol>
+<li>创建布局树「构建一颗只包含可见元素的布局树」  </li>
+<li>布局计算 </li>
+</ol>
+</blockquote>
+<blockquote>
+<p>「在执行布局操作的时候，会把布局运算的结果重新写回布局树中，所以布局树既是输入内容也是输出内容，这是布局阶段一个不合理的地方，因为在布局阶段并没有清晰地将输入内容和输出内容区分开来。针对这个问题，Chrome 团队正在重构布局代码，下一代布局系统叫 <code>LayoutNG</code>，试图更清晰地分离输入和输出，从而让新设计的布局算法更加简单。」</p>
+</blockquote>
+<h4 id="06-渲染流程-下-：HTML、CSS和JavaScript，是如何变成页面的"><a href="#06-渲染流程-下-：HTML、CSS和JavaScript，是如何变成页面的" class="headerlink" title="06|渲染流程(下)：HTML、CSS和JavaScript，是如何变成页面的"></a>06|渲染流程(下)：HTML、CSS和JavaScript，是如何变成页面的</h4><h5 id="分层"><a href="#分层" class="headerlink" title="分层"></a>分层</h5><blockquote>
+<p>为了生成一些复杂效果(3D变换、页面滚动、z轴排序等)，渲染引擎还需要为特定的节点生成专用的图层，生成一颗对应的图层树.</p>
+<ul>
+<li>并不是布局树的每个节点都包含一个图层，如果一个节点没有对应的层，那么这个节点就从属于父节点的图层.   </li>
+<li>素有了层叠上下文的属性或者需要被剪裁，满足这任意一点，就会被提升成为单独一层。  </li>
+</ul>
+</blockquote>
+<h5 id="绘制"><a href="#绘制" class="headerlink" title="绘制"></a>绘制</h5><blockquote>
+<p>一个图层的绘制拆分成很多小的绘制指令，然后再把这些指令按照顺序组成一个<code>待绘制列表</code>。「可在浏览器开发者工具的Layers中查看。」</p>
+</blockquote>
+<h5 id="栅格化操作"><a href="#栅格化操作" class="headerlink" title="栅格化操作"></a>栅格化操作</h5><blockquote>
+<p>所谓栅格化，是指将图块转换为位图。<br>栅格化过程都会使用 GPU 来加速生成，使用 GPU 生成位图的过程叫快速栅格化，或者 GPU 栅格化，生成的位图被保存在 GPU 内存中. </p>
+</blockquote>
+<h5 id="合成和显示"><a href="#合成和显示" class="headerlink" title="合成和显示"></a>合成和显示</h5><blockquote>
+<p>一旦所有图块都被光栅化，合成线程就会生成一个绘制图块的命令——“DrawQuad”，然后将该命令提交给浏览器进程。经过浏览器就会显示出页面。  </p>
+</blockquote>
+<blockquote>
+<p>一个完整的渲染流程大致可总结为如下：  </p>
+<ul>
+<li>渲染进程将 HTML 内容转换为能够读懂的 DOM 树结构。 </li>
+<li>渲染引擎将 CSS 样式表转化为浏览器可以理解的 styleSheets，计算出 DOM 节点的样式。  </li>
+<li>创建布局树，并计算元素的布局信息。对布局树进行分层，并生成分层树。  </li>
+<li>为每个图层生成绘制列表，并将其提交到合成线程。  </li>
+<li>合成线程将图层分成图块，并在光栅化线程池中将图块转换成位图。  </li>
+<li>合成线程发送绘制图块命令 DrawQuad 给浏览器进程。浏览器进程根据 DrawQuad 消息生成页面，并显示到显示器上。</li>
+</ul>
+</blockquote>
+<h5 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h5><h6 id="重排-更新了元素的几何属性"><a href="#重排-更新了元素的几何属性" class="headerlink" title="重排(更新了元素的几何属性)"></a>重排(更新了元素的几何属性)</h6><blockquote>
+<p>使用CSS或者JS使元素的几何位置发生了改变，例如改变元素的宽度、高度等，这会使得浏览器触发重新布局、解析之后的一系列子阶段，这个过程就是重排。无疑，重排需要更新完整的渲染流水线，所以开销是最大的。 </p>
+</blockquote>
+<h6 id="重绘-更新元素的绘制属性"><a href="#重绘-更新元素的绘制属性" class="headerlink" title="重绘(更新元素的绘制属性)"></a>重绘(更新元素的绘制属性)</h6><blockquote>
+<p>比如改变了元素的背景色，这会触发浏览器进行重绘之后的操作。相较于重排操作，重绘省去了布局和分层阶段，所以执行效率会比重排操作要高一些。  </p>
+</blockquote>
+<h6 id="直接合成阶段"><a href="#直接合成阶段" class="headerlink" title="直接合成阶段"></a>直接合成阶段</h6><blockquote>
+<p>那如果你更改一个既不要布局也不要绘制的属性，会发生什么变化呢？渲染引擎将跳过布局和绘制，只执行后续的合成操作，我们把这个过程叫做合成.<br>例如CSS的transform实现的动画效果，可以避开重排和重绘阶段，相对于重绘和重排，合成能大大提升绘制效率。</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="http://img.liugezhou.online/wechatDangerous.jpg" alt="liugezhou wechat" style="width: 200px; max-width: 100%;">
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Enjoy Yourself EveryDay！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="liugezhou 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="liugezhou 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/浏览器工作原理与实践/" rel="tag"># 浏览器工作原理与实践</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/03/每周总结第十七期/" rel="next" title="每周总结第十七期">
+                <i class="fa fa-chevron-left"></i> 每周总结第十七期
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/10/每周总结第十八期/" rel="prev" title="每周总结第十八期">
+                每周总结第十八期 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="http://img.liugezhou.online/time.png" alt="liugezhou">
+            
+              <p class="site-author-name" itemprop="name">liugezhou</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">71</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-user"></i>
+                个人主页
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://github.com/liugezhou" title="GitHub" target="_blank">GitHub</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://liugezhou.gitbook.io/liugezhou/" title="Gitbook" target="_blank">Gitbook</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.instagram.com/liugezhou/" title="ins" target="_blank">ins</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.jianshu.com/u/5842abb77bd1" title="简书" target="_blank">简书</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://juejin.im/user/5afcc0a66fb9a07aad17b79e" title="掘金" target="_blank">掘金</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。"><span class="nav-number">1.</span> <span class="nav-text">前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#本篇是这个专栏的第一章：《宏观视角下的浏览器》。本章分为六讲。"><span class="nav-number">2.</span> <span class="nav-text">本篇是这个专栏的第一章：《宏观视角下的浏览器》。本章分为六讲。</span></a></li></ol><li class="nav-item nav-level-4"><a class="nav-link" href="#01-Chrome架构：仅仅打开一个页面，为什么有四个进程"><span class="nav-number"></span> <span class="nav-text">01.Chrome架构：仅仅打开一个页面，为什么有四个进程</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#线程-VS-进程"><span class="nav-number"></span> <span class="nav-text">线程 VS 进程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#单进程浏览器时代"><span class="nav-number"></span> <span class="nav-text">单进程浏览器时代</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#多进程浏览器时代"><span class="nav-number"></span> <span class="nav-text">多进程浏览器时代</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#目前多进程架构"><span class="nav-number"></span> <span class="nav-text">目前多进程架构</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#未来面向服务的架构-SOP"><span class="nav-number"></span> <span class="nav-text">未来面向服务的架构(SOP)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#02｜TCP协议：如何保证页面文件能被完整的送达浏览器"><span class="nav-number"></span> <span class="nav-text">02｜TCP协议：如何保证页面文件能被完整的送达浏览器</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#一个数据包的“旅程”"><span class="nav-number"></span> <span class="nav-text">一个数据包的“旅程”</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#完整的TCP连接过程"><span class="nav-number"></span> <span class="nav-text">完整的TCP连接过程</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#03｜HTTP请求流程：为什么很多站点第二次打开速度会很快？"><span class="nav-number"></span> <span class="nav-text">03｜HTTP请求流程：为什么很多站点第二次打开速度会很快？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#浏览器端发起HTTP请求流程"><span class="nav-number"></span> <span class="nav-text">浏览器端发起HTTP请求流程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#服务器端处理HTTP请求流程"><span class="nav-number"></span> <span class="nav-text">服务器端处理HTTP请求流程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#问题解答"><span class="nav-number"></span> <span class="nav-text">问题解答</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#04｜导航流程：从输入URl到页面展示，这中间发生了什么"><span class="nav-number"></span> <span class="nav-text">04｜导航流程：从输入URl到页面展示，这中间发生了什么</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#过程大致描述"><span class="nav-number"></span> <span class="nav-text">过程大致描述</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#从输入URL到页面展示–过程细节"><span class="nav-number"></span> <span class="nav-text">从输入URL到页面展示–过程细节</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#“从输入-URL-到页面展示，这中间发生了什么？”-留言总结"><span class="nav-number"></span> <span class="nav-text">“从输入 URL 到页面展示，这中间发生了什么？”(留言总结)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#05｜渲染流程-上-：HTML、CSS和JavaScript，是如何变成页面的"><span class="nav-number"></span> <span class="nav-text">05｜渲染流程(上)：HTML、CSS和JavaScript，是如何变成页面的</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#构建DOM树"><span class="nav-number"></span> <span class="nav-text">构建DOM树</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#样式计算"><span class="nav-number"></span> <span class="nav-text">样式计算</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#布局阶段"><span class="nav-number"></span> <span class="nav-text">布局阶段</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#06-渲染流程-下-：HTML、CSS和JavaScript，是如何变成页面的"><span class="nav-number"></span> <span class="nav-text">06|渲染流程(下)：HTML、CSS和JavaScript，是如何变成页面的</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#分层"><span class="nav-number"></span> <span class="nav-text">分层</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#绘制"><span class="nav-number"></span> <span class="nav-text">绘制</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#栅格化操作"><span class="nav-number"></span> <span class="nav-text">栅格化操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#合成和显示"><span class="nav-number"></span> <span class="nav-text">合成和显示</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#相关概念"><span class="nav-number"></span> <span class="nav-text">相关概念</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#重排-更新了元素的几何属性"><span class="nav-number">1.</span> <span class="nav-text">重排(更新了元素的几何属性)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#重绘-更新元素的绘制属性"><span class="nav-number">2.</span> <span class="nav-text">重绘(更新元素的绘制属性)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#直接合成阶段"><span class="nav-number">3.</span> <span class="nav-text">直接合成阶段</span></a></li></ol></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-github"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">liugezhou</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">101.3k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '7Y2MfUyJAFLBIDtKaHckAXbO-gzGzoHsz',
+        appKey: 'QzorRYCide4mEYVhrEGCOHh7',
+        placeholder: 'Just write something!',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === '') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("7Y2MfUyJAFLBIDtKaHckAXbO-gzGzoHsz", "QzorRYCide4mEYVhrEGCOHh7");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  <script async src="//code.tidio.co/6brxboofvivexcnvw6lnczwguzplcfgz.js"></script>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/moment-precise-range-plugin@1.3.0/moment-precise-range.min.js"></script>
+  <script>
+    function timer() {
+      var ages = moment.preciseDiff(moment(),moment(20190101,"YYYYMMDD"));
+      ages = ages.replace(/years?/, "年");
+      ages = ages.replace(/months?/, "月");
+      ages = ages.replace(/days?/, "天");
+      ages = ages.replace(/hours?/, "小时");
+      ages = ages.replace(/minutes?/, "分");
+      ages = ages.replace(/seconds?/, "秒");
+      ages = ages.replace(/\d+/g, '<span style="color:#1890ff">$&</span>');
+      div.innerHTML = `我已在此等候你 ${ages}`;
+    }
+    var div = document.createElement("div");
+    //插入到copyright之后
+    var copyright = document.querySelector(".copyright");
+    document.querySelector(".footer-inner").insertBefore(div, copyright.nextSibling);
+    timer();
+    setInterval("timer()",1000)
+  </script>
+
+</body>
+</html>

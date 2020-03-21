@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://liugezhou.online/"/>
-  <updated>2020-03-15T07:11:41.810Z</updated>
+  <updated>2020-03-21T12:29:55.989Z</updated>
   <id>http://liugezhou.online/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>每周总结第三十五期</title>
+    <link href="http://liugezhou.online/2020/03/21/%E6%AF%8F%E5%91%A8%E6%80%BB%E7%BB%93%E7%AC%AC%E4%B8%89%E5%8D%81%E4%BA%94%E6%9C%9F/"/>
+    <id>http://liugezhou.online/2020/03/21/每周总结第三十五期/</id>
+    <published>2020-03-21T12:22:40.000Z</published>
+    <updated>2020-03-21T12:29:55.989Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>本周是2020年的第十二个周末。<br>这里记录过去一周，我的一些总结。</p></blockquote><!-- 制作一张最能反映过去一周的周图片 --><p><img src="http://img.liugezhou.online/blog/weekly35.jpg" alt="weekly-35"></p><a id="more"></a><!-- 一周最大感受 --><h4 id="Feeling"><a href="#Feeling" class="headerlink" title="Feeling"></a>Feeling</h4><blockquote><p>Just for Fun (只是为了好玩) 。<br>本书是Linux之父Linus Torvalds的自传。<br>Linux之父Linus Torvalds的自传，也是Linus唯一一本书。Linus以调侃的语气讲述了自己的成长经历，在他看来，一切都是为了好玩儿，兴趣引发革命。书中内容共分为五章，一部分是Linus自己写的，一部分是合著者David Diamond的评论。<br>林纳斯•托瓦兹 当今世界最著名的程序员、黑客，开源操作系统Linux之父。生于芬兰，毕业于赫尔辛基大学，1997年～2003年任职于美国加州硅谷的全美达公司，现受聘于开放源代码开发实验室，全力开发Linux内核。2004年，他被《时代周刊》评为世界最有影响力的人之一。<br>大卫•戴蒙 职业撰稿人，曾为《纽约时报》《连线》《美国周末》及许多刊物供稿。 </p></blockquote><h4 id="黄金价格"><a href="#黄金价格" class="headerlink" title="黄金价格"></a>黄金价格</h4><blockquote><p>黄金价格不断上涨，2020年3月16日金银比价创下123.78的记录，即等重量的黄金价格是白银的123.78倍。这是人类5000年来的最高记录。</p></blockquote><h4 id="滴滴跑腿"><a href="#滴滴跑腿" class="headerlink" title="滴滴跑腿"></a>滴滴跑腿</h4><blockquote><p>滴滴跑腿推出一项用户福利活动，从3月21日起，用户每天首笔订单费用0.1元，此优惠将连续11天。此前，滴滴已在21个城市上线跑腿服务。(from 36ke)</p></blockquote><h4 id="git-install"><a href="#git-install" class="headerlink" title="git install"></a>git install</h4><blockquote><p>本周开源社区劲爆的一条新闻是：Github宣布收购npm。<br>至此，TypeScript, VS Code, GitHub, npm 都是微软的。<br>有开发者评论道：<br>「 微软通过收购 GitHub 接管了整个开源生态系统，<br>通过收购 npm 接管了整个 JavaScript 生态系统<br>通过 Visual Studio Code 占领了大部分开发者的机器<br>通过 TypeScript 改变了开发者使用 JavaScript 的方式。<br>因此可以认为，JavaScript 现在基本上是属于微软的。」</p></blockquote><h4 id="PacVim"><a href="#PacVim" class="headerlink" title="PacVim"></a><a href="https://github.com/jmoon018/PacVim" target="_blank" rel="noopener">PacVim</a></h4><blockquote><p>👆Github上一个让你通过玩游戏学习 Vim 命令的游戏PacVim，类似于PacMan(吃豆人)。<br>该游戏在终端即可打开使用，玩法详见上面链接项目仓库介绍或者：<a href="https://mp.weixin.qq.com/s/aauMKWZhzsYeayj1S0FffQ" target="_blank" rel="noopener">Vim一直学不会？试试这个 “真香” 神器</a> </p></blockquote><h4 id="Github移动端上线"><a href="#Github移动端上线" class="headerlink" title="Github移动端上线"></a>Github移动端上线</h4><blockquote><p>GitHub移动端：iOS与安卓版终于上线了，在iOS应用市场搜索不到，需要在网页:<a href="https://github.com/mobile/中点击下载，在AppStore中打开下载。" target="_blank" rel="noopener">https://github.com/mobile/中点击下载，在AppStore中打开下载。</a><br>由于国内网络原因，体验并不是很友好。</p></blockquote><h4 id="微信服务平台上架13种接口能力"><a href="#微信服务平台上架13种接口能力" class="headerlink" title="微信服务平台上架13种接口能力"></a><a href="https://mp.weixin.qq.com/s/k07xNw6kn22Bdhgt_KqSBQ" target="_blank" rel="noopener">微信服务平台上架13种接口能力</a></h4><blockquote><p>👆 为了提升开发者的开发运营效率，节省开发资源，3月17日，微信服务平台上架了13种接口能力，包括微信OCR识别、地址解析、珊瑚图片内容安全等，可支持开发者快速进行调用，帮助各行业打造完善的服务链。</p></blockquote><h4 id="CentOS7安装MySQL数据库"><a href="#CentOS7安装MySQL数据库" class="headerlink" title="CentOS7安装MySQL数据库"></a><a href="https://help.aliyun.com/document_detail/116727.html?spm=5176.11065259.1996646101.searchclickresult.c3be2f1auy5Wbc" target="_blank" rel="noopener">CentOS7安装MySQL数据库</a></h4><blockquote><p>👆CentOS7上安装mysql数据库的文章特别特别的多，这篇阿里云文档给出的安装教程简单、清晰，可以快速在CentOS7上安装mysql数据库、配置远程访问等。</p></blockquote><h4 id="CentOS升级git版本"><a href="#CentOS升级git版本" class="headerlink" title="CentOS升级git版本"></a><a href="https://www.cnblogs.com/Hi-blog/p/How-To-Update-Git-On-CentOS7.html" target="_blank" rel="noopener">CentOS升级git版本</a></h4><blockquote><p>👆一篇总结简单、易懂的文章，介绍快速在CentOS上升级git版本。</p></blockquote><h4 id="VsCode插件，自动生成注释koroFileHeader"><a href="#VsCode插件，自动生成注释koroFileHeader" class="headerlink" title="VsCode插件，自动生成注释koroFileHeader"></a><a href="https://blog.csdn.net/SevenGirl2017/article/details/88424641" target="_blank" rel="noopener">VsCode插件，自动生成注释koroFileHeader</a></h4><blockquote><p>整洁的代码一定是代码注释简洁明了，koroFileHeader插件可快速定制自己的文件头以及光标处的代码注释生成。</p></blockquote><!-- 鸡汤一句 --><h4 id="End"><a href="#End" class="headerlink" title="End"></a>End</h4><blockquote><p>西瓜视频、抖音、今日头条、《大赢家》出品方共同宣布，于3月20日晚八点免费上线喜剧电影《大赢家》。该片由于淼执导，大鹏、柳岩主演，讲述了一次抢劫演习中所发生的幽默故事。<br>so,看电影去喽。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;本周是2020年的第十二个周末。&lt;br&gt;这里记录过去一周，我的一些总结。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;!-- 制作一张最能反映过去一周的周图片 --&gt;
+&lt;p&gt;&lt;img src=&quot;http://img.liugezhou.online/blog/weekly35.jpg&quot; alt=&quot;weekly-35&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="每周分享" scheme="http://liugezhou.online/categories/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
+    
+    
+      <category term="每周分享" scheme="http://liugezhou.online/tags/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
+    
+  </entry>
+  
+  <entry>
     <title>每周总结第三十四期</title>
     <link href="http://liugezhou.online/2020/03/15/%E6%AF%8F%E5%91%A8%E6%80%BB%E7%BB%93%E7%AC%AC%E4%B8%89%E5%8D%81%E5%9B%9B%E6%9C%9F/"/>
     <id>http://liugezhou.online/2020/03/15/每周总结第三十四期/</id>
     <published>2020-03-15T06:45:27.000Z</published>
-    <updated>2020-03-15T07:11:41.810Z</updated>
+    <updated>2020-03-15T07:14:19.437Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>本周是2020年的第十一个周末。<br>这里记录过去一周，我的一些总结。</p></blockquote><p><img src="http://img.liugezhou.online/blog/weekly34.jpeg" alt="weekly-34"></p><a id="more"></a><h4 id="Feeling"><a href="#Feeling" class="headerlink" title="Feeling"></a>Feeling</h4><blockquote><p>每个夜晚来临的时候，每个清晨苏醒的时候，脑中思维不停盘旋：我是谁？我来自哪里？我将要去向何处？我正在干嘛？</p></blockquote><h4 id="全球股市暴跌"><a href="#全球股市暴跌" class="headerlink" title="全球股市暴跌"></a>全球股市暴跌</h4><blockquote><p>过去一周，全球股市暴跌，石油战诱发美股跌停熔断，另有疫情夹击，12个国家股市于3月12日发生“熔断“。<br>这一天将会被股市历史牢牢铭记。<br>据说中国历史上也推行过熔断制度，但自从熔断制度推出后，接连两天触发熔断，于是撤回。<br>朋友圈看到一个段子,很鲜活：<br><code>金融行业每天的工作，早上八点起床先看国外肺炎人数，看美股收盘点数。八点半，看亚太崩盘，九点半看大A震荡，下午四点看欧洲崩盘，晚上九点半看美股开盘崩盘</code><br>惨不忍睹。<br><a href="https://mp.weixin.qq.com/s/TJvfe99YFhctkCakS0Hrjg" target="_blank" rel="noopener">这篇文章</a>简单、通俗的解释了有关熔断定义规则、熔断历史等内容(该文章发于2020年3月10日)。  </p></blockquote><h4 id="《人物》"><a href="#《人物》" class="headerlink" title="《人物》"></a>《人物》</h4><blockquote><p>2020年3月10日，《人物》杂志发表了一篇名为《发哨子的人》的特稿，文章发布数小时后，随后在国内所有的媒体平台全面删除，采访内容让人们更为真实地了解到这场现代社会最为严重的疫情是缘何扩散，以及处于漩涡中心的武汉人民经受怎样的苦难。 </p><p><a href="https://mp.weixin.qq.com/s/unmdEd7tN--frL88xAYScg" target="_blank" rel="noopener">《人物》被删文章：发哨子的人</a><br><a href="https://jsbin.com/soqaxuj/edit?html,output" target="_blank" rel="noopener">序员版本</a></p><p>有人总结道「也算创了传播史上的一个小记录：一而删，再而转；你越删，我越转，前赴后继锲而不舍飞蛾扑火宁死不屈大义凛然不可描述无法形容的壮烈与顽固」。</p></blockquote><h4 id="yuange1975"><a href="#yuange1975" class="headerlink" title="yuange1975"></a>yuange1975</h4><blockquote><p>微博用户@yuange1975持续质疑微博借钱利息高，被微博平台炸号。<br>此人是国内首屈一指的网络安全专家，腾讯沪湛实验室掌门人.</p></blockquote><h4 id="微信读书助手"><a href="#微信读书助手" class="headerlink" title="微信读书助手"></a><a href="https://chrome.google.com/webstore/search/%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6%E5%8A%A9%E6%89%8B?utm_source=chrome-ntp-icon" target="_blank" rel="noopener">微信读书助手</a></h4><blockquote><p>👆 Chrome浏览器插件–一款自动组队、备份笔记、听书的微信读书插件。</p></blockquote><h4 id="从一到无穷大"><a href="#从一到无穷大" class="headerlink" title="从一到无穷大"></a>从一到无穷大</h4><blockquote><p>乔治·伽莫夫（1904-1968, George Gamow）世界著名物理学家和天文学家。<br>《从一到无穷大：科学中的事实和臆测》是当今世界最有影响的科普经典名著之一，1970年代末由科学出版社引进出版后，曾在国内引起很大反响，直接影响了众多的科普工作者。<br>豆瓣评分9.1。</p></blockquote><h4 id="https-yandex-com"><a href="#https-yandex-com" class="headerlink" title="https://yandex.com/"></a><a href="https://yandex.com/" target="_blank" rel="noopener">https://yandex.com/</a></h4><blockquote><p>俄罗斯搜索引擎 Yandex,图片搜索很赞。 </p></blockquote><h4 id="Chrome-80-开发者工具两个特性"><a href="#Chrome-80-开发者工具两个特性" class="headerlink" title="Chrome 80 开发者工具两个特性"></a>Chrome 80 开发者工具两个特性</h4><blockquote><ul><li>在控制台中已支持 let 和 class 重新声明。  </li><li>Network 面板：增加新的 Path 列和 Url 列查看每个网络资源的绝对路径或完整URL。开启方式：需要在NetWork面板的菜单栏右击选择显示。        </li><li>Network 面板:增加initiator列，可以将网络请求的启动器和依赖项作为嵌套列表查看，帮助你理解为什么要请求某个资源，或者某个资源(例如脚本)导致了什么网络活动。</li></ul></blockquote><h4 id="第一次使用VS-Code时你应该知道的一切配置"><a href="#第一次使用VS-Code时你应该知道的一切配置" class="headerlink" title="第一次使用VS Code时你应该知道的一切配置"></a><a href="https://juejin.im/post/5cb87c6e6fb9a068a03af93a" target="_blank" rel="noopener">第一次使用VS Code时你应该知道的一切配置</a></h4><blockquote><p>👆这是一篇总结的非常全面的VSCode使用技巧，包括常用快捷键、光标使用、Terminal启动、高级进阶使用、推荐的一些很高级的插件使用等等。根据这篇文章温习了一下使用技巧，且体验使用了几个插件：<br>Bracket Pair Colorizer 2 、Project Manager 、Color Manager 、Code Time、RemoteHub 、Live Share等。</p></blockquote><h4 id="lodash"><a href="#lodash" class="headerlink" title="lodash"></a>lodash</h4><blockquote><p>一个提供模块化、高性能和额外功能的现代JavaScript实用程序库.</p></blockquote><h4 id="JS基础–typeof、instanceof、Object-prototype-toString"><a href="#JS基础–typeof、instanceof、Object-prototype-toString" class="headerlink" title="JS基础–typeof、instanceof、Object.prototype.toString"></a>JS基础–typeof、instanceof、Object.prototype.toString</h4><blockquote><ul><li>typeof用在基本数据类型和函数时，返回其对应类型的描述，对于引用类型都返回为object.   </li><li>instanceof无法判断基本数据类型，对于引用类型数据，返回其其对应类型.    </li><li>Object.prototype.toString无论基本数据类型还是引用类型返回其对应类型.   </li></ul></blockquote><h4 id="vscode保存时自动按eslint格式化"><a href="#vscode保存时自动按eslint格式化" class="headerlink" title="vscode保存时自动按eslint格式化"></a><a href="https://www.haorooms.com/post/vscode_eslint" target="_blank" rel="noopener">vscode保存时自动按eslint格式化</a></h4><blockquote><p> 👆通过简单的配置，使得在VSCode中编写代码保存时，自动按eslint格式进行代码格式化。</p></blockquote><h4 id="End"><a href="#End" class="headerlink" title="End"></a>End</h4><blockquote><p>每个人的生活都是一条通向自身的道路。每个人的真正职责只有一个：找到自我。然后在心中坚守一生，全心全意，永不停息。</p></blockquote>]]></content>
     
@@ -477,30 +503,6 @@
     
     
       <category term="浏览器工作原理与实践" scheme="http://liugezhou.online/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>每周总结第二十二期</title>
-    <link href="http://liugezhou.online/2019/12/07/%E6%AF%8F%E5%91%A8%E6%80%BB%E7%BB%93%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%BA%8C%E6%9C%9F/"/>
-    <id>http://liugezhou.online/2019/12/07/每周总结第二十二期/</id>
-    <published>2019-12-07T14:08:00.000Z</published>
-    <updated>2019-12-08T14:09:36.000Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>这里记录过去一周，我的一些小总结。<br><img src="http://img.liugezhou.online/20191206weekly.jpeg" alt="weekly-22"></p></blockquote><a id="more"></a><h4 id="Feeling"><a href="#Feeling" class="headerlink" title="Feeling"></a>Feeling</h4><blockquote><p>推出一个新产品很难，组建一个能够持续推出新产品的团队更难。<br>我最引以为傲的产品，就是苹果公司和我在苹果公司建立的团队。<br><cite>史蒂夫·乔布斯</cite></p></blockquote><h4 id="消费者办手机号全面开启人脸比对"><a href="#消费者办手机号全面开启人脸比对" class="headerlink" title="消费者办手机号全面开启人脸比对"></a>消费者办手机号全面开启人脸比对</h4><blockquote><p>据工信部的相关规定，自12月1日起，电信企业需在实体渠道全面实施人像比对技术措施，人像比对一致方可办理入网手续。<br>这意味着，今后，中国所有注册新SIM卡的手机用户都必须接受面部识别扫描。同时，规定要求电信企业部署“人工智能和其他技术方法”以检查注册SIM卡的人员的身份。<br>今年以来，人脸识别技术在国内出现了一系列的负面新闻，比如曾红极一时的换脸软件——ZAO，还有一位大学教授起诉动物园违规采集面部信息的“中国人脸识别第一案”。这些事件背后，说明中国人脸识别行业缺乏统一标准，管理仍然比较混乱，对用户的隐私保护做得不到位。就像“办手机卡”这件事，已经有一些声音开始担心：电信运营商真的能保证我们的人脸数据不外泄吗,不会用于其他的某方面用途吗？</p></blockquote><h4 id="华为作过的恶"><a href="#华为作过的恶" class="headerlink" title="华为作过的恶"></a><a href="https://github.com/evil-huawei/evil-huawei" target="_blank" rel="noopener">华为作过的恶</a></h4><blockquote><p>Gitub上，本周star数凑凑上涨的一个项目：<br>项目介绍：「由于部分内容被控评和删帖，已经无法在中文互联网搜索到，所以本项目将收集华为作过的恶，记录这些不应该被遗忘的历史。」</p></blockquote><h4 id="一键抠图神器"><a href="#一键抠图神器" class="headerlink" title="一键抠图神器"></a><a href="http://www.picup.ai/#/" target="_blank" rel="noopener">一键抠图神器</a></h4><blockquote><p>识别图像中的人体轮廓，与背景进行分离.有人体抠图和物体抠图。   </p></blockquote><h4 id="沙拉查词"><a href="#沙拉查词" class="headerlink" title="沙拉查词"></a>沙拉查词</h4><blockquote><p>一款浏览器插件，推荐。<br><img src="https://user-gold-cdn.xitu.io/2019/10/21/16dec06bb7790bd3?imageView2/2/w/800/q/85" alt="查词"></p></blockquote><h4 id="Grid-代码生成器"><a href="#Grid-代码生成器" class="headerlink" title="Grid 代码生成器"></a><a href="https://cssgrid-generator.netlify.com/" target="_blank" rel="noopener">Grid 代码生成器</a></h4><blockquote><p>可视化地配置 Grid，你可以设置行与列的个数、指定每个格子的类、长宽占比、行间距与列间距大小等，再一键生成 Grid 的 CSS 代码.<br><img src="https://user-gold-cdn.xitu.io/2019/12/6/16eda0f218272486?imageView2/2/w/800/q/85" alt="演示"></p></blockquote><h4 id="GitHub中文排行榜"><a href="#GitHub中文排行榜" class="headerlink" title="GitHub中文排行榜"></a><a href="https://github.com/kon9chunkit/GitHub-Chinese-Top-Charts" target="_blank" rel="noopener">GitHub中文排行榜</a></h4><blockquote><p>GitHub中文排行榜，帮助你发现高分优秀中文项目、更高效地吸收国人的优秀经验成果；榜单每周更新一次.   </p></blockquote><h4 id="浏览器中的页面"><a href="#浏览器中的页面" class="headerlink" title="浏览器中的页面"></a><a href="https://www.liugezhou.online/2019/12/03/No5.%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E7%9A%84%E9%A1%B5%E9%9D%A2/" target="_blank" rel="noopener">浏览器中的页面</a></h4><blockquote><p>前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。<br>本篇是这个专栏的第四章：<a href="https://www.liugezhou.online/2019/12/03/No5.%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E7%9A%84%E9%A1%B5%E9%9D%A2/" target="_blank" rel="noopener">浏览器中的页面</a>。本章分为八讲。</p></blockquote><h4 id="HTTP请求中的Form-Data和Request-Payload的区别"><a href="#HTTP请求中的Form-Data和Request-Payload的区别" class="headerlink" title="HTTP请求中的Form Data和Request Payload的区别"></a>HTTP请求中的Form Data和Request Payload的区别</h4><blockquote><p>前端开发中经常会用到AJAX发送异步请求，对于POST类型的请求会附带请求数据。而常用的两种传参方式为：Form Data 和 Request Payload。    </p></blockquote><blockquote><p>方式一： Form Data形式<br>当POST请求的请求头里设置Content-Type: application/x-www-form-urlencoded(默认), 参数在请求体以标准的Form Data的形式提交，以&amp;符号拼接，参数格式为key=value&amp;key=value&amp;key=value…<br>方式二：Request Payload形式<br>如果使用AJAX原生POST请求,请求头里设置Content-Type:application/json，请求的参数会显示在Request Payload中，参数格式为JSON格式：{“key”:”value”,”key”:”value”…}，这种方式可读性会更好. 后端可以使用getRequestPayload方法来获取.<br><code>Form Data 和 Request Payload 区别</code><br>如果请求头里设置Content-Type: application/x-www-form-urlencoded，那么这个请求被认为是表单请求，参数出现在Form Data里，格式为key=value&amp;key=value&amp;key=value…<br>原生的AJAX请求头里设置Content-Type:application/json，或者使用默认的请求头Content-Type:text/plain;参数会显示在Request payload块里提交。</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;这里记录过去一周，我的一些小总结。&lt;br&gt;&lt;img src=&quot;http://img.liugezhou.online/20191206weekly.jpeg&quot; alt=&quot;weekly-22&quot;&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="每周分享" scheme="http://liugezhou.online/categories/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
-    
-    
-      <category term="每周分享" scheme="http://liugezhou.online/tags/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
     
   </entry>
   

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://liugezhou.online/"/>
-  <updated>2020-03-28T13:33:21.399Z</updated>
+  <updated>2020-04-04T11:25:57.120Z</updated>
   <id>http://liugezhou.online/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>每周总结第三十七期</title>
+    <link href="http://liugezhou.online/2020/04/04/%E6%AF%8F%E5%91%A8%E6%80%BB%E7%BB%93%E7%AC%AC%E4%B8%89%E5%8D%81%E4%B8%83%E6%9C%9F/"/>
+    <id>http://liugezhou.online/2020/04/04/每周总结第三十七期/</id>
+    <published>2020-04-04T11:25:54.000Z</published>
+    <updated>2020-04-04T11:25:57.120Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>本周是2020年的第十四个周末。<br>这里记录过去一周，我的生活、工作与娱乐的一些小总结。</p></blockquote><!-- 制作一张最能反映过去一周的周图片 --><p><img src="http://img.liugezhou.online/blog/weekly37.jpg" alt="weekly-37"></p><a id="more"></a><!-- 一周最大感受 --><h4 id="Feeling"><a href="#Feeling" class="headerlink" title="Feeling"></a>Feeling</h4><blockquote><p>浅水是喧哗的，深水是沉默的。（Shallow water is roaring, deep water is silent.）<br><cite>– 雪莱</cite></p></blockquote><h4 id="何以为家"><a href="#何以为家" class="headerlink" title="何以为家"></a>何以为家</h4><blockquote><p>《何以为家》由娜丁·拉巴基执导的2018年黎巴嫩剧情长片，由加拿大CTV电视网制作，于第71届戛纳电影节主竞赛单元首映。获得评审团奖和基督教评审团奖。也获得了金球奖最佳外语片和奥斯卡最佳外语片提名。<br>为了让观众意识到这个残酷的现实和所讲故事的真实性，导演纳迪拉巴基选择一批真实生活于迦百农类似的人出演影片，演员必须经历过这样的生活。<br>影片中的赞恩饰演者并不是职业演员，而是真实的叙利亚难民。被导演发掘时，当时12岁左右的他连自己的名字都不会写.</p></blockquote><h4 id="瑞幸咖啡"><a href="#瑞幸咖啡" class="headerlink" title="瑞幸咖啡"></a>瑞幸咖啡</h4><blockquote><p>本周大事件为瑞幸咖啡财务造假，伪造交易22亿，周三晚(北京时间)盘前暴跌80%。<br>由此引发的连锁反应还在持续，股价大跌，遭遇集体诉讼，用户出现挤兑式消费。</p></blockquote><h4 id="Colorables"><a href="#Colorables" class="headerlink" title="Colorables"></a><a href="https://www.colorabl.es/all" target="_blank" rel="noopener">Colorables</a></h4><blockquote><p>这个网站可以下载各种填色图片，打印以后让小朋友用蜡笔填色。</p></blockquote><h4 id="创客贴"><a href="#创客贴" class="headerlink" title="创客贴"></a><a href="https://www.chuangkit.com" target="_blank" rel="noopener">创客贴</a></h4><blockquote><p>👆创客贴是一款多平台（Web、Mobile、Mac 、Windows）极简图形编辑和平面设计工具，包括创客贴网页版、 iPhone、iPad、 桌面版  等。从功能使用上分，创客贴有个人版和团队协作版，提供图片素材和设计模板，通过简单的拖拉拽操作就可以设计出海报、PPT、名片、邀请函等各类设计图. </p></blockquote><h4 id="音频剪辑转码网站"><a href="#音频剪辑转码网站" class="headerlink" title="音频剪辑转码网站"></a><a href="http://www.ruanyifeng.com/blog/2020/04/weekly-issue-101.html" target="_blank" rel="noopener">音频剪辑转码网站</a></h4><blockquote><p>👆在线音频实时剪辑转码网站,这个网站兼顾了准专业性和傻瓜式的操作。<br>包含单轨编辑、音频转码、音频去燥、提取伴奏等功能。  </p></blockquote><h4 id="Liner"><a href="#Liner" class="headerlink" title="Liner"></a>Liner</h4><blockquote><p>Liner是一款谷歌浏览器插件，让你能对网页方便的”划重点”.</p></blockquote><h4 id="RSA的原理与实现"><a href="#RSA的原理与实现" class="headerlink" title="RSA的原理与实现"></a><a href="https://cjting.me/2020/03/13/rsa/" target="_blank" rel="noopener">RSA的原理与实现</a></h4><blockquote><p>👆这篇文章运用数学原理解释了RSA这种非对称加密方式的原理与实现，分析了私钥的生成、加密与解秘过程以及解秘证明等。<br>我们工作中Github或者远程服务器，以及微信、支付宝的支付等等都会用到这种RAS加密方式。<br>文章对于小白来说较为晦涩，需要花点时间去理解。这里做个文章收藏。 </p></blockquote><h4 id="从forEach到迭代器"><a href="#从forEach到迭代器" class="headerlink" title="从forEach到迭代器"></a><a href="https://juejin.im/post/5bcb249a6fb9a05d212ed038" target="_blank" rel="noopener">从forEach到迭代器</a></h4><blockquote><p>👆本文从使用 forEach 对数组进行遍历开始说起，粗略对比使用 forEach , for…in , for…of 进行遍历的差异，并由此引入 ES6 中 *可迭代对象/迭代器 *的概念，并对其进行粗略介绍。</p></blockquote><h4 id="本周小结"><a href="#本周小结" class="headerlink" title="本周小结"></a>本周小结</h4><blockquote><p>本周在学习上周总结中的一篇文章《前端100问》，对于JS中的一些基础知识，依然甚是欠缺。<br>文章大概看到十分之一，粗略总结了 Vue中的key、map(parseInt)、防抖截流、SET与MAP、拷贝、继承、对象等相关基础知识。<br>阮老师的开源书籍《ES6标准入门》，真的是ES6基础的精华，我一定要好好学完这本书。</p></blockquote><!-- 鸡汤一句 --><h4 id="End"><a href="#End" class="headerlink" title="End"></a>End</h4><blockquote><ul><li>工作是一场马拉松，而不是短跑。  </li><li>尊重人，而不是头衔。  </li><li>工作从白板开始，而不是键盘。  </li><li>产出的是价值，而不是代码。  </li><li>热爱生活，而不是工作。  </li><li>学会享受过程。</li></ul></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;本周是2020年的第十四个周末。&lt;br&gt;这里记录过去一周，我的生活、工作与娱乐的一些小总结。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;!-- 制作一张最能反映过去一周的周图片 --&gt;
+&lt;p&gt;&lt;img src=&quot;http://img.liugezhou.online/blog/weekly37.jpg&quot; alt=&quot;weekly-37&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="每周分享" scheme="http://liugezhou.online/categories/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
+    
+    
+      <category term="每周分享" scheme="http://liugezhou.online/tags/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
+    
+  </entry>
   
   <entry>
     <title>每周总结第三十六期</title>
@@ -483,30 +509,6 @@
     
     
       <category term="浏览器工作原理与实践" scheme="http://liugezhou.online/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>每周总结第二十三期</title>
-    <link href="http://liugezhou.online/2019/12/15/%E6%AF%8F%E5%91%A8%E6%80%BB%E7%BB%93%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%89%E6%9C%9F/"/>
-    <id>http://liugezhou.online/2019/12/15/每周总结第二十三期/</id>
-    <published>2019-12-15T15:08:00.000Z</published>
-    <updated>2019-12-16T03:01:55.000Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>这里记录过去一周，我的一些小总结。<br> <img src="http://img.liugezhou.online/weekly23.jpeg" alt="weekly-23"></p></blockquote><a id="more"></a><h4 id="Feeling"><a href="#Feeling" class="headerlink" title="Feeling"></a>Feeling</h4><blockquote><p>周末去参加了两个群体聚会，本来是有很多的感受的，但是由于本性是善于遗忘，这篇周总结拖沓了一些，什么感受不感受的也都忘光了。  </p></blockquote><h4 id="普法-如果你被裁员，赔偿金是N、N-1、2N呢？"><a href="#普法-如果你被裁员，赔偿金是N、N-1、2N呢？" class="headerlink" title="普法 | 如果你被裁员，赔偿金是N、N+1、2N呢？"></a><a href="https://mp.weixin.qq.com/s/uFUhMlittAbNDcHWjLeZLA" target="_blank" rel="noopener">普法 | 如果你被裁员，赔偿金是N、N+1、2N呢？</a></h4><blockquote><p>最近几个大厂闹了不少事情，各家对裁员的赔偿金额不尽相同，导致很多朋友有所疑惑：到底裁员应该赔偿多少？又一波科普《劳动合同法》的。</p></blockquote><h4 id="二师兄法力无边–CPI破4"><a href="#二师兄法力无边–CPI破4" class="headerlink" title="二师兄法力无边–CPI破4"></a><a href="https://mp.weixin.qq.com/s/DIxLlp9cbrcKm47WQX6oyQ" target="_blank" rel="noopener">二师兄法力无边–CPI破4</a></h4><blockquote><p>据国家统计局发布的数据，11月份全国CPI（居民消费价格指数）同比上涨4.5%，连续9个月涨幅扩大.上一次CPI处在4%以上的高位，还是7年多前.那一轮通胀周期始于2010年下半年，直到2012年初才缓解.<br>猪肉是测算CPI的一篮子商品中权重最大的单品（约占2.5%），对CPI的拉动效果极为明显。</p></blockquote><h4 id="Chrome79发布"><a href="#Chrome79发布" class="headerlink" title="Chrome79发布"></a><a href="https://mp.weixin.qq.com/s/MEV6YhBUcpT82VryKsezgg" target="_blank" rel="noopener">Chrome79发布</a></h4><blockquote><p>Google 发布了适用于 Windows、Mac、Linux、Chrome OS、Android 和 iOS 用户的 Chrome 79。</p><p>Chrome 79 是 2019 年最后一次特性更新。自今年秋天初以来，Chrome 79 一直处在开发中，并于 10 月底进入 Beta 测试。Chrome 79 的更改主要面向开发人员，但安全浏览和内置密码检查工具方面也已有一些改进。</p></blockquote><h4 id="WebAssembly"><a href="#WebAssembly" class="headerlink" title="WebAssembly"></a><a href="https://mp.weixin.qq.com/s/XxdrxkU5ZZKX4kcqIIXIQw" target="_blank" rel="noopener">WebAssembly</a></h4><blockquote><p>2019年的12月5日，WebAssembly(简称WASM) ，被W3C推荐为正式标准，这是继html、css、javascript之后的第4门web语言，同时为Web带来一种支持代码在浏览器中运行的新语言.<br>通过即时编译或解析，WebAssembly引擎可以接近原生平台的速度执行代码编译。   </p><p>关于明年的前端发展趋势，该作者给出以下几点的预测:</p><ol><li>WebAssembly变得越来越普遍，得到了实际采用，并被用于产品中。        </li><li>GraphQL在新的创业公司和新项目上超过了REST，而老牌公司则向其迁移。      </li><li>TypeScript成为创业公司和新项目的默认选择。           </li><li>CSS-in-JS可能会成为默认的样式设置方法，而不是普通的CSS。     </li><li>Flutter可能会取代React Native成为构建跨平台移动应用的最佳方式。 </li></ol></blockquote><h4 id="themostdangerouswritingapp"><a href="#themostdangerouswritingapp" class="headerlink" title="themostdangerouswritingapp"></a><a href="https://github.com/maebert/themostdangerouswritingapp" target="_blank" rel="noopener">themostdangerouswritingapp</a></h4><blockquote><p>最危险的应用写作程序。<br>一旦你开始写作，那就不要停，必须时刻不停的打字。一旦停下（5秒倒计时），便立刻把先前写的所有内容删得一干二净。</p><p>体验地址：<a href="http://www.themostdangerouswritingapp.com" target="_blank" rel="noopener">http://www.themostdangerouswritingapp.com</a></p></blockquote><h4 id="Github或正式登录中国"><a href="#Github或正式登录中国" class="headerlink" title="Github或正式登录中国"></a>Github或正式登录中国</h4><blockquote><p>2019年12月10日，据英国《金融时报》报道， 全球最大程序员交友平台 GitHub <code>渴望</code>在中国开子公司。</p></blockquote><h4 id="力扣"><a href="#力扣" class="headerlink" title="力扣"></a><a href="https://leetcode-cn.com/" target="_blank" rel="noopener">力扣</a></h4><blockquote><p>力扣（LeetCode）上的题目已经有 1000+ 了。一目了然的题目分类力扣的题覆盖面极大，目前已有 1000+ 公开题目资源，涉及了许多算法与数据结构，有贪心，搜索，动态规划，链表，二叉树，哈希表等。<br>如果你是一名程序员，力扣一定要提前准备起来。</p></blockquote><h4 id="浏览器中的网络"><a href="#浏览器中的网络" class="headerlink" title="浏览器中的网络"></a><a href="https://www.liugezhou.online/2019/12/10/No6.%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E7%9A%84%E7%BD%91%E7%BB%9C/" target="_blank" rel="noopener">浏览器中的网络</a></h4><blockquote><p>前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。<br>本篇是这个专栏的第六章：<a href="https://www.liugezhou.online/2019/12/10/No6.%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E7%9A%84%E7%BD%91%E7%BB%9C/" target="_blank" rel="noopener">浏览器中的网络</a>。本章分为三讲。    </p><p>这三讲从浏览器的视角对HTTP的历史演进，进行了整体介绍，分别是即将完成使命的HTTP/1，正在我们走向的HTTP/2，以及未来的HTTP/3.</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;这里记录过去一周，我的一些小总结。&lt;br&gt; &lt;img src=&quot;http://img.liugezhou.online/weekly23.jpeg&quot; alt=&quot;weekly-23&quot;&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="每周分享" scheme="http://liugezhou.online/categories/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
-    
-    
-      <category term="每周分享" scheme="http://liugezhou.online/tags/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
     
   </entry>
   

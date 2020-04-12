@@ -145,7 +145,7 @@
 <meta property="og:description" content="本周是2020年的第十五个周末。这里记录过去一周，我的一些总结。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://img.liugezhou.online/blog/weekly38.png">
-<meta property="og:updated_time" content="2020-04-12T07:05:45.623Z">
+<meta property="og:updated_time" content="2020-04-12T07:35:53.045Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="每周总结第三十八期">
 <meta name="twitter:description" content="本周是2020年的第十五个周末。这里记录过去一周，我的一些总结。">
@@ -399,7 +399,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-04-12T15:05:45+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2020-04-12T15:35:53+08:00">
                 2020-04-12
               </time>
             
@@ -470,7 +470,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  754
+                  753
                 </span>
               
 
@@ -539,12 +539,12 @@
 <p>在抢口罩和呼吸机的同时，美国新泽西州州长在电视台上，公开招聘大龄程序员，要求是：50年程序员经验，掌握COBOL编程语言，时薪 55 美元至 85 美元！<br>原因为：疫情背景下，美国失业数据飙升，由于国家各项福利保障比较完善，失业人纷纷领取失业保险金，但失业保险系统用COBOL语言开发，由于系统故障，积累了太多的失业金无法发放，于是州长开始在电视台上公开招聘。<br>COBOL 全称为（Common Business Oriented Language），是数据处理领域最为广泛的程序设计语言。它是世界上第一个商用语言，第一个广泛使用的高级编程语言。<br>COBOL 应用的领域特别重要：金融，政府，航空公司。所有的银行，保险公司，金融机构都在大量使用 COBOL 写的程序。</p>
 </blockquote>
 <h4 id="每天前端一道前端面试题"><a href="#每天前端一道前端面试题" class="headerlink" title="每天前端一道前端面试题"></a>每天前端一道前端面试题</h4><blockquote>
-<p>本周在哔哩哔哩上注册了一个账号，尝试着录了几个视频《每天一道前端面试题》。<br>一气呵成，效果不是很好，但，是一次很有意思的尝试。  </p>
+<p>本周在哔哩哔哩上注册了一个<a href="https://space.bilibili.com/527313141?from=search&seid=1467228759580826016" target="_blank" rel="noopener">账号</a>，尝试着录了几个视频《每天一道前端面试题》。<br>一气呵成，效果不是很好，但，是一次很有意思的尝试。  </p>
 </blockquote>
 <h4 id="DOM变动发出声音"><a href="#DOM变动发出声音" class="headerlink" title="DOM变动发出声音"></a><a href="https://gist.github.com/tomhicks/6cb5e827723c4eaef638bf9f7686d2d8" target="_blank" rel="noopener">DOM变动发出声音</a></h4><blockquote>
 <p>👆 一段 JS 代码，只要插在网页里面，可以让 DOM 变动发出声音。如果 DOM 有改变，你就会听到声音。</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">	const audioCtx = new (window.AudioContext || window.webkitAudioContext)()</span><br><span class="line">const observer = new MutationObserver(function(mutationsList) &#123;</span><br><span class="line">  const oscillator = audioCtx.createOscillator()</span><br><span class="line"></span><br><span class="line">  oscillator.connect(audioCtx.destination)</span><br><span class="line">  oscillator.type = &quot;sine&quot;</span><br><span class="line">  oscillator.frequency.setValueAtTime(</span><br><span class="line">    Math.log(mutationsList.length + 5) * 880,</span><br><span class="line">    audioCtx.currentTime,</span><br><span class="line">  )</span><br><span class="line"></span><br><span class="line">  oscillator.start()</span><br><span class="line">  oscillator.stop(audioCtx.currentTime + 0.01)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">observer.observe(document, &#123;</span><br><span class="line">  attributes: true,</span><br><span class="line">  childList: true,</span><br><span class="line">  subtree: true,</span><br><span class="line">  characterData: true,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">const audioCtx = new (window.AudioContext || window.webkitAudioContext)()</span><br><span class="line">const observer = new MutationObserver(function(mutationsList) &#123;</span><br><span class="line">  const oscillator = audioCtx.createOscillator()</span><br><span class="line"></span><br><span class="line">  oscillator.connect(audioCtx.destination)</span><br><span class="line">  oscillator.type = &quot;sine&quot;</span><br><span class="line">  oscillator.frequency.setValueAtTime(</span><br><span class="line">    Math.log(mutationsList.length + 5) * 880,</span><br><span class="line">    audioCtx.currentTime,</span><br><span class="line">  )</span><br><span class="line"></span><br><span class="line">  oscillator.start()</span><br><span class="line">  oscillator.stop(audioCtx.currentTime + 0.01)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">observer.observe(document, &#123;</span><br><span class="line">  attributes: true,</span><br><span class="line">  childList: true,</span><br><span class="line">  subtree: true,</span><br><span class="line">  characterData: true,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
 <!-- 鸡汤一句 -->
 <h4 id="End"><a href="#End" class="headerlink" title="End"></a>End</h4><blockquote>

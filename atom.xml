@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://liugezhou.online/"/>
-  <updated>2020-04-12T07:35:53.045Z</updated>
+  <updated>2020-04-19T07:17:56.740Z</updated>
   <id>http://liugezhou.online/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>每周总结第三十九期</title>
+    <link href="http://liugezhou.online/2020/04/19/issue-39/"/>
+    <id>http://liugezhou.online/2020/04/19/issue-39/</id>
+    <published>2020-04-19T02:45:00.000Z</published>
+    <updated>2020-04-19T07:17:56.740Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>本周是2020年的第十六个周末。<br>这里记录过去一周，我的一些总结。</p></blockquote><!-- 制作一张最能反映过去一周的周图片 --><p><img src="http://img.liugezhou.online/blog/weekly39.png" alt="weekly-39"></p><a id="more"></a><!-- 一周最大感受 --><h4 id="Feeling"><a href="#Feeling" class="headerlink" title="Feeling"></a>Feeling</h4><blockquote><p>突然感觉自己就老了，对什么事情也提不起兴趣，对什么事情也毫无激情。<br>间歇性怀疑人生。</p></blockquote><h4 id="商品历史价格"><a href="#商品历史价格" class="headerlink" title="商品历史价格"></a><a href="http://www.lsjgcx.comlsjgcx.com" target="_blank" rel="noopener">商品历史价格</a></h4><blockquote><p>👆 淘宝，京东等商品历史价格查询，能更清晰了解商家的活动是否为虚假促销以及促销的力度。</p></blockquote><h4 id="斯诺登自传"><a href="#斯诺登自传" class="headerlink" title="斯诺登自传"></a><a href="https://a.temporaryrecord.com/" target="_blank" rel="noopener">斯诺登自传</a></h4><blockquote><p> 👆斯诺登自传《永久记录》—美国政府监控全世界网络信息的真相。<br>未删节的简体中文版 PDF 下载，作者本人授权。</p></blockquote><h4 id="Git-is-now-free-for-team"><a href="#Git-is-now-free-for-team" class="headerlink" title="Git is now free for team"></a>Git is now free for team</h4><blockquote><p>GitHub CEO Nat Friedman 在官方博客中正式宣布：即日起，所有用户都可以免费使用该平台的核心功能。无论是个人免费账户、还是商业项目团队，都可访问 GitHub 的无限私有存储库、以及每月 2000 分钟的 GitHub Actions 访问，后者是该公司的自动化和 CI / CD 平台。<br>本次重大的更新大概如下几点：</p><ul><li>对个人免费的私有仓库，现在对所有账号类型开放，取消协作者数量上限（之前个人私仓限制 3 个协作者）； </li><li>GitHub Pro 现在将包括 2GB 的 Packages 存储和 10GB 的数据传输；  </li><li>在官宣时间之前注册并已为团队服务付费的用户，订单到期之日按比例退款；  </li><li>自 5 月 14 日起，GitHub 团队每月将为私有仓库提供 3000 分钟的操作时间；  </li></ul></blockquote><h4 id="page-note-网页里的笔记"><a href="#page-note-网页里的笔记" class="headerlink" title="page note:网页里的笔记"></a>page note:网页里的笔记</h4><blockquote><p>一款Chrome浏览器插件，类似于之前记录的LINER。可以在网页中做笔记。</p></blockquote><h4 id="代码git仓库提交统计"><a href="#代码git仓库提交统计" class="headerlink" title="代码git仓库提交统计"></a>代码git仓库提交统计</h4><blockquote><p>git shortlog -sn 命令可以列出代码仓库的提交者统计。</p></blockquote><h4 id="Bash脚本教程"><a href="#Bash脚本教程" class="headerlink" title="Bash脚本教程"></a><a href="https://wangdoc.com/bash/" target="_blank" rel="noopener">Bash脚本教程</a></h4><blockquote><p>👆 历时三个月，本周阮一峰老师总结的《Bash脚本教程》发布。</p></blockquote><!-- 鸡汤一句 --><h4 id="End"><a href="#End" class="headerlink" title="End"></a>End</h4><blockquote><p>时光匆匆，好似在高中课堂那会我问自己 我应该干些什么一样。此时的生活也断不了会这么想。<br>后来，我明白我并不是想干些什么，我是想在年轻的时候多留下些什么，老了可以念想一下。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;本周是2020年的第十六个周末。&lt;br&gt;这里记录过去一周，我的一些总结。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;!-- 制作一张最能反映过去一周的周图片 --&gt;
+&lt;p&gt;&lt;img src=&quot;http://img.liugezhou.online/blog/weekly39.png&quot; alt=&quot;weekly-39&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="每周分享" scheme="http://liugezhou.online/categories/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
+    
+    
+      <category term="每周分享" scheme="http://liugezhou.online/tags/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
+    
+  </entry>
   
   <entry>
     <title>每周总结第三十八期</title>
@@ -481,30 +507,6 @@
     
       &lt;blockquote&gt;
 &lt;p&gt;这里记录过去一周，我的一些小总结。&lt;br&gt; &lt;img src=&quot;http://img.liugezhou.online/weekly25.jpeg&quot; alt=&quot;weekly-25&quot;&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="每周分享" scheme="http://liugezhou.online/categories/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
-    
-    
-      <category term="每周分享" scheme="http://liugezhou.online/tags/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>每周总结第二十四期</title>
-    <link href="http://liugezhou.online/2019/12/22/%E6%AF%8F%E5%91%A8%E6%80%BB%E7%BB%93%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%9B%9B%E6%9C%9F/"/>
-    <id>http://liugezhou.online/2019/12/22/每周总结第二十四期/</id>
-    <published>2019-12-22T10:08:00.000Z</published>
-    <updated>2019-12-23T01:34:54.000Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>这里记录过去一周，我的一些小总结。<br> <img src="http://img.liugezhou.online/weekly24.jpeg" alt="weekly-24"></p></blockquote><a id="more"></a><h4 id="Feeling"><a href="#Feeling" class="headerlink" title="Feeling"></a>Feeling</h4><blockquote><p>最近几年喝酒好似没有了年轻时的浪荡不羁。<br>每次喝毕总有一些稀奇古怪的感受，第二天醒来一阵落幕感袭来。<br>就立个flag：以后不喝酒了，Quit Drinking。  </p></blockquote><h4 id="羞愧"><a href="#羞愧" class="headerlink" title="羞愧"></a>羞愧</h4><blockquote><p>当aliya问我什么是车厘子的时候，我说不知道。<br>她说：你应该问此而羞愧，我说的羞愧指的并不是你不知道这个东西 而是你知道你不知道后还不知道。   </p></blockquote><h4 id="关于侵害用户权益行为的APP（第一批）通报"><a href="#关于侵害用户权益行为的APP（第一批）通报" class="headerlink" title="关于侵害用户权益行为的APP（第一批）通报"></a><a href="http://www.miit.gov.cn/n1146290/n1146402/n1146440/c7575066/content.html?tsrrbdcdnht=" target="_blank" rel="noopener">关于侵害用户权益行为的APP（第一批）通报</a></h4><blockquote><p>工业和信息化部信息通信管理局关于侵害用户权益行为的APP通报。   </p></blockquote><h4 id="Maskbook"><a href="#Maskbook" class="headerlink" title="Maskbook"></a><a href="https://mp.weixin.qq.com/s/ZQSy8JdFdoAPug2rJ7ZmJg" target="_blank" rel="noopener">Maskbook</a></h4><blockquote><p>【 Maskbook 给了我一个最直观的感受。这款产品以浏览器插件的形式，把 Facebook 网站变成了一个无法监视的大广场。你依然使用以前的身份账号在这个广场上玩耍 —— 认识新的人、发布自己的动态、交新的朋友 —— 但不同的是，你所发布的数据将被加密成一串串乱码，只有你指定的好友能解读出其中正确的含义。】</p></blockquote><h4 id="图表制作可以很简单-图表魔方-ChartCube"><a href="#图表制作可以很简单-图表魔方-ChartCube" class="headerlink" title="图表制作可以很简单 - 图表魔方 ChartCube"></a><a href="https://chartcube.alipay.com/" target="_blank" rel="noopener">图表制作可以很简单 - 图表魔方 ChartCube</a></h4><blockquote><p>ChartCube 针对快速图表制作的场景，只要有浏览器就可以使用。<br>无论你是谁，都可以用它。你可以完全不懂如何处理数据，你可以没听说过任何图表类库，你也不需要写一行代码。通过最直观的交互，谁都能制作出所需的图表。<br>利用 ChartCube 制作图表，过程非常简单。通常你需要三步：选择图表、配置图表、导出图表。</p></blockquote><h4 id="教育部关于同意某大学章程部分条款修改的批复"><a href="#教育部关于同意某大学章程部分条款修改的批复" class="headerlink" title="教育部关于同意某大学章程部分条款修改的批复"></a><a href="http://www.moe.gov.cn/srcsite/A02/zfs_gdxxzc/201912/t20191216_412276.html" target="_blank" rel="noopener">教育部关于同意某大学章程部分条款修改的批复</a></h4><blockquote><p>以上为教育部网站原文链接。</p></blockquote><h4 id="和“内存杀手”-Chrome-说再见-新版-Edge-即将发布"><a href="#和“内存杀手”-Chrome-说再见-新版-Edge-即将发布" class="headerlink" title="和“内存杀手” Chrome 说再见? 新版 Edge 即将发布"></a><a href="https://mp.weixin.qq.com/s/g9WlXAjw0gPWzjfw0cgGPA" target="_blank" rel="noopener">和“内存杀手” Chrome 说再见? 新版 Edge 即将发布</a></h4><blockquote><p>近日，有不少外媒表示，微软计划于 2020 年 1 月 15 日正式发布基于 Chromium 的 Edge 浏览器，该浏览器支持 Windows 10、Windows 7、Windows 8 和 macOS 等操作系统。同时，更有网友通过对 Edge Chromium Beta 实测后，称新版 Edge 比 Chrome 更好用，比 Firefox 的功能更完善.<br>微软还为 Edge 引入新的 logo 和图<br><img src="https://mmbiz.qpic.cn/mmbiz_gif/Pn4Sm0RsAujIolbibsroulrun7rebicTT0mfUoWsWyQYZJ8j6IGjhhd3aqx5SC9ibDVQ2wN4NvCZajCjf25p5b5Dg/640?wx_fmt=gif&wxfrom=5&wx_lazy=1" alt="logo"></p></blockquote><h4 id="文言文编程语言，可谓年度最骚语言"><a href="#文言文编程语言，可谓年度最骚语言" class="headerlink" title="文言文编程语言，可谓年度最骚语言"></a><a href="https://github.com/LingDong-/wenyan-lang" target="_blank" rel="noopener">文言文编程语言，可谓年度最骚语言</a></h4><blockquote><p>Github上一周左右斩获一万多星的项目。<br>这是一位卡内基梅隆大学（CMU）的大四学生开发。利用 NLP 的一些技术，将文言文程序语法转换到 JavaScript 或 Python 运行，并不是简单的将程序中的英文字符换成了中文。</p></blockquote><h4 id="浏览器安全"><a href="#浏览器安全" class="headerlink" title="浏览器安全"></a><a href="https://www.liugezhou.online/2019/12/16/No7.%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AE%89%E5%85%A8/" target="_blank" rel="noopener">浏览器安全</a></h4><blockquote><p>前段时间在《极客时间》上学了一个专栏，通篇略过，干货不少，但理解相当不够透彻，于是计划用几周的时间，对本专栏内容用作者的总结以及自己的相对逐字理解，来个通篇的文字记录学习，书读百遍，其义自现。<br>本篇是这个专栏的第七章，也是最后一章：<a href="https://www.liugezhou.online/2019/12/16/No7.%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AE%89%E5%85%A8/" target="_blank" rel="noopener">浏览器安全</a>。本章分为六讲。    </p><p>本章主要从Web页面安全、浏览器系统安全、浏览器网络安全三块内容展开。   </p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;这里记录过去一周，我的一些小总结。&lt;br&gt; &lt;img src=&quot;http://img.liugezhou.online/weekly24.jpeg&quot; alt=&quot;weekly-24&quot;&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>

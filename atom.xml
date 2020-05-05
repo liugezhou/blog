@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://liugezhou.online/"/>
-  <updated>2020-04-19T07:17:56.740Z</updated>
+  <updated>2020-05-05T09:41:03.042Z</updated>
   <id>http://liugezhou.online/</id>
   
   <author>
@@ -15,6 +15,57 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>每周总结第四十期</title>
+    <link href="http://liugezhou.online/2020/05/05/issue-40/"/>
+    <id>http://liugezhou.online/2020/05/05/issue-40/</id>
+    <published>2020-05-05T09:40:00.000Z</published>
+    <updated>2020-05-05T09:41:03.042Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>本周是2020年的第十八个周末。<br>这里记录过去一周，我的一些总结。</p></blockquote><!-- 制作一张最能反映过去一周的周图片 --><p><img src="http://img.liugezhou.online/blog/weekly40.jpg" alt="weekly-40"></p><a id="more"></a><!-- 一周最大感受 --><h4 id="Feeling"><a href="#Feeling" class="headerlink" title="Feeling"></a>Feeling</h4><blockquote><p>上周由于加班与项目烦心事较多，停更了一周。<br>当然，也是由于没有什么值得记录的素材与总结的心得。<br>虽然尽量保证每周周报不糊弄自己，可时间久了免不了心生疲惫与退意。每每想到虽然每周的总结做的不是很好，但至少还在坚持学习、坚持尝试关注一些东西，还是觉得有一些的收获。<br>祝大家五一中长假欢乐。</p><p>这篇文章开始写的时候是五月一号，而到如今发出五一过去了。</p></blockquote><h4 id="一句话新规"><a href="#一句话新规" class="headerlink" title="一句话新规"></a>一句话新规</h4><blockquote><p>最高人民法院正式规定，电子数据充当民事诉讼证据具有完全效力，从2020年5月1日开始实施。网页、博客、微博、短信、电子邮件、即时通信、用户注册信息、电子交易记录、登录日志等，都是有效证据。</p></blockquote><h4 id="负油价"><a href="#负油价" class="headerlink" title="负油价"></a>负油价</h4><blockquote><p>看到一个段子：<br>一月武汉加油，二月中国加油，三月世界加油，四月油加多了～<br>上周【暴跌300% 美油期货每桶-37美元】又一次让众人见证历史，中国银行原油宝客户抄底失败倒欠银行钱的事引起轩然大波。</p></blockquote><h4 id="丰巢快递柜与刷脸识别技术"><a href="#丰巢快递柜与刷脸识别技术" class="headerlink" title="丰巢快递柜与刷脸识别技术"></a>丰巢快递柜与刷脸识别技术</h4><blockquote><p>4月30日，丰巢快递柜开始进入收费时代，超12小时每半天收费0.5元，3元封顶。<br>一名公号大V针对此次进行了审核剖析：<a href="https://mp.weixin.qq.com/s/kqy0qC2i7VP2BHQXxNYnSQ" target="_blank" rel="noopener">《我的快递，什么时候能送货上门？》</a>.   </p><p>和这样事件大同小异的刷脸识别技术也被各公司应用的淋漓极致，比如北京银行新版的《北京银行电子银行转账服务条款》。<br>在进行转账时，北京银行提示：为确保您本人办理，我行将采集您的人像信息安全验证，并将切实保护您的信息安全，您是否同意？<br>如果你不同意你就得使用U盾，然后你U盾大概率是不知道早扔哪了，你还是必须使用人脸验证，否则你就没有进行转账的权利。  </p><p>与快递一样，人脸识别技术也在慢慢不断刷新人民的忍耐力，直到完全推行起来。<br>因不愿意“刷脸进门”，购买了动物园年卡的浙江理工大学副教授郭兵将杭州野生动物世界告上了法庭。<br>被称为国内“人脸识别第一案”刚刚过去半年，然并卵，栾冰然。</p></blockquote><h4 id="中国互联网往事"><a href="#中国互联网往事" class="headerlink" title="中国互联网往事"></a><a href="https://mp.weixin.qq.com/s/EhrdF4BvPzlqx3C_vvH5zA" target="_blank" rel="noopener">中国互联网往事</a></h4><blockquote><p>👆一篇长长的漫画，简要回顾中国互联网往事。</p></blockquote><h4 id="如何改进-NGINX-配置文件节省带宽？"><a href="#如何改进-NGINX-配置文件节省带宽？" class="headerlink" title="如何改进 NGINX 配置文件节省带宽？"></a><a href="https://www.nginx.com/blog/help-the-world-by-healing-your-nginx-configuration/" target="_blank" rel="noopener">如何改进 NGINX 配置文件节省带宽？</a></h4><blockquote><p>👆从阮老师博客看到的推荐：<a href="https://www.nginx.com/blog/help-the-world-by-healing-your-nginx-configuration/" target="_blank" rel="noopener">NGINX 官方的博客文章</a>，教大家五个小技巧，通过改进配置来节省带宽、提高性能。<br>对开发者来说对nginx的掌握非常必要，下周将这篇文章的翻译提上日程。</p></blockquote><h4 id="Gossip"><a href="#Gossip" class="headerlink" title="Gossip"></a><a href="https://pearmini.gitee.io/gossip/" target="_blank" rel="noopener">Gossip</a></h4><blockquote><p>一个制作幻灯片的在线工具，只需要少量拖拽和对齐操作，就可以生成通过浏览器播放的幻灯片。<br><cite>来自–阮一峰的网络日志</cite></p></blockquote><h4 id="VSCode插件"><a href="#VSCode插件" class="headerlink" title="VSCode插件"></a>VSCode插件</h4><blockquote><p>Polacode:用来生成代码截图。<br>better-comments:注释高亮。</p></blockquote><h4 id="Mac下安装redis"><a href="#Mac下安装redis" class="headerlink" title="Mac下安装redis"></a><a href="https://zhuanlan.zhihu.com/p/35945728" target="_blank" rel="noopener">Mac下安装redis</a></h4><blockquote><p>👆Mac下安装redis简易教程。  </p><ul><li>下载并安装 reids  </li><li>编译测试: sudo make test  </li><li>编译安装: sudo make install   </li><li>启动redis: redis-server </li><li>查看redis进程：ps -ef | grep redis  </li><li>在redis目录下建立bin，etc，db三个目录、配置(略) </li></ul></blockquote><h4 id="终极Shell"><a href="#终极Shell" class="headerlink" title="终极Shell"></a><a href="https://xie.infoq.cn/article/da5db7e0e60a4fb1529a5ba51" target="_blank" rel="noopener">终极Shell</a></h4><blockquote><p>👆池坚强，池老师的一篇总结【oh my zsh】项目的配置文章。<br>【oh my zsh】是国外一个程序员开发的让你快速上手zsh的项目。<br>我由于zsh或者bash的很大命令还不是很融会贯通，加上对shell的学习没有那么强烈，所以暂没有进行安装使用，这里做一个记录与了解。</p></blockquote><h4 id="panolens-js"><a href="#panolens-js" class="headerlink" title="panolens.js"></a><a href="https://pchen66.github.io/Panolens/" target="_blank" rel="noopener">panolens.js</a></h4><blockquote><p>一个360度全景照片浏览的 JS 库。官网有一些示例，非常酷。<br>我们生活，身边应用的有印象的就是买房、看房软件的360度环绕效果。 </p></blockquote><!-- 鸡汤一句 --><h4 id="End"><a href="#End" class="headerlink" title="End"></a>End</h4><blockquote><p>悲观者往往正确,乐观者往往成功.</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;本周是2020年的第十八个周末。&lt;br&gt;这里记录过去一周，我的一些总结。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;!-- 制作一张最能反映过去一周的周图片 --&gt;
+&lt;p&gt;&lt;img src=&quot;http://img.liugezhou.online/blog/weekly40.jpg&quot; alt=&quot;weekly-40&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="每周分享" scheme="http://liugezhou.online/categories/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
+    
+    
+      <category term="每周分享" scheme="http://liugezhou.online/tags/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Help the World by Healing Your NGINX Configuration</title>
+    <link href="http://liugezhou.online/2020/05/01/Help%20the%20World%20by%20Healing%20Your%20NGINX%20Configuration/"/>
+    <id>http://liugezhou.online/2020/05/01/Help the World by Healing Your NGINX Configuration/</id>
+    <published>2020-05-01T05:27:49.000Z</published>
+    <updated>2020-05-01T05:41:14.020Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="Title：通过完善配置你的NGIINX来帮助世界"><a href="#Title：通过完善配置你的NGIINX来帮助世界" class="headerlink" title="Title：通过完善配置你的NGIINX来帮助世界"></a>Title：通过完善配置你的NGIINX来帮助世界</h5><blockquote><p>在2014年德克萨斯大学的著名演讲中，Admiral William H. McRaven(威廉-H-麦克拉文上将)曾说过，如果你想改变世界，就从铺床开始。有时候，小事也会产生大的影响—-无论是早上整理好你的床铺，还是对网站的HTTP服务器配置做一些小小的改动，都会产生很大的影响。 </p><p>这样说是不是有点夸大其词呢？2020年的头几个月已经把我们这个世界上所有正常和合理的活动都搞掉了。由于COVID-19大流行病，地球上几乎一半的人口都被关在家里。互联网已经成为我们唯一的交流、娱乐、买菜、工作、教育等的方式和途径。 因此每周互联网的网络流量和服务器负载都比以往任何时候都要高。 根据BroadbandNow在3月25日发布的一份报告，”在我们分析的200个城市中，与之前的10周相比，有44%的城市在过去一周内出现了一定程度的网络退化。”。</p></blockquote><blockquote><p>Netflix和YouTube等主要媒体平台为了保护网络链路，都在限制其传输质量，让人们有更多的带宽用于工作、与家人沟通，或者在学校上虚拟课。但这仍然是不够的，随着网络质量逐渐恶化，很多服务器都出现了超负荷的情况。</p></blockquote><h5 id="您可以通过优化您的网站提供帮助"><a href="#您可以通过优化您的网站提供帮助" class="headerlink" title="您可以通过优化您的网站提供帮助"></a>您可以通过优化您的网站提供帮助</h5><blockquote><p>如果你拥有一个网站，并且能够管理其HTTP服务器的配置，你可以提供帮助。几个小的改动就可以减少用户产生的网络带宽和服务器的负载。这是一个双赢的局面：如果你的网站目前处于高负载下，你可以降低负载，使你能够为更多的用户提供服务，并可能降低你的成本。如果它不是在高负载下，更快的加载速度会改善你的用户体验（有时会对你在Google搜索结果中的位置产生积极影响）。<br>如果你有一个每月有数百万用户的应用程序，或者是一个有烘焙食谱的小博客，这其实并不重要–你消除的每一KB的网络流量都能为那些急需在线检查医学检验结果或创建包裹标签来给亲戚寄送重要的东西的人释放出流量。<br>在这篇博客中，我们介绍了一些简单但功能强大的NGINX配置。作为一个现实世界的例子，我们使用的是我们的朋友Rogalove的电子商务网站，Rogalove是一个生态化妆品制造商，我住在波兰，在这里。该网站是一个相当标准的WooCommerce安装，运行NGINX 1.15.9作为其网络服务器。为了我们的计算，我们假设这个网站每天有100个独特的用户，30%的用户是经常性访客，每个用户平均在一个会话中访问4个页面。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h5 id=&quot;Title：通过完善配置你的NGIINX来帮助世界&quot;&gt;&lt;a href=&quot;#Title：通过完善配置你的NGIINX来帮助世界&quot; class=&quot;headerlink&quot; title=&quot;Title：通过完善配置你的NGIINX来帮助世界&quot;&gt;&lt;/a&gt;Title：通过完善配
+      
+    
+    </summary>
+    
+      <category term="翻译" scheme="http://liugezhou.online/categories/%E7%BF%BB%E8%AF%91/"/>
+    
+    
+      <category term="nginx" scheme="http://liugezhou.online/tags/nginx/"/>
+    
+  </entry>
   
   <entry>
     <title>每周总结第三十九期</title>
@@ -458,55 +509,6 @@
     
       &lt;blockquote&gt;
 &lt;p&gt;这里记录过去一周，我的一些总结。&lt;br&gt;&lt;img src=&quot;http://img.liugezhou.online/weekly26.png&quot; alt=&quot;weekly-26&quot;&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="每周分享" scheme="http://liugezhou.online/categories/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
-    
-    
-      <category term="每周分享" scheme="http://liugezhou.online/tags/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Node入门</title>
-    <link href="http://liugezhou.online/2020/01/03/node%E5%85%A5%E9%97%A8/"/>
-    <id>http://liugezhou.online/2020/01/03/node入门/</id>
-    <published>2020-01-03T10:00:00.000Z</published>
-    <updated>2020-01-10T06:27:21.056Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><hr><blockquote><p>最近有一个node服务的项目需要去接手，于是在阅读学习各种有关node的文章，零零总总的看了一些文章，感觉还是一团浆糊，遂整理总结出此文。<br>此文并未加入自己的理解，主要是从网上查阅资料看到的一些入门教程，将教程中的讲解进行重点知识的记录、梳理。</p></blockquote><a id="more"></a><h3 id="廖雪峰官网的Node-js"><a href="#廖雪峰官网的Node-js" class="headerlink" title="廖雪峰官网的Node.js"></a><a href="https://www.liaoxuefeng.com/wiki/1022910821149312/1023025235359040" target="_blank" rel="noopener">廖雪峰官网的Node.js</a></h3><h4 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h4><hr><blockquote><p>在2009年，Ryan正式推出了基于JavaScript语言和V8引擎的开源Web服务器项目，命名为Node.js。虽然名字很土，但是，Node第一次把JavaScript带入到后端服务器开发，加上世界上已经有无数的JavaScript开发人员，所以Node一下子就火了起来。    </p></blockquote><blockquote><p>由于一群开发者对Joyent公司的策略不满(Node幕后一直由Joyent公司资助)，于2014年从Node.js项目fork出了io.js项目，决定单独发展，但两者实际上是兼容的。  </p></blockquote><blockquote><p>“分久必合，合久必分”,Joyent公司表示要和解,io.js项目又决定回归Node.js。    </p></blockquote><blockquote><p>将来io.js将首先添加新的特性，如果大家测试用得爽，就把新特性加入Node.js。io.js是“尝鲜版”，而Node.js是线上稳定版，</p></blockquote><h4 id="安装node-js和npm"><a href="#安装node-js和npm" class="headerlink" title="安装node.js和npm"></a>安装node.js和npm</h4><hr><blockquote><p>首先，从Node.js官网下载对应平台的安装程序.<br>安装完成后，在终端中输出：<code>node -v</code>,显示版本号，说明安装成功。</p></blockquote><blockquote><p>npm是Node.js的包管理工具（package manager）。<br>npm已经在Node.js安装的时候顺带装好了。我们在命令提示符或者终端输入<code>npm -v</code>,显示版本号。</p></blockquote><h4 id="第一个Node程序"><a href="#第一个Node程序" class="headerlink" title="第一个Node程序"></a>第一个Node程序</h4><hr><blockquote><p>命令行模式下，输入<code>node</code>回车，进入Node交互式环境。<br>或者也可以直接<code>node hello.js</code>运行一个.js文件。</p></blockquote><h4 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h4><hr><blockquote><p>在Node环境中，一个.js文件就称之为一个模块（module）。<br>使用模块可以避免函数名和变量名冲突。这是因为：JavaScript是一种<code>函数式编程语言</code>，它支持闭包。如果我们把一段JavaScript代码用一个函数包装起来，这段代码的所有“全局”变量就变成了函数内部的局部变量。而Node加载一个模块，其实就是对代码进行了一层包装。</p></blockquote><blockquote><p>要在模块中对外输出变量，用：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports = variable;</span><br></pre></td></tr></table></figure></blockquote><blockquote><p>输出的变量可以是任意对象、函数、数组等等。<br>要引入其他模块输出的对象，用：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var foo = require(&apos;other_module&apos;);</span><br></pre></td></tr></table></figure></blockquote><blockquote><p> 引入的对象具体是什么，取决于引入模块输出的对象。</p></blockquote><blockquote><p>关于Node.js的模块原理：<br>JavaScript语言本身并没有一种模块机制来保证不同模块可以使用相同的变量名。而是因为由于JavaScript是一种函数式编程语言，它支持闭包，Node加载一个js文件，就相当于把代码包装了一下，原来代码中的全局变量变成了函数内部的局部变量，因此每个模块中定义的全局变量并不会相互干扰。</p></blockquote><h4 id="基本模块"><a href="#基本模块" class="headerlink" title="基本模块"></a>基本模块</h4><hr><blockquote><p>Node.js内置的常用模块是为了实现基本的服务器功能，这些模块在浏览器环境中是无法执行的，因为它们的底层代码是用C/C++在Node.js运行环境中实现的。   </p></blockquote><blockquote><ul><li>global:相当于浏览器环境中的window。<br>在终端中输入node进入node环境，然后输入：<code>for (var k of Object.keys(global)) { console.log(k);}</code>,可以查看输出的结果，以更好理解global。</li></ul></blockquote><blockquote><ul><li>process: 是Node.js提供的一个对象，它代表当前Node.js进程。<br>如果我们想要在下一次事件响应中执行代码，可以调用process.nextTick().</li></ul></blockquote><h4 id="fs"><a href="#fs" class="headerlink" title="fs"></a>fs</h4><hr><blockquote><p>Node.js内置的fs模块是文件系统模块，负责读写文件。<br>fs模块同时提供了异步和同步的方法。 </p></blockquote><h5 id="异步读取文件"><a href="#异步读取文件" class="headerlink" title="异步读取文件"></a>异步读取文件</h5><blockquote><p>异步读取一个文件的代码如下： <code>fs.readFile(&#39;sample.txt&#39;,&#39;utf-8&#39;,function(err, data){})</code><br>异步读取时，传入的回调函数接受两个参数，当正常读取时，err参数为null，data参数为读取到的string。当读取发生错误时，err参数代表一个错误对象，data为undefined。<br>这也是Node.js标准的回调函数：第一个参数代表错误信息，第二个参数代表结果。后面我们会经常用到这种回调函数。 </p></blockquote><blockquote><p>读取二进制文件时，<code>fs.readFile(&#39;demo.png&#39;,function(err, data){}</code><br>不传入文件编码时，回调函数的data返回的是一个Buffer对象。在Node中，Buffer对象就是一个包含零个或任意个字节数的数组(与Array不同)。<br>Buffer对象转换为String：<code>data.toString(&#39;utf-8&#39;)</code>;<br>String对象转换为Buffer：<code>Buffer.from(data,&#39;utf-8&#39;)</code>;  </p></blockquote><h5 id="同步读取文件"><a href="#同步读取文件" class="headerlink" title="同步读取文件"></a>同步读取文件</h5><blockquote><p><code>fs.readFileSync()</code>;</p></blockquote><h5 id="写文件"><a href="#写文件" class="headerlink" title="写文件"></a>写文件</h5><blockquote><p><code>fs.writeFile(&#39;output.txt&#39;,data, function(err){}</code>;<br>writeFile()的参数依次为文件名、数据和回调函数。<br>和readFileSync()类似，写入文件也有一个同步方法：writeFileSync();  </p></blockquote><h5 id="stat"><a href="#stat" class="headerlink" title="stat"></a>stat</h5><blockquote><p>如果我们要获取文件大小、创建时间等信息，可以使用fs.stat()方法，此方法返回一个stat对象，能告诉我们目录文件详细信息。<br>是否是文件：<code>stat.isFile()</code>;<br>是否是目录：<code>stat.isDirectory()</code>;<br>若是文件，文件大小： <code>stat.size</code>;<br>若是文件，文件创建时间：<code>stat.birthtime</code>;<br>若是文件，文件修改时间：<code>stat.mtime</code>; </p></blockquote><blockquote><p><code>stat()</code>也有一个对应的同步方法：<code>statSync()</code>;</p></blockquote><h4 id="stream"><a href="#stream" class="headerlink" title="stream"></a>stream</h4><hr><blockquote><p>stream是Node.js提供的又一个仅在服务端可用的模块，目的是支持“流”这种数据结构。<br>流分为：stain(标准输入流)、staout(标准输出流)。   </p></blockquote><blockquote><p>读取文件流的核心语法是： <code>fs.createReadStream()</code>,代码见：<a href="https://github.com/liugezhou/koa/blob/master/basic/steam/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E6%96%87%E6%9C%AC.js" target="_blank" rel="noopener">文件读取文本</a>  </p></blockquote><blockquote><p>以流的形式写入文件，只有不断调用write()方法，代码见：<a href="https://github.com/liugezhou/koa/blob/master/basic/steam/%E6%96%87%E4%BB%B6%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6.js" target="_blank" rel="noopener">文本写入文件</a></p></blockquote><blockquote><p>将Readable流和Writable流串起来，所有的数据从Readable流进入Writable流，这种操作叫做pipe。在Node.js中，Readable流有一个pipe()方法，就是用来干这件事的。代码见：<a href="https://github.com/liugezhou/koa/blob/master/basic/steam/pipe.js" target="_blank" rel="noopener">pipe</a></p></blockquote><h4 id="http"><a href="#http" class="headerlink" title="http"></a>http</h4><hr><blockquote><p>要开发HTTP服务器程序，从头处理TCP连接，解析HTTP是不现实的。这些工作实际上已经由Node.js自带的http模块完成了。应用程序并不直接和HTTP协议打交道，而是操作http模块提供的request和response对象。</p></blockquote><blockquote><p>request对象封装了HTTP请求，我们调用request对象的属性和方法就可以拿到所有HTTP请求的信息；</p></blockquote><blockquote><p>response对象封装了HTTP响应，我们操作response对象的方法，就可以把HTTP响应返回给浏览器。</p></blockquote><h4 id="crypto"><a href="#crypto" class="headerlink" title="crypto"></a>crypto</h4><hr><blockquote><p>crypto模块的目的是为了提供通用的加密和哈希算法。用纯JavaScript代码实现这些功能不是不可能，但速度会非常慢。Nodejs用C/C++实现这些算法后，通过crypto这个模块暴露为JavaScript接口，这样用起来方便，速度也快。 </p></blockquote><blockquote><ul><li>MD5和SHA1是常用的哈希算法，用于给任意数据一个“签名”，这个签名通常用一个十六进制的字符串表示。   </li><li>Hmac算法：也是一种哈希算法，不同的是，它还需要加一个密钥。  </li><li>AES算法：是一种常用的对称加密算法，加解密都用同一个密钥。   </li><li>Diffie-Hellman：DH算法是一种密钥交换协议。  </li><li>RAS：RAS算法是一种对称加密算法</li></ul></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h3&gt;&lt;hr&gt;
-&lt;blockquote&gt;
-&lt;p&gt;最近有一个node服务的项目需要去接手，于是在阅读学习各种有关node的文章，零零总总的看了一些文章，感觉还是一团浆糊，遂整理总结出此文。&lt;br&gt;此文并未加入自己的理解，主要是从网上查阅资料看到的一些入门教程，将教程中的讲解进行重点知识的记录、梳理。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Node.js" scheme="http://liugezhou.online/categories/Node-js/"/>
-    
-    
-      <category term="node" scheme="http://liugezhou.online/tags/node/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>每周总结第二十五期</title>
-    <link href="http://liugezhou.online/2019/12/29/%E6%AF%8F%E5%91%A8%E6%80%BB%E7%BB%93%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%BA%94%E6%9C%9F/"/>
-    <id>http://liugezhou.online/2019/12/29/每周总结第二十五期/</id>
-    <published>2019-12-29T04:15:00.000Z</published>
-    <updated>2019-12-29T04:15:49.000Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>这里记录过去一周，我的一些小总结。<br> <img src="http://img.liugezhou.online/weekly25.jpeg" alt="weekly-25"></p></blockquote><a id="more"></a><h3 id="Feeling"><a href="#Feeling" class="headerlink" title="Feeling"></a>Feeling</h3><blockquote><p>何谓朋友？ </p><p>我曾以狭隘的思考巴拉巴拉的说道：</p><p>其实朋友这个词的出现，是因为身为有意识的个体在这个世界出现后.<br>多数时间的独处.<br>可能因为害怕孤单、可能因为享受快乐，也可能因为骄傲，等等的一些生活感受.<br>而使得想要有所依靠、分享、诉说，因而有了朋友。  </p><p>其实朋友这个名词不重要。<br>还在乎朋友是因为自己内心不够平静.<br>而且你没有发现，很多所谓朋友的交流:<br>在漫漫、而浮于表面—-没有内涵。<br>而且加上因为个体自我的期望没有实现，<br>因此才想要在社交中与他人的交流中去给予自我一些宽慰，这种心理的深处、<br>可能就是不自信、不充实。<br>而朋友出现了，一次次的缓解你这个感触，直到你没有这个感触。</p><p>aliya告诉我说： </p><p>因为你有我.<br>所以可能你会暂时天真的以为没有朋友也没事，<br>你也可以天真的这么突然自以为。<br>但是有的人不是啊，没对象没家庭，那怎么证明自己还活着？<br>就是朋友啊。<br>什么平静、自信、充实，也不过是活着的附加品。<br>朋友的存在就是证明着你还活着。<br>朋友的意义对于一些人来说，对于大多数还没找寻到人生的目标前，朋友是他们生命中一部分的意义。</p></blockquote><h3 id="重磅文件！中国户籍制度大变局"><a href="#重磅文件！中国户籍制度大变局" class="headerlink" title="重磅文件！中国户籍制度大变局"></a><a href="https://mp.weixin.qq.com/s/L4LLwv1Q5SLLqkuU66bLMA" target="_blank" rel="noopener">重磅文件！中国户籍制度大变局</a></h3><blockquote><p>2019年12月25日(本周三)，中共中央办公厅 国务院办公厅印发《关于促进劳动力和人才社会性流动体制机制改革的意见》，详见<a href="http://www.gov.cn/zhengce/2019-12/25/content_5463978.htm" target="_blank" rel="noopener">这里</a>.    </p><p>以下内容来自公众号《最爱大北京》的一些内容摘要，文章链接<a href="https://mp.weixin.qq.com/s/L4LLwv1Q5SLLqkuU66bLMA" target="_blank" rel="noopener">点击这里</a> </p><p><code>全面取消</code>城区常住人口300万以下的城市落户限制，<code>全面放宽</code>城区常住人口300万至500万的大城市落户条件。</p><p><code>完善</code>城区常住人口500万以上的超大特大城市<code>积分落户政策</code>，精简积分项目，确保社会保险缴纳年限和居住年限分数占主要比例。<br>以合肥、昆明、苏州、大连、南宁为代表的I型大城市将全面放宽落户条件，石家庄、南昌、无锡、珠海、常州等II型大城市，以及所有的三四线中小城市，都会<code>全面取消落户限制</code>。</p></blockquote><h3 id="一锤定音，70年产权到期后可续期，房产税要加速来了？"><a href="#一锤定音，70年产权到期后可续期，房产税要加速来了？" class="headerlink" title="一锤定音，70年产权到期后可续期，房产税要加速来了？"></a><a href="https://36kr.com/p/5152186?ktm_source=feed" target="_blank" rel="noopener">一锤定音，70年产权到期后可续期，房产税要加速来了？</a></h3><blockquote><p>70年产权的计算是从开发商拿地开始起计，不是从你买房或拿到房产证那一刻开始算的。<br>世界上其他国家的房产基本都是永久产权，为什么我们国家只有70年的产权呢？<br>产权到期了该怎么办？<br>房产税会怎么征收？</p><p>这是一篇来自2018年9月17日的一篇资讯。<a href="https://36kr.com/p/5152186?ktm_source=feed" target="_blank" rel="noopener">文章来源</a></p></blockquote><h3 id="问医生"><a href="#问医生" class="headerlink" title="问医生"></a>问医生</h3><blockquote><p>微信搜一搜上线健康搜索服务，其中，健康搜索服务中主要分为三方面：健康信息查询、在线问医生，和预约挂号。</p><p>在微信搜一搜中输入病的症状（“头疼”、“发烧”等），搜索结果将展示：病因、就医方法、治疗等说明和建议。</p><p>内容来源包含众多实名医生背书的权威医疗内容、和由权威医学专家团编写的常见疾病及药品百科词条的专业解读。</p></blockquote><h3 id="北京7号线双井站开通"><a href="#北京7号线双井站开通" class="headerlink" title="北京7号线双井站开通"></a><a href="http://www.bjnews.com.cn/news/2019/12/26/666505.html" target="_blank" rel="noopener">北京7号线双井站开通</a></h3><blockquote><p>昨日(周六)，北京7号线东延、八通线南延开通试运营。<br>7号线双井站开通使用，换乘通道将同步开通，不过工作日自首班车至上午10时，7号线和10号线双井站分别独立开放运营，其他时段可以在双井站换乘。</p></blockquote><h3 id="北京新能源指标申请数已超45万！新申请或等9年才有资购车"><a href="#北京新能源指标申请数已超45万！新申请或等9年才有资购车" class="headerlink" title="北京新能源指标申请数已超45万！新申请或等9年才有资购车"></a><a href="https://news.mydrivers.com/1/664/664083.htm" target="_blank" rel="noopener">北京新能源指标申请数已超45万！新申请或等9年才有资购车</a></h3><blockquote><p>12月25日，北京小客车指标办公发布了今年最后一期指标配置数据。新能源小客车指标申请个人共有458673个，单位共有11263家，本期申请人数增加1万人左右。<br>按照每年5.4万个新能源指标计算，且今年的指标已完全用尽。所以，如果按照现行规则不变，新能源指标新申请者或将等待9年，也就是2028年才能获得指标。<br><cite><a href="https://news.mydrivers.com/1/664/664083.htm" target="_blank" rel="noopener">文章来源</a></cite></p></blockquote><h3 id="牙医"><a href="#牙医" class="headerlink" title="牙医"></a>牙医</h3><blockquote><p>美国教育部公布官方数据，美国大学毕业生第一年收入最高的各校专业排名，前十名里面有九个是牙医专业.<br><cite>阮一峰的网络日志</cite></p></blockquote><h3 id="腾讯会议APP"><a href="#腾讯会议APP" class="headerlink" title="腾讯会议APP"></a>腾讯会议APP</h3><blockquote><p>腾讯推出的一块开会APP。<br>全平台运行，手机、电脑、平板、Web一键入会。小程序打开即用，不需要下载任何插件或客户端。支持手机录屏等功能。</p></blockquote><h3 id="圣诞节前成功断网！俄罗斯举行首次国家级断网演习引热议"><a href="#圣诞节前成功断网！俄罗斯举行首次国家级断网演习引热议" class="headerlink" title="圣诞节前成功断网！俄罗斯举行首次国家级断网演习引热议"></a><a href="https://mp.weixin.qq.com/s/XfJvYuMb-M3-kHpibPsOTg" target="_blank" rel="noopener">圣诞节前成功断网！俄罗斯举行首次国家级断网演习引热议</a></h3><blockquote><p>俄罗斯政府宣布，已完成一系列测试，成功地使该国脱离了全球互联网，从而使俄罗斯的RuNet成为全球最大的内部网。此举引发专家担忧和网友热议：这意味着人们将无法就本国正在发生的事情进行对话，而陷入自己的泡沫中。<br><cite><a href="https://mp.weixin.qq.com/s/XfJvYuMb-M3-kHpibPsOTg" target="_blank" rel="noopener">文章来源</a></cite></p></blockquote><h3 id="Tiobe"><a href="#Tiobe" class="headerlink" title="Tiobe"></a>Tiobe</h3><blockquote><p>TIOBE排行榜是根据互联网上有经验的程序员、<code>课程</code>和第三方厂商的数量，并使用搜索引擎（如Google、Bing、Yahoo!）以及Wikipedia、Amazon、YouTube统计出排名数据，只是反映某个编程语言的热门程度，并不能说明一门编程语言好不好，或者一门语言所编写的代码数量多少。<br>2019年12月编程语言排行榜,前十名依次为：<br>Java、C、Python、C++、c#、Visual Basic .NET、JavaScript、PHP、SQL、Swift。<br><cite><a href="https://hellogithub.com/report/tiobe/" target="_blank" rel="noopener">排名来源</a></cite></p></blockquote><h3 id="node入门"><a href="#node入门" class="headerlink" title="node入门"></a>node入门</h3><blockquote><p>这是一篇短小精悍的node入门教程。<br>为了更彻底、清楚的学习本教程，我在Github上整理了一个<a href="https://github.com/liugezhou/nodejs_getting_started" target="_blank" rel="noopener">仓库</a>。</p><p>这篇文章关于JavaScript的一点描述说道：<br>“尽管当想要增强页面的时候，使用jQuery总让你觉得很爽，但到最后，你顶多是个JavaScript用户，而非JavaScript开发者。”  </p><p>于是勉励自己，对JS的掌握，慢慢能成为其开发者，而不仅仅是其用户。</p></blockquote><h3 id="浏览器工作原理与实践"><a href="#浏览器工作原理与实践" class="headerlink" title="浏览器工作原理与实践"></a><a href="https://liugezhou.gitbook.io/liugezhou/" target="_blank" rel="noopener">浏览器工作原理与实践</a></h3><blockquote><p>历时两个月将《极客时间》上的一个专栏进行了通篇学习。并且整理自<a href="https://liugezhou.gitbook.io/liugezhou/" target="_blank" rel="noopener">Gitbook</a>.     </p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;这里记录过去一周，我的一些小总结。&lt;br&gt; &lt;img src=&quot;http://img.liugezhou.online/weekly25.jpeg&quot; alt=&quot;weekly-25&quot;&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>

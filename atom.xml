@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://liugezhou.online/"/>
-  <updated>2020-05-05T09:41:03.042Z</updated>
+  <updated>2020-05-12T13:24:48.039Z</updated>
   <id>http://liugezhou.online/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>每周总结第四十一期</title>
+    <link href="http://liugezhou.online/2020/05/12/issue-41/"/>
+    <id>http://liugezhou.online/2020/05/12/issue-41/</id>
+    <published>2020-05-12T12:00:00.000Z</published>
+    <updated>2020-05-12T13:24:48.039Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>本周是2020年的第十九个周末。<br>这里记录过去一周，我的一些总结。</p></blockquote><a id="more"></a><!-- 一周最大感受 --><h4 id="Feeling"><a href="#Feeling" class="headerlink" title="Feeling"></a>Feeling</h4><blockquote><p>这两周的周总结是干不下去了，上周的文章又拖到了今日[本周二]。 </p><p>眨眼之间，周总结写了四十周，差不多就是十个月，这家伙真要这么断了，也怪可惜的。<br>比较没有总结的欲望，是因为周总结带给我的是一次不如一次的体验。<br>为了让我欣慰的感觉到每周还在做点东西、而明显开始应付差事。  </p><p>记录下最近比较糟心的事–关于工作方面的：<br>在手的两个项目，其中一个由于跨部门合作，主要是为前端提供后端接口；<br>另一个比较舒心但总是中断的项目是：前后端分离但需共同兼顾的新项目。  </p><p>第一个项目基本接口服务已经完成，由于接手离职人员的代码，外加我对后端代码不是很待见，于是调试的一个个bug扰乱了我弱小的心灵。<br>第二个项目由于第一个项目的时刻扰乱，从来也不顺畅。<br>不仅如此，我也深感调试的这些bug对自我技术的提升不会有什么帮助，于是时刻提醒自己保持平常心。<br>这就是工作，一个职工在公司的首页任务：解决问题为先。 </p></blockquote><h4 id="教育部"><a href="#教育部" class="headerlink" title="教育部"></a>教育部</h4><blockquote><p>教育部消息，今年将招收40多万毕业生补充中小学和幼儿园教师队伍，并采取“先上岗、再考证”的举措。</p></blockquote><h4 id="未获用户同意投放快递柜属违法"><a href="#未获用户同意投放快递柜属违法" class="headerlink" title="未获用户同意投放快递柜属违法"></a>未获用户同意投放快递柜属违法</h4><blockquote><p>江苏省邮政管理局统计，省内15%的快递采取了快递柜方式投递。邮政管理部门表示，快递员未征得用户同意就投到快递柜属违法行为，用户可投诉快递企业。若企业不改正，可拨打025-12305申诉。</p></blockquote><h4 id="求助电话"><a href="#求助电话" class="headerlink" title="求助电话"></a>求助电话</h4><blockquote><p>抖音上看到的一个视频，法律相关的救助电话：<br>12348:法律援助。<br>12333:拖欠工资。<br>12309:举报村霸。</p></blockquote><h4 id="后浪"><a href="#后浪" class="headerlink" title="后浪"></a>后浪</h4><blockquote><p>B站后浪视频的爆火，引起一批90后00后的强烈方案与吐槽。有人写道：《后浪》是一次成功的事件营销，但也给B站敲响了警钟。<br>虽然不止于此，但还是忍不住网络思考者们的一堆吐槽。  </p><p>程序猿版<a href="https://mp.weixin.qq.com/s/8mMV-6ggKS-ES7M4x-h4Jg" target="_blank" rel="noopener">《溢出吧，后浪》</a></p></blockquote><h4 id="端到端加密"><a href="#端到端加密" class="headerlink" title="端到端加密"></a>端到端加密</h4><blockquote><p>我总结了一下,目前支持端对端加密的通信软件，欢迎补充。  </p><ul><li>Signal  </li><li>WhatsApp   </li><li>Wire  </li><li>Matrix  </li><li>Riot  </li><li>Line  </li><li>Keybase<br>根据我查到的资料，Telegram 默认不开启端对端加密，仅在使用一对一的“秘密聊天”功能时提供。<br>所以，Telegram 的群聊是不加密的<br><cite>–from  阮一峰的Twitter</cite><br>国内受政策影响，应该没有较为[流行]的端对端加密通信软件。<br>所谓端到端加密通讯软件，简单来说就是：<br>任何使用端到端加密（E2EE）的软件都可以保证只有您和收件人才能看到发送的内容。没有人可以拦截您正在传输的消息并阅读它们。<br><a href="https://www.cyclonis.com/zh-hans/what-is-end-to-end-encryption/" target="_blank" rel="noopener">什么是端到端加密</a></li></ul></blockquote><h4 id="Free-Mybatis-Plugin"><a href="#Free-Mybatis-Plugin" class="headerlink" title="Free Mybatis Plugin"></a>Free Mybatis Plugin</h4><blockquote><p>IDE插件：跳转到mapper以及从mapper文件中跳回,主要作用：  </p><ul><li>生成mapper xml文件  </li><li>快速从代码跳转到mapper及从mapper返回代码  </li><li>mybatis自动补全及语法错误提示 </li><li>集成mybatis generator gui界面</li></ul></blockquote><h4 id="END"><a href="#END" class="headerlink" title="END"></a>END</h4><blockquote><p>Okay.</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;本周是2020年的第十九个周末。&lt;br&gt;这里记录过去一周，我的一些总结。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="每周分享" scheme="http://liugezhou.online/categories/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
+    
+    
+      <category term="每周分享" scheme="http://liugezhou.online/tags/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
+    
+  </entry>
   
   <entry>
     <title>每周总结第四十期</title>
@@ -485,30 +509,6 @@
 &lt;p&gt;&lt;img src=&quot;http://img.liugezhou.online/weekly27.jpeg&quot; alt=&quot;weekly-27&quot;&gt;       &lt;/p&gt;
 &lt;center&gt;小狗钱钱&lt;/center&gt;
 
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="每周分享" scheme="http://liugezhou.online/categories/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
-    
-    
-      <category term="每周分享" scheme="http://liugezhou.online/tags/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>每周总结第二十六期</title>
-    <link href="http://liugezhou.online/2020/01/05/%E6%AF%8F%E5%91%A8%E6%80%BB%E7%BB%93%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%85%AD%E6%9C%9F/"/>
-    <id>http://liugezhou.online/2020/01/05/每周总结第二十六期/</id>
-    <published>2020-01-05T04:41:00.000Z</published>
-    <updated>2020-01-10T02:35:22.442Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>这里记录过去一周，我的一些总结。<br><img src="http://img.liugezhou.online/weekly26.png" alt="weekly-26"></p></blockquote><a id="more"></a><h3 id="Feeling"><a href="#Feeling" class="headerlink" title="Feeling"></a>Feeling</h3><blockquote><p>2019年年初定了些目标，下面是一些可以量化的年初计划以及完成情况：</p><table><thead><tr><th align="left">19年年初目标</th><th align="center">完成情况</th><th align="center">完成占比</th></tr></thead><tbody><tr><td align="left">学完Vue.js开发音乐WebAPP</td><td align="center">粗略勉强学完</td><td align="center">70%</td></tr><tr><td align="left">简书粉丝达到300</td><td align="center">粉丝198</td><td align="center">66%</td></tr><tr><td align="left">简书获得2500个喜欢</td><td align="center">获得1212个喜欢</td><td align="center">49%</td></tr><tr><td align="left">简书文章目标200篇</td><td align="center">完成44篇</td><td align="center">22%</td></tr><tr><td align="left">读书清单</td><td align="center">乱七八糟</td><td align="center">10%</td></tr><tr><td align="left">学习Python,完成Python两个专题的文章</td><td align="center">未学习</td><td align="center">0%</td></tr><tr><td align="left">学完Vue.js源码</td><td align="center">未学习</td><td align="center">0%</td></tr><tr><td align="left">整理100个前端方面的知识</td><td align="center">未开始</td><td align="center">0%</td></tr></tbody></table><p>下面是2019年可以量化的额外收获：    </p><table><thead><tr><th align="left">内容</th><th align="center">量化</th></tr></thead><tbody><tr><td align="left">重新搭建 个人博客</td><td align="center">完成日志61篇</td></tr><tr><td align="left">英语百词斩背单词</td><td align="center">坚持天数187天</td></tr><tr><td align="left">【六个周】公众号被封，转战【Dangerous Wakaka】</td><td align="center">18篇周总结，与个人博客冲突</td></tr><tr><td align="left">Github代码提交天数</td><td align="center">231Day</td></tr></tbody></table><p>总结：2019年是初尝试的一年，不禁感觉时间飞快，年初稀里糊涂定的小目标早已遗忘，每天在坚持做的一些事情，也是缺少动力激情下在苟延残喘。但即使做的不好，也要继续坚持做下去，除了更加用心以外，也希望量变可以引起质变，下面是刚刚想到的2020年的一些小目标。    </p><table><thead><tr><th align="left">新年目标</th><th align="center">量化标准</th></tr></thead><tbody><tr><td align="left">Github代码提交全绿</td><td align="center">完成天数/总天数为完成比率</td></tr><tr><td align="left">英语百词斩每日背一会单词</td><td align="center">总天数/打卡天数</td></tr><tr><td align="left">每周总结</td><td align="center">总周数/完成周数</td></tr><tr><td align="left">优化博客</td><td align="center">博客的重新搭建或者继续构建</td></tr><tr><td align="left">Node.js技术栈</td><td align="center">有关node的技术文章、项目等数据</td></tr><tr><td align="left">Vue.js基础到源码再深入</td><td align="center">源码视频学习、英文文档学习</td></tr></tbody></table></blockquote><h3 id="曼德拉效应"><a href="#曼德拉效应" class="headerlink" title="曼德拉效应"></a>曼德拉效应</h3><blockquote><p>2010年，美国作家菲安娜·布梅（Fiona Broome）惊奇地发现，有“南非国父”之称的南非政治家纳尔逊·曼德拉（Nelson Mandela）竟然还存于人世。而她记得明明在上世纪八十年代，曼德拉就死于狱中。她问过身边的人，也有不少人记得曼德拉早已逝世。</p><p>当2013年12月5日曼德拉因肺部感染去世时，疑惑与惊异再次出现：他不是早就死了吗?<br>这种记忆与现实的割裂，由此得名“曼德拉效应”（Mandela Effect）。</p><p>简单说来，“曼德拉效应”是指集体性的记忆与事实不符的现象。</p><p><cite><a href="https://zhuanlan.zhihu.com/p/55874734" target="_blank" rel="noopener">相关阅读*曼德拉效应背后的时间重置——世界的真相还是伪科学？</a></cite></p></blockquote><h3 id="农村土地确权"><a href="#农村土地确权" class="headerlink" title="农村土地确权"></a>农村土地确权</h3><blockquote><p>土地所有权、土地使用权和他项权利的确认、确定，简称确权。是依照法律、政策的规定确定某一范围内的土地（或称一宗地）的所有权、使用权的隶属关系和他项权利的内容。<br>每宗地的土地权属要经过土地登记申请、地籍调查、核属审核、登记注册、颁发土地证书等土地登记程序，才能得到最后的确认和确定。2013年1月31日下发的中央一号文件提出，全面开展农村土地确权登记颁证工作。<br>2018年3月，我国正式启动农村房屋不动产登记发证试点工作。<br><cite><a href="https://mp.weixin.qq.com/s/9YTzzn1Se8Fzs76HGnlpHg" target="_blank" rel="noopener">相关阅读*武安老家有房的快瞧瞧吧！这6种宅基地将不再属于自己，也无法继承</a></cite></p></blockquote><h3 id="京张高铁2019年12月30日开通运营"><a href="#京张高铁2019年12月30日开通运营" class="headerlink" title="京张高铁2019年12月30日开通运营"></a><a href="http://www.beijing.gov.cn/fuwu/bmfw/jtcx/ggts/t1611464.htm" target="_blank" rel="noopener">京张高铁2019年12月30日开通运营</a></h3><blockquote><p>12月30日，北京至张家口高速铁路(京张高铁)开通运营，崇礼铁路同步建成投用。<br>京张高铁全长174公里，最高设计时速350公里，全线设北京北、清河、沙河(不办理客运)、昌平、八达岭长城、东花园北、怀来、下花园北、宣化北、张家口10座车站。崇礼铁路自京张高铁下花园北站引出，至崇礼区太子城奥运村，线路全长53公里，设计时速250公里。</p></blockquote><h3 id="特斯拉Model3"><a href="#特斯拉Model3" class="headerlink" title="特斯拉Model3"></a>特斯拉Model3</h3><blockquote><p>特斯拉宣布，即日起，特斯拉调整全系Model 3销售政策：中国制造Model 3基础车价从35.58万元下调至32.38万元（包含基础版辅助驾驶功能）。</p><p>同时，根据国家政策，全系Model 3可以享受免征购置税政策，以及2.475万元的新能源补贴金额，中国制造Model 3补贴后售价为29.905万元。</p><p>1月7日，中国制造Model 3将正式对外交付。</p></blockquote><h3 id="gitignore"><a href="#gitignore" class="headerlink" title=".gitignore"></a><a href="https://github.com/github/gitignore" target="_blank" rel="noopener">.gitignore</a></h3><blockquote><p>GitHub 有一个十分详细的针对数十种项目及语言的 .gitignore 文件列表，你可以在 <a href="https://github.com/github/gitignore" target="_blank" rel="noopener">https://github.com/github/gitignore</a> 找到它.</p></blockquote><h3 id="推荐一些-Mac-上比较好用的软件"><a href="#推荐一些-Mac-上比较好用的软件" class="headerlink" title="推荐一些 Mac 上比较好用的软件"></a><a href="https://mp.weixin.qq.com/s/Sgk1f_xgFXphQfGdNAlypw" target="_blank" rel="noopener">推荐一些 Mac 上比较好用的软件</a></h3><blockquote><p>一篇推荐Mac上比较好用的一些工具。</p></blockquote><h3 id="2019年前端大事件回顾：流年笑掷，未来可期"><a href="#2019年前端大事件回顾：流年笑掷，未来可期" class="headerlink" title="2019年前端大事件回顾：流年笑掷，未来可期"></a><a href="https://juejin.im/post/5def782ce51d4558181d27ce" target="_blank" rel="noopener">2019年前端大事件回顾：流年笑掷，未来可期</a></h3><blockquote><p>回顾2019年前端和Web开发的主要事件，新闻和趋势.</p></blockquote><h3 id="CODEOWNERS"><a href="#CODEOWNERS" class="headerlink" title="CODEOWNERS"></a>CODEOWNERS</h3><blockquote><p>提交Github文件时，如果你想让自己提交的每一个文件都有一个owner的标识，可以在项目根目录下添加 CODEOWNERS文件。</p></blockquote><h3 id="2020"><a href="#2020" class="headerlink" title="2020"></a>2020</h3><blockquote><p>2020 = 404 + 404 + 404 + 404+ 404<br>2020 = 1024 + 996</p></blockquote><h3 id="node-js入门"><a href="#node-js入门" class="headerlink" title="node.js入门"></a><a href="https://www.liugezhou.online/2020/01/03/node%E5%85%A5%E9%97%A8/" target="_blank" rel="noopener">node.js入门</a></h3><blockquote><p>最近有一个node服务的项目需要去接手，于是在阅读学习各种有关node的文章，零零总总的看了一些文章，感觉还是一团浆糊，遂整理总结出此文。<br>此文并未加入自己的理解，主要是从网上查阅资料看到的一些入门教程，将教程中的讲解进行重点知识的记录、梳理。</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;这里记录过去一周，我的一些总结。&lt;br&gt;&lt;img src=&quot;http://img.liugezhou.online/weekly26.png&quot; alt=&quot;weekly-26&quot;&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://liugezhou.online/"/>
-  <updated>2020-05-12T13:24:48.039Z</updated>
+  <updated>2020-05-25T12:12:21.359Z</updated>
   <id>http://liugezhou.online/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>每周总结第四十二期</title>
+    <link href="http://liugezhou.online/2020/05/17/issue-42/"/>
+    <id>http://liugezhou.online/2020/05/17/issue-42/</id>
+    <published>2020-05-17T12:13:00.000Z</published>
+    <updated>2020-05-25T12:12:21.359Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>上周是2020年的第二十二个周末。(今天周一)<br>这里记录过去一周，我的一些总结。</p></blockquote><!-- 制作一张最能反映过去一周的周图片 --><p><img src="http://img.liugezhou.online/blog/weekly42.png" alt="weekly-42"></p><a id="more"></a><!-- 一周最大感受 --><h4 id="Feeling"><a href="#Feeling" class="headerlink" title="Feeling"></a>Feeling</h4><blockquote><p>好吧，继续拖更。<br>虽然此号无人问津，但是我却心有不甘。</p></blockquote><h4 id="爱love佑"><a href="#爱love佑" class="headerlink" title="爱love佑"></a>爱love佑</h4><blockquote><p>爱love佑小程序，爱佑慈善基金会官方小程序。<br>如果世界让你感到冷漠，如果生活让你疲惫不堪，如果爱心让你无处释放。<br>打开小程序，为远方还在忍受病痛折磨的孩子献上一份爱心吧。</p></blockquote><h4 id="KTFSR"><a href="#KTFSR" class="headerlink" title="KTFSR"></a>KTFSR</h4><blockquote><p>发送KTFSR到10086，可以开通骚扰电话拦截功能，不用额外下载软件。</p></blockquote><h4 id="楼盘真正销售情况"><a href="#楼盘真正销售情况" class="headerlink" title="楼盘真正销售情况"></a><a href="https://mp.weixin.qq.com/s/4rtdQ5gU6w0xY2lqSMEbWg" target="_blank" rel="noopener">楼盘真正销售情况</a></h4><blockquote><p>👆 这篇文章，通过分析武汉楼盘情况，告诉大家：<code>所有楼盘的销售情况都是在政府网站上全部公开的</code>。<br>作者在留言区：<code>所有城市楼盘销售情况都有的，国家规定必须公开，位置不同而已</code>。<br>然而我花了些时间找了一找，还是没有找到。  </p></blockquote><h4 id="One-Switch"><a href="#One-Switch" class="headerlink" title="One Switch"></a>One Switch</h4><blockquote><p>一款Mac桌面软件， 可以快速设置隐藏桌面、黑暗模式、保持亮屏、屏幕保护、清理屏幕等小工具。  </p><p>Mac上一些软件在安装时，会显示不能打开的提示，就像这块小工具软件，这个时候只要打开终端输入以下命令，就会开启Mac的安装设置：允许任何来源。<br><code>sudo spctl --master-disable</code></p></blockquote><h4 id="小技巧：Mac系统调整Launchpad图标大小"><a href="#小技巧：Mac系统调整Launchpad图标大小" class="headerlink" title="小技巧：Mac系统调整Launchpad图标大小"></a><a href="https://www.jianshu.com/p/60315dfcda53" target="_blank" rel="noopener">小技巧：Mac系统调整Launchpad图标大小</a></h4><blockquote><p>👆 Mac的启动台页面默认显示的图标比较大，而在我们使用一段时间后，会安装很多软件，图标看着着实不舒服。<br>在设置中找不到图标大小的设置，这个时候需要在终端中，执行如下命令：  </p><p>1、调整每一列显示图标数量，7 表示每一列显示7个<br> <code>defaults write com.apple.dock springboard-rows -int 7</code>  </p><p>2、调整每一行显示图标数量，这里我用的是8<br><code>defaults write com.apple.dock springboard-columns -int 8</code>  </p><p>3、由于修改了每一页显示图标数量，可能需要重置Launchpad<br><code>defaults write com.apple.dock ResetLaunchPad -bool TRUE;killall Dock</code></p></blockquote><h4 id="柠檬清理"><a href="#柠檬清理" class="headerlink" title="柠檬清理"></a><a href="https://lemon.qq.com/" target="_blank" rel="noopener">柠檬清理</a></h4><blockquote><p>一款Mac清理工具。</p></blockquote><h4 id="traditional"><a href="#traditional" class="headerlink" title="traditional"></a>traditional</h4><blockquote><p> jquery框架的ajax参数：<code>traditional</code>,其默认值是false。<br>而在请求接口如果需要传递一个参数为数组时，可以添加<code>traditionla:true</code>这一设置。</p></blockquote><h4 id="JustAuth"><a href="#JustAuth" class="headerlink" title="JustAuth"></a><a href="https://github.com/justauth/JustAuth" target="_blank" rel="noopener">JustAuth</a></h4><blockquote><p>👆 史上最全的整合第三方登录的开源库。目前已支持Github、Gitee、微博、钉钉、百度、Coding、腾讯云开发者平台、OSChina、支付宝、QQ、微信、淘宝、Google、Facebook、抖音、领英、小米、微软、今日头条、Teambition、StackOverflow、Pinterest、人人、华为、企业微信、酷家乐、Gitlab、美团、饿了么和推特等第三方平台的授权登录。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;上周是2020年的第二十二个周末。(今天周一)&lt;br&gt;这里记录过去一周，我的一些总结。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;!-- 制作一张最能反映过去一周的周图片 --&gt;
+&lt;p&gt;&lt;img src=&quot;http://img.liugezhou.online/blog/weekly42.png&quot; alt=&quot;weekly-42&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="每周分享" scheme="http://liugezhou.online/categories/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
+    
+    
+      <category term="每周分享" scheme="http://liugezhou.online/tags/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
+    
+  </entry>
   
   <entry>
     <title>每周总结第四十一期</title>
@@ -490,33 +516,6 @@
     
     
       <category term="browserslist" scheme="http://liugezhou.online/tags/browserslist/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>每周总结第二十七期</title>
-    <link href="http://liugezhou.online/2020/01/10/%E6%AF%8F%E5%91%A8%E6%80%BB%E7%BB%93%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%83%E6%9C%9F/"/>
-    <id>http://liugezhou.online/2020/01/10/每周总结第二十七期/</id>
-    <published>2020-01-10T12:41:00.000Z</published>
-    <updated>2020-01-12T12:54:32.000Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>本周是2020年的第二个周末。<br>这里记录过去一周，我的一些总结。  </p><p><img src="http://img.liugezhou.online/weekly27.jpeg" alt="weekly-27">       </p><center>小狗钱钱</center></blockquote><a id="more"></a><h3 id="Feeling"><a href="#Feeling" class="headerlink" title="Feeling"></a>Feeling</h3><blockquote><p>《小狗钱钱》是由四川少年儿童出版社出版的一本图书。<br>由王钟欣、余茜合译的一部来自德国作家博多～舍费尔(Bodo Schaffer)的作品。 </p><p>这是一部很有意思的理财启蒙书籍，短小精悍，很值得花几个小时一看。<br>我跟着书中的思路游走，发现了一件特别有意思的事：</p><p>开始小狗钱钱让我们的小女主人公列出十个愿望。<br>于是,我也随之去想我的十个愿望，想了很长时间，天马行空扯开的去做梦，最后也才想到八个。<br>这其中很有韵味、很有意思的一件事就是去想这十个愿望的过程。  </p><p>在每想一个愿望的历程中，都在无比的考验你对这个世界、对自己的一些认知，发散思维激发想象力。</p><p>书中讲到的愿望相册、成功日记、理财的一些小知识、一些鸡汤等等都非常的耐人寻味。    </p><p>推荐我的朋友们读一读。</p></blockquote><h3 id="vlog达人张子贺"><a href="#vlog达人张子贺" class="headerlink" title="vlog达人张子贺"></a><a href="https://space.bilibili.com/89944567?spm_id_from=333.788.b_765f7570696e666f.1" target="_blank" rel="noopener">vlog达人张子贺</a></h3><blockquote><p>「每30天学会一个新技能、新知识，并用文字和视频分享教程和指南。」   </p><p>本周看了这个vlog博主的几个视频，里面讲到Rap、冥想、谷歌面试、远离手机等等挑战以及他之前的一些分享。<br>获益匪浅，很是漂亮。期待下一个30天挑战。<br><cite>公众号《张子贺》</cite></p></blockquote><h3 id="北京公积金提取申请人可以网上办理"><a href="#北京公积金提取申请人可以网上办理" class="headerlink" title="北京公积金提取申请人可以网上办理"></a><a href="http://www.gov.cn/xinwen/2020-01/09/content_5467875.htm" target="_blank" rel="noopener">北京公积金提取申请人可以网上办理</a></h3><blockquote><p>2020年1月10日起，北京公积金提取申请人可以网上办理。<br>北京住房公积金网：<a href="http://gjj.beijing.gov.cn/" target="_blank" rel="noopener">http://gjj.beijing.gov.cn/</a>  </p><p><cite> <a href="http://gjj.beijing.gov.cn/web/zwgk/_300583/zxzysx/675803/index.html" target="_blank" rel="noopener">官网公告</a></cite></p></blockquote><h3 id="2020微信公开课PRO"><a href="#2020微信公开课PRO" class="headerlink" title="2020微信公开课PRO"></a><a href="https://baijiahao.baidu.com/s?id=1655219878385555103&wfr=spider&for=pc" target="_blank" rel="noopener">2020微信公开课PRO</a></h3><blockquote><p>1月9日，2020微信公开课PRO在广州举行。</p><ul><li>2020年1月9日，小程序框架正式开放，可支持小程序在硬件运行. </li><li>2020年1月10日，小程序“订阅消息”能力上线，</li></ul></blockquote><h3 id="深海网站"><a href="#深海网站" class="headerlink" title="深海网站"></a><a href="https://neal.fun/deep-sea/" target="_blank" rel="noopener">深海网站</a></h3><blockquote><p>这个网站可以不停往下拉，看看每个深度的海底都有些什么生物,可以一直拉到10000多一点米。<br>对于海洋、水下世界感兴趣的人儿来说，这真是一个不错的网站。      </p></blockquote><h3 id="isometric-Contributions"><a href="#isometric-Contributions" class="headerlink" title="isometric Contributions"></a>isometric Contributions</h3><blockquote><p>这个插件有点酷 ，Isometric Contributions：它可以让我们 Github 的贡献图变成 3D 效果：</p><p><img src="http://img.liugezhou.online/weekly27Github.png" alt="浏览器插件"></p></blockquote><h3 id="zsh-和-bash的区别-以及切换"><a href="#zsh-和-bash的区别-以及切换" class="headerlink" title="zsh 和 bash的区别 以及切换"></a>zsh 和 bash的区别 以及切换</h3><blockquote><p>从 macOS Catalina Beta 版开始，zsh (Z shell) 是所有新建用户帐户的默认 Shell。<br>zsh完美兼容bash，并且有比bash更强大的功能，用起来也比bash更优雅。</p><p>切换bash与zsh命令，在终端中输入：<code>chsh -s /bin/zsh</code>或者<code>chsh -s /bin/bash</code>。    </p><p>切换zsh后，shell由原来的bash变成了zsh，打开终端，发现终端中名字重复显示、或者其他异常显示情况，修改为： </p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">touch ~/.zshrc</span><br><span class="line">echo &quot;export PS1=&apos;%n %c $&apos;&quot; &gt;&gt; ~/.zshrc</span><br><span class="line">source ~/.zshrc</span><br></pre></td></tr></table></figure><blockquote><p>最后，如果你在bash命令行下的<code>.bash_profile</code>文件中有maven等的配置，需要添加至<code>.zshrc</code>中。</p></blockquote><h3 id="Mithril框架入门"><a href="#Mithril框架入门" class="headerlink" title="Mithril框架入门"></a><a href="https://mithril.js.org/" target="_blank" rel="noopener">Mithril框架入门</a></h3><blockquote><p>Mithril 是一个前端 JS 框架，只有 9.5KB，如果你感到 React 或 Vue 太重，应该看看这个框架。<br>Github Star数：11930.</p><p>周末在家花了一些时间，翻译了一下官方文档的介绍和安装使用模块，提交至:<a href="https://github.com/liugezhou/Mithril" target="_blank" rel="noopener">https://github.com/liugezhou/Mithril</a></p></blockquote><h3 id="npm-init-–yes"><a href="#npm-init-–yes" class="headerlink" title="npm init –yes"></a>npm init –yes</h3><blockquote><p>npm init 命令用来初始化一个简单的 package.json 文件。<br>而如果想要偷懒步免去一直按 enter，在命令后追加 –yes 参数即可，其作用与一路下一步相同。</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init --yes</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;本周是2020年的第二个周末。&lt;br&gt;这里记录过去一周，我的一些总结。  &lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://img.liugezhou.online/weekly27.jpeg&quot; alt=&quot;weekly-27&quot;&gt;       &lt;/p&gt;
-&lt;center&gt;小狗钱钱&lt;/center&gt;
-
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="每周分享" scheme="http://liugezhou.online/categories/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
-    
-    
-      <category term="每周分享" scheme="http://liugezhou.online/tags/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
     
   </entry>
   

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://liugezhou.online/"/>
-  <updated>2020-07-07T03:22:22.555Z</updated>
+  <updated>2020-07-12T10:37:36.289Z</updated>
   <id>http://liugezhou.online/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>每周总结第四十三期</title>
+    <link href="http://liugezhou.online/2020/07/12/issue-43/"/>
+    <id>http://liugezhou.online/2020/07/12/issue-43/</id>
+    <published>2020-07-12T07:50:00.000Z</published>
+    <updated>2020-07-12T10:37:36.289Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>本周是2020年的第二十九个周末。<br>这里记录过去一周，我的一些总结。</p></blockquote><!-- 制作一张最能反映过去一周的周图片 --><p><img src="http://img.liugezhou.online/blog/weekly43.jpeg" alt="weekly-43"></p><a id="more"></a><h4 id="Feeling"><a href="#Feeling" class="headerlink" title="Feeling"></a>Feeling</h4><blockquote><p>距离上一个周总结过去了快要俩个月了。<br>这匆匆忙忙的两个月里，并没有干什么。</p></blockquote><h4 id="A股暴涨"><a href="#A股暴涨" class="headerlink" title="A股暴涨"></a>A股暴涨</h4><blockquote><p>之前炒过一段时间股票，亏了两千块左右后就不玩了。<br>今年年初，手里有一点点闲钱，然后就入市。<br>我是个一点经验都没有的新手，在疫情期间入市后的一。时间一至在亏，然而这两周A股暴涨(尤其是7月6号，周一的涨幅，上证大盘近六个点)，从入市算起，竟然小赚万把块，这种捡来的钱，除了运气好、投机之外，想不到别的原因。<br>由此可见这次A股暴涨带给人的心灵冲击。</p></blockquote><h4 id="百度网盘白嫖新姿势"><a href="#百度网盘白嫖新姿势" class="headerlink" title="百度网盘白嫖新姿势"></a><a href="https://mp.weixin.qq.com/s/kIExcmla99aBBLoKC6O3Ig" target="_blank" rel="noopener">百度网盘白嫖新姿势</a></h4><blockquote><p>👆 这篇文章介绍了一个名为<code>度云简易分享地址提取</code>的网站，整个页面非常简单，没有多余粉饰和图片，只有几段文字介绍了网站如何下载百度网盘内的资源.<br>该网站地址是：<a href="http://pan.naifei.cc/" target="_blank" rel="noopener">http://pan.naifei.cc/</a>   </p><p>我从网盘里下载了一套视频，差不多不到13G，下载了大约半个小时到四十分钟左右吧。<br>不限速很爽。</p></blockquote><h4 id="如何自己写一个包发布到npm"><a href="#如何自己写一个包发布到npm" class="headerlink" title="如何自己写一个包发布到npm"></a>如何自己写一个包发布到npm</h4><blockquote><p>之前不知道发布一个npm包竟是如此简单。<br>简单到：在写好自己的包项目后，在npm注册一个账号，npm login登录成功后，npm publish就可以直接发布到npm官网。</p></blockquote><h4 id="webpack4-0"><a href="#webpack4-0" class="headerlink" title="webpack4.0"></a>webpack4.0</h4><blockquote><p>前几天在某交流群中，看到一群友分享的一个资源：慕课网讲师dell的实战课：《从基础到实战，手把手教带你掌握webpack4.0》。<br>拿到资源地址后，通过上面推荐的百度网盘资源下载，对整个视频整体了看了一遍，收获不小。<br>webpack的配置甚多。<br>现在的Vue-cli3.0与create-react-app在项目构建都不在看见webpack的身影。<br>对于Vue来说，自己出了一套规则，通过vue.config.js去配置webpack(vue将webpack封装)。对React脚手架来说，如果想要自己配置webpack，需要通过npm run ejects这个命令释放代码，配置的规则还是webpack。</p></blockquote><h4 id="Dan-Abramov"><a href="#Dan-Abramov" class="headerlink" title="Dan Abramov"></a>Dan Abramov</h4><blockquote><p>Dan Abramov–Redux的作者，受2014年Facebook的Flux架构以及函数式编程语言Elm启发。很快，Redux因其简单易学体积小在短时间内成为最热门的前端架构。<br>TA正在撰写 JavaScript 教程，还没有写完。只要在上面网址报名，每写好一部分就会通过邮件发给你。网址：<a href="https://justjavascript.com/" target="_blank" rel="noopener">https://justjavascript.com/</a></p></blockquote><h4 id="End"><a href="#End" class="headerlink" title="End"></a>End</h4><blockquote><p>创业公司不要专注于创造产品，而要专注于解决问题。  </p><p>看到抽象的东西，应该尽量使它变得具体；看到具体的东西，应该尽量使它变得抽象。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;本周是2020年的第二十九个周末。&lt;br&gt;这里记录过去一周，我的一些总结。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;!-- 制作一张最能反映过去一周的周图片 --&gt;
+&lt;p&gt;&lt;img src=&quot;http://img.liugezhou.online/blog/weekly43.jpeg&quot; alt=&quot;weekly-43&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="每周分享" scheme="http://liugezhou.online/categories/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
+    
+    
+      <category term="每周分享" scheme="http://liugezhou.online/tags/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
+    
+  </entry>
   
   <entry>
     <title>Proxy与Reflect</title>
@@ -493,30 +519,6 @@
     
     
       <category term="brew" scheme="http://liugezhou.online/tags/brew/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>每周总结第三十期</title>
-    <link href="http://liugezhou.online/2020/02/10/%E6%AF%8F%E5%91%A8%E6%80%BB%E7%BB%93%E7%AC%AC%E4%B8%89%E5%8D%81%E6%9C%9F/"/>
-    <id>http://liugezhou.online/2020/02/10/每周总结第三十期/</id>
-    <published>2020-02-10T02:00:00.000Z</published>
-    <updated>2020-02-16T15:00:39.597Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>本周是2020年的第七个周末。<br>这里记录过去一周，我的一些总结。<br><img src="http://img.liugezhou.online/weekly30.png" alt="weekly-30"></p></blockquote><a id="more"></a><h3 id="Feeling"><a href="#Feeling" class="headerlink" title="Feeling"></a>Feeling</h3><blockquote><p>关注什么就看到什么。自己却还是不知道要干什么。  </p></blockquote><h3 id="一个武汉女生的真实日记"><a href="#一个武汉女生的真实日记" class="headerlink" title="一个武汉女生的真实日记"></a>一个武汉女生的真实日记</h3><blockquote><p>2020年2月11日周一早晨在阅读一篇来自微信公众号”先生手账”的一篇文章时，转瞬被和谐。<br>再次进去时显示：“此内容被投诉且经审核涉嫌侵权，无法查看”，投诉类型为：侵犯知识产权。  </p><p>第一次心理变化是又删文？  </p><p>于是紧接着是去豆瓣查看主人公的日记，发现近期日记只剩下一篇2月3日的。</p><p>第二次心理变化是：豆瓣也删？(之后感觉可能是作者本人删除了)      </p><p>于是接着去微信搜一搜，搜索相关信息，发现好多个转载、摘抄”先生手账”的那篇文章都还在。<br>同时也发现，痛斥这篇文章的文章也好多。<br>痛斥文章的核心论点是：通过检索主人公日记可发现，小杭早已在1月31日的豆瓣广播中做出两点声明：一是不要未经允许使用作者信息公开，自媒体不要未经沟通就自行写此事。二为已发的请撤下删除。<br>第三次心理变化是这个”先生手账”公众号真无良，封的好。  </p><p>结论：真真假假，假假真，一些事情还是搞清楚些，心里边比较舒服一些。</p></blockquote><h3 id="傅颖当场站起来反驳佩洛西，现场响起掌声"><a href="#傅颖当场站起来反驳佩洛西，现场响起掌声" class="headerlink" title="傅颖当场站起来反驳佩洛西，现场响起掌声"></a><a href="https://mp.weixin.qq.com/s/QBOtcSyCtu1o_bJqXEKx9w" target="_blank" rel="noopener">傅颖当场站起来反驳佩洛西，现场响起掌声</a></h3><blockquote><p>上述链接，是2月16日，来自人民日报的一则报道。<br>比较好奇的是佩洛西到底说了什么？</p></blockquote><h3 id="沉默的大多数"><a href="#沉默的大多数" class="headerlink" title="沉默的大多数"></a>沉默的大多数</h3><blockquote><p>本周通读了一遍王小波的《沉默的大多数》，对一些句子做个记录。  </p><ul><li><p>我们这个民族总是有很多的理由封锁知识、钳制思想、灌输善良，因此有很多有才智之士在其一生中丧失了学习、交流、建树的机会，没有得到思想的乐趣就死掉了。  </p></li><li><p>在一切价值判断之中，最坏的一种是：想得太多、太深奥、超过了某些人的理解程度是一种罪恶。我们在体验思想的快乐时，并没有伤害到任何人；不幸的是，总有人觉得自己受了伤害。诚然，这种快乐不是每一个人都能体验到的，但我们不该对此负责任。我看不出有什么理由要取消这种快乐，除非把卑鄙的嫉妒计算在内——这世界上有人喜欢丰富，有人喜欢单纯；我未见过喜欢丰富的人妒恨、伤害喜欢单纯的人，我见到的情形总是相反。    </p></li><li><p>作为一个有过幸福和痛苦两种经历的人，我期望下一代人能在思想方面有些空间来感到幸福，而且这种空间比给我的大得多。而这些呼吁当然是对那些立志要当军代表和道德教师的人而发的。</p></li><li><p>对于学者来说，研究的结论会不会累及自身，是个带有根本性的问题。这主要取决于在学者周围有没有花剌子模君王类的人。  </p></li><li><p>东西方精神的最大区别在于西方人沉迷于物欲，而东方人精于人与人的关系；前者从征服中得到满足，后者从人与人的相亲相爱中汲取幸福. </p></li><li><p>人得到自己希求的东西就是幸福，那就言之成理。倘若说因为某件事是幸福的，所以我们就希求它，那就是错误的.   </p></li></ul></blockquote><h3 id="Chorme-80发布"><a href="#Chorme-80发布" class="headerlink" title="Chorme 80发布"></a>Chorme 80发布</h3><blockquote><p>2020年2月6日，Chrome 80 稳定版（版本号v80.0.3987.87）已正式面向 Windows、macOS、Linux、Android 和 iOS 全平台推送。<br>Chrome 80 值得关注的主要更新如下：</p><ul><li>引入全新的 cookie 分类模型 SameSite</li><li>静默通知</li><li>将所有混合音频和视频资源自动升级为 HTTPS</li><li>移除对 FTP 的支持</li><li>标签分组，每组可配置个性化颜色</li><li>支持 SVG 格式的图像，进一步降低站点资源占用</li><li>上线联系人选取和内容索引 API</li></ul></blockquote><h3 id="codecanyon-net"><a href="#codecanyon-net" class="headerlink" title="codecanyon.net"></a><a href="https://codecanyon.net/" target="_blank" rel="noopener">codecanyon.net</a></h3><blockquote><p>一个代码可以售卖的网站。<br>很多coder上传了各种代码，每个代码都明码标价。</p></blockquote><h3 id="一份炫酷的前端简历"><a href="#一份炫酷的前端简历" class="headerlink" title="一份炫酷的前端简历"></a><a href="https://www.strml.net/?source=imaring.com" target="_blank" rel="noopener">一份炫酷的前端简历</a></h3><blockquote><p>这个网站真酷。</p></blockquote><h3 id="一本全面的node入门文章"><a href="#一本全面的node入门文章" class="headerlink" title="一本全面的node入门文章"></a><a href="https://www.nodebeginner.org/index-zh-cn.html" target="_blank" rel="noopener">一本全面的node入门文章</a></h3><blockquote><p>学习node的启蒙文章。</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;本周是2020年的第七个周末。&lt;br&gt;这里记录过去一周，我的一些总结。&lt;br&gt;&lt;img src=&quot;http://img.liugezhou.online/weekly30.png&quot; alt=&quot;weekly-30&quot;&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="每周分享" scheme="http://liugezhou.online/categories/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
-    
-    
-      <category term="每周分享" scheme="http://liugezhou.online/tags/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
     
   </entry>
   

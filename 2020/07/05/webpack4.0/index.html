@@ -123,7 +123,7 @@
 
 
 
-  <meta name="keywords" content="webpack4.0,">
+  <meta name="keywords" content="六个周, liugezhou">
 
 
 
@@ -137,16 +137,16 @@
 
 
 <meta name="description" content="初识webpack  webpack is a module bundler.     webpack核心定义是一个模块打包工具。    webpack module：ES Module、CommonJS、CMD、AMD">
-<meta name="keywords" content="webpack4.0">
+<meta name="keywords" content="六个周的个人博客">
 <meta property="og:type" content="article">
-<meta property="og:title" content="webpack4.0">
+<meta property="og:title" content="六个周">
 <meta property="og:url" content="http://liugezhou.online/2020/07/05/webpack4.0/index.html">
 <meta property="og:site_name" content="六个周">
 <meta property="og:description" content="初识webpack  webpack is a module bundler.     webpack核心定义是一个模块打包工具。    webpack module：ES Module、CommonJS、CMD、AMD">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-07-06T15:19:32.380Z">
+<meta property="og:updated_time" content="2020-07-12T07:38:44.086Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="webpack4.0">
+<meta name="twitter:title" content="六个周">
 <meta name="twitter:description" content="初识webpack  webpack is a module bundler.     webpack核心定义是一个模块打包工具。    webpack module：ES Module、CommonJS、CMD、AMD">
 
 
@@ -183,7 +183,7 @@
 
 
 
-  <title>webpack4.0 | 六个周</title>
+  <title> | 六个周</title>
   
 
 
@@ -369,7 +369,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">webpack4.0</h2>
+          <h2 class="post-title" itemprop="name headline"></h2>
         
 
         <div class="post-meta">
@@ -381,7 +381,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-05T14:50:00+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-05T14:46:56+08:00">
                 2020-07-05
               </time>
             
@@ -397,34 +397,12 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-07-06T23:19:32+08:00">
-                2020-07-06
+              <time title="更新于" itemprop="dateModified" datetime="2020-07-12T15:38:44+08:00">
+                2020-07-12
               </time>
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/webpack4-0/" itemprop="url" rel="index">
-                    <span itemprop="name">webpack4.0</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -443,7 +421,7 @@
 
           
           
-             <span id="/2020/07/05/webpack4.0/" class="leancloud_visitors" data-flag-title="webpack4.0">
+             <span id="/2020/07/05/webpack4.0/" class="leancloud_visitors" data-flag-title>
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -468,7 +446,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  856
+                  2.4k
                 </span>
               
 
@@ -484,7 +462,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  9
                 </span>
               
             </div>
@@ -568,7 +546,125 @@
 <h4 id="HMR-hot-Module-Replacement-热模块替换"><a href="#HMR-hot-Module-Replacement-热模块替换" class="headerlink" title="[HMR] hot Module Replacement(热模块替换)"></a>[HMR] hot Module Replacement(热模块替换)</h4><blockquote>
 <p>场景：js动作添加一些模块后，如果修改css文件，webpack会将之前的行为给删除，HMR就是解决只修改css在，不更改行为的。</p>
 </blockquote>
+<h4 id="使用Babel处理ES6语法"><a href="#使用Babel处理ES6语法" class="headerlink" title="使用Babel处理ES6语法"></a>使用Babel处理ES6语法</h4><blockquote>
+<ul>
+<li>安装第三方依赖：’babel-loader’、‘@babel/core’：babel-loader只是webpack与babel的一个沟通桥梁，并不会将ES6代码转化为ES5代码。 </li>
+<li>继续安装@babel/preset-env，用于将ES6代码转为ES5代码。 </li>
+<li>配置webpack.config.js。 </li>
+<li>继续安装@babel/pollyfill(对低版本的一个完善)，使用的时候直接在全局引入即可:import ‘@babel/polyfill’,这样存在一个问题，打出的包非常的大，不爽，然后解决之：在webpack的配置文件中，这么配置：   </li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">  test: /\.js$/, </span><br><span class="line">  exclude: /node_modules/, </span><br><span class="line">  loader: &apos;babel-loader&apos;,</span><br><span class="line">  options:&#123;</span><br><span class="line">    presets: [[&apos;@babel/preset-env&apos;,&#123;</span><br><span class="line">      useBuiltIns:&apos;usage&apos;</span><br><span class="line">    &#125;]]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h4 id="Tree-Shaking"><a href="#Tree-Shaking" class="headerlink" title="Tree Shaking"></a>Tree Shaking</h4><blockquote>
+<ul>
+<li>Tree Shaking在webpack2.0之后引入。  </li>
+<li>在math.js这个模块中有两个方法add 和minu，在index中只调用add方法，去打包的时候，会将math中的两个方法均打包，这样做是没有必要，且会使得打包文件变大，Tree Shaking就是为了解决这个问题的。     </li>
+<li>Tree Shaking只支持ES Module(即import这种模块引入，require这种的不支持)。 </li>
+</ul>
+</blockquote>
+<blockquote>
+<p> mode为development环境：  </p>
+<ul>
+<li>默认没有Tree Shaking功能。配置的话需要在配置文件中添加 <code>optimization:{usedExports:true},</code> ，并且如果直接引入第三方资源，如果也不想做Tree Shaking，需要在package.json中配置（比如业务代码中使用了polyfill，添加： “sideEffects”:[“@babel/polyfill”],以忽略Tree Shaking对其作用）   </li>
+<li>在我们math这个例子中，并未用到polyfill , 我们继续在package.json中配置： “sideEffects”:false   </li>
+<li>这个时候我们用webpack打包，发现打包文件中，minu这个方法也被打包保留了下来，但是文件中有提示，告知我们只要add方法使用了。之所以有代码的保留是因为在开发环境下我们会调试代码，为了使得行行对应。  </li>
+</ul>
+</blockquote>
+<blockquote>
+<p>mode为production环境时：  </p>
+<ul>
+<li>Tree-Shaking才算真正生效。  </li>
+<li>在production环境下，Tree-Shaking默认已经配置好了，在webpack的配置文件下不需要对<code>optimization</code>配置。     </li>
+<li>但是仍然需要对package.json中的sideEffects进行配置。   </li>
+<li>使用webpack打包会发现生成一个.map的映射文件，且打包文件被压缩，注释去掉、minu有关的代码也剔除掉了。    </li>
+</ul>
+</blockquote>
+<h4 id="Development和Production模式的区分打包"><a href="#Development和Production模式的区分打包" class="headerlink" title="Development和Production模式的区分打包"></a>Development和Production模式的区分打包</h4><blockquote>
+<p> 通过前面的学习，我们知道在开发环境与生产环境下，打包方式是有区别。<br> 为了提高在不同开发模式下进行打包的效率，我们分别新建两个文件:webpack.dev.js和webpack.prod.js。这两个文件分别代码不同环境下的webpack配置。<br>然后在package.json文件中的script标签页配置两个命令即可：<br>‘dev’:’webpack-dev-server –config webpack-dev.js’<br>‘build’:’webpack –config webpack.prod.js’    </p>
+</blockquote>
+<blockquote>
+<p>到这里我们又发现一个问题，dev与prod的配置文件有特别多相同的代码，我们继续优化：<br>根目录下新建webpack.base.js,将dev与prod相同的代码摘出来放到base中去。<br>这个时候分别将dev/pro的文件与base文件进行合并输出配置：需要安装第三方模块：<code>webpack-merge</code> (此文默认安装的时候最新版本是5.0.8,使用merge报错，然后回退使用4.2.2版本)<br>最后分别在dev和prod中引入webpack-merge,通过<code>module.exports = merge(baseConfig, fileConfig)</code>即可。  </p>
+</blockquote>
+<h4 id="webpack和Code-Splitting-代码分割"><a href="#webpack和Code-Splitting-代码分割" class="headerlink" title="webpack和Code Splitting(代码分割)"></a>webpack和Code Splitting(代码分割)</h4><blockquote>
+<p>代码分割与webpack无关。</p>
+<ul>
+<li>这里的代码分割是指对代码进行分割，提高代码执行效率与性能。    </li>
+</ul>
+</blockquote>
+<blockquote>
+<p>Demo:</p>
+<ul>
+<li>安装第三方包：lodash(提供了一些工具方法)。      </li>
+<li>比如通过entry，将lodash打包成一个文件，业务代码打成一个文件。   </li>
+</ul>
+</blockquote>
+<blockquote>
+<p>webpack4可以自动的帮我们做代码分割：  </p>
+<ul>
+<li>第一种同步代码：在webpack.base.js中配置 optimization:{splitChunks:{chunks:’all’}},此时在开发环境下打包，会看到有一个新的打包文件：vendors~main.js.    </li>
+<li>第二种异步代码：异步加载第三方资源(import异步引入)，无需做任何配置，webpack会自动帮我们进行代码的分割。</li>
+</ul>
+</blockquote>
+<h4 id="Lazy-Loading懒加载，Chunk是什么？"><a href="#Lazy-Loading懒加载，Chunk是什么？" class="headerlink" title="Lazy Loading懒加载，Chunk是什么？"></a>Lazy Loading懒加载，Chunk是什么？</h4><blockquote>
+<p>懒加载是通过import异步加载一个模块，在执行的时候，再去引入。<br>路由懒加载等提升页面加载效率。<br>业务代码引入第三方资源的懒加载可以通过async、await。    </p>
+</blockquote>
+<blockquote>
+<p>chunk指的是整个项目完成打包后，dist下面有几个js文件就是指几个chunk。</p>
+</blockquote>
+<h4 id="CSS文件的代码分割"><a href="#CSS文件的代码分割" class="headerlink" title="CSS文件的代码分割"></a>CSS文件的代码分割</h4><blockquote>
+<p>webpack配置文件中的output有两个属性：fileName和chunkFilename，这两个的区别是：  </p>
+<p>CSS文件代码分割要使用在生产环境中。<br>需要安装<code>mini-css-extract-plugin</code>插件。<br>使用<code>optimize-css-assets-webpack-plugin</code>这个插件可以对代码进行合并和压缩。</p>
+</blockquote>
+<h4 id="shimming"><a href="#shimming" class="headerlink" title="shimming"></a>shimming</h4><blockquote>
+<p>代码或者打包过程的兼容性问题。    </p>
+<p>webpack自带一个webpack.procidePlugin({})插件–垫片。    </p>
+<p>如果想让每一个js文件的this指向window，安装<code>imports-loader</code>。<br>对webpack.base.js做一些配置。</p>
+</blockquote>
+<h4 id="Library打包"><a href="#Library打包" class="headerlink" title="Library打包"></a>Library打包</h4><blockquote>
+<p>自己发布一个npm包，在配置好自己的项目包之后，在npm官方注册账号，npm login登录，npm publish即可</p>
+</blockquote>
+<h4 id="Progessive-Web-Application-PWA"><a href="#Progessive-Web-Application-PWA" class="headerlink" title="Progessive Web Application - PWA"></a>Progessive Web Application - PWA</h4><blockquote>
+<ul>
+<li>安装第三方插件：workbox-webpack-plugin。   </li>
+<li>线上打包配置文件：添加plugin：new WorkboxPlugin.GenerateSW()。   </li>
+<li>在业务代码中，应该serverWorker，就可以将页面缓存住了。  </li>
+</ul>
+</blockquote>
+<h4 id="TypaScript的打包配置"><a href="#TypaScript的打包配置" class="headerlink" title="TypaScript的打包配置"></a>TypaScript的打包配置</h4><blockquote>
+<p> 总结至：<a href="https://github.com/liugezhou/typescript_webpack" target="_blank" rel="noopener">https://github.com/liugezhou/typescript_webpack</a></p>
+</blockquote>
+<h4 id="使用WebpackDevServer实现请求转发"><a href="#使用WebpackDevServer实现请求转发" class="headerlink" title="使用WebpackDevServer实现请求转发"></a>使用WebpackDevServer实现请求转发</h4><blockquote>
+<p>本节主要是对webpack的配置devServer属性中的proxy做了一个讲解，没啥内容。</p>
+</blockquote>
+<h4 id="WebpackDevServer解决单页面应用路由问题"><a href="#WebpackDevServer解决单页面应用路由问题" class="headerlink" title="WebpackDevServer解决单页面应用路由问题"></a>WebpackDevServer解决单页面应用路由问题</h4><blockquote>
+<p>devServer:historyApiFallback: true</p>
+</blockquote>
+<h4 id="Eslint在Webpack中的配置"><a href="#Eslint在Webpack中的配置" class="headerlink" title="Eslint在Webpack中的配置"></a>Eslint在Webpack中的配置</h4><blockquote>
+<ul>
+<li>npm i eslint -D   </li>
+<li>npx eslint –init   </li>
+<li>npm i babel-eslint -D</li>
+</ul>
+</blockquote>
+<h4 id="提升Webpack打包速度的方法"><a href="#提升Webpack打包速度的方法" class="headerlink" title="提升Webpack打包速度的方法"></a>提升Webpack打包速度的方法</h4><blockquote>
+<ol>
+<li>跟上技术的迭代：Npde、Npm、Yarn  </li>
+<li>在尽可能少的模块上应用Loader (合理使用exclude和include)    </li>
+<li>Plugin尽可能精简少用并确保可靠</li>
+<li>resolve参数合理配置(如果想引入默认为js或者jsx的文件，在webpack配置文件中加<code>resolve:{extensions:[&#39;.js&#39;,&#39;jsx&#39;]}</code>)</li>
+</ol>
+</blockquote>
+<h4 id="如何编写一个loader"><a href="#如何编写一个loader" class="headerlink" title="如何编写一个loader"></a>如何编写一个loader</h4><blockquote>
+<p>借助loader处理引用的文件。<br><a href="https://github.com/liugezhou/make-loader" target="_blank" rel="noopener">demo仓库源码</a></p>
+</blockquote>
+<h4 id="如何编写一个Plugin"><a href="#如何编写一个Plugin" class="headerlink" title="如何编写一个Plugin"></a>如何编写一个Plugin</h4><blockquote>
+<p>在打包的某个具体时刻做的操作(比如打包钱清空dist目录，打包完成的html自动生成等)<br><a href="https://github.com/liugezhou/make-plugin" target="_blank" rel="noopener">demo仓库源码</a></p>
+</blockquote>
+<h4 id="Bundler源码编写-模块分析"><a href="#Bundler源码编写-模块分析" class="headerlink" title="Bundler源码编写(模块分析)"></a>Bundler源码编写(模块分析)</h4><blockquote>
+<p><a href="https://github.com/liugezhou/make-bundle" target="_blank" rel="noopener">demo仓库源码</a></p>
+</blockquote>
+<h4 id="通过CreateReactApp深入学习Webpack配置"><a href="#通过CreateReactApp深入学习Webpack配置" class="headerlink" title="通过CreateReactApp深入学习Webpack配置"></a>通过CreateReactApp深入学习Webpack配置</h4><h4 id="通过VueCli3学习webpack配置"><a href="#通过VueCli3学习webpack配置" class="headerlink" title="通过VueCli3学习webpack配置"></a>通过VueCli3学习webpack配置</h4>
       
     </div>
     
@@ -620,12 +716,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/webpack4-0/" rel="tag"># webpack4.0</a>
-          
-        </div>
-      
 
       
       
@@ -644,6 +734,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/07/07/深入一下下这个ES6的Proxy与Reflect/" rel="prev" title="Proxy与Reflect">
+                Proxy与Reflect <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -725,7 +819,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">84</span>
+                  <span class="site-state-item-count">85</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -747,7 +841,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -817,7 +911,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#初识webpack"><span class="nav-number">1.</span> <span class="nav-text">初识webpack</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#搭建webpack环境"><span class="nav-number">2.</span> <span class="nav-text">搭建webpack环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#webpack的配置"><span class="nav-number">3.</span> <span class="nav-text">webpack的配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sourceMap的配置"><span class="nav-number">4.</span> <span class="nav-text">sourceMap的配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用WebpackDevServer提升开发效率"><span class="nav-number">5.</span> <span class="nav-text">使用WebpackDevServer提升开发效率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HMR-hot-Module-Replacement-热模块替换"><span class="nav-number">6.</span> <span class="nav-text">[HMR] hot Module Replacement(热模块替换)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#初识webpack"><span class="nav-number">1.</span> <span class="nav-text">初识webpack</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#搭建webpack环境"><span class="nav-number">2.</span> <span class="nav-text">搭建webpack环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#webpack的配置"><span class="nav-number">3.</span> <span class="nav-text">webpack的配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sourceMap的配置"><span class="nav-number">4.</span> <span class="nav-text">sourceMap的配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用WebpackDevServer提升开发效率"><span class="nav-number">5.</span> <span class="nav-text">使用WebpackDevServer提升开发效率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HMR-hot-Module-Replacement-热模块替换"><span class="nav-number">6.</span> <span class="nav-text">[HMR] hot Module Replacement(热模块替换)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用Babel处理ES6语法"><span class="nav-number">7.</span> <span class="nav-text">使用Babel处理ES6语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tree-Shaking"><span class="nav-number">8.</span> <span class="nav-text">Tree Shaking</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Development和Production模式的区分打包"><span class="nav-number">9.</span> <span class="nav-text">Development和Production模式的区分打包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#webpack和Code-Splitting-代码分割"><span class="nav-number">10.</span> <span class="nav-text">webpack和Code Splitting(代码分割)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Lazy-Loading懒加载，Chunk是什么？"><span class="nav-number">11.</span> <span class="nav-text">Lazy Loading懒加载，Chunk是什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS文件的代码分割"><span class="nav-number">12.</span> <span class="nav-text">CSS文件的代码分割</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#shimming"><span class="nav-number">13.</span> <span class="nav-text">shimming</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Library打包"><span class="nav-number">14.</span> <span class="nav-text">Library打包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Progessive-Web-Application-PWA"><span class="nav-number">15.</span> <span class="nav-text">Progessive Web Application - PWA</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TypaScript的打包配置"><span class="nav-number">16.</span> <span class="nav-text">TypaScript的打包配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用WebpackDevServer实现请求转发"><span class="nav-number">17.</span> <span class="nav-text">使用WebpackDevServer实现请求转发</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WebpackDevServer解决单页面应用路由问题"><span class="nav-number">18.</span> <span class="nav-text">WebpackDevServer解决单页面应用路由问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Eslint在Webpack中的配置"><span class="nav-number">19.</span> <span class="nav-text">Eslint在Webpack中的配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提升Webpack打包速度的方法"><span class="nav-number">20.</span> <span class="nav-text">提升Webpack打包速度的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何编写一个loader"><span class="nav-number">21.</span> <span class="nav-text">如何编写一个loader</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何编写一个Plugin"><span class="nav-number">22.</span> <span class="nav-text">如何编写一个Plugin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Bundler源码编写-模块分析"><span class="nav-number">23.</span> <span class="nav-text">Bundler源码编写(模块分析)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通过CreateReactApp深入学习Webpack配置"><span class="nav-number">24.</span> <span class="nav-text">通过CreateReactApp深入学习Webpack配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通过VueCli3学习webpack配置"><span class="nav-number">25.</span> <span class="nav-text">通过VueCli3学习webpack配置</span></a></li></ol></div>
             
 
           </div>
@@ -851,7 +945,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">113k</span>
+    <span title="Site words total count">115.3k</span>
   
 </div>
 

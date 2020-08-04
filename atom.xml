@@ -273,7 +273,7 @@
     <link href="http://liugezhou.online/2020/05/01/Help%20the%20World%20by%20Healing%20Your%20NGINX%20Configuration/"/>
     <id>http://liugezhou.online/2020/05/01/Help the World by Healing Your NGINX Configuration/</id>
     <published>2020-05-01T05:27:49.000Z</published>
-    <updated>2020-05-01T05:41:14.020Z</updated>
+    <updated>2020-08-04T05:42:23.213Z</updated>
     
     <content type="html"><![CDATA[<h5 id="Title：通过完善配置你的NGIINX来帮助世界"><a href="#Title：通过完善配置你的NGIINX来帮助世界" class="headerlink" title="Title：通过完善配置你的NGIINX来帮助世界"></a>Title：通过完善配置你的NGIINX来帮助世界</h5><blockquote><p>在2014年德克萨斯大学的著名演讲中，Admiral William H. McRaven(威廉-H-麦克拉文上将)曾说过，如果你想改变世界，就从铺床开始。有时候，小事也会产生大的影响—-无论是早上整理好你的床铺，还是对网站的HTTP服务器配置做一些小小的改动，都会产生很大的影响。 </p><p>这样说是不是有点夸大其词呢？2020年的头几个月已经把我们这个世界上所有正常和合理的活动都搞掉了。由于COVID-19大流行病，地球上几乎一半的人口都被关在家里。互联网已经成为我们唯一的交流、娱乐、买菜、工作、教育等的方式和途径。 因此每周互联网的网络流量和服务器负载都比以往任何时候都要高。 根据BroadbandNow在3月25日发布的一份报告，”在我们分析的200个城市中，与之前的10周相比，有44%的城市在过去一周内出现了一定程度的网络退化。”。</p></blockquote><blockquote><p>Netflix和YouTube等主要媒体平台为了保护网络链路，都在限制其传输质量，让人们有更多的带宽用于工作、与家人沟通，或者在学校上虚拟课。但这仍然是不够的，随着网络质量逐渐恶化，很多服务器都出现了超负荷的情况。</p></blockquote><h5 id="您可以通过优化您的网站提供帮助"><a href="#您可以通过优化您的网站提供帮助" class="headerlink" title="您可以通过优化您的网站提供帮助"></a>您可以通过优化您的网站提供帮助</h5><blockquote><p>如果你拥有一个网站，并且能够管理其HTTP服务器的配置，你可以提供帮助。几个小的改动就可以减少用户产生的网络带宽和服务器的负载。这是一个双赢的局面：如果你的网站目前处于高负载下，你可以降低负载，使你能够为更多的用户提供服务，并可能降低你的成本。如果它不是在高负载下，更快的加载速度会改善你的用户体验（有时会对你在Google搜索结果中的位置产生积极影响）。<br>如果你有一个每月有数百万用户的应用程序，或者是一个有烘焙食谱的小博客，这其实并不重要–你消除的每一KB的网络流量都能为那些急需在线检查医学检验结果或创建包裹标签来给亲戚寄送重要的东西的人释放出流量。<br>在这篇博客中，我们介绍了一些简单但功能强大的NGINX配置。作为一个现实世界的例子，我们使用的是我们的朋友Rogalove的电子商务网站，Rogalove是一个生态化妆品制造商，我住在波兰，在这里。该网站是一个相当标准的WooCommerce安装，运行NGINX 1.15.9作为其网络服务器。为了我们的计算，我们假设这个网站每天有100个独特的用户，30%的用户是经常性访客，每个用户平均在一个会话中访问4个页面。</p></blockquote>]]></content>
     
@@ -286,7 +286,7 @@
     
     </summary>
     
-      <category term="翻译" scheme="http://liugezhou.online/categories/%E7%BF%BB%E8%AF%91/"/>
+      <category term="文档翻译" scheme="http://liugezhou.online/categories/%E6%96%87%E6%A1%A3%E7%BF%BB%E8%AF%91/"/>
     
     
       <category term="nginx" scheme="http://liugezhou.online/tags/nginx/"/>

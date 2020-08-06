@@ -123,7 +123,7 @@
 
 
 
-  <meta name="keywords" content="六个周, liugezhou">
+  <meta name="keywords" content="Just JavaScript,">
 
 
 
@@ -136,17 +136,18 @@
 
 
 
-<meta name="description" content="六个周的个人博客">
-<meta name="keywords" content="六个周的个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="六个周">
-<meta property="og:url" content="http://liugezhou.online/categories/浏览器工作原理与实践/index.html">
+<meta name="description" content="简介  Dan Abramov:Redux作者，React社区大神。前一段时间发起了一个活动，通过邮箱订阅他写的一个小专栏，每写好一片草稿就会发到你的邮箱里面。这是这篇小专栏的第四节：‘ Counting the Values(Part 1) ’–“计算值(第一部分)”。下面内容是在原作基础上，用我的大白话翻译的文章内容，文章原文贴至末尾。">
+<meta name="keywords" content="Just JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Just JavaScript--04 | Counting the Values(Part 1)">
+<meta property="og:url" content="http://liugezhou.online/2020/07/26/JustJS-04/index.html">
 <meta property="og:site_name" content="六个周">
-<meta property="og:description" content="六个周的个人博客">
+<meta property="og:description" content="简介  Dan Abramov:Redux作者，React社区大神。前一段时间发起了一个活动，通过邮箱订阅他写的一个小专栏，每写好一片草稿就会发到你的邮箱里面。这是这篇小专栏的第四节：‘ Counting the Values(Part 1) ’–“计算值(第一部分)”。下面内容是在原作基础上，用我的大白话翻译的文章内容，文章原文贴至末尾。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-08-06T07:17:53.170Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="六个周">
-<meta name="twitter:description" content="六个周的个人博客">
+<meta name="twitter:title" content="Just JavaScript--04 | Counting the Values(Part 1)">
+<meta name="twitter:description" content="简介  Dan Abramov:Redux作者，React社区大神。前一段时间发起了一个活动，通过邮箱订阅他写的一个小专栏，每写好一片草稿就会发到你的邮箱里面。这是这篇小专栏的第四节：‘ Counting the Values(Part 1) ’–“计算值(第一部分)”。下面内容是在原作基础上，用我的大白话翻译的文章内容，文章原文贴至末尾。">
 
 
 
@@ -176,13 +177,13 @@
 
 
 
-  <link rel="canonical" href="http://liugezhou.online/categories/浏览器工作原理与实践/">
+  <link rel="canonical" href="http://liugezhou.online/2020/07/26/JustJS-04/">
 
 
 
 
 
-  <title>分类: 浏览器工作原理与实践 | 六个周</title>
+  <title>Just JavaScript--04 | Counting the Values(Part 1) | 六个周</title>
   
 
 
@@ -211,7 +212,7 @@
     
   
 
-  <div class="container sidebar-position-right ">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
     <a href="https://github.com/liugezhou" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#64CEAA; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -337,209 +338,452 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block category">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h2>浏览器工作原理与实践<small>分类</small>
-        </h2>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liugezhou.online/2020/07/26/JustJS-04/">
 
-      <h3 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liugezhou">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="http://img.liugezhou.online/time.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="六个周">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/12/16/No7.浏览器安全/" itemprop="url">
-              
-                <span itemprop="name">No7.浏览器安全</span>
-              
-            </a>
         
-      </h3>
+          <h2 class="post-title" itemprop="name headline">Just JavaScript--04 | Counting the Values(Part 1)</h2>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-12-16T20:40:00+08:00" content="2019-12-16">
-          12-16
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-26T19:15:00+08:00">
+                2020-07-26
+              </time>
+            
 
-    </header>
-  </article>
+            
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2020-08-06T15:17:53+08:00">
+                2020-08-06
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Just-JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">Just JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/07/26/JustJS-04/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/07/26/JustJS-04/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/07/26/JustJS-04/" class="leancloud_visitors" data-flag-title="Just JavaScript--04 | Counting the Values(Part 1)">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3.6k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  12
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2019/12/10/No6.浏览器中的网络/" itemprop="url">
-              
-                <span itemprop="name">No6.浏览器中的网络</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-12-10T20:40:00+08:00" content="2019-12-10">
-          12-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
+        <h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><blockquote>
+<p> Dan Abramov:Redux作者，React社区大神。<br>前一段时间发起了一个活动，通过邮箱订阅他写的一个小专栏，每写好一片草稿就会发到你的邮箱里面。<br>这是这篇小专栏的第四节：‘ Counting the Values(Part 1) ’–“计算值(第一部分)”。<br>下面内容是在原作基础上，用我的大白话翻译的文章内容，文章原文贴至末尾。 </p>
+</blockquote>
+<a id="more"></a>
+<blockquote>
+<p>在本模块中，我们将进一步了解JavaScript的世界及其贯穿它世界中的值。但在我们做到这一点之前，我们需要解决房间里的大象。JavaScript的世界是真实的吗？</p>
+</blockquote>
+<h4 id="JavaScript模拟-The-JavaScript-Simulation"><a href="#JavaScript模拟-The-JavaScript-Simulation" class="headerlink" title="JavaScript模拟(The JavaScript Simulation)"></a>JavaScript模拟(The JavaScript Simulation)</h4><blockquote>
+<p>我生活在JavaScript宇宙中的小行星上。  </p>
+</blockquote>
+<blockquote>
+<p>每当我’询问’JS一个问题的时候，它总是反馈我一个值。当然所有这些值都不是我想象出来的。变量、线、值–他们充斥在我世界的周围。我周围的JavaScript世界对我来说是绝对真实的，就像你生活的世界对你来说是真实的一样。  </p>
+</blockquote>
+<blockquote>
+<p>但有时，在下一行代码执行之前会有片刻的间隙。像下一个函数调用之前的空闲时间–好似矩阵里的一个小故障。在那些时刻，我看到了一个比我的大得多的世界。 </p>
+</blockquote>
+<blockquote>
+<p>当世界在我眼前显现的时候，它没有所谓变数和值，没有表达式，没有文字。相反，有夸克，原子，电子，水和生命。也许，您也是以这种方式对这个世界熟悉的？</p>
+</blockquote>
+<blockquote>
+<p>那个称为“人类”的生灵使用称为“计算机”的特殊机器来模拟我的 JavaScript宇宙。他们中有些人是出于娱乐目的。他们中有些人是牟利的。他们中有些人根本没有理由这样做。他们一时兴起，整个世界每天出生并死亡一万亿次。<br>毕竟，也许我的JavaScript世界不是那么真实。<br>这意味着有两种研究方法。  </p>
+</blockquote>
+<h4 id="从外部进行学习-Studying-From-the-Outside"><a href="#从外部进行学习-Studying-From-the-Outside" class="headerlink" title="从外部进行学习(Studying From the Outside)"></a>从外部进行学习(Studying From the Outside)</h4><blockquote>
+<p>研究我的JavaScript世界的一个方法就是从外部去研究它。<br>也许，您可能会专注于“真实”地模拟我的世界（一个JavaScript引擎）的工作方式。例如，您可能会了解到，这个文本字符串（ 我的世界中的一个值）是存储在硅芯片中的字节序列。<br>这种方法使我们将精力集中在人和计算机的物理世界上。一些教程采用这种方法。但是我的方法是不同的。</p>
+</blockquote>
+<h4 id="从内部进行学习-Studying-From-The-Inside"><a href="#从内部进行学习-Studying-From-The-Inside" class="headerlink" title="从内部进行学习(Studying From The Inside)"></a>从内部进行学习(Studying From The Inside)</h4><blockquote>
+<p>我们将从内部研究JavaScript世界。现在想象你跟我一起进入了JavaScript世界，并站在我旁边。我们将观察JS宇宙的定律并进行实验，就像物理学家在物理宇宙中所做的那样。</p>
+</blockquote>
+<blockquote>
+<p>我们将了解JavaScript世界的本质，而无需考虑其实现方式。这类似于物理学家如何谈论恒星的性质而无需回答物理世界是否真实的问题。这都不是问题！我们绝逼可以用自己的术语来描述它。</p>
+</blockquote>
+<blockquote>
+<p>我们的思维模式构建过程中并不会尝试回答诸如“计算机内存中的值如何表示？”之类的问题。这样的答案一直在变化！实际上，即使您的程序正在运行 ，该问题的答案也会改变。如果您听到有关JavaScript“真正”如何表示内存中的数字，字符串或对象的简单说明，则很可能是错误的。</p>
+</blockquote>
+<blockquote>
+<p>对我来说，每个字符串都是一个值。不是“指针”或“内存地址”，而是一个值 。 在我的宇宙中，值就足够了。不要让“内存单元”和其他低级隐喻使您分心以建立准确的JavaScript高级别思维模型。反正对于我们来说，理解起来都是乌龟在爬！</p>
+</blockquote>
+<blockquote>
+<p>如果您使用的是较低级的语言，请保留关于“通过引用传递”，“在堆栈上分配”，“在写时复制”等等的直觉。这些关于计算机工作方式的模型通常使人们更难以确定JavaScript程序中可能发生或不会发生的事情。我们将研究一些较低级别的细节，但仅在真正重要的地方 。它们可以作为我们心理模型的补充 ，而不是其基础。</p>
+</blockquote>
+<blockquote>
+<p>相反，我们思维模式的基础是我们的世界充满值。每个值都属于几种内置类型之一。其中一些是原始的，这使得这些类型的值不可变。变量是从代码中的名称指向值的“线”。而且，我们将继续在此基础上发展。</p>
+</blockquote>
+<blockquote>
+<p>至于一些奇怪的愿景，我不再对它们抱有太多的想法。我有要指出的问题，要问的问题和要调用的函数。我最好马上去做！</p>
+</blockquote>
+<blockquote>
+<p>当我看着它们时，星星是明亮的。  </p>
+</blockquote>
+<blockquote>
+<p>我眨眼时他们还在吗？</p>
+</blockquote>
+<blockquote>
+<p>我耸耸肩。</p>
+</blockquote>
+<blockquote>
+<p>“一探究竟去”</p>
+</blockquote>
+<h4 id="计算值-Counting-the-Values"><a href="#计算值-Counting-the-Values" class="headerlink" title="计算值(Counting the Values)"></a>计算值(Counting the Values)</h4><blockquote>
+<p>弗恩·伯爵（Count von Count）是我童年的榜样。如果您对芝麻街不熟悉，那你不了解他最喜欢的消遣就是数数。今天，弗恩·伯爵（Count von Count）将与我们一起数数JavaScript领域中的每个值。</p>
+</blockquote>
+<blockquote>
+<p>您可能想问： 数数值有什么意义？我们又不是上算术课。计数的本质是将事物彼此区分开。当您清楚地看到它们是两个不同的苹果时，您只能说有“两个苹果”。相互区分值是理解JavaScript 相等性的关键-这将是我们的下一个主题。</p>
+</blockquote>
+<blockquote>
+<p>就像维吉尔（Virgil）引导但丁（Dante）穿越地狱的9个循环一样，弗恩·伯爵（Count von Count）将陪伴我们穿越JavaScript的“星体”，去了解他的一些值：布尔值，数字，字符串等等。就让我当成是一次观光旅游吧。</p>
+</blockquote>
+<h4 id="undefined"><a href="#undefined" class="headerlink" title="undefined"></a>undefined</h4><blockquote>
+<p>我们将从Undefined类型开始旅程。弗恩·伯爵（Count von Count)很高兴得知该类型的值只有一个：undefined 。</p>
+</blockquote>
+<blockquote>
+<p>console .log( typeof ( undefined )); // “undefined” </p>
+</blockquote>
+<blockquote>
+<p>它被称为未定义，因此您可能会认为它不存在-但这是一个值，而且是一个非常真实的值！就像黑洞一样， undefined脾气暴躁，通常会带来麻烦。例如，从属性读取属性将破坏您的程序：<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let person = undefined ; console .log(person.mood); // TypeError!</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>那好吧。幸运的是，整个JavaScript世界中只有一个undefined 。您可能会想：为什么它根本存在？在JavaScript中，它表示无意中缺少值的概念。</p>
+</blockquote>
+<blockquote>
+<p>您可以通过编写undefined来在自己的代码中使用它，就像编写2或”hello” 。但是， undefined通常也 “自然发生”。在某些情况下，当JavaScript不知道您想要什么值时，它就会显示出来。例如，如果您忘记分配变量，它将指向undefined ：<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let bandersnatch; console .log(bandersnatch); // undefined</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>您可以将其指向另一个值，或根据需要再次指向undefined 。</p>
+</blockquote>
+<blockquote>
+<p>不要太在意它的名字。容易将undefined视为某种变量状态，例如“此变量尚未定义”。但这是一种完全误导的思考方式！实际上，如果您读取一个实际上未定义的变量（或在let声明之前），则会收到错误消息：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console .log(jabberwocky); // ReferenceError! let jabberwocky;</span><br></pre></td></tr></table></figure>
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+<blockquote>
+<p>这与未定义无关。<br>实际上， undefined是一个常规原始值，例如2或”hello” 。<br>一点要小心处理哦。</p>
+</blockquote>
+<h4 id="Null"><a href="#Null" class="headerlink" title="Null"></a>Null</h4><blockquote>
+<p>你可以把null看作是未定义的姐妹。它们的行为非常相似。例如，当您试图访问它的属性时，它也会引起麻烦：  </p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(mimsy.mood); // TypeError!</span><br></pre></td></tr></table></figure>
 
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2019/12/03/No5.浏览器中的页面/" itemprop="url">
-              
-                <span itemprop="name">No5.浏览器中的页面</span>
-              
-            </a>
-        
-      </h3>
+<blockquote>
+<p>与undefined类似，null是惟一具有自己类型的值。然而，null也是一个迷惑者。由于JavaScript中的一个遗留bug，它假装自己是一个对象： </p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(typeof(null)); // &quot;object&quot; (a lie!)</span><br></pre></td></tr></table></figure>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-12-03T20:40:00+08:00" content="2019-12-03">
-          12-03
-        </time>
-      </div>
+<blockquote>
+<p>您可能认为这意味着null是一个对象。 不要陷入这个陷阱！ 这是一个原始值，它的行为方式与对象不同。 不幸的是，typeof（null）是历史原因，我们必须永远忍受。<br>在实践中，null用于’有意’丢失值。为什么有null和undefined呢?这可以帮助我们区分编码错误(可能导致未定义undefined)和有效丢失数据(可能表示为null)。但是，这只是一个约定，JavaScript并不强制这种用法。有些人会尽量避开这两种情况!我不怪他们。</p>
+</blockquote>
+<h4 id="Boolean"><a href="#Boolean" class="headerlink" title="Boolean"></a>Boolean</h4><blockquote>
+<p>就像白天和黑夜一样，布尔值只有两个值:true和false。<br>我们可以使用它执行逻辑操作。  </p>
+</blockquote>
+<h4 id="Numbers"><a href="#Numbers" class="headerlink" title="Numbers"></a>Numbers</h4><blockquote>
+<p>JavaScript数字的行为与常规数学数字并不完全相同。下面是一个演示它的代码片段：  </p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(0.1 + 0.2 === 0.3); // false</span><br><span class="line">console.log(0.1 + 0.2 === 0.30000000000000004); // true</span><br></pre></td></tr></table></figure>
 
-    </header>
-  </article>
+<blockquote>
+<p>这看起来可能非常令人惊讶！与正常情况认知相反，这并不意味着JavaScript的Number有什么问题。此行为在不同的编程语言中很常见。它甚至有一个专用名字： 浮点数学 。</p>
+</blockquote>
+<blockquote>
+<p>你会发现，JavaScript无法实现我们在现实生活中使用的那种数学。浮点数学是“计算机数学”。不用太担心这个名称或它如何工作。很少有人知道它的所有微妙之处，这就是重点！它在实践中效果很好，大多数时候您都不会考虑它。不过，让我们快速看一下它与众不同的原因。</p>
+</blockquote>
+<h5 id="颜色和数字-Colors-and-Numbers"><a href="#颜色和数字-Colors-and-Numbers" class="headerlink" title="颜色和数字(Colors and Numbers)"></a>颜色和数字(Colors and Numbers)</h5><blockquote>
+<p>您是否曾经使用扫描仪将实物照片或文档转换为数字文档？这个类比可以帮助我们理解JavaScript的Number。</p>
+</blockquote>
+<blockquote>
+<p>扫描仪通常最多可分辨1600万种颜色。如果您用红色蜡笔绘制图片并进行扫描，则扫描后的图像也会发出红色-但它将具有扫描仪从这1600万种颜色中挑选出的最接近的红色。因此，如果您有两个颜色略有不同的红色蜡笔，扫描仪可能会以为它们的颜色完全相同！</p>
+</blockquote>
+<blockquote>
+<p>可以说，扫描仪将颜色视为精度有限。</p>
+</blockquote>
+<blockquote>
+<p>浮点数学是相似的。在实际数学中，存在无限数量的数字。但是在浮点数学中， 只有18百万个五位数。因此，当我们在代码中编写数字或进行数字计算时，JavaScript会选择它知道的最接近的数字，就像我们的扫描仪对颜色一样。</p>
+</blockquote>
+<blockquote>
+<p>换句话说，JavaScript将数字视为具有有限的精度。</p>
+</blockquote>
+<blockquote>
+<p>我们可以想象一个轴上的所有JavaScript数字。我们离0越近，精度数字就越多，并且它们彼此“坐”得越近：</p>
+</blockquote>
+<p>当我们从任一方向从0移动时，我们开始失去精度。在某些时候，即使是两个最接近的JavaScript数字也相距比1还远：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">console.log(Number.MAX_SAFE_INTEGER);     // 9007199254740991</span><br><span class="line">console.log(Number.MAX_SAFE_INTEGER + 1); // 9007199254740992</span><br><span class="line">console.log(Number.MAX_SAFE_INTEGER + 2); // 9007199254740992</span><br><span class="line">console.log(Number.MAX_SAFE_INTEGER + 3); // 9007199254740994</span><br><span class="line">console.log(Number.MAX_SAFE_INTEGER + 4); // 9007199254740996</span><br><span class="line">console.log(Number.MAX_SAFE_INTEGER + 5); // 9007199254740996</span><br></pre></td></tr></table></figure>
 
+<blockquote>
+<p>幸运的是， <code>Number.MIN_SAFE_INTEGER</code>和<code>Number.MAX_SAFE_INTEGER</code>之间的任何整数都是准确的。这就是为什么10 + 20 === 30 。</p>
+</blockquote>
+<blockquote>
+<p>但是当我们写0.1或0.2 ，我们得不到精确的 0.1和0.2 。我们获得JavaScript中最接近的可用数字。它们几乎完全相同，但是可能会有微小的差异。这些微小的差异加起来，这就是为什么0.1 + 0.2不能提供与编写0.3 完全相同的数字的原因。</p>
+</blockquote>
+<blockquote>
+<p>如果这仍然令人困惑，请不要担心。您可以了解有关浮点数学的更多信息 ，但您已经比开始编写本指南时了解的更多！除非您使用财务应用程序，否则您不必担心这一点。</p>
+</blockquote>
+<h5 id="特殊号码-Special-Numbers"><a href="#特殊号码-Special-Numbers" class="headerlink" title="特殊号码(Special Numbers)"></a>特殊号码(Special Numbers)</h5><blockquote>
+<p>值得注意的是，浮点数学运算包含一些特殊数字 。您可能偶尔会遇到NaN ， Infinity ， -Infinity和-0 。它们的存在，因为有时你可能会像执行操作1 / 0和JavaScript需要以某种方式代表他们的结果。浮点数学标准指定了它们的工作方式以及使用它们时会发生什么。<br>这是代码中可能出现特殊数字的方式：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let scale = 0;</span><br><span class="line">let a = 1 / scale; // Infinity</span><br><span class="line">let b = 0 / scale; // NaN</span><br><span class="line">let c = -a; // -Infinity</span><br><span class="line">let d = 1 / c; // -0</span><br></pre></td></tr></table></figure>
 
-      
-        
+<blockquote>
+<p>在这些特殊数字中， NaN特别有趣。 NaN是0 / 0和其他一些无效数学的结果，表示“不是数字”。<br>您可能会对为什么它声称自己是数字感到困惑：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console .log( typeof ( NaN )); // &quot;number&quot;</span><br></pre></td></tr></table></figure>
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2019/11/25/No4.浏览器中的页面循环系统/" itemprop="url">
-              
-                <span itemprop="name">No4.浏览器中的页面循环系统</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-11-25T20:40:00+08:00" content="2019-11-25">
-          11-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2019/11/21/No3.V8工作原理/" itemprop="url">
-              
-                <span itemprop="name">No3.V8工作原理</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-11-21T21:40:00+08:00" content="2019-11-21">
-          11-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2019/11/11/No2.浏览器中的JavaScript执行机制/" itemprop="url">
-              
-                <span itemprop="name">No2.浏览器中的JavaScript执行机制</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-11-11T21:40:00+08:00" content="2019-11-11">
-          11-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2019/11/03/No1.宏观视角下的浏览器/" itemprop="url">
-              
-                <span itemprop="name">No1.宏观视角下的浏览器</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-11-03T23:20:00+08:00" content="2019-11-03">
-          11-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+<blockquote>
+<p>但是，这里没有技巧。从JavaScript角度来看， NaN 是一个数值。它不是null，未定义，字符串或其他某种类型。但是在浮点数学中，该术语的名称是“不是数字” 。因此它是一个数值。它恰好被称为“非数字”，因为它表示无效的结果。<br>使用这些特殊数字编写代码并不常见。但是，它们可能由于编码错误而出现。因此，知道它们的存在也是令人欢乐的。</p>
+</blockquote>
+<h4 id="未完待续-To-be-Continuted"><a href="#未完待续-To-be-Continuted" class="headerlink" title="未完待续(To be Continuted)"></a>未完待续(To be Continuted)</h4><blockquote>
+<p>该模块分为两部分。我们已经到了第1部分的结尾。我们现在休息一会儿。让我们回顾一下到目前为止我们已经数了多少个值！ </p>
+</blockquote>
+<blockquote>
+<ul>
+<li>Undefined ：只有一个值， undefined 。</li>
+<li>Null ：仅一个值， null 。</li>
+<li>Booleans true和false 。</li>
+<li>Numbers ：每个浮点数学数字一个值。</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>我们还了解了一些有关JavaScript数字的有趣事实：  </p>
+<ul>
+<li>并非所有数字都可以用JavaScript完美地表示。它们的小数部分提供接近0更高精度，而远离它的精度更低。我们可以说它们的小数点是“浮动”的。 </li>
+<li>无效的数学运算（例如1 / 0或0 / 0是特殊的。 NaN就是这样的数字之一。它们可能是由于编码错误而出现的。  </li>
+<li>typeof(NaN)是一个数字，因为NaN是一个数值。这就是所谓的“非数”，因为它代表了一个“无效”号的主意 。  </li>
+<li>在第二部分中，我们将继续观光。我们将研究BigInts，字符串，对象和函数-并尝试将它们全部计算在内。  </li>
+</ul>
+</blockquote>
 
       
     </div>
+    
+    
+    
 
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="http://img.liugezhou.online/wechatDangerous.jpg" alt="liugezhou wechat" style="width: 200px; max-width: 100%;">
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Enjoy Yourself EveryDay！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="liugezhou 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="liugezhou 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Just-JavaScript/" rel="tag"># Just JavaScript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/07/24/JustJS-03/" rel="next" title="Just JavaScript--03 |  Values and Variables">
+                <i class="fa fa-chevron-left"></i> Just JavaScript--03 |  Values and Variables
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -547,6 +791,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -567,8 +818,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -667,6 +927,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript模拟-The-JavaScript-Simulation"><span class="nav-number">2.</span> <span class="nav-text">JavaScript模拟(The JavaScript Simulation)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#从外部进行学习-Studying-From-the-Outside"><span class="nav-number">3.</span> <span class="nav-text">从外部进行学习(Studying From the Outside)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#从内部进行学习-Studying-From-The-Inside"><span class="nav-number">4.</span> <span class="nav-text">从内部进行学习(Studying From The Inside)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算值-Counting-the-Values"><span class="nav-number">5.</span> <span class="nav-text">计算值(Counting the Values)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">6.</span> <span class="nav-text">undefined</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Null"><span class="nav-number">7.</span> <span class="nav-text">Null</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Boolean"><span class="nav-number">8.</span> <span class="nav-text">Boolean</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Numbers"><span class="nav-number">9.</span> <span class="nav-text">Numbers</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#颜色和数字-Colors-and-Numbers"><span class="nav-number">9.1.</span> <span class="nav-text">颜色和数字(Colors and Numbers)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#特殊号码-Special-Numbers"><span class="nav-number">9.2.</span> <span class="nav-text">特殊号码(Special Numbers)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#未完待续-To-be-Continuted"><span class="nav-number">10.</span> <span class="nav-text">未完待续(To be Continuted)</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -823,6 +1099,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://liugezhou.online/"/>
-  <updated>2020-08-07T08:30:54.168Z</updated>
+  <updated>2020-08-09T05:31:44.156Z</updated>
   <id>http://liugezhou.online/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>每周总结第四十五期</title>
+    <link href="http://liugezhou.online/2020/08/09/issue-45/"/>
+    <id>http://liugezhou.online/2020/08/09/issue-45/</id>
+    <published>2020-08-09T05:00:00.000Z</published>
+    <updated>2020-08-09T05:31:44.156Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>本周是2020年的第三十二个周末。<br>这里记录过去一周，我的一些总结。</p></blockquote><a id="more"></a><h4 id="Feeling"><a href="#Feeling" class="headerlink" title="Feeling"></a>Feeling</h4><blockquote><p>本周看到一篇不用文字叙述而写出来的一篇在当下社会意识形态的大现实，文章不拘一格、行为流水，真乃大作一篇。文章内容记录如下：<br><img src="http://img.liugezhou.online/blog/weekly45bg.png" alt="文章来源"></p></blockquote><h4 id="张玉环案"><a href="#张玉环案" class="headerlink" title="张玉环案"></a>张玉环案</h4><blockquote><p>张玉环这个案子看的真是让人痛心疾首，那段全家相聚的视频相信很多人看了那叫一个内外流泪。<br>在我非常浅薄的认知里面，中国司法就是一个笑话。  </p></blockquote><h4 id="Mac微信打开小程序"><a href="#Mac微信打开小程序" class="headerlink" title="Mac微信打开小程序"></a>Mac微信打开小程序</h4><blockquote><p>windows版本微信早就可以打开小程序了，而Mac苹果商店版本迟迟没见更新。<br>在逛微信开放社区的时候，看到原来Mac版本早早就有内测试版本可打开小程序。<br>安装内测版本不仅可以在微信打开小程序，而且在微信开发者工具调试也可以自己吊起小程序。<br><a href="https://developers.weixin.qq.com/community/develop/doc/0008ce7eeb870022c4b917e6d5b009" target="_blank" rel="noopener">Mac小程序开发说明-官方</a><br><a href="https://dldir1.qq.com/weixin/mac/WeChatMac_Beta.dmg" target="_blank" rel="noopener">点击下载</a></p></blockquote><h4 id="一台服务器支持多个域名和站点"><a href="#一台服务器支持多个域名和站点" class="headerlink" title="一台服务器支持多个域名和站点"></a>一台服务器支持多个域名和站点</h4><blockquote><p>本周在生产服务器通过nginx配置两个域名的时候，花了一整个上午时间总是不成功，原因后来找到原来是对接客户在网关上做了限制，需要网关人员开启域名白名单才可以访问。<br>这里做个记录：bug的问题不单单是代码原因，还有很多其它外部原因，应多维度去快速定位问题。</p></blockquote><h4 id="Just-JavaScript"><a href="#Just-JavaScript" class="headerlink" title="Just JavaScript"></a>Just JavaScript</h4><blockquote><p>前几周提到， 亲爱的Dan Abramov–Redux的作者，在编写一本Just JavaScript的草稿书籍。<br>这本通过邮件订阅方式的专栏现已完结。<br>书籍比较入门且啰嗦，但挺有意思。<br>亲爱的Dan一直在强调思维模式养成的重要性，且用几行非常之so  easy的代码展开叙述，通篇可能没讲多少内容，但总觉得有一些醍醐灌顶。 </p></blockquote><h4 id="绘制变量和值的关系图表"><a href="#绘制变量和值的关系图表" class="headerlink" title="绘制变量和值的关系图表"></a><a href="https://excalidraw.com/" target="_blank" rel="noopener">绘制变量和值的关系图表</a></h4><blockquote><p>👆 Just JavaScript文章中有很多几行简单的代码，作者希望通过变量与值的关系作图来阐述每一行代码的内部发生了什么。这个网站也是作者推荐的一个绘制变量与值关系图表的在线网站。</p></blockquote><h4 id="code-runner"><a href="#code-runner" class="headerlink" title="code runner"></a>code runner</h4><blockquote><p>一款VScode插件，代码一键运行，支持超过40种语言.<br><a href="https://zhuanlan.zhihu.com/p/54861567" target="_blank" rel="noopener">code runner介绍</a></p></blockquote><h4 id="2020年你应该尝试的10个-JavaScript-库"><a href="#2020年你应该尝试的10个-JavaScript-库" class="headerlink" title="2020年你应该尝试的10个 JavaScript 库"></a><a href="https://www.freecodecamp.org/news/10-javascript-libraries-you-should-try/" target="_blank" rel="noopener">2020年你应该尝试的10个 JavaScript 库</a></h4><blockquote><p>👆如上。  </p><ul><li><a href="https://leafletjs.com/reference-1.6.0.html" target="_blank" rel="noopener">Leaflet</a>:Leaflet是领先的开源JavaScript库的移动友好<code>互动地图</code>。它只有38 KB的JS，拥有大多数开发人员需要的所有映射特性。  </li><li><a href="https://alvarotrigo.com/fullPage/" target="_blank" rel="noopener">fullPage.js</a>:创建全屏幕滚动网站。 </li><li><a href="https://animejs.com/" target="_blank" rel="noopener">animejs</a>:Anime.js是最好的动画库之一，它灵活且易于使用。 它是帮助您向项目中添加一些非常酷的动画的完美工具.。  </li><li><a href="https://sindresorhus.com/screenfull.js/" target="_blank" rel="noopener">screenfull.js</a>:用于跨浏览器使用的JavaScript全屏API的简单包装器，它允许您将页面或任何元素带入全屏,只有0.7kb大小。  </li><li><a href="https://momentjs.com/" target="_blank" rel="noopener">moment.js</a>:在JavaScript中解析、验证、操作和显示日期和时间的js库。<br>等。</li></ul></blockquote><h4 id="10个有用的-git-log-技巧"><a href="#10个有用的-git-log-技巧" class="headerlink" title="10个有用的 git log 技巧"></a><a href="https://hackernoon.com/ten-useful-git-log-tricks-7nt3yxy" target="_blank" rel="noopener">10个有用的 git log 技巧</a></h4><blockquote><p>👆– Ten Useful Git Log Tricks.  </p><ul><li><code>git log --oneline</code>:查看代码提交的一行信息。  </li><li><code>git log --after=&#39;2020-08-01&#39;</code>:查看2020年8月1号之后的代码提交记录。 </li><li><code>git log --after=&quot;2020-08-01&quot; --before=&quot;2020-08-09&quot;</code>:查看2020年8月1日之后，8月9日之前的代码提交记录。 </li><li><code>git log -p</code>:可以查看每次提交的代码具体修改了那些地方。 </li><li><code>git log --authot=&quot;liumingzhou&quot;</code>:查看某位提交人的提交日志。 </li><li><code>git log --grep=&quot;title&quot;</code>:查看提交信息带有title字样的提交历史。  </li></ul></blockquote><h4 id="END"><a href="#END" class="headerlink" title="END"></a>END</h4><blockquote><p>世人慌慌张张，不过图碎银几两。可偏偏这碎银几两，能解世间万种慌张。</p></blockquote><blockquote><p>不管什么事情，我们都会凭直觉得到一个结论，这就是”强观点”；只要有任何与结论相悖的信息，我们就会修正自己的观点，这就是”弱立场”。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;本周是2020年的第三十二个周末。&lt;br&gt;这里记录过去一周，我的一些总结。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="每周分享" scheme="http://liugezhou.online/categories/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
+    
+    
+      <category term="每周分享" scheme="http://liugezhou.online/tags/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
+    
+  </entry>
   
   <entry>
     <title>Just JavaScript--04 | Counting the Values(Part 1)</title>
@@ -149,30 +173,6 @@
     
       &lt;blockquote&gt;
 &lt;p&gt;本周是2020年的第二十九个周末。&lt;br&gt;这里记录过去一周，我的一些总结。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="每周分享" scheme="http://liugezhou.online/categories/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
-    
-    
-      <category term="每周分享" scheme="http://liugezhou.online/tags/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>每周总结第四十五期</title>
-    <link href="http://liugezhou.online/2020/07/20/issue-45/"/>
-    <id>http://liugezhou.online/2020/07/20/issue-45/</id>
-    <published>2020-07-20T01:16:00.000Z</published>
-    <updated>2020-08-09T05:29:47.228Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>本周是2020年的第三十二个周末。<br>这里记录过去一周，我的一些总结。</p></blockquote><a id="more"></a><h4 id="Feeling"><a href="#Feeling" class="headerlink" title="Feeling"></a>Feeling</h4><blockquote><p>本周看到一篇不用文字叙述而写出来的一篇在当下社会意识形态的大现实，文章不拘一格、行为流水，真乃大作一篇。文章内容记录如下：<br><img src="http://img.liugezhou.online/blog/weekly45bg.png" alt="文章来源"></p></blockquote><h4 id="张玉环案"><a href="#张玉环案" class="headerlink" title="张玉环案"></a>张玉环案</h4><blockquote><p>张玉环这个案子看的真是让人痛心疾首，那段全家相聚的视频相信很多人看了那叫一个内外流泪。<br>在我非常浅薄的认知里面，中国司法就是一个笑话。  </p></blockquote><h4 id="Mac微信打开小程序"><a href="#Mac微信打开小程序" class="headerlink" title="Mac微信打开小程序"></a>Mac微信打开小程序</h4><blockquote><p>windows版本微信早就可以打开小程序了，而Mac苹果商店版本迟迟没见更新。<br>在逛微信开放社区的时候，看到原来Mac版本早早就有内测试版本可打开小程序。<br>安装内测版本不仅可以在微信打开小程序，而且在微信开发者工具调试也可以自己吊起小程序。<br><a href="https://developers.weixin.qq.com/community/develop/doc/0008ce7eeb870022c4b917e6d5b009" target="_blank" rel="noopener">Mac小程序开发说明-官方</a><br><a href="https://dldir1.qq.com/weixin/mac/WeChatMac_Beta.dmg" target="_blank" rel="noopener">点击下载</a></p></blockquote><h4 id="一台服务器支持多个域名和站点"><a href="#一台服务器支持多个域名和站点" class="headerlink" title="一台服务器支持多个域名和站点"></a>一台服务器支持多个域名和站点</h4><blockquote><p>本周在生产服务器通过nginx配置两个域名的时候，花了一整个上午时间总是不成功，原因后来找到原来是对接客户在网关上做了限制，需要网关人员开启域名白名单才可以访问。<br>这里做个记录：bug的问题不单单是代码原因，还有很多其它外部原因，应多维度去快速定位问题。</p></blockquote><h4 id="Just-JavaScript"><a href="#Just-JavaScript" class="headerlink" title="Just JavaScript"></a>Just JavaScript</h4><blockquote><p>前几周提到， 亲爱的Dan Abramov–Redux的作者，在编写一本Just JavaScript的草稿书籍。<br>这本通过邮件订阅方式的专栏现已完结。<br>书籍比较入门且啰嗦，但挺有意思。<br>亲爱的Dan一直在强调思维模式养成的重要性，且用几行非常之so  easy的代码展开叙述，通篇可能没讲多少内容，但总觉得有一些醍醐灌顶。 </p></blockquote><h4 id="绘制变量和值的关系图表"><a href="#绘制变量和值的关系图表" class="headerlink" title="绘制变量和值的关系图表"></a><a href="https://excalidraw.com/" target="_blank" rel="noopener">绘制变量和值的关系图表</a></h4><blockquote><p>👆 Just JavaScript文章中有很多几行简单的代码，作者希望通过变量与值的关系作图来阐述每一行代码的内部发生了什么。这个网站也是作者推荐的一个绘制变量与值关系图表的在线网站。</p></blockquote><h4 id="code-runner"><a href="#code-runner" class="headerlink" title="code runner"></a>code runner</h4><blockquote><p>一款VScode插件，代码一键运行，支持超过40种语言.<br><a href="https://zhuanlan.zhihu.com/p/54861567" target="_blank" rel="noopener">code runner介绍</a></p></blockquote><h4 id="2020年你应该尝试的10个-JavaScript-库"><a href="#2020年你应该尝试的10个-JavaScript-库" class="headerlink" title="2020年你应该尝试的10个 JavaScript 库"></a><a href="https://www.freecodecamp.org/news/10-javascript-libraries-you-should-try/" target="_blank" rel="noopener">2020年你应该尝试的10个 JavaScript 库</a></h4><blockquote><p>👆如上。  </p><ul><li><a href="https://leafletjs.com/reference-1.6.0.html" target="_blank" rel="noopener">Leaflet</a>:Leaflet是领先的开源JavaScript库的移动友好<code>互动地图</code>。它只有38 KB的JS，拥有大多数开发人员需要的所有映射特性。  </li><li><a href="https://alvarotrigo.com/fullPage/" target="_blank" rel="noopener">fullPage.js</a>:创建全屏幕滚动网站。 </li><li><a href="https://animejs.com/" target="_blank" rel="noopener">animejs</a>:Anime.js是最好的动画库之一，它灵活且易于使用。 它是帮助您向项目中添加一些非常酷的动画的完美工具.。  </li><li><a href="https://sindresorhus.com/screenfull.js/" target="_blank" rel="noopener">screenfull.js</a>:用于跨浏览器使用的JavaScript全屏API的简单包装器，它允许您将页面或任何元素带入全屏,只有0.7kb大小。  </li><li><a href="https://momentjs.com/" target="_blank" rel="noopener">moment.js</a>:在JavaScript中解析、验证、操作和显示日期和时间的js库。<br>等。</li></ul></blockquote><h4 id="10个有用的-git-log-技巧"><a href="#10个有用的-git-log-技巧" class="headerlink" title="10个有用的 git log 技巧"></a><a href="https://hackernoon.com/ten-useful-git-log-tricks-7nt3yxy" target="_blank" rel="noopener">10个有用的 git log 技巧</a></h4><blockquote><p>👆– Ten Useful Git Log Tricks.  </p><ul><li><code>git log --oneline</code>:查看代码提交的一行信息。  </li><li><code>git log --after=&#39;2020-08-01&#39;</code>:查看2020年8月1号之后的代码提交记录。 </li><li><code>git log --after=&quot;2020-08-01&quot; --before=&quot;2020-08-09&quot;</code>:查看2020年8月1日之后，8月9日之前的代码提交记录。 </li><li><code>git log -p</code>:可以查看每次提交的代码具体修改了那些地方。 </li><li><code>git log --authot=&quot;liumingzhou&quot;</code>:查看某位提交人的提交日志。 </li><li><code>git log --grep=&quot;title&quot;</code>:查看提交信息带有title字样的提交历史。  </li></ul></blockquote><h4 id="END"><a href="#END" class="headerlink" title="END"></a>END</h4><blockquote><p>世人慌慌张张，不过图碎银几两。可偏偏这碎银几两，能解世间万种慌张。</p></blockquote><blockquote><p>不管什么事情，我们都会凭直觉得到一个结论，这就是”强观点”；只要有任何与结论相悖的信息，我们就会修正自己的观点，这就是”弱立场”。</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;本周是2020年的第三十二个周末。&lt;br&gt;这里记录过去一周，我的一些总结。&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>

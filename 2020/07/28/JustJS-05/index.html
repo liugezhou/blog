@@ -140,11 +140,11 @@
 <meta name="keywords" content="Just JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Just JavaScript--04 | Counting the Values(Part 1)">
-<meta property="og:url" content="http://liugezhou.online/2020/08/07/JustJS-05/index.html">
+<meta property="og:url" content="http://liugezhou.online/2020/07/28/JustJS-05/index.html">
 <meta property="og:site_name" content="六个周">
 <meta property="og:description" content="简介  Dan Abramov:Redux作者，React社区大神。前一段时间发起了一个活动，通过邮箱订阅他写的一个小专栏，每写好一片草稿就会发到你的邮箱里面。这是这篇小专栏的第五节：‘ Counting the Values(Part 2) ’–“计算值(第二部分)”。下面内容是在原作基础上，用我的大白话翻译的文章内容，文章原文贴至末尾。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-08-07T08:30:54.168Z">
+<meta property="og:updated_time" content="2020-08-10T01:32:39.914Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Just JavaScript--04 | Counting the Values(Part 1)">
 <meta name="twitter:description" content="简介  Dan Abramov:Redux作者，React社区大神。前一段时间发起了一个活动，通过邮箱订阅他写的一个小专栏，每写好一片草稿就会发到你的邮箱里面。这是这篇小专栏的第五节：‘ Counting the Values(Part 2) ’–“计算值(第二部分)”。下面内容是在原作基础上，用我的大白话翻译的文章内容，文章原文贴至末尾。">
@@ -177,7 +177,7 @@
 
 
 
-  <link rel="canonical" href="http://liugezhou.online/2020/08/07/JustJS-05/">
+  <link rel="canonical" href="http://liugezhou.online/2020/07/28/JustJS-05/">
 
 
 
@@ -352,7 +352,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liugezhou.online/2020/08/07/JustJS-05/">
+    <link itemprop="mainEntityOfPage" href="http://liugezhou.online/2020/07/28/JustJS-05/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liugezhou">
@@ -381,8 +381,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-07T15:00:00+08:00">
-                2020-08-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-28T15:00:00+08:00">
+                2020-07-28
               </time>
             
 
@@ -397,8 +397,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-08-07T16:30:54+08:00">
-                2020-08-07
+              <time title="更新于" itemprop="dateModified" datetime="2020-08-10T09:32:39+08:00">
+                2020-08-10
               </time>
             
           </span>
@@ -434,8 +434,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/08/07/JustJS-05/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/08/07/JustJS-05/" itemprop="commentCount"></span>
+                <a href="/2020/07/28/JustJS-05/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/07/28/JustJS-05/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -443,7 +443,7 @@
 
           
           
-             <span id="/2020/08/07/JustJS-05/" class="leancloud_visitors" data-flag-title="Just JavaScript--04 | Counting the Values(Part 1)">
+             <span id="/2020/07/28/JustJS-05/" class="leancloud_visitors" data-flag-title="Just JavaScript--04 | Counting the Values(Part 1)">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -468,7 +468,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3.2k
+                  3.3k
                 </span>
               
 
@@ -484,7 +484,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  11
+                  12
                 </span>
               
             </div>
@@ -636,27 +636,90 @@
 <h5 id="函数就是值-Function-Are-Value"><a href="#函数就是值-Function-Are-Value" class="headerlink" title="函数就是值(Function Are Value)"></a>函数就是值(Function Are Value)</h5><blockquote>
 <p>我们定义函数，以便以后可以调用它们并在其中运行代码。但是，要真正理解JavaScript中的函数，我们需要暂时忘记它们为什么有用。我们将函数视为另一种值：一个数字，一个对象， 一个方法 。<br>为了理解函数，我们将它们与数字和对象进行比较。</p>
 </blockquote>
-<p>首先，考虑以下运行console.log(2)七次的for循环：</p>
 <blockquote>
-<p>它传递给console.log多少个不同的值？为了回答这个问题，让我们回想一下2写下时的含义。它是数字文字。文字是一种表达，是对我们宇宙的一个问题。在我们的宇宙中，每个数字只有一个值，因此它通过每次“召集”数字2相同的值来“回答”我们的问题。 因此，答案是一个价值。我们将看到该日志七次-但每次调用都传递相同的值。<br>现在让我们简要地回顾一下对象。<br>这是另一个运行console.log({})七次的for循环：</p>
+<p>首先，思考以下for循环输出七次console.log()的for循环： </p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for (let i = 0; i &lt; 7; i++) &#123;</span><br><span class="line">  console.log(2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>它传递给console.log多少个不同的值？为了回答这个问题，让我们回想一下2写下时的含义。它是数字文本,它是一种表达，是我们JS宇宙对我们提出问题的回答。在我们的宇宙中，每个数字只有一个值，因此它通过每次“召集”数字2相同的值来“回答”我们的问题。 因此，答案是一个值。我们将看到该日志七次-但每次调用都传递相同的值。</p>
 </blockquote>
 <blockquote>
-<p>现在它传递给console.log有多少个不同的值？在这里， {}也是一个文字-除了它是一个对象文字 。正如我们刚刚了解到的，JavaScript宇宙不会通过召唤任何东西来“回答”对象文字。相反，它将创建一个新的对象值-这将是{}对象文字的结果。 因此，上面的代码创建并记录了七个完全不同的对象值。<br>让它沉入。<br>现在让我们看一下函数。</p>
+<p>现在让我们简要地回顾一下对象。<br>这是另一个运行console.log({})七次的for循环：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for (let i = 0; i &lt; 7; i++) &#123;</span><br><span class="line">  console.log(&#123;&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>现在它传递给console.log有多少个不同的值？在这里， {}也是一个文本–它是一个对象文字 。正如我们刚刚了解到的，JavaScript宇宙不会通过召唤任何东西来“回答”对象文本。相反，它将创建一个新的对象值–这将是{}对象文字本的结果。 因此，上面的代码创建并记录了七个完全不同的对象值。</p>
 </blockquote>
 <blockquote>
-<p>此代码将多少个不同值传递给console.log ？</p>
+<p>这个我们先介绍到这里，让这两端代码在你的思维模式中沉淀以下。  </p>
 </blockquote>
 <blockquote>
-<p>答案是七个。<br>每当我们执行包含函数表达式的代码行时，就会在我们的Universe中出现一个全新的函数值。</p>
+<p>接着让我们看一下函数。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for (let i = 0; i &lt; 7; i++) &#123;</span><br><span class="line">  console.log(function() &#123;&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>此代码将多少个不同值传递给console.log呢？</p>
 </blockquote>
 <blockquote>
-<p>在这里， function() {}也是一个表达式。像任何表达式一样，函数表达式是JavaScript世界的“问题”， 它在每次询问时通过创建一个新的函数值来回答我们 。这与{}执行时如何创建新对象值非常相似。功能就像对象！<br>从技术上讲，函数是 JavaScript 中的对象。我们将继续将它们视为独立的基本类型，因为与常规对象相比，它们具有独特的功能。但是，通常来说，如果您可以对对象执行某些操作，那么您也可以对函数执行操作。它们是非常特殊的对象。</p>
+<p>答案是七个。<br>每当我们执行包含函数表达式的代码行时，就会在我们的JS宇宙中出现一个全新的函数值。</p>
 </blockquote>
 <blockquote>
-<p>调用函数<br>此代码打印什么？<br> let countDwarves = function (  ) { return 7 ; }; let dwarves = countDwarves; console .log(dwarves);<br>您可能会认为它可以显示7 ，尤其是当您查看的不是很近时。<br>现在，在控制台中检查此代码段！它输出的确切内容取决于浏览器，但是您会看到函数本身，而不是那里的数字7 。<br>如果您遵循我们的思维模式，那么这种行为应该是合理的：<br>首先，我们使用function() { }表达式创建了一个新的函数值，并将countDwarves变量指向该值。<br>接下来，我们将dwarves变量指向countDwarves所指向的值，该值与函数值相同。<br>最后，我们记录了dwarves当前指向的值。<br>我们根本没有调用我们的函数！<br>结果， countDwarves和dwarves指向相同的值，而这恰好是一个函数。看， 函数就是值 。我们可以将变量指向它们，就像处理数字或对象一样。<br>当然，如果我们想调用一个函数，我们也可以这样做：<br> let countDwarves = function (  ) { return 7 ; }; let dwarves = countDwarves(); // () is a function call console .log(dwarves);<br>注意， let声明和=赋值都与我们的函数调用无关。是()执行函数调用-而且它本身就完成了！<br>添加()更改代码的含义：<br>let dwarves = countDwarves意味着“将dwarves指向countDwarves指向的值。”<br>let dwarves = countDwarves()意味着“将dwarves点指向由 countDwarves指向的函数返回的值。”<br>实际上， countDwarves()也是一个表达式。它称为通话表达式 。为了“回答”一个调用表达式，JavaScript在函数内部运行代码，并将返回的值交给我们（在本示例中为7 ）。<br>我们将在以后的模块中更详细地介绍函数调用。<br>回顾<br>那是一段漫长的旅程！在最后两个模块中，我们研究了JavaScript中的每个值类型。让我们与Count von Count一起，从不同的原始类型开始，重述每种类型有多少个值：</p>
+<p>在这里， function() {}也是一个表达式。像任何表达式一样，函数表达式是JavaScript宇宙的“问题”， 它在每次被询问时通过创建一个新的函数值来回答我们 。这与{}执行时如何创建新对象值非常相似。功能就像对象！</p>
 </blockquote>
 <blockquote>
-<p>未定义 ：只有一个值， undefined 。<br>Null ：仅一个值， null 。<br>布尔值：两个值： true和false 。<br>数字 ：每个浮点数学数字一个值。<br>BigInts ：每个可能的整数一个值。<br>字符串 ：每个可能的字符串一个值。<br>Symbols ：我们暂时跳过了Symbols，但是有一天我们会去找它们！<br>以下类型是特殊的，因为它们使我们能够形成自己的价值观 ：<br>对象 ：我们执行的每个对象文字的一个值。<br>Function ：我们执行的每个函数表达式都有一个值。</p>
+<p>从技术层面来看，在JS中函数也是对象。我们将继续将它们视为独立的基本类型，因为与常规对象相比，它们具有独特的功能。但是，通常来说，如果您可以对对象执行某些操作，那么您也可以对函数执行操作。它们是非常特殊的对象。</p>
+</blockquote>
+<h5 id="调用函数-Calling-a-Function"><a href="#调用函数-Calling-a-Function" class="headerlink" title="调用函数(Calling a Function)"></a>调用函数(Calling a Function)</h5><blockquote>
+<p>下面代码的打印结果是？  </p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let countDwarves = function() &#123; return 7; &#125;;</span><br><span class="line">let dwarves = countDwarves;</span><br><span class="line">console.log(dwarves);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>您可能会认为它显示7 ，尤其是当您阅读代码不是很仔细的时候。<br>现在，在控制台中输入此代码段！它输出的确切内容取决于浏览器，但是您会看到函数本身，而不是被预料的数字7 。  </p>
+</blockquote>
+<blockquote>
+<p>如果您遵循我们的思维模式思考，那么这种行为看起来应该是合理的：  </p>
+<ul>
+<li>首先，我们使用function() { }表达式创建了一个新的函数值，并将countDwarves变量指向该值。  </li>
+<li>接下来，我们将dwarves变量指向countDwarves所指向的值，该值与函数值相同。</li>
+<li>最后，我们记录了dwarves当前指向的值。</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>我们少了一个步骤，我们根本没有调用我们的函数！<br>结果， countDwarves和dwarves指向相同的值，而这恰好是一个函数。看， 函数就是值 。我们可以将变量指向它们，就像处理数字或对象一样。<br>当然，如果我们想调用一个函数，我们也可以这样做：  </p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let countDwarves = function() &#123; return 7; &#125;;</span><br><span class="line">let dwarves = countDwarves(); // () is a function call</span><br><span class="line">console.log(dwarves);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意， <code>let</code>声明和<code>=</code>赋值都与我们的函数调用无关。是<code>()</code>执行函数调用-而且它本身就完成了！<br>添加<code>()</code>更改代码的含义：  </p>
+<ul>
+<li>let dwarves = countDwarves意味着“将dwarves指向countDwarves指向的值。” </li>
+<li>let dwarves = countDwarves()意味着“将dwarves点指向由 countDwarves指向的函数返回的值。”<br>实际上， countDwarves()也是一个表达式。它称为调用函数表达式 。为了“回答”一个调用函数表达式，JavaScript在函数内部运行代码，并将返回的值交给我们（在本示例中为7 ）。<br>我们将在以后的模块中更详细地介绍函数调用。</li>
+</ul>
+</blockquote>
+<h4 id="回顾-Recap"><a href="#回顾-Recap" class="headerlink" title="回顾(Recap)"></a>回顾(Recap)</h4><blockquote>
+<p>真是一段漫长的旅程！在最后两个模块中，我们研究了JavaScript中的每个值类型。让我们与Count von Count一起，从不同的原始类型开始，重述每种类型有多少个值：</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>Undefined ：只有一个值， undefined 。  </li>
+<li>Null ：仅一个值， null 。 </li>
+<li>Booleans：两个值： true和false 。 </li>
+<li>Numbers ：每个浮点数学数字一个值。 </li>
+<li>BigInts ：每个可能的整数一个值。  </li>
+<li>Strings ：每个可能的字符串一个值。   </li>
+<li>Symbols ：我们暂时跳过了Symbols。  </li>
+</ul>
+</blockquote>
+<blockquote>
+<p>以下类型是特殊的，因为它们使我们能够形成自己的值 ： </p>
+<ul>
+<li>Objects ：我们定义的每一个对象就是一个值。  </li>
+<li>Function ：我们执行的每个函数表达式都有一个值。 </li>
+</ul>
 </blockquote>
 <blockquote>
 <p>访问JavaScript的不同“天体”很有趣。现在我们已经计算了所有值，我们还了解了使它们彼此不同的原因 。 例如，写2或”hello”总是“召唤”相同的数字或字符串值。但是编写{}或function() {}总是会创造一个全新的，不同的价值。这个想法对于理解JavaScript中的平等至关重要，这将是下一个模块的主题。</p>
@@ -914,7 +977,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#BigInts"><span class="nav-number">2.</span> <span class="nav-text">BigInts</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Strings"><span class="nav-number">3.</span> <span class="nav-text">Strings</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#字符串不是对象-Strings-Aren’t-Objects"><span class="nav-number">3.1.</span> <span class="nav-text">字符串不是对象(Strings Aren’t Objects)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#字符串的百变形态-A-Value-for-Every-Conceivable-String"><span class="nav-number">3.2.</span> <span class="nav-text">字符串的百变形态(A Value for Every Conceivable String)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Symbols"><span class="nav-number">4.</span> <span class="nav-text">Symbols</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Objects"><span class="nav-number">5.</span> <span class="nav-text">Objects</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#新建自己的对象-Make-Our-Own-Objects"><span class="nav-number">5.1.</span> <span class="nav-text">新建自己的对象(Make Our Own Objects)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#对象消失了吗？-Do-Objects-Disappear"><span class="nav-number">5.2.</span> <span class="nav-text">对象消失了吗？(Do Objects Disappear?)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Functions"><span class="nav-number">6.</span> <span class="nav-text">Functions</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#函数就是值-Function-Are-Value"><span class="nav-number">6.1.</span> <span class="nav-text">函数就是值(Function Are Value)</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#BigInts"><span class="nav-number">2.</span> <span class="nav-text">BigInts</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Strings"><span class="nav-number">3.</span> <span class="nav-text">Strings</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#字符串不是对象-Strings-Aren’t-Objects"><span class="nav-number">3.1.</span> <span class="nav-text">字符串不是对象(Strings Aren’t Objects)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#字符串的百变形态-A-Value-for-Every-Conceivable-String"><span class="nav-number">3.2.</span> <span class="nav-text">字符串的百变形态(A Value for Every Conceivable String)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Symbols"><span class="nav-number">4.</span> <span class="nav-text">Symbols</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Objects"><span class="nav-number">5.</span> <span class="nav-text">Objects</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#新建自己的对象-Make-Our-Own-Objects"><span class="nav-number">5.1.</span> <span class="nav-text">新建自己的对象(Make Our Own Objects)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#对象消失了吗？-Do-Objects-Disappear"><span class="nav-number">5.2.</span> <span class="nav-text">对象消失了吗？(Do Objects Disappear?)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Functions"><span class="nav-number">6.</span> <span class="nav-text">Functions</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#函数就是值-Function-Are-Value"><span class="nav-number">6.1.</span> <span class="nav-text">函数就是值(Function Are Value)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#调用函数-Calling-a-Function"><span class="nav-number">6.2.</span> <span class="nav-text">调用函数(Calling a Function)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#回顾-Recap"><span class="nav-number">7.</span> <span class="nav-text">回顾(Recap)</span></a></li></ol></div>
             
 
           </div>
@@ -948,7 +1011,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">133.5k</span>
+    <span title="Site words total count">133.6k</span>
   
 </div>
 
